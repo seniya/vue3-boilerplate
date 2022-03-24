@@ -1,0 +1,19 @@
+{
+  "api_user": {
+    "code": 200,
+    "msg": "ok",
+    "id": 1,
+    "name": "김닫힘",
+    "position": "사원",
+    "userNo": "14573",
+    "email": "close@openobject.net",
+    "phone": "010-1234-5678",
+    "team": "디지털그룹 > 디지털사업부 > 프론트엔드 개발 3팀",
+    "profileImage": null,
+    "state": "출장",
+    "stateInfo": {
+      "startDate": "1998-01-12T00:00:00.000Z'",
+      "endtDate": "1998-01-12T00:00:00.000Z'"
+    }
+  }
+}
