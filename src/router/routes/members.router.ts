@@ -1,27 +1,27 @@
 const DefaultLayout = (): Promise<typeof import('*.vue')> =>
-  import(/* webpackChunkName: "member" */ '@/views/member/_container.vue')
+  import(/* webpackChunkName: "members" */ '@/views/members/_container.vue')
 
 const Main = (): Promise<typeof import('*.vue')> =>
-  import(/* webpackChunkName: "member" */ '@/views/member/main.vue')
+  import(/* webpackChunkName: "members" */ '@/views/members/main.vue')
 
 const Example = (): Promise<typeof import('*.vue')> =>
-  import(/* webpackChunkName: "member" */ '@/views/member/example.vue')
+  import(/* webpackChunkName: "members" */ '@/views/members/example.vue')
 
 export default {
-  path: '/member',
+  path: '/members',
   component: DefaultLayout,
-  redirect: '/member/main',
+  redirect: '/members/main',
 
   children: [
     {
-      path: '/member/main',
+      path: '/members/main',
       component: Main,
       meta: {
         title: '내부직원조회'
       }
     },
     {
-      path: '/member/example',
+      path: '/members/example',
       component: Example,
       meta: {
         title: '내부직원조회 예제 페이지'

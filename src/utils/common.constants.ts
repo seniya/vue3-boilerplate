@@ -1,12 +1,17 @@
 /**
- * @description: request method
+ * @description:
+ */
+export const API_URL = process.env.VUE_APP_API_URL
+
+/**
+ * @description:
  */
 export enum StorageNameCode {
   TOKEN = 'TOKEN',
 }
 
 /**
- * @description: request method
+ * @description:
  */
 export enum RequestEnum {
   GET = 'GET',

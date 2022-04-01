@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+import { API_URL } from './common.constants'
 
 export function setInterceptors (instance: AxiosInstance): AxiosInstance {
   instance.interceptors.request.use(
@@ -28,13 +29,14 @@ export function setInterceptors (instance: AxiosInstance): AxiosInstance {
   return instance
 }
 
-const apiRootPath = '/api'
+console.log('API_URL : ', API_URL)
+// console.log('process.env : ', process.env)
 
 function createInstance () {
   const instance: AxiosInstance = axios.create({
     timeout: 10 * 1000,
     // headers: { 'Content-Type': ContentTypeEnum.JSON },
-    baseURL: apiRootPath
+    baseURL: API_URL
   })
   return setInterceptors(instance)
 }

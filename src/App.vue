@@ -16,7 +16,7 @@ export default defineComponent({
   },
   setup () {
     onMounted(() => {
-      logger.debug('App onMounted')
+      logger.debug('onMounted App')
     })
     return { }
   }

@@ -8,7 +8,7 @@ interface authState {
   token: string | null;
 }
 
-export const authStore = defineStore({
+export const userAuthStore = defineStore({
   id: 'auth-store',
   state: (): authState => ({
     token: null

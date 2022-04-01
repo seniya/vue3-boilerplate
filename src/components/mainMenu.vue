@@ -3,8 +3,8 @@
     <a-menu-item key="home">
       <router-link to="/">home</router-link>
     </a-menu-item>
-    <a-menu-item key="sign">
-        <router-link to="/sign/in">
+    <a-menu-item key="members">
+        <router-link to="/members/main">
           로그인
           <span style="color: red;">(로그인됨)</span>
         </router-link>

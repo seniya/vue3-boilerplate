@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serveFe": "vue-cli-service serve --mode development",
+    "serveBe": "json-server --delay 1000 --watch ./src/assets/demoApi.js",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "jsonserve": "node src/jsonserver/server.js"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "ant-design-vue": "^2.2.8",
@@ -16,10 +16,13 @@
     "loglevel": "^1.8.0",
     "mitt": "^3.0.0",
     "pinia": "^2.0.12",
+    "shortid": "^2.2.16",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.1.1",
+    "@types/lodash": "^4.14.181",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",

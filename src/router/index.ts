@@ -1,14 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-import routerHome from '@/router/routes/home.router'
-import routerMember from '@/router/routes/member.router'
+import routerPages from '@/router/routes/pages.router'
+import routerMembers from '@/router/routes/members.router'
+import routerPosts from '@/router/routes/posts.router'
 
 const routes: Array<RouteRecordRaw> = [
-  routerHome,
-  routerMember,
+  routerPages,
+  routerMembers,
+  routerPosts,
   {
     path: '/',
-    redirect: '/home/main',
+    redirect: '/pages/main',
     meta: {
       title: 'HomeMain'
     }

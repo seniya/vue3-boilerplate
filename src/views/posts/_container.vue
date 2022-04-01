@@ -1,6 +1,11 @@
 <template>
   <div>
-    <p>홈 화면</p>
+    <div>
+      <h4>Posts 컨테이너</h4>
+    </div>
+    <div style="padding: 20px;">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -8,10 +13,13 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'homeMain',
+  name: 'postsContainer',
   components: { },
   setup () {
     return { }
   }
 })
 </script>
+
+<style>
+</style>

@@ -29,7 +29,7 @@ export default defineComponent({
 
     onMounted(() => {
       actionOnEventbus()
-      logger.debug('MainContainer onMounted')
+      logger.debug('onMounted MainContainer')
     })
 
     onUnmounted(() => {
