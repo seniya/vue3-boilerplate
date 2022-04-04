@@ -8,7 +8,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'homeMain',
+  name: 'pageTwo',
   components: { },
   setup () {
     return { }

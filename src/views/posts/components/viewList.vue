@@ -3,34 +3,44 @@
     class="demo-loadmore-list"
     :loading="isLoadingPostItems"
     item-layout="horizontal"
-    :data-source="items" >
-    <div
-      v-if="donePostItems"
-      data="loadMore"
-      :style="{ textAlign: 'center', marginTop: '12px', height: '32px', lineHeight: '32px' }" >
-      <a-spin v-if="isLoadingPostItems" />
-      <a-button v-else @click="onClickMoreBtn">
-        loading more
-      </a-button>
-    </div>
-    <a-list-item data="renderItem" data-scope="item">
-      <a data="actions" @click="onClickEditBtn(item.id)">edit</a>
-      <a data="actions" @click="onClickReadBtn(item.id)">more</a>
-      <a-list-item-meta :description="item.content">
-        <span data="title">
-          <router-link :to="{ name: 'postsRead', params: { postId: item.id }}">
-            {{ item.title }}
-          </router-link>
-        </span>
-        <a-avatar data="avatar" :size="64" :src="item.image" />
-      </a-list-item-meta>
-      <div>{{item.author}}</div>
-    </a-list-item>
+    :data-source="items"
+  >
+    <template #loadMore>
+      <div
+        v-if="!isLoadingPostItems && donePostItems"
+        :style="{ textAlign: 'center', marginTop: '12px', height: '32px', lineHeight: '32px' }"
+      >
+        <a-button @click="onClickMoreBtn">loading more</a-button>
+      </div>
+    </template>
+    <template #renderItem="{ item }">
+      <a-list-item>
+        <template #actions>
+          <a @click="onClickReadBtn(item.id)" key="list-loadmore-more">more</a>
+        </template>
+        <a-skeleton avatar :title="false" :loading="!!isLoadingPostItems" active>
+          <a-list-item-meta :description="item.content">
+            <template #title>
+              <a @click="onClickReadBtn(item.id)">{{ item.title }}</a>
+            </template>
+            <template #avatar>
+              <a-avatar :src="item.image" />
+            </template>
+          </a-list-item-meta>
+        </a-skeleton>
+      </a-list-item>
+    </template>
   </a-list>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+
+import { logger } from '@/utils/instance.logger'
+
+export default defineComponent({
+  name: 'viewList',
+  components: {},
   props: {
     items: {
       type: Array,
@@ -57,26 +67,29 @@ export default {
       required: true
     }
   },
+  setup (props) {
+    async function onClickMoreBtn () {
+      props.onClickMoreBtn_()
+    }
+    function onClickEditBtn () {
+      props.onClickEditBtn_()
+    }
+    function onClickReadBtn (id: string) {
+      props.onClickReadBtn_(id)
+    }
 
-  /* request, prepare, on, cb, action */
-  methods: {
-    async onClickMoreBtn () {
-      this.onClickMoreBtn_()
-    },
-    onClcikRefreshBtn () {
-      this.onClcikRefreshBtn_()
-    },
-    onClickEditBtn (postId) {
-      this.onClickEditBtn_(postId)
-    },
-    onClickReadBtn (postId) {
-      this.onClickReadBtn_(postId)
+    onMounted(() => {
+      logger.debug('mounted viewList')
+    })
+    onUnmounted(() => {
+      logger.debug('unmounted viewList')
+    })
+
+    return {
+      onClickMoreBtn,
+      onClickEditBtn,
+      onClickReadBtn
     }
   }
-
-}
+})
 </script>
-
-<style>
-
-</style>

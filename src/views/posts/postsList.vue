@@ -1,33 +1,35 @@
 <template>
   <div>
     <div>
-      <h3>
+      <h4>
         POSTS 목록 페이지
-        <button @click="onClcikRefreshBtn">새로고침</button>
+        <button @click="onClcikRefresh">새로고침</button>
         &nbsp;&nbsp;
-        <button @click="onClcikCreateBtn">새글작성</button>
-      </h3>
+        <button @click="onClickCreate">새글작성</button>
+      </h4>
     </div>
 
-    <!-- <viewList
-      :items="$store.state.post.items"
-      :isLoadingPostItems="$store.state.post.isLoadingPostItems"
-      :donePostItems="$store.state.post.donePostItems"
-      :onClickMoreBtn_="onClickMoreBtn"
-      :onClickEditBtn_="onClickEditBtn"
-      :onClickReadBtn_="onClickReadBtn" /> -->
+    <!-- -->
+    <viewList
+      :items="state.posts"
+      :isLoadingPostItems="postStore.getIsLodingPosts"
+      :donePostItems="postStore.getIsDonePosts"
+      :onClickMoreBtn_="actionMore"
+      :onClickEditBtn_="actionEdit"
+      :onClickReadBtn_="actionRead" />
 
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, reactive } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { cloneDeep } from 'lodash'
 
-// import viewList from '@/views/posts/components/viewList'
-import { userPostStore } from '@/service/posts/posts.module'
-import { PostInterface, PostsResponseInterface } from '@/service/posts/model/post.interface'
-import { AxiosResponse } from 'axios'
+import viewList from '@/views/posts/components/viewList.vue'
+import { usePostStore } from '@/service/posts/posts.module'
+import { PostInterface } from '@/service/posts/model/post.interface'
+import { logger } from '@/utils/instance.logger'
 
 interface stateType {
   posts: PostInterface[];
@@ -36,89 +38,76 @@ interface stateType {
 export default defineComponent({
   name: 'postsList',
   components: {
-    // viewList
+    viewList
   },
   setup () {
     /* request, prepare, on, cb, action */
-    const postStore = userPostStore()
-
+    const router = useRouter()
+    const route = useRoute()
+    const postStore = usePostStore()
     const state: stateType = reactive({ posts: [] })
 
     async function requestApiHttpPosts () {
       const resResult = await postStore.actionHttpPosts()
-      prepareData(resResult)
+      if (resResult.result) {
+        prepareData()
+      }
     }
 
-    function prepareData (itmes: AxiosResponse<PostsResponseInterface>) {
-      state.posts = []
-      // if (itmes.length > 0) {
-      //   const posts_ = cloneDeep(itmes)
-      //   /*
-      //     데이터 가공
-      //   */
-      //   state.posts = posts_
-      // }
+    function prepareData () {
+      const items = postStore.getPosts
+      if (items.length > 0) {
+        const posts_ = cloneDeep(items)
+        /*
+          데이터 가공 영역
+        */
+        state.posts = posts_
+      }
+    }
+
+    async function actionMore () {
+      logger.debug('postsList actionMore')
+    }
+    function actionEdit () {
+      logger.debug('postsList actionEdit')
+    }
+    function actionRead (id: string) {
+      router.push({
+        path: `/posts-read/${id}`,
+        query: { ...route.query }
+      })
+    }
+
+    function onClcikRefresh () {
+      requestApiHttpPosts()
+    }
+    function onClickCreate () {
+      router.push({
+        path: '/posts-create',
+        query: { ...route.query }
+      })
     }
 
     onMounted(() => {
-      console.log('postsList mounted')
+      logger.debug('mounted postsList')
     })
     onUnmounted(() => {
-      console.log('postsList unmounted')
+      logger.debug('unmounted postsList')
     });
     (() => {
-      console.log('postsList initailize')
+      logger.debug('initailize postsList')
       requestApiHttpPosts()
     })()
 
     return {
-      state
+      postStore,
+      state,
+      actionMore,
+      actionEdit,
+      actionRead,
+      onClcikRefresh,
+      onClickCreate
     }
   }
 })
-
-/*
-
-import viewList from '@/views/posts/components/viewList'
-
-export default {
-  name: 'postsList',
-  components: {
-    viewList
-  },
-
-  created () {
-    console.log('viewList : ', viewList)
-    this.initialize()
-  },
-  methods: {
-    initialize () {
-      if (this.$store.state.post.items.length === 0) {
-        this.requestAPI()
-      }
-    },
-    async requestAPI () {
-      const returnCondition = await this.$store.dispatch('post/POST_ITEMS', { })
-      console.log('requestAPI returnCondition: ', returnCondition)
-    },
-    async onClickMoreBtn () {
-      this.requestAPI()
-    },
-    onClcikRefreshBtn () {
-      this.$store.commit('post/reSetItems')
-      this.requestAPI()
-    },
-    onClickEditBtn (postId) {
-      this.$router.push(`/posts/update/${postId}`)
-    },
-    onClickReadBtn (postId) {
-      this.$router.push(`/posts/read/${postId}`)
-    },
-    onClcikCreateBtn () {
-      this.$router.push('/posts/create')
-    }
-  }
-
-}
-*/
 </script>

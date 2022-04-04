@@ -19,6 +19,21 @@ module.exports = () => {
       result: {
         items: []
       }
+    },
+    postInfo: {
+      code: 0,
+      msg: 'OK',
+      result: {
+        item: {
+          id: shortId.generate(),
+          title: 'posts_' + faker.lorem.sentence(),
+          content: faker.lorem.paragraph(),
+          image: faker.image.image(),
+          animals: faker.image.animals(),
+          author: faker.name.findName(),
+          createAt: faker.date.recent()
+        }
+      }
     }
   }
   // Create 10 items

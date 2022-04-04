@@ -1,32 +1,34 @@
 <template>
-  <a-card hoverable style="width: 100%" :loading="isLoadingPostRead">
-    <img
-      data="cover"
-      alt="example"
-      style="max-width: 400px;"
-      v-if="donePostRead"
-      :src="item.image" />
-    <template data="actions" class="ant-card-actions">
-      <a-icon key="rollback" type="rollback" @click="onClickBackBtn"/>
-      <a-icon key="edit" type="edit" @click="onClickEditBtn(item.id)"/>
-      <a-button
-        icon="delete"
-        @click="onClickDeleteBtn(item.id)"
-        :loading="isLoadingPostRemove"/>
+  <a-card :loading="isLoadingPostRead" :title="item.title">
+    <div>
+      <span>author : {{item.author}}</span>
+    </div>
+    <template #cover>
+      <img
+        alt="image loding.."
+        style="max-width: 400px;"
+        :src="item.image"
+      />
     </template>
-    <a-card-meta
-      :title="item.title"
-      :description="item.content">
-      <a-avatar
-        data="avatar"
-        :size="64"
-        :src="item.animals" />
+    <template #actions>
+      <edit-outlined key="edit" @click="onClickEditBtn(item.id)" />
+      <backward-outlined key="back" @click="onClickBackBtn"/>
+    </template>
+    <a-card-meta :description="item.content">
     </a-card-meta>
   </a-card>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { EditOutlined, BackwardOutlined } from '@ant-design/icons-vue'
+import { logger } from '@/utils/instance.logger'
+
+export default defineComponent({
+  name: 'viewRead',
+  components: {
+    EditOutlined, BackwardOutlined
+  },
   props: {
     item: {
       type: Object,
@@ -40,10 +42,6 @@ export default {
       type: Boolean,
       required: true
     },
-    isLoadingPostRemove: {
-      type: Boolean,
-      required: true
-    },
     onClickBackBtn_: {
       type: Function,
       required: true
@@ -51,26 +49,26 @@ export default {
     onClickEditBtn_: {
       type: Function,
       required: true
-    },
-    onClickDeleteBtn_: {
-      type: Function,
-      required: true
     }
   },
+  setup (props) {
+    function onClickBackBtn () {
+      props.onClickBackBtn_()
+    }
+    function onClickEditBtn (id: string) {
+      props.onClickEditBtn_(id)
+    }
+    onMounted(() => {
+      logger.debug('mounted viewRead')
+    })
+    onUnmounted(() => {
+      logger.debug('unmounted viewRead')
+    })
 
-  methods: {
-    onClickBackBtn () {
-      this.onClickBackBtn_()
-    },
-    onClickEditBtn (postId) {
-      this.onClickEditBtn_(postId)
-    },
-    onClickDeleteBtn (postId) {
-      this.onClickDeleteBtn_(postId)
+    return {
+      onClickBackBtn,
+      onClickEditBtn
     }
   }
-}
+})
 </script>
-
-<style>
-</style>

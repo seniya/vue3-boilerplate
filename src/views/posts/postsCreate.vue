@@ -1,56 +1,66 @@
 <template>
   <div>
-    <h3>
+    <h4>
       POSTS 작성 페이지
       <button @click="onClickBackBtn">목록으로</button>
-    </h3>
+    </h4>
 
-    <!-- 디자인 없이..
-    <div>
-      <div>
-        $store.state.post.isLoadingPostAdd : {{$store.state.post.isLoadingPostAdd}}
-      </div>
-      <div>
-        $store.state.post.donePostAdd : {{$store.state.post.donePostAdd}}
-      </div>
-      <div>
-        $store.state.post.errorPostAdd : {{$store.state.post.errorPostAdd}}
-      </div>
-      <form name="normal-form" @submit.prevent="onSubmitForm">
-        <div v-if="formErrors.length > 0">
-          <b>Please correct the following error(s):</b>
-          <div v-for="(item, index) in formErrors" :key="index">
-            <span style="color: red">{{ item.text }}</span>
-          </div>
-        </div>
-        <p>
-          <label for="title">Title</label>
-          <input type="text" name="title" id="title" v-model="title">
-        </p>
-        <p>
-          <label for="content">Content</label>
-          <input type="text" name="content" id="content" v-model="content">
-        </p>
-        <p>
-          <label for="author">Author</label>
-          <input type="text" name="author" id="author" v-model="author">
-        </p>
-        <p>
-          <input type="submit" value="Submit" :disabled="$store.state.post.isLoadingPostAdd">
-        </p>
-      </form>
-    </div>
-    -->
-
-    <!-- antd 반영 -->
+    <!-- antd 반영-->
     <viewCreate
-      :isLoadingPostAdd="$store.state.post.isLoadingPostAdd"
-      :prepareData_="prepareData" />
+      :isLoadingPostAdd="false"
+      :actionSave="actionCreate" />
 
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+import viewCreate from '@/views/posts/components/viewCreate.vue'
+import { logger } from '@/utils/instance.logger'
+
+export default defineComponent({
+  name: 'postsCreate',
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    viewCreate
+  },
+  setup () {
+    /* request, prepare, on, cb, action */
+    const router = useRouter()
+    const route = useRoute()
+
+    function actionCreate () {
+      logger.debug('postsCreate actionCreate')
+      alert('저장!')
+    }
+
+    function onClickBackBtn () {
+      router.push({
+        path: '/posts-list',
+        query: { ...route.query }
+      })
+    }
+
+    onMounted(() => {
+      logger.debug('mounted postsCreate')
+    })
+    onUnmounted(() => {
+      logger.debug('unmounted postsCreate')
+    });
+    (() => {
+      logger.debug('initailize postsCreate')
+    })()
+
+    return {
+      actionCreate,
+      onClickBackBtn
+    }
+  }
+})
+
+/*
 import shortId from 'shortid'
 import { faker } from '@faker-js/faker'
 import viewCreate from '@/views/posts/components/viewCreate'
@@ -76,7 +86,6 @@ export default {
     this.initialize()
   },
 
-  /* request, prepare, on, cb, action */
   methods: {
     initialize () {
       // console.log('initialize 아무것도 안함')
@@ -119,8 +128,5 @@ export default {
   }
 
 }
+*/
 </script>
-
-<style>
-
-</style>
