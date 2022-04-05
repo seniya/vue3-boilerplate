@@ -19,7 +19,7 @@ export const authInfoInit = {
   token: '' // 토큰
 }
 
-export const userAuthStore = defineStore({
+export const useAuthStore = defineStore({
   id: 'auth-store',
 
   state: (): authState => ({
@@ -63,6 +63,14 @@ export const userAuthStore = defineStore({
         this.errorAuthInfo = '에러가 발생했습니다. #1'
         return Promise.reject(error)
       }
+    },
+
+    actionLogout () {
+      localStorage.removeItem(StorageNameCode.TOKEN)
+      this.authInfo = authInfoInit
+      this.isLodingAuthInfo = false
+      this.isDoneAuthInfo = true
+      this.errorAuthInfo = null
     }
   }
 })

@@ -5,39 +5,33 @@
     </h3>
 
     <div>
-      <p>$store.state.auth.isLoadingSignIn : {{$store.state.auth.isLoadingSignIn}}</p>
-      <p>$store.state.auth.doneSignIn : {{$store.state.auth.doneSignIn}}</p>
-      <p>$store.state.auth.errorSignIn : {{$store.state.auth.errorSignIn}}</p>
-      <p>$store.state.auth.user.token : {{$store.state.auth.user.token}}</p>
-
-      <div v-if="$store.state.auth.user.token && $store.state.auth.user.token !== undefined">
+      <p>authStore.authInfo : {{authStore.authInfo}}</p>
+      <p>authStore.isLodingAuthInfo: {{authStore.isLodingAuthInfo}}</p>
+      <p>authStore.isDoneAuthInfo : {{authStore.isDoneAuthInfo}}</p>
+      <p>authStore.errorAuthInfo : {{authStore.errorAuthInfo}}</p>
+<!--  -->
+      <div v-if="authStore.getIsLogin && authStore.getToken !== ''">
         <p>로그인 되었습니다.</p>
-        <p>userId : {{$store.state.auth.user.userId}}</p>
-        <p>name : {{$store.state.auth.user.name}}</p>
-        <p>lv : {{$store.state.auth.user.lv}}</p>
+        <p>userId : {{authStore.authInfo.userId}}</p>
+        <p>name : {{authStore.authInfo.name}}</p>
+        <p>lv : {{authStore.authInfo.lv}}</p>
         <div>
-          <input type="button" value="LOGOUT" @click="onClickLogoutBtn">
+          <input type="button" value="LOGOUT" @click="onClickLogout">
         </div>
       </div>
 
       <div v-else>
-        <form name="normal-form" @submit.prevent="onSubmitForm">
-          <div v-if="formErrors.length > 0">
-            <b>Please correct the following error(s):</b>
-            <div v-for="(item, index) in formErrors" :key="index">
-              <span style="color: red">{{ item.text }}</span>
-            </div>
-          </div>
+        <form name="normal-form" @submit.prevent="onClickLogin">
           <p>
-            <label for="userId">userId : test</label>
-            <input type="text" name="userId" id="userId" v-model="userId">
+            <label for="userId">userId</label>
+            <input type="text" name="userId" id="userId" >
           </p>
           <p>
-            <label for="password">password : 1111</label>
-            <input type="password" name="password" id="password" v-model="password">
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" >
           </p>
           <p>
-            <input type="submit" value="LOGIN" :disabled="$store.state.auth.isLoadingSignIn">
+            <input type="submit" value="LOGIN" :disabled="authStore.isLodingAuthInfo">
           </p>
         </form>
       </div>
@@ -47,13 +41,52 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { authInfoInit, useAuthStore } from '@/service/auth/auth.module'
+import { AuthInterface } from '@/service/auth/model/auth.interface'
+import { defineComponent, onMounted, onUnmounted, reactive } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { logger } from '@/utils/instance.logger'
+
+interface stateType {
+  authInfo: AuthInterface;
+}
 
 export default defineComponent({
   name: 'memberMain',
   components: { },
   setup () {
-    return { }
+    /* request, prepare, on, cb, action */
+    const router = useRouter()
+    const route = useRoute()
+
+    const authStore = useAuthStore()
+
+    const state: stateType = reactive({ authInfo: authInfoInit })
+
+    async function requestApiHttpAuth () {
+      await authStore.actionHttpAuth({})
+    }
+
+    onMounted(() => {
+      logger.debug('mounted memberMain')
+    })
+    onUnmounted(() => {
+      logger.debug('unmounted memberMain')
+    })
+    function onClickLogin () {
+      requestApiHttpAuth()
+    }
+    function onClickLogout () {
+      logger.debug('log out!!')
+      authStore.actionLogout()
+    }
+
+    return {
+      authStore,
+      state,
+      onClickLogin,
+      onClickLogout
+    }
   }
 })
 </script>
