@@ -2,21 +2,21 @@ import { AxiosPromise } from 'axios'
 import { axiosInstance } from '@/utils/instance.axios'
 import { RequestEnum } from '@/utils/common.constants'
 
-import { AuthenticateResponseInterface } from '@/service/auth/model/authenticate.interface'
+import { AuthResponseInterface } from '@/service/auth/model/auth.interface'
 
 enum Api {
-  authenticatePost = '/authenticate',
+  auth = '/auth',
 }
 
 /**
- * @description: httpAuthenticatePost
+ * @description: httpAuth
  */
-export const httpAuthenticatePost = (
+export const httpAuth = (
   data: any
-): AxiosPromise<AuthenticateResponseInterface> => {
+): AxiosPromise<AuthResponseInterface> => {
   return axiosInstance({
-    method: RequestEnum.POST,
-    url: Api.authenticatePost,
+    method: RequestEnum.GET,
+    url: Api.auth,
     data
   })
 }

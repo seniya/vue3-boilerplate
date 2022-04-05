@@ -4,15 +4,15 @@ import { PostInterface } from '@/service/posts/model/post.interface'
 import { httpPostInfo, httpPosts } from '@/service/posts/posts.api'
 
 interface postsState {
-  posts: PostInterface[];
-  isLodingPosts: boolean;
-  isDonePosts: boolean;
-  errorPosts: string | null;
+  posts: PostInterface[]
+  isLodingPosts: boolean
+  isDonePosts: boolean
+  errorPosts: string | null
 
-  postInfo: PostInterface;
-  isLodingPostInfo: boolean;
-  isDonePostInfo: boolean;
-  errorPostInfo: string | null;
+  postInfo: PostInterface
+  isLodingPostInfo: boolean
+  isDonePostInfo: boolean
+  errorPostInfo: string | null
 }
 
 export const postInfoInit = {

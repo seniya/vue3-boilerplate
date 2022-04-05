@@ -12,12 +12,16 @@
     "ant-design-vue": "^2.2.8",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
+    "dayjs": "^1.11.0",
+    "highcharts": "^10.0.0",
+    "highcharts-vue": "^1.4.0",
     "lodash": "^4.17.21",
     "loglevel": "^1.8.0",
     "mitt": "^3.0.0",
     "pinia": "^2.0.12",
     "shortid": "^2.2.16",
     "vue": "^3.2.13",
+    "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
