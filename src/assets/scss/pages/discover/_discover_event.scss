@@ -1,0 +1,992 @@
+// 이벤트
+.event {
+  // 마이데이터 런칭 이벤트
+  &.mydata-open {
+    .mydata-main {
+      margin: 0 -2.4rem;
+      padding: 6rem 1.6rem;
+      background: #1d40c2 url(#{$img-path}/payfan/visual/discover/bg_event_mydata.png) no-repeat 0 0 / 100% auto;
+      .sh-logo {
+        width: 8rem;
+        height: 2.1rem;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+      }
+      .header-text {
+        margin-top: 2.2rem;
+        color: $white;
+        text-align: center;
+        .title {
+          font-weight: $fontMedium;
+          @include fontHeight(2.7);
+          strong {
+            display: block;
+            color: #7beeff;
+            font-weight: $fontBold;
+            @include fontHeight(2.1);
+          }
+        }
+        .hashtag-area {
+          margin-top: 1.4rem;
+          text-align: center;
+          .hash-badge {
+            display: inline-flex;
+            width: 11.5rem;
+            height: 2.5rem;
+            padding-top: .2rem;
+            background-color: #7beeff;
+            box-shadow: 0 0 .4rem 0 rgba($black, 0.3);
+            border-radius: 1.3rem;
+            color: #112b8a;
+            font-weight: $fontBold;
+            @include fontHeight(1.2);
+            align-items: center;
+            justify-content: center;
+            & + .hash-badge {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+      .img-area {
+        position: relative;
+        height: 25.6rem;
+        margin-top: 4.2rem;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 20.6rem;
+          background: url(#{$img-path}/payfan/visual/discover/visual_event_mydata01.png) no-repeat 50% 0 / auto 100%;
+          z-index: 1;
+          content: '';
+        }
+       .text-box {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 7rem;
+          background-color: $blue020;
+          box-shadow: 0 0 .4rem 0 rgba($black, 0.5);
+          border-radius: .8rem;
+          text-align: center;
+          p {
+            padding-top: 1.5rem;
+            color: $blue080;
+            font-weight: $fontLight;
+            @include fontHeight(1.5);
+          }
+          strong {
+            display: block;
+            font-weight: $fontMedium;
+            @include fontHeight(1.7);
+          }
+        } 
+      }
+      .content-list {
+        margin-top: 3.4rem;
+        li {
+          position: relative;
+          padding-top: 1.8rem;
+          color: $white;
+          font-weight: $fontLight;
+          @include fontHeight(1.6);
+          text-align: center;
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            display: inline-block;
+            width: 4rem;
+            height: .2rem;
+            background-color: $white;
+            transform: translateX(-50%);
+            content: '';
+          }
+          & + li {
+            margin-top: 2.4rem;
+          }
+          .title {
+            display: block;
+            margin-bottom: .3rem;
+            font-weight: $fontBold;
+          }
+        }
+      }
+    }
+    .mydata-meaning {
+      padding: 6rem 0;
+      margin: 0 -2.4rem;
+      background-color: #1e2d73;
+      .title {
+        color: $white;
+        font-weight: $fontMedium;
+        @include fontHeight(2.2);
+        text-align: center;
+        strong {
+          color: #7beeff;
+          font-weight: $fontBold;
+          span {
+            position: relative;
+            display: inline-flex;
+            &:before {
+              position: absolute;
+              top: -.6rem;
+              left: .6rem;
+              display: block;
+              width: .4rem;
+              height: .4rem;
+              background-color: #7beeff;
+              border-radius: 50%;
+              content: '';
+            }
+          }
+        }
+      }
+      p {
+        position: relative;
+        margin-top: 3.2rem;
+        padding: 0 14rem 0 2.1rem;
+        color: $white;
+        font-weight: $fontLight;
+        @include fontHeight(1.4);
+        word-break: keep-all;
+        &:after {
+          position: absolute;
+          top: .6rem;
+          right: 0;
+          display: block;
+          width: 14.9rem;
+          height: 14.2rem;
+          background: url(#{$img-path}/payfan/visual/discover/visual_event_mydata02.png) no-repeat 0 0 / auto 100%;
+          content: '';
+        }
+      }
+    }
+    .event-title {
+      position: relative;
+      text-align: center;
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 1.8rem;
+        width: 100%;
+        height: 1px;
+        background-color: #1d40c2;
+      }
+      strong.title {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        width: 18rem;
+        background: #1d40c2;
+        border-radius: 20px;
+        color: $white;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+        text-align: center;
+        padding: .7rem 0 .6rem;
+      }
+    }
+    .event-sub-title {
+      padding: 3rem 0;
+      color: #414e7f;
+      font-weight: $fontMedium;
+      @include fontHeight(1.6);
+      text-align: center;
+      strong {
+        display: inline-block;
+        padding-top: .3rem;
+        color: #1d40c2;
+        @include fontHeight(2.2);
+        font-weight: $fontBold;
+      }
+    }
+    .event-btn {
+      li {
+        padding-bottom: 1.5rem;
+      }
+      button {
+        width: 100%;
+        font-weight: $fontMedium;
+        @include fontHeight(1.6);
+        color: $white;
+        padding: 1.5rem 0 1.1rem;
+        border-radius: 2.4rem;
+        &.btn-event {
+          background-color: #1e2d73;
+        }
+        &.btn-apply, &.btn-bank {
+          background-color: $blue100;
+        }
+      }
+    }
+    .event-gift {
+      padding: 6rem 1.6rem;
+      margin: 0 -2.4rem;
+      background-color: #eff3fe;
+      .event-sub-title {
+        padding-bottom: 1.1rem;
+      }
+      .img-area {
+        position: relative;
+        height: 34.4rem;
+        &:before {
+          display: block;
+          width: 29.2rem;
+          height: 31.3rem;
+          margin: 0 auto;
+          background: url(#{$img-path}/payfan/visual/discover/visual_event_mydata03.png) no-repeat 0 0 / 100% auto;
+          content: '';
+        }
+        @at-root .event.mydata-open .item-box {
+          background-color: $white;
+          border-radius: .8rem;
+          box-shadow: 0 0 .4rem 0 rgba($black, 0.2);
+        }
+        .item-box {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          p {
+            display: flex;
+            height: 9.5rem;
+            color: $blue080;
+            font-weight: $fontLight;
+            @include fontHeight(1.6);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            span, strong {
+              display: block;
+              font-weight: $fontBold;
+            }
+            span {
+              @include fontHeight(1.5);
+            }
+          }
+        }
+      }
+      &-guide {
+        padding-top: .9rem;
+        li {
+          position: relative;
+          padding: 0 0 0 1.4rem;
+          font-weight: $fontLight;
+          @include fontHeight(1.3);
+          word-break: keep-all;
+          .number {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+    .event-mission-method {
+      padding: 6.4rem 0 4.9rem;
+      .mission-step {
+        padding: 3.7rem 0 3.9rem;
+        li {
+          text-align: center;
+          &:not(:first-child) {
+            margin-top: 1.5rem;
+            &::before {
+              content: "";
+              display: block;
+              width: 1.1rem;
+              height: 5.5rem;
+              background: url(#{$img-path}/payfan/visual/discover/icon_event_step.png) 0 center / 1.1rem 4.7rem no-repeat ;
+              margin: 0 auto;
+            }
+          }
+          .step {
+            font-weight: $fontBold;
+            @include fontHeight(1.8);
+            color: #3048a2;
+          }
+          .sub-text {
+            font-weight: $fontLight;
+            @include fontHeight(1.5);
+            padding-top: 1rem;
+            span {
+              font-weight: $fontMedium;
+            }
+          }
+        }
+      }
+    }
+    .event-gift-detail {
+      padding: 5rem 1.6rem 6rem;
+      margin: 0 -2.4rem;
+      background-color: #eff3fe;
+      .event-sub-title {
+        padding-bottom: 3.2rem;
+        span {
+          display: block;
+          padding-top: .7rem;
+          color: $black;
+          @include fontHeight(1.4);
+        }
+      }
+      .rank-list {
+        display: flex;
+        margin-top: -1.2rem;
+        flex-wrap: wrap;
+        li {
+          position: relative;
+          flex-basis: calc(50% - .6rem);
+          margin-top: 1.2rem;
+          padding: 6rem 0 1.7rem;
+          &:nth-child(2n) {
+            margin-left: 1.2rem;
+          }
+          &:before {
+            display: block;
+            width: 12rem;
+            height: 12rem;
+            margin: 0 auto;
+            content: '';
+          }
+          &:nth-child(1) {
+            &:before {
+              background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift01.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          &:nth-child(2) {
+            &:before {
+              background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift02.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          &:nth-child(3) {
+            &:before {
+              background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift03.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          &:nth-child(4) {
+            &:before {
+              background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift04.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          &:nth-child(5) {
+            &:before {
+              background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift05.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          .rank-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1.1rem;
+            display: inline-flex;
+            width: 4rem;
+            height: 4rem;
+            padding-top: .2rem;
+            background-color: $blue100;
+            border-radius: 50%;
+            color: $white;
+            font-weight: $fontBold;
+            @include fontHeight(1.4);
+            align-items: center;
+            justify-content: center;
+          }
+          .rank-text {
+            padding-top: 1rem;
+            text-align: center;
+            strong {
+              display: block;
+              color: $blue100;
+              font-weight: $fontBold;
+              @include fontHeight(1.6);
+            }
+            .rank-title {
+              display: block;
+              padding-top: .6rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+            }
+            .rank-tip {
+              display: block;
+              padding: .2rem 2rem 0;
+              font-weight: $fontLight;
+              @include fontHeight(1);
+              word-break: keep-all;
+            }
+          }
+        }
+      }
+    }
+    .event-mission-state {
+      padding: 6.4rem 0;
+      .mission-case {
+        padding-bottom: 1.8rem;
+        li {
+          padding: 2rem;
+          border-radius: 8px;
+          background-color: #eff3fe;
+          margin-bottom: 1.2rem;
+          min-height: 5rem;
+          vertical-align: middle;
+          .sub-tit {
+            color: #1e2d73;
+            @include fontHeight(1.6);
+            font-weight: $fontBold;
+          }
+          .sub-desc {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1rem 0 .2rem 6rem;
+            @include fontHeight(1.4);
+            font-weight: $fontLight;
+            &::before {
+              position: absolute;
+              left: 0;
+              display: inline-block;
+              content: '';
+              width: 5rem;
+              height: 5rem;
+              background: $steelGray url(#{$img-path}/payfan/icons/default/icon_32_check_wh.svg) no-repeat 0;
+              background-size: 5rem;
+              border-radius: 50%;
+            }
+            .state {
+              display: block;
+              color: $blue100;
+              font-weight: $fontBold;
+              padding-bottom: .2rem;
+            }
+            .text {
+              em.num {
+                font-style: normal;
+                font-weight: $fontBold;
+              }
+            }
+            .info {
+              display: block;
+              @include fontHeight(1);
+            }
+          }
+          &.mission-sucess {
+            .sub-desc {
+              &::before {
+                position: absolute;
+                left: 0;
+                display: inline-block;
+                content: '';
+                width: 5rem;
+                height: 5rem;
+                background: $blue100 url(#{$img-path}/payfan/icons/default/icon_32_check_wh.svg) no-repeat 0;
+                background-size: 5rem;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+      .mission-desc {
+        .item-link {
+          @include fontHeight(1.4);
+          text-decoration: underline;
+          .icon {
+            margin-top: -.3rem;
+          }
+        }
+      }
+    }
+    .event-banner {
+      position: relative;
+      display: block;
+      margin: 0 -2.4rem;
+      a {
+        display: block;
+      }
+      .banner-visual {
+        display: block;
+        width: 100%;
+        height: 15.8rem;
+        background-color: #d5d9e0;
+        text-align: right;
+        img {
+          width: auto;
+          height: 100%;
+          vertical-align: middle;
+        }
+      }
+      .banner-cont {
+        position: absolute;
+        top: 2.9rem;
+        left: 2.5rem;
+        .item-title {
+          display: block;
+          @include fontHeight(1.7);
+          padding-bottom: 2.5rem;
+        }
+        .btn-apply {
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+          color: $white;
+          padding: .6rem 2rem .4rem;
+          border-radius: 2rem;
+          background-color: $blue100;
+        }
+      }
+      .item-text-sm {
+        padding: .8rem 1.6rem;
+        font-weight: $fontLight;
+        @include fontHeight(1);
+        text-align: right;
+      }
+    }
+    .event-share {
+      margin: 6rem 0;
+      padding-bottom: 2.4rem;
+      text-align: center;
+      .btn-share {
+        position: relative;
+        width: 4.4rem;
+        height: 4.4rem;
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: 0 .2rem .4rem 0 rgba(48, 49, 51, 0.1);
+        .share-text {
+          position: absolute;
+          top: 5.2rem;
+          left: 50%;
+          color: $gray090;
+          @include fontHeight(1.2);
+          white-space: nowrap;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    .event-useinfo {
+      margin: 0 -2.4rem;
+      padding: 4rem 2.4rem;
+      background-color: $bgWarmGray;
+      h4 {
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .sub-title {
+        display: block;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+        padding: 2.4rem 0;
+      }
+      .item-list{
+        > li {
+          position: relative;
+          padding: 1.2rem 0 0 1.4rem;
+          @include fontHeight(1.6);
+          &::before {
+            content: '';
+            position: absolute;
+            top: 1.9rem;
+            left: 0;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $gray070;
+          }
+          &:first-child {
+            padding-top: 0;
+            &::before{
+              top: .6rem;
+            }
+          }
+          .sub-list {
+            li {
+                display: flex;
+                margin-top: .6rem;
+                font-weight: $fontMedium;
+                span {
+                  display: block;
+                  margin-right: .4rem;
+                }
+              }
+          }
+        }
+        & + .sub-title {
+          padding-top: 3.2rem;
+        }
+      }
+    }
+    // .v01 마이데이터 앵콜 이벤트 
+    &.v01 { 
+      .section {
+        &.visual-main {
+          margin: 0 -2.4rem;
+          background-image: linear-gradient(to bottom, #ffdc9c, #fcd365 31%, #fd717e 65%);
+        }
+      }
+      .mydata-main {
+        position: relative;
+        background: transparent url(#{$img-path}/payfan/visual/discover/bg_event_mydata_v01.png) no-repeat 50% 0 / auto 100%;
+        padding: 5rem 0 5.8rem;
+        margin: 0;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -2rem;
+          left: 50%;
+          width: 6.4rem;
+          height: 6.4rem;
+          background: #fd717e url(#{$img-path}/payfan/visual/discover/icon_event_arrow_v01.png) center center / 2rem 1.8rem no-repeat ;
+          margin: 0 auto;
+          border-radius: 50%;
+          transform: translateX(-50%);
+        }
+        .header-text {
+          margin-top: 1.2rem;
+          color: $black;
+          .title {
+            @include fontHeight(3.2);
+            font-weight: $fontBold;
+            letter-spacing: -1px;
+            strong {
+              position: relative;
+              display: inline-block;
+              color: $black;
+              font-weight: $fontBold;
+              @include fontHeight(2.4);
+              z-index: 0;
+              &::before {
+                position: absolute;
+                bottom: .4rem;
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2rem;
+                background-color: rgba(255, 169, 0, 0.6);
+                z-index: -1;
+              }
+            }
+            span {
+              display: block;
+              margin-top: -.4rem;
+              em {
+                color: #f23651;
+                font-style: normal;
+              }
+            }
+          }
+          .hashtag-area {
+            margin-top: .6rem;
+            .hash-badge {
+              height: auto;
+              padding: .6rem 0 .5rem;
+              background-color: #ff556e;
+              box-shadow: 0 0;
+              color: #ffe5b6;
+            }
+          }
+        }
+        .img-area {
+          position: relative;
+          height: auto;
+          margin-top: 3.3rem;
+          &:before {
+            display: none;
+            background-image: none;
+          }
+          .img-box {
+            img {
+              width: 100%;
+              vertical-align: middle;
+            }
+          }
+         .text-box {
+            position: static;
+            height: auto;
+            text-align: center;
+            box-shadow: 0 0;
+            background-color: transparent;
+            margin-top: 2.4rem;
+            p {
+              padding-top: 1rem;
+              color: $black;
+              @include fontHeight(1.7);
+              letter-spacing: -0.5px;
+              font-weight: $fontRegular;
+            }
+            strong {
+              display: block;
+              font-weight: $fontBold;
+              @include fontHeight(1.7);
+              margin-top: -.2rem;
+              .ho {
+                display: inline-block;
+                font-style: normal;
+                @include fontHeight(2.2);
+                font-weight: $fontBold;
+                transform: rotate(10deg) translate(2px,2px);
+
+              }
+            }
+          } 
+        }
+      }
+      .mydata-info {
+        padding: 6.4rem 0 4.4rem;
+        margin: 0 -2.4rem;
+        background-color: #41495d;
+        .content-list {
+          li {
+            position: relative;
+            color: $white;
+            font-weight: $fontLight;
+            @include fontHeight(1.6);
+            text-align: center;
+            + li {
+              margin-top: 4rem;
+            }
+            .title {
+              display: inline-block;
+              width: 12rem;
+              height: 2.2rem;
+              padding: .4rem 0 0;
+              letter-spacing: -0.25px;
+              text-align: center;
+              color: #fed884;
+              border-radius: 13px;
+              border: solid 1px #feb625;
+              font-weight: $fontBold;
+              margin-bottom: .8rem;
+            }
+          }
+        }
+      }
+      .mydata-meaning {
+        background-color: #313949;
+        padding: 5rem 0 4.4rem;
+        .title {
+          strong {
+            color: #fcd46f;
+            span {
+              &:before {
+                background-color: #fcd46f;
+              }
+            }
+          }
+        }
+        p {
+          margin-top: 2rem;
+          padding: 15rem 2rem 0;
+          text-align: center;
+          &::after{
+            top: 0;
+            right: auto;
+            left: 50%;
+            width: 32rem;
+            height: 14rem;
+            transform: translateX(-50%);
+            background: url(#{$img-path}/payfan/visual/discover/visual_event_mydata02_v01.png) no-repeat 50% 0 / auto 100%;
+          }
+        }
+      }
+      .event-title {
+        &:before, strong.title {
+          background-color: #ff556e;
+        }
+      }
+      .event-sub-title {
+        padding: 2.4rem 0 4rem;
+        color: #41495d;
+        strong {
+          color: #ff556e;
+        }
+      }
+      .event-gift {
+        background-color: #fef4ef;
+        .img-area {
+          position: relative;
+          height: 33.2rem;
+          &:before {
+            width: 27rem;
+            height: 27rem;
+            background: url(#{$img-path}/payfan/visual/discover/visual_event_mydata03_v01.png) no-repeat 0 0 / 100% auto;
+          }
+          .item-box {
+            p {
+              height: auto;
+              padding: 1.8rem;
+              color: #41495d;
+              .desc {
+                display: contents;
+              }
+            }
+          }
+        }
+      }
+      .event-mission-method {
+        padding: 6rem 1.6rem;
+        margin: 0 -2.4rem;
+        .mission-step {
+          padding: 3rem 0 1.5rem;
+          li {
+            color: #41495d;
+            &:not(:first-child) {
+              margin-top: 2.4rem;
+              &::before {
+                width: 2rem;
+                height: 5rem;
+                background: url(#{$img-path}/payfan/visual/discover/icon_event_step_v01.png) center 0 / 2rem 1.8rem no-repeat ;
+              }
+            }
+            .step {
+              @include fontHeight(2.2);
+              color: #ff556e;
+            }
+            .sub-text {
+              @include fontHeight(1.6);
+              padding-top: .6rem;
+              .desc {
+                @include fontHeight(1.4);
+                font-weight: $fontLight;
+              }
+            }
+          }
+        }
+        .event-mission-guide{
+          font-weight: $fontLight;
+          @include fontHeight(1.3);
+          word-break: keep-all;
+          text-align: center;
+        }
+      }
+      .event-gift-detail {
+        padding: 6rem 1.6rem;
+        background-color: #fef4ef;
+        .rank-list {
+          margin-top: 0;
+          li {
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            padding: 5.4rem 0 2.5rem;
+            .rank-badge {
+              background-color: #313949;
+            }
+            .rank-text {
+              padding-top: .6rem;
+              strong {
+                color: #ff556e;
+              }
+            }
+            &:nth-child(1) {
+              .rank-badge {
+                background-color: #ff556e;
+              }
+              &:before {
+                background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift01_v01.png) no-repeat 0 0 / 100% auto;
+              }
+            }
+            &:nth-child(2) {
+              &:before {
+                background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift02_v01.png) no-repeat 0 0 / 100% auto;
+              }
+            }
+            &:nth-child(3) {
+              &:before {
+                background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift03_v01.png) no-repeat 0 0 / 100% auto;
+              }
+            }
+            &:nth-child(4) {
+              &:before {
+                background: url(#{$img-path}/payfan/visual/discover/visual_mydata_gift04_v01.png) no-repeat 0 0 / 100% auto;
+              }
+            }
+          }
+        }
+        .event-gift-guide {
+          position: relative;
+          padding: 0 0 0 1.4rem;
+          font-weight: $fontLight;
+          @include fontHeight(1.3);
+          word-break: keep-all;
+          .mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      .event-mission-state {
+        padding: 6rem 0 0;
+        .mission-case {
+          padding: 4rem 0 0;
+          li {
+            background-color: #eff0f5;
+            margin-bottom: 2rem;
+            .sub-tit {
+              color: #313949;
+            }
+            .sub-desc {
+              padding: 1rem 0 1.2rem 6.5rem;
+              &::before {
+                background: $steelGray url(#{$img-path}/payfan/visual/discover/icon_32_check_wh.png) no-repeat  center center / 3.2rem 3.2rem;
+              }
+              .state {
+                color: #313949;
+                font-weight: $fontMedium;
+                strong {
+                  color: #ff556e;
+                  font-weight: $fontBold;
+                }
+              }
+            }
+            &.mission-sucess {
+              .sub-desc {
+                &::before {
+                  background-color: #ff556e;
+                }
+              }
+            }
+          }
+        }
+        .mission-desc {
+          .btn-line {
+            @include fontHeight(1.4);
+          }
+          .mission-case-guide {
+            position: relative;
+            padding: 0 0 .6rem 1.4rem;
+            margin-top: 1.2rem;
+            font-weight: $fontLight;
+            @include fontHeight(1.3);
+            word-break: keep-all;
+            .mark {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+      }
+      .event-share {
+        margin: 4rem 0;
+        .btn-share {
+          box-shadow: 0 0;
+          border: 1px solid $gray050;
+          .share-text {
+            color: $gray080;
+          }
+        }
+      }
+      .event-useinfo {
+        h4 {
+          margin-bottom: 2.4rem;
+        }
+      }
+    }
+  }
+}

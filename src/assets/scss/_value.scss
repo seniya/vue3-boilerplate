@@ -1,0 +1,198 @@
+//images,fonts
+$img-path : '~@/assets/images/';
+$spoqa-font-path: '~@/assets/fonts/SpoqaHanSansNeo';
+
+//payfan
+// $img-path : 'https://paycdn.shinhancard.com/common/vue/images';
+// $spoqa-font-path: 'https://paycdn.shinhancard.com/common/vue/fonts/SpoqaHanSansNeo';
+
+//mydata
+// $img-path : 'https://mydatacdn.shinhancard.com/common/vue/images';
+// $spoqa-font-path: 'https://mydatacdn.shinhancard.com/common/vue/fonts/SpoqaHanSansNeo';
+
+//font
+$spoqa : 'Spoqa Han Sans Neo';
+
+$fontThin: 100;
+$fontLight: 300;
+$fontRegular: 400;
+$fontMedium: 500;
+$fontBold: 700;
+
+/////////////////////////////////////not defined
+//사용되고 있으나 색상 파레트에 없음
+//font color
+$fontGrey5 : #999;
+$fontGrey7 : #383E55;
+$fontBlue2 : #294AC7;
+
+//line color
+$lineGrey3 : #EEF0F6;
+$fanGrayline1 : #999;
+$fanGrayline2 : #E7E4E4;
+$fanGrayline3 : #DBE1F6;
+$fanGrayDark3 : #DADAE2;
+
+//button background color
+$fanGrayDark2 : #656671;
+
+$bgDarkBlue2 : #414e7f;
+$bgLightBlue2 : #e7e9ee;
+
+//background color
+$bgLightBlue3 : #f4f7fc;
+//////////////////////////////////////not defined
+
+//color
+//gray
+$white: #fff;
+$gray020: #eff0f5;
+$gray030: #eee;
+$gray040: #ddd;
+$gray050: #ccc;
+$gray060: #bbb;
+$gray070: #888;
+$gray080: #666;
+$gray090: #333;
+$gray100: #222;
+$black: #000;
+
+//primary
+$blue020: #dae2ff;
+$blue060: #91a8ff;
+$blue080: #3048a2;
+$blue100: #476eff;
+
+$blue2: #4868e1;
+
+$darkBlue20: #d1d2d9;
+$darkBlue30: #b1b7c4;
+$darkBlue40: #323b50;
+$darkBlue50: #293143;
+$darkBlue60: #76798e;
+$darkBlue70: #3d4964;
+$darkBlue80: #414e7f;
+$darkBlue90: #1b1f42;
+$darkBlue100: #050f26;
+
+//secondary
+$pastelPink20: #fee8f2;
+$pastelPink60: #fcbad8;
+$pastelPink100: #fa8cbe;
+
+$pink20: #ffddf2;
+$pink60: #ff99a8;
+$pink090: #ff0065;
+$pink100: #ff556e;
+
+$orange20: #fcdbd3;
+$orange60: #f7937c;
+$orange100: #f44b25;
+
+$pastelYellow20: #fff5e1;
+$pastelYellow60: #ffe1a5;
+$pastelYellow100: #ffcd69;
+
+$green20: #ddf6e2;
+$green60: #99e4a8;
+$green70: #06cc9d;
+$green80: #0ca32b;
+$green90: #25957a;
+$green100: #55d26e;
+
+$blushGreen20: #e5f8f7;
+$blushGreen50: #25c4cc;
+$blushGreen100: #116e72;
+
+$skyBlue20: #d6f4fc;
+$skyBlue60: #84def6;
+$skyBlue100: #32c8f0;
+
+$purple20: #dcdcf4;
+$purple60: #9696de;
+$purple90: #6a44bf;
+$purple100: #5050c8;
+
+$red20: #f8e4e4;
+$red030: #e97777;
+$red040: #855151;
+$red060: #b64343;
+$red100: #da1d1d;
+$red200: #855151;
+
+//colors
+$primary: $blue100; //blue
+$primary2: $blue2; //blue2
+$primaryDark: $darkBlue100;
+$secondary: #d8d8d8;
+
+//sub
+$steelBlue: #91a1b2;
+$steelGray: #b8bbc5;
+$darkBlueGray: #494f60;
+
+//background
+$bgLightGray: #f8f8f8;
+$bgDarkBlue: #383b5a;
+$bgSteelBlue: #d0dae6;
+$bgLightBlue: #edf0f8;
+$bgWarmGray: #f6f6f6;
+$bgGray: #f1f1f3;
+
+//line
+$line1: #b4b4b4;
+$line2: #686868;
+$line3: #2c3548;
+
+//dim
+$dim070: rgba(0, 0, 0, 0.7);
+
+//font line-height
+@mixin fontHeight($fontSize) {
+  //linehight 1.4
+  font-size: $fontSize + rem;
+  @if $fontSize == 4 {
+    line-height: 5.6rem;
+  } @else if $fontSize == 3.6 {
+    line-height: 5rem;
+  } @else if $fontSize == 2.6 {
+    line-height: 3.6rem;
+  } @else if $fontSize == 2.4 {
+    line-height: 3.4rem;
+  } @else if $fontSize == 2.2 {
+    line-height: 3rem;
+  } @else if $fontSize == 2 {
+    line-height: 2.8rem;
+  } @else if $fontSize == 1.8 {
+    line-height: 2.6rem;
+  } @else if $fontSize == 1.6 {
+    line-height: 2.2rem;
+  } @else if $fontSize == 1.4 {
+    line-height: 2rem;
+  } @else if $fontSize == 1.2 {
+    line-height: 1.6rem;
+  } @else if $fontSize == 1 {
+    line-height: 1.4rem;
+  } @else if $fontSize == .8 {
+    line-height: 1.2rem;
+  }
+}
+@mixin fontHeight2($fontSize) {
+  //linehight 1.3
+  font-size: $fontSize + rem;
+  @if $fontSize == 3.6 {
+    line-height: 4.6rem;
+  } @else if $fontSize == 3 {
+    line-height: 4rem;
+  } @else if $fontSize == 2.8 {
+    line-height: 3.6rem;
+  } @else if $fontSize == 2.4 {
+    line-height: 3rem;
+  } @else if $fontSize == 2.2 {
+    line-height: 2.8rem;
+  } @else if $fontSize == 1.8 {
+    line-height: 2.2rem;
+  } @else if $fontSize == 1.4 {
+    line-height: 1.8rem;
+  } 
+}

@@ -1,0 +1,1448 @@
+//마이페이지
+.mypage {
+  //main 은 메인 화면 / sub은 메인과 관련된 팝업, 서브 페이지
+  .empty {
+    width: 100%;
+    height: 1.2rem;
+    margin: 0 -2.4rem;
+    padding: 0 2.4rem;
+    border: 0 none;
+    background-color: $gray030;
+  }
+  &.main {
+    padding: 0;
+    .content-body {
+      position: relative;
+      .content-area {
+        padding-bottom: 4rem;
+      }
+      .btn.btn-arrow:after {
+        top: calc(50% - 0.1rem);
+      }
+      .btn.btn-arrow span::after {
+        top: -.1rem;
+      }
+    }
+    .marketing-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: self-start;
+      padding: 2rem 1.3rem 0 2.4rem;
+      .flex-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 2.7rem - 5.6rem);
+        height: 4.0rem;
+        margin-top: 0.4rem;
+        padding: 0 1.2rem;
+        border-radius: 2.0rem;
+        background-color: $bgDarkBlue;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+        color: $white;
+        .flex-left {
+          span {
+            margin-right: 0.8rem;
+          }
+          .text-ellipsis {
+            overflow: hidden;
+            display: inline-block;
+            width: calc(100vw - 17.0rem);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+        span {
+          display: flex;
+          vertical-align: middle;
+          align-items: center;
+        }
+      }
+      .chatbot {
+        display: block;
+        width: 5.6rem;
+        height: 5.6rem;
+        background-image: url(#{$img-path}/payfan/visual/mypage/visual_main_chatbot.svg);
+      }
+    }
+    .profile-area {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      padding: 2.0rem 2.7rem 3.4rem 3.2rem;
+      .portrait-area {
+        padding-right: 2.4rem;
+        .image-area {
+          overflow: hidden;
+          display: block;
+          width: 7.2rem;
+          height: 7.2rem;
+          border-radius: 50%;
+          box-shadow: 0 0.3rem 1.2rem 0 rgba(0, 0, 0, 0.3);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .btn-area {
+          padding-top: 2.0rem;
+          .btn {
+            font-weight: $fontRegular;
+            @include fontHeight(1.2);
+          }
+        }
+      }
+      .information-area {
+        flex: 1;
+        .personal-area {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 1.4rem;
+          .name {
+            font-weight: $fontMedium;
+            @include fontHeight(2.0);
+          }
+          .nickname {
+            padding-bottom: 0.4rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+            color: $gray090;
+          }
+          .latest-access {
+            font-weight: $fontRegular;
+            @include fontHeight(1.2);
+            color: $gray080;
+          }
+        }
+        .my-point {
+          display: flex;
+          flex-direction: column;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          span {
+            display: flex;
+            font-weight: $fontBold;
+            @include fontHeight(1.8);
+            align-items: center;
+            &:after {
+              display: inline-block;
+              width: 1.6rem;
+              height: 1.6rem;
+              background: url(#{$img-path}/common/icons/default/icon_16_arrow1.svg) no-repeat 0 0 / 100% auto;
+              transform: rotate(90deg);
+              content: '';
+            }
+          }
+        }
+      }
+      .btn-guide-area.btn-area {
+        position: absolute;
+        top: 2.2rem;
+        right: 2.7rem;
+        .btn-arrow span::after {
+          top: -.1rem;
+        }
+        .btn-arrow-black {
+          display: flex;
+          align-items: center;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    // 카드 섹션 공통
+    .section {
+      position: relative;
+      margin: 0 1.6rem 1.6rem;
+      padding-bottom: 1.2rem;
+      border-radius: 1.6rem;
+      background: rgba(255, 255, 255, 0.6);
+      &:last-of-type {
+        margin-bottom: 4.2rem;
+      }
+      .btn-more-page {
+        position: absolute;
+        top: 2.4rem;
+        right: 2.0rem;
+      }
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 6.2rem;
+        padding: 0 1rem 0 1.6rem;
+        h3 {
+          display: flex;
+          font-weight: $fontMedium;
+          @include fontHeight(2.0);
+          .icon {
+            margin-right: 0.8rem;
+          }
+        }
+        .btn.btn-text.btn-arrow {
+          padding: .6rem;
+        }
+      }
+      .section-content {
+        margin: 0 1.2rem;
+      }
+      // 카드
+      &.card-area {
+        .splide-area {
+          .splide {
+            border-radius: 1.0rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0.2rem 0.4rem 0.7rem 0 rgba(0, 0, 0, 0.05);
+            &.bullet {
+              padding-bottom: 5.8rem;
+            }
+            .splide__slide {
+              img {
+                vertical-align: top;
+              }
+            }
+            .slide-inner {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .total-area {
+            text-align: center;
+            a {
+              display: inline-block;
+              padding-left: 1.0rem;
+            }
+            .total-title {
+              display: block;
+              padding-bottom: 0.6rem;
+              font-weight: $fontRegular;
+              @include fontHeight(1.4);
+              color: $darkBlue90;
+            }
+            .total-number {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: $fontBold;
+              @include fontHeight(3.2);
+              color: $black;
+              .unit {
+                display: inline-block;
+                @include fontHeight(3);
+              }
+              .icon {
+                position: relative;
+                top: -0.3rem;
+              }
+            }
+          }
+          .list-area {
+            display: block;
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              @include fontHeight(1.2);
+              dt {
+                font-weight: $fontRegular;
+                @include fontHeight(1.4);
+                color: $gray080;
+              }
+              dd {
+                font-weight: $fontBold;
+                @include fontHeight(1.6);
+                a {
+                  position: relative;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                  .icon {
+                    margin-top: -.2rem;
+                  }
+                }
+                .unit {
+                  @include fontHeight(1.4);
+                }
+              }
+            }
+          }
+          .btn-list-area {
+            margin: 0 2.0rem;
+            padding-top: 1.6rem;
+            border-top: 0.1rem solid $gray030;
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding-bottom: 0.8rem;
+              font-weight: $fontMedium;
+              &:last-child {
+                padding-bottom: 0;
+              }
+              dt {
+                font-weight: $fontMedium;
+                @include fontHeight(1.4);
+              }
+              dd {
+                @include fontHeight(1.3);
+              }
+            }
+          }
+          .payment-area {
+            .list-area {
+              margin: 0 2.0rem;
+            }
+            &.list01 {
+              .total-area {
+                padding-top: 4.6rem;
+                padding-bottom: 4.0rem;
+              }
+              .list-area {
+                padding-bottom: 1.6rem;
+              }
+            }
+            &.list02 {
+              .total-area {
+                padding-top: 3.5rem;
+                padding-bottom: 2.3rem;
+              }
+              .list-area {
+                padding-bottom: 1.6rem;
+                div {
+                  padding-bottom: 0.6rem;
+                  &:last-child {
+                    padding-bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+          .only-total-area{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+          }
+          .benefit-area {
+            margin: 0 2.0rem;
+            padding: 2.4rem 0 2.4rem;
+            border-top: 0.1rem solid $gray030;
+            .benefit-title {
+              padding-bottom: 1.8rem;
+              font-weight: $fontBold;
+              @include fontHeight(1.4);
+              color: $black;
+            }
+            dl {
+              div {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 1.2rem;
+                &:last-child {
+                  padding-bottom: 0;
+                }
+                dt {
+                  font-weight: $fontRegular;
+                  @include fontHeight(1.4);
+                }
+                dd {
+                  display: flex;
+                  align-items: center;
+                  font-weight: $fontBold;
+                  @include fontHeight(1.4);
+                }
+              }
+            }
+          }
+          .point-area {
+            display: block;
+            .total-area {
+              padding-top: 4.8rem;
+              padding-bottom: 2.8rem;
+              .point-date {
+                display: block;
+                padding-top: 1.0rem;
+                text-align: center;
+                font-weight: $fontRegular;
+                @include fontHeight(1.2);
+                color: $gray080;
+                span {
+                  color: $black;
+                }
+              }
+            }
+          }
+          .loan-area {
+            .total-area {
+              padding: 7.1rem 0;
+            }
+            .list-area {
+              margin: 0 2.0rem;
+              padding-top: 1.6rem;
+              padding-bottom: 2.4rem;
+              border-top: 0.1rem solid $gray030;
+            }
+            .btn-area {
+              margin: 0 2.0rem;
+            }
+          }
+          .shpaymoney-ing {
+            display: flex;
+            width: 100%;
+            height: calc(100% + 5.8rem);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            p {
+              font-weight: $fontMedium;
+              @include fontHeight(2);
+              text-align: center;
+            }
+            .btn-refresh {
+              position: relative;
+              margin-top: 2rem;
+              padding-left: .4rem;
+              justify-content: flex-start;
+              &:before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: block;
+                width: 2.4rem;
+                height: 2.4rem;
+                background-color: $gray020;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                content: '';
+              }
+              .text {
+                padding-left: .8rem;
+                margin-top: .2rem;
+                font-weight: $fontMedium;
+                @include fontHeight(1.2);
+              }
+            }
+          }
+        }
+      }
+      // 월렛
+      &.wallet-area {
+        .main-items {
+          display: flex;
+          align-items: center;
+          height: 10.6rem;
+          margin-bottom: 0.8rem;
+          padding: 2.4rem 0 2.0rem;
+          border-radius: 1.0rem;
+          background-color: $white;
+          box-shadow: 0.2rem 0.4rem 0.7rem 0 rgba(0, 0, 0, 0.05);
+          .item {
+            width: 50%;
+            &:first-child {
+              border-right: 0.1rem solid rgba(0, 0, 0, 0.08);
+            }
+            span {
+              display: block;
+              text-align: center;
+              &.item-title {
+                padding-bottom: 0.8rem;
+                font-weight: $fontRegular;
+                @include fontHeight(1.4);
+                color: $black;
+              }
+              &.item-count {
+                font-weight: $fontBold;
+                @include fontHeight(2.8);
+                color: $black;
+              }
+            }
+          }
+        }
+        .sub-items {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(50% - 0.4rem);
+            height: 5.2rem;
+            border-radius: 1.0rem;
+            background-color: $white;
+            box-shadow: 0.2rem 0.4rem 0.7rem 0 rgba(0, 0, 0, 0.05);
+            span {
+              &.item-title {
+                padding-right: 0.6rem;
+                font-weight: $fontRegular;
+                @include fontHeight(1.4);
+                color: $black;
+              }
+              &.item-count {
+                font-weight: $fontBold;
+                @include fontHeight(1.6);
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+      // 자산
+      &.assets-area {
+        // 1. 신한 마이 데이터와 금융기관 모두 연동한 경우
+        .flex-area {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 1.0rem;
+          background-color: $white;
+          box-shadow: 0.2rem 0.4rem 0.7rem 0 rgba(0, 0, 0, 0.05);
+          .flex-left {
+            display: block;
+            span {
+              display: block;
+              font-weight: $fontRegular;
+              @include fontHeight(1.4);
+              color: $black;
+            }
+            strong {
+              font-weight: $fontBold;
+              @include fontHeight(1.4);
+              color: $black;
+            }
+          }
+          .flex-right {
+            display: inline-flex;
+          }
+        }
+        .total-assets-area {
+          background-image: url(#{$img-path}/payfan/visual/mypage/visual_main_assets.svg);
+          background-size: contain;
+          background-position: calc(100% - 24px) center;
+          background-repeat: no-repeat;
+          .flex-area {
+            padding: 2.2rem 0.8rem 1.6rem 2.0rem;
+            background-color: transparent;
+            box-shadow: none;
+            .flex-left {
+              span {
+                font-weight: $fontRegular;
+                @include fontHeight(1.6);
+                color: $black;
+                &:first-child {
+                  padding-bottom: 0.2rem;
+                }
+              }
+              strong {
+                padding-right: 0.1rem;
+                font-weight: $fontBold;
+                @include fontHeight(1.6);
+                color: $black;
+              }
+            }
+          }
+        }
+        .today-outcome-area {
+          .flex-area {
+            padding: 1.6rem 0.8rem 1.6rem 2.0rem;
+          }
+        }
+        .mydata-connect-area {
+          margin-top: 0.8rem;
+          .flex-area {
+            padding: 2.6rem 0.8rem 2.6rem 2.0rem;
+          }
+        }
+        .manage-credit-information-area {
+          margin-top: 0.8rem;
+          .flex-area {
+            padding: 1.6rem 1.2rem 1.6rem 2.0rem;
+            .flex-left {
+              display: flex;
+              align-items: center;
+              .title {
+                strong {
+                  padding-bottom: 0.2rem;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.4);
+                  color: $black;
+                }
+                span {
+                  font-weight: $fontRegular;
+                  @include fontHeight(1.2);
+                  color: $gray080;
+                }
+              }
+            }
+          }
+        }
+        .my-credit-score-area {
+          position: relative;
+          margin-top: 0.8rem;
+          padding: 1.6rem 1.6rem 2.0rem;
+          border-radius: 1.0rem;
+          background-color: $white;
+          box-shadow: 0.2rem 0.4rem 0.7rem 0 rgba(0, 0, 0, 0.05);
+          h4 {
+            padding-bottom: 1.6rem;
+            padding-left: 0.4rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+          }
+          .chart-area {
+            height: 17.6rem;
+            text-align: center;
+          }
+          .btn-multi {
+            margin-bottom: 1.6rem;
+            border: 0;
+            background: $bgLightGray;
+            .title {
+              font-weight: $fontRegular;
+              color: $gray080
+            }
+            .text {
+              white-space: nowrap;
+            }
+            .amount {
+              font-weight: $fontMedium;
+            }
+            &::before {
+              background-color: $gray050;
+            }
+            .btn-space-between {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              min-height: 4.8rem;
+              padding-left: 2rem;
+              padding-right: 2rem;
+              @include fontHeight(1.4);
+            }
+          }
+          .btn-multi + .btn-area {
+            position: relative;
+          }
+          .btn-move-my-credit-score {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.2rem;
+          }
+          .bubble-area {
+            position: absolute;
+            top: -22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .bubble {
+              max-width: 15.0rem;
+              min-width: 14.0rem;
+            }
+          }
+        }
+        .btn-move-assets {
+          position: absolute;
+          top: 2.5rem;
+          right: 1.2rem;
+        }
+        // 2. 신한 마이 데이터와 연동하지 않은 경우 //3. 금융기관과 연동하지 않은 경우
+        .splide-area {
+          .splide {
+            border-radius: 1.0rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: .2rem .4rem .7rem 0 rgba(0, 0, 0, 0.05);
+          }
+          .slide-assets-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 11.2rem;
+            padding-top: 3.6rem;
+            text-align: center;
+            h3 {
+              font-weight: $fontMedium;
+              @include fontHeight(2);
+              color: $black;
+            }
+            p {
+              padding-top: 0.8rem;
+              font-weight: $fontRegular;
+              @include fontHeight(1.4);
+              color: $black;
+            }
+          }
+          .image-area {
+            display: block;
+            width: 100%;
+            height: 10.0rem;
+            background: url(#{$img-path}/payfan/visual/mypage/visual_assets1.png) no-repeat center center / auto 100%;
+            &.assets1 {
+              background-image: url(#{$img-path}/payfan/visual/mypage/visual_assets1.png);
+              background-size: auto 13.8rem;
+            }
+            &.assets2 {
+              background-image: url(#{$img-path}/payfan/visual/mypage/visual_assets2.png);
+              background-size: auto 10.1rem;
+            }
+            &.assets3 {
+              background-image: url(#{$img-path}/payfan/visual/mypage/visual_assets3.png);
+              background-position: center 0;
+              background-size: auto 12.7rem;
+            }
+            &.assets4 {
+              background-image: url(#{$img-path}/payfan/visual/mypage/visual_assets4.png);
+              background-size: auto 10.5rem;
+            }
+          }
+          .image-area-assets5 {
+            height: 10rem;
+            padding-top: 2.0rem;
+            text-align: center;
+            font-weight: $fontBold;
+            @include fontHeight(3.2);
+            color: $blue080;
+            span {
+              color: $blue100;
+              @include fontHeight(3.6);
+            }
+          }
+          .btn-one-area {
+            padding: 0 1.6rem;
+          }
+        }
+      }
+      // 디스커버
+      &.discover-area {
+        .bookmark-list {
+          ul {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            justify-items: center;
+            margin-bottom: 0.8rem;
+            padding: 1.5rem 0;
+            border-radius: 1.0rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            li {
+              position: relative;
+              width: 100%;
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0.1rem;
+                right: 0;
+                display: block;
+                width: 0.1rem;
+                height: 4.6rem;
+                background-color:$gray050;
+                opacity: 0.5;
+              }
+              &:last-child {
+                &::after {
+                  display: none;
+                }
+              }
+              a {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 6.0rem;
+                height: 4.8rem;
+                margin: 0 auto;
+                &::before {
+                  content: "";
+                  display: block;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  margin: 0.5rem auto;
+                }
+              }
+              span {
+                text-align: center;
+                font-weight: $fontMedium;
+                @include fontHeight(1.2);
+              }
+              .new {
+                overflow: hidden;
+                position: absolute;
+                top: 0.5rem;
+                right: 0.9rem;
+                display: block;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 0.2rem;
+                background-color: #fb5c4f;
+                text-indent: -9999rem;
+                font-size: 0;
+              }
+              &:nth-child(1) {
+                a::before {
+                  background: url(#{$img-path}/payfan/visual/mypage/visual_list.png) no-repeat center center;
+                  background-size: contain;
+                }
+              }
+              &:nth-child(2) {
+                a::before {
+                  background: url(#{$img-path}/payfan/visual/mypage/visual_gift.png) no-repeat center center;
+                  background-size: contain;
+                }
+              }
+              &:nth-child(3) {
+                a::before {
+                  background: url(#{$img-path}/payfan/visual/mypage/visual_coupon.png) no-repeat center center;
+                  background-size: contain;
+                }
+              }
+              &:nth-child(4) {
+                a::before {
+                  background: url(#{$img-path}/payfan/visual/mypage/visual_delivery.png) no-repeat center center;
+                  background-size: contain;
+                }
+              }
+            }
+          }
+        }
+        .community-area {
+          padding: 1.6rem 2.0rem;
+          border-radius: 1.0rem;
+          background-color: rgba(255, 255, 255, 0.8);
+          .community-title {
+            display: block;
+            padding-bottom: 1.6rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+          }
+          .my-news {
+            div {
+              display: flex;
+              justify-content: space-between;
+              padding-bottom: 1.2rem;
+              &:last-child {
+                padding-bottom: 0;
+              }
+              dt {
+                font-weight: $fontMedium;
+                @include fontHeight(1.4);
+              }
+              dd {
+                a {
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.6);
+                  color: $black;
+                  .icon {
+                    position: relative;
+                    top: -0.2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // 알림
+      &.notice-area {
+        .section-content.no-data {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1.0rem;
+          background-color: $white;
+          padding: 4.0rem 0;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          color: $gray080;
+          .icon {
+            margin-bottom: 1.2rem;
+          }
+        }
+        article {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.8rem;
+          padding: 2.4rem 1.2rem;
+          border-radius: 1.0rem;
+          background-color: rgba(255, 255, 255, 0.8);
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .background-dim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .background-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 4.8rem;
+      background-image: url(#{$img-path}payfan/visual/mypage/visual_main_bg.png);
+      background-size: cover;
+    }
+  }
+  &.sub {
+    padding: 0;
+    .personal-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 9.6rem;
+      margin: 0 1.6rem;
+      font-weight: $fontMedium;
+      @include fontHeight(1.8);
+      .dropdown {
+        &:after {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          display: block;
+          width: 3.6rem;
+          height: 3.6rem;
+          background: url(#{$img-path}/payfan/icons/default/icon_36_photo.svg) no-repeat 0 0 / 100% auto;
+          content: '';
+        }
+        .dropdown-container {
+          height: 12rem;
+          .dropdown-name {
+            width: 12.0rem;
+            height: 12.0rem;
+            border-radius: 50%;
+            box-shadow: .4rem .8rem 1.4rem 0 rgba(0, 0, 0, 0.15);
+          }
+        }
+      }
+      .image-area {
+        overflow: hidden;
+        display: block;
+        width: 12.0rem;
+        height: 12.0rem;
+        border-radius: 50%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .form-group {
+        .form-label {
+          display: block;
+          padding-top: 3.2rem;
+          padding-bottom: 4.0rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+          text-align: center;
+          color: $black;
+        }
+        .form-control {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .notice-area {
+    position: relative;
+    .top-banner {
+      position: relative;
+      padding: 1.5rem 4rem 1.5rem 2rem;
+      margin: 0 1.6rem;
+      background-color: $bgLightBlue2;
+      border-radius: 2.3rem;
+      .banner-text {
+        color: $gray090;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+      }
+      & + .item-list {
+        .item-header {
+          padding-top: 2.6rem;
+        }
+      }
+      .btn-close {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+    /////////알림 영역......판도라의 상자
+    .item-body { //dd
+      position: relative;
+      padding: 0 2.4rem 0 1.6rem;
+      // banner
+      &.item-icon {
+        position: relative;
+        padding: 2rem 0 2rem 5.2rem;
+        .banner-icon {
+          // position: absolute;
+          // top: 4.2rem;
+          // left: 1.6rem;
+          width: 2.4rem;
+          height: 2.4rem;
+          flex: none;
+          margin-right: 0.8rem;
+          img {
+            max-width: 100%;
+          }
+        }
+        .item-info {
+          width: calc(100% - 2.4rem);
+        }
+      }
+      // body info
+      .item-info {
+        .item-link {
+          display: block;
+          width: 100%;
+          // padding: 2rem 0;
+          .item-text {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            .title {
+              align-items: center;
+              .title-icon {
+                margin-right: .4rem;
+              }
+            }
+            .price {
+              display: flex;
+              margin-left: auto;
+              padding-left: 1.6rem;
+              font-weight: $fontBold;
+              @include fontHeight(1.6);
+              white-space: nowrap;
+              align-items: center;
+              &::after {
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                margin-top: -.2rem;
+                background: url(#{$img-path}/common/icons/default/icon_20_arrow1_gray2.svg) no-repeat 0 0 / 100% auto;
+                transform: rotate(90deg);
+                content: '';
+              }
+              .won {
+                font-style: normal;
+                @include fontHeight(1.4);
+              }
+            }
+            .item-btn {
+              margin-left: 0;
+            }
+          }
+          .text-footer {
+            display: flex;
+            margin-top: .4rem;
+            color: $gray080;
+            @include fontHeight(1.4);
+            align-items: center;
+            .text {
+              display: flex;
+              margin-left: .8rem;
+              align-items: center;
+            }
+            em {
+              font-style: normal;
+            }
+          }
+        }
+      }
+      .item-checkbox {
+        display: none;
+      }
+      .item-banner {
+        display: block;
+        border-top-left-radius: 1.6rem;
+        border-bottom-left-radius: 1.6rem;
+        flex: 1;
+        &.skyblue {
+          background-color: rgba(214, 244, 252, .3);
+        }
+        &.pink {
+          background-color: rgba(252, 219, 211, .2);
+        }
+        &.purple {
+          background-color: rgba(220, 220, 244, .2);
+        }
+        .item-link {
+          display: block;
+          // padding: 2.4rem 2.4rem 2.4rem 2rem;
+          .item-text {
+            display: block;
+            &.intro {
+              position: relative;
+              .title {
+                font-weight: $fontMedium;
+                @include fontHeight(1.8);
+              }
+              .text {
+                margin-top: .8rem;
+                @include fontHeight(1.4);
+              }
+              .item-text-btn {
+                margin-top: 2rem;
+                color: $darkBlueGray;
+                @at-root .mypage .notice-area .item-body .item-banner .item-link .item-text.intro .item-text-btn {
+                  span {
+                    margin: 0;
+                    padding-top: .1rem;
+                  }
+                }
+              }
+              &::after {
+                position: absolute;
+                right: -1.2rem;
+                bottom: -2.4rem;
+                display: block;
+                width: 14rem;
+                height: 14rem;
+                background: url(#{$img-path}/common/visual/visual_timeline_intro.png) no-repeat 0 0 / 100% auto;
+                content: '';
+              }
+            }
+            .title {
+              display: block;
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+              em {
+                font-style: normal;
+              }
+            }
+            .text {
+              display: block;
+              margin-top: .4rem;
+              color: $gray080;
+              font-weight: $fontRegular;
+              @include fontHeight(1.4);
+              word-break: keep-all;
+            }
+            
+          }
+          .text-footer {
+            display: flex;
+            margin-top: .8rem;
+            color: $gray080;
+            @include fontHeight(1.4);
+            .time {
+              font-style: normal;
+            }
+            .setting {
+              margin-left: auto;
+              font-style: normal;
+            }
+            &.link {
+              margin-top: 1.2rem;
+            }
+          }
+        }
+        .btn-arrow span::after {
+          top: -.1rem;
+        }
+      }
+    }
+    // common
+    .dot {
+      .item-info {
+        position: relative;
+        padding-left: 2.8rem;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2.4rem;
+          height: 2.4rem;
+          content: '';
+        }
+        &::after {
+          position: absolute;
+          top: .9rem;
+          left: .9rem;
+          display: block;
+          width: .6rem;
+          height: .6rem;
+          border-radius: 50%;
+          background-color: $black;
+          content: '';
+        }
+        & + .item-inner-banner {
+          margin-top: -1.8rem;
+        }
+        .tooltip-area {
+          position: absolute;
+          top: 6.4rem;
+          right: .6rem;
+          z-index: 2;
+        }
+      }
+      .item-inner-banner {
+        width: 100%;
+        margin-left: 0;
+        .item-link {
+          position: relative;
+          display: block;
+          width: auto;
+          padding: 1.6rem 4rem 1.6rem 1.6rem;
+          background-color: $bgDarkBlue2;
+          border-radius: .8rem;
+          color: rgba(255, 255, 255, 0.7);
+          font-weight: $fontRegular;
+          @include fontHeight(1.2);
+          word-break: keep-all;
+          strong {
+            color: rgba(255, 255, 255, 1);
+          }
+          &::after {
+            position: absolute;
+            top: 50%;
+            right: 1.6rem;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background: url(#{$img-path}/common/icons/default/icon_20_arrow1_wh.svg) no-repeat 0 0 / 100% auto;
+            transform: translateY(-50%) rotate(90deg);
+            content: '';
+          }
+        }
+      }
+    }
+    .item-info {
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      flex-wrap: wrap;
+      .item-text {
+        font-weight: $fontMedium;
+        @include fontHeight(1.6);
+      }
+      .sub-text {
+        display: block;
+        padding: .4rem 2.4rem 0 0;
+        color: $gray080;
+        @include fontHeight(1.4);
+      }
+      .item-btn {
+        display: flex;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-left: auto;
+        align-items: center;
+        justify-content: center;
+      }
+      .tooltip-wrap .tooltip2.type4 {
+        width: 6.4rem;
+        height: 6.4rem;
+        .btn-delete {
+          width: 100%;
+          height: 100%;
+          &-text {
+            display: block;
+            color: $white;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+    }
+    .item-inner-content {
+      display: block;
+      margin-top: 1.2rem;
+      margin-right: 2rem;
+      padding-top: .8rem;
+      border-top: .1rem solid $gray030;
+      .content-group {
+        display: flex;
+        @include fontHeight(1.4);
+        & + .content-group {
+          margin-top: .4rem;
+        }
+        .content-title {
+          display: block;
+          margin-right: .6rem;
+          color: $gray070;
+        }
+        .content-text {
+          color: $gray080;
+        }
+        .content-price {
+          display: block;
+          margin-left: auto;
+          color: $gray090;
+          font-weight: $fontMedium;
+          .won {
+            font-style: normal;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+    }
+    .text-overflow {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    // dot line
+    .item-list{
+      dd:last-child {
+        padding-bottom: 4rem;
+        &.item-icon:not(.type2)::before {
+          height: 4.2rem;
+        }
+        &.item-icon.type2::before {
+          height: 2rem;
+        }
+        &.dot::before {
+          height: 2.8rem;
+        }
+        & .item-info .item-link {
+          padding-bottom: 0;
+        }
+        &.item-icon {
+          padding-bottom: 4rem;
+        }
+      }
+    }
+    // 자산 금융캘린더
+    .week-area {
+      .day-list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        height: 5.4rem;
+        margin-top: 0.8rem;
+        li {
+          width: 100%;
+          button {
+            width: 100%;
+            height: 100%;
+            @include fontHeight(1.4);
+            text-align: center;
+            border-radius: 0.2rem 0.2rem 0 0;
+            .day {
+              display: block;
+              color: $gray080;
+            }
+            .day-num {
+              display: block;
+              font-weight: $fontMedium;
+            }
+            .day-cont {
+              background-color: red;
+            }
+            &.active {
+              span {
+                color: $white;
+              }
+              background-color: $darkBlue90;
+              box-shadow: 0 0.4rem 0.8rem rgba($color: #000000, $alpha: 0.12);
+            }
+          }
+        }
+      }
+      .fc-calendal {
+        width: 100%;
+        table-layout: fixed;
+        thead tr .day-name {
+          padding: 1.2rem 0;
+          font-weight: $fontMedium;
+        }
+        tbody tr {
+          border-top: 0.1rem solid $gray030;
+          td {
+            overflow:hidden;
+            padding: 1rem 0 0;
+            text-align: center;
+            vertical-align: top;
+            line-height: 0;
+          }
+        }
+        .day-cont {
+          display: block;
+          width: 3.2rem;
+          margin: 0 auto;
+          text-align: left;
+          .fc-bullet {
+            display: inline-block;
+            margin-right: 0.2rem;
+            margin-bottom: 0.2rem;
+            vertical-align: top;
+            &.spend {
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 0.1rem;
+              background-color: $blue100;
+            }
+            &.statement {
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 0.1rem;
+              background-color: #25c4cc;
+            }
+            &.alarm {
+              width: 0.8rem;
+              height: 0.8rem;
+              background: url(#{$img-path}/common/icons/default/icon_16_bell.svg) no-repeat 0 0 / 100% auto;
+            }
+            &.memo {
+              width: 0.8rem;
+              height: 0.8rem;
+              background: url(#{$img-path}/common/icons/default/icon_16_pencil.svg) no-repeat 0 0 / 100% auto;
+            }
+            &.more {
+              font-size: 1rem;
+              line-height: 1.4rem;
+              color: #888;
+            }
+            &:nth-child(3n) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 인터랙션가이드 툴팁
+  .btn-modify-area {
+    position: relative;
+    .btn {
+      font-size: 1.4rem;
+      font-weight: $fontMedium;
+      color: #222;
+    }
+    .tooltip-guide {
+      position: absolute;
+      left: 50%;
+      bottom: .6rem;
+      transform: translateX(-50%);
+      .img-area {
+        width: 24.5rem;
+      }
+    }
+  }
+}

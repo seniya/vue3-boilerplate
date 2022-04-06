@@ -1,0 +1,642 @@
+// 타임라인 페이
+
+.timeline.pay {
+  .details-info {
+    margin: 0 -2.4rem;
+    padding: 4.8rem 1.6rem;
+    background-color: $bgLightGray;
+    .details-header {
+      position: relative;
+      text-align: center;
+      .details-category {
+        .btn-icon {
+          width: 6.4rem;
+          height: 6.4rem;
+          img {
+            max-width: 100%;
+          }
+        }
+        .category-name {
+          display: block;
+          padding-top: 1.2rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+          text-decoration: underline;
+          &.fc-gold {
+            color: #eebd1c;
+          }
+        }
+      }
+      .btn-more {
+        position: absolute;
+        top: -2rem;
+        right: 0;
+        width: 2rem;
+        height: 2rem;
+        margin-right: .4rem;
+      }
+      .store-title {
+        padding: 2.4rem 0 .2rem;
+        font-weight: $fontMedium;
+        @include fontHeight(2);
+        word-break: keep-all;
+      }
+      .text-footer {
+        color: $gray070;
+        @include fontHeight(1.4);
+      }
+      .price {
+        display: block;
+        padding: 1.6rem 0 2.8rem;
+        font-weight: $fontBold;
+        @include fontHeight(2.4);
+      }
+    }
+    .details-body {
+      .details-card {
+        background-color: $white;
+        border-radius: .8rem;
+        &.card-type {
+          .details-card-inner {
+            padding: 2rem 2.4rem;
+          }
+        }
+        & + .details-card {
+          margin-top: 1.6rem;
+        }
+        > li + li {
+          &::before {
+            display: block;
+            width: calc(100% - 4rem);
+            height: .1rem;
+            margin: 0 auto;
+            background-color: $gray030;
+            content: '';
+          }  
+        }
+        .details-card-inner {
+          position: relative;
+          display: block;
+          padding: 2rem;
+          .card-inner-group {
+            position: relative;
+            display: block;
+            padding-left: 4.8rem;
+            padding-right: 4rem;
+            &::after {
+              position: absolute;
+              top: 50%;
+              right: 0;
+              display: block;
+              width: 2rem;
+              height: 2rem;
+              background: url(#{$img-path}/common/icons/default/icon_18_arrow1_gr.svg) no-repeat center center / 1.6rem auto;
+              transform: translate(0, -50%);
+              content: '';
+            }
+          }
+          .card-name {
+            display: block;
+            font-weight: $fontMedium;
+            word-break: keep-all;
+            @include fontHeight(1.6);
+            
+          }
+          .card-img {
+            position: absolute;
+            top: .8rem;
+            left: -.6rem;
+            width: 4rem;
+            height: 2.6rem;
+            background-color: $gray050;
+            text-align: center;
+            transform: rotate(90deg);
+            img {
+              height: 100%;
+            }
+            &.vertical {
+              top: 0;
+              left: 0;
+              width: 2.6rem;
+              height: 4rem;
+              transform: rotate(0);
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+          }
+          .card-number {
+            display: block;
+            padding-top: .4rem;
+            font-style: normal;
+            color: $gray080;
+            @include fontHeight(1.4);
+          }
+          .table-list {
+            display: block;
+            li {
+              padding: 2rem 0;
+              &:first-child {
+                padding-top: 1.2rem;
+              }
+              .inner-group {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                .status-text {
+                  padding-right: .8rem;
+                  color: $black;
+                  @include fontHeight(1.4);
+                  white-space: nowrap;
+                }
+                .item-text {
+                  overflow: hidden;
+                  padding-right: .8rem;
+                  color: $gray080;
+                  @include fontHeight(1.4);
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                }
+                .price-text {
+                  margin-left: auto;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.6);
+                  white-space: nowrap;
+                  .unit {
+                    @include fontHeight(1.4);
+                  }
+                }
+                & + .sub-text {
+                  padding-top: .2rem;
+                  color: $gray080;
+                  @include fontHeight(1.2);
+                  .btn-underline {
+                    padding-top: .2rem;
+                    margin-left: auto;
+                    font-weight: $fontMedium;
+                    @include fontHeight(1.2);
+                  }
+                }
+                
+              }
+              & + li {
+                border-top: .1rem solid $gray030;
+              }
+              &:last-child {
+                padding-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .card {
+    &.card-receipt + .card{
+      border-width: .1rem;
+    }
+    .card-header {
+      padding: 4.8rem 0 2rem;
+      .card-title {
+        display: flex;
+        width: 100%;
+        color: $black;
+        align-items: center;
+        .item-right {
+          display: block;
+          margin-left: auto;
+          padding-left: 1.6rem;
+          white-space: nowrap;
+        }
+        .btn.btn-arrow {
+          color: $black;
+          span::after {
+            top: -.1rem;
+          }
+        }
+      }
+    }
+    .card-body {
+      padding-bottom: 0;
+      // 공통
+      .more-area {
+        border-top: .1rem solid $gray030;
+        text-align: center;
+        .btn {
+          width: 100%;
+          padding: 3.2rem;
+        }
+      }
+    }
+    &.card-receipt {
+      border-width: .1rem;
+      .card-link {
+        display: flex;
+        width: calc(100% + 4.8rem);
+        padding: 2rem 2rem 2rem 2.4rem;
+        margin: 0 -2.4rem;
+        align-items: center;
+        .card-toolbar {
+          display: flex;
+          margin-left: auto;
+          align-items: center;
+        }
+      }
+    }
+    &.card-type1 {
+      .table-list.type2 {
+        dt, dd {
+          @include fontHeight(1.4);
+        }
+        dd {
+          font-weight: $fontMedium;
+        }
+      }
+      .banner-area {
+        margin: 3.2rem 0 1.6rem;
+        .banner {
+          padding: 0;
+          .banner-visual {
+            position: static;
+            display: flex;
+            overflow: hidden;
+            border-radius: .8rem;
+            align-items: center;
+            justify-content: center;
+            transform: translate(0);
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+  
+      }
+    }
+    &.card-type2 {
+      .card-body {
+        .list-group:last-child {
+          padding-bottom: 2.4rem;
+        }
+      }
+      .table-list {
+        padding-bottom: 1.2rem;
+        dt, dd {
+          margin-bottom: .4rem;
+        }
+        dt {
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+        }
+        dd {
+          font-weight: $fontBold;
+          @include fontHeight(1.6);
+          .unit {
+            @include fontHeight(1.4);
+          }
+        }
+        & + .graph-area.type3 {
+          padding-top: 1.2rem;
+          padding-bottom: 2rem;
+        }
+        & + .list-group.line {
+          border-top: .1rem solid $gray050;
+        }
+      }
+      .graph-area.type3 {
+        & + .list-group.line {
+          border-top: .1rem solid $gray050;
+          & .list-item:first-child .item-area {
+            padding-top: 2.8rem;
+          }
+        }
+      }
+      .graph-area.vertical{
+        .graph-bar {
+          width: 3.2rem;
+        }
+      }
+    }
+    &.card-type3 {
+      .budget-area {
+        padding-top: .8rem;
+        padding-bottom: 4.8rem;
+        .item-status {
+          position: relative;
+          margin-bottom: 2rem;
+          .status-icon {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            transform: translateY(-50%);
+            img {
+              max-width: 100%;
+            }
+          }
+          .status-text {
+            padding-left: 5.4rem;
+            @include fontHeight(1.4);
+          }
+        }
+        
+      }
+    }
+    &.card-type4 {
+      &.card {
+        .card-header {
+          display: block;
+          .card-title {
+            display: block;
+          }
+        }
+      }
+      .store-text {
+        display: flex;
+        padding: 1rem 0 2.8rem;
+        align-items: center;
+        justify-content: space-between;
+        .item-left {
+          display: flex;
+          width: calc(100% - 7.6rem);
+          height: 2rem;
+        }
+        .item-right {
+          .btn {
+            box-sizing: border-box;
+            span {
+              white-space: nowrap;
+            }
+          }
+        }
+        .text-info {
+          display: inline-block;
+          color: $gray080;
+          @include fontHeight(1.4);
+          align-items: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &:first-child {
+            flex: none;
+          }
+        }
+        .text-info-icon {
+          margin-right: .4rem;
+          vertical-align: middle;
+        }
+      }
+      .store-info {
+        .table-list.type4 {
+          dt, dd {
+            margin-bottom: .6rem;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+      .map-area {
+        display: flex;
+        width: 100%;
+        height: 31.2rem;
+        background-color: #eee;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &.card-type5 {
+      .card-header .card-title {
+        position: relative;
+      }
+      .star-grade {
+        display: flex;
+        padding-bottom: 1.8rem;
+        align-items: center;
+        justify-content: space-between;
+        @at-root .star-area {
+          position: relative;
+          display: block;
+          width: 12rem;
+          height: 2.4rem;
+          margin-left: 1.2rem;
+          margin-top: -.4rem;
+          background: url(#{$img-path}/common/icons/default/icon_24_star2_gr.svg) repeat-x 0 0 / 2.4rem auto;
+          &.sm {
+            width: 8rem;
+            height: 1.6rem;
+            margin: 0;
+            background: url(#{$img-path}/common/icons/default/icon_16_star2_gr.svg) repeat-x 0 0 / 1.6rem auto;
+            .icon-star {
+              height: 1.6rem;
+              background: url(#{$img-path}/common/icons/default/icon_16_star2_blue.svg) repeat-x 0 0 / 1.6rem auto;
+            }
+          }
+          .icon-star {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: block;
+            width: 0;
+            height: 2.4rem;
+            background: url(#{$img-path}/common/icons/default/icon_24_star2_blue.svg) repeat-x 0 0 / 2.4rem auto;
+          }
+        }
+        .number {
+          display: block;
+          margin-left: .4rem;
+          @include fontHeight(1.4);
+        }
+      }
+      .review {
+        padding: 1.8rem 0 0;
+        border-top: .1rem solid $gray030;
+        .review-text {
+          padding-top: .8rem;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    &.card-type6 {
+      .coupon-list {
+        .coupon-item {
+          position: relative;
+          overflow: hidden;
+          @mixin coupon-dot {
+            z-index: 1;
+            position: absolute;
+            top: 6.0rem;
+            display: block;
+            width: 2.6rem;
+            height: 2.6rem;
+            background-color: $white;
+            border: .1rem solid $bgSteelBlue;
+            border-radius: 50%;
+            box-sizing: border-box;
+            content: '';
+          }
+          &::before {
+            @include coupon-dot;
+            left: -1.3rem;
+          }
+          &::after {
+            @include coupon-dot;
+            right: -1.3rem;
+          }
+          .coupon {
+            display: flex;
+            width: 100%;
+            height: 14.4rem;
+            background-color: $bgLightBlue3;
+            border: .1rem solid $bgSteelBlue;
+            border-bottom-color: transparent;
+            border-radius: .8rem .8rem 0 0;
+            &-content {
+              position: relative;
+              display: block;
+              width: 100%;
+              height: 14.4rem;
+              padding: 4.0rem 3.2rem 0;
+            }
+            &-label {
+              position: absolute;
+              top: 1.6rem;
+              left: 1.6rem;
+              display: block;
+            }
+            &-myshop {
+              .coupon-label {
+                top: 1.9rem;
+                img {
+                  display: block;
+                  height: 1.2rem;
+                }
+              }
+              .coupon-title {
+                display: block;
+                white-space: nowrap;
+                -webkit-line-clamp: none;
+                -webkit-box-orient: inline-axis;
+              }
+            }
+            &-topsclub .coupon-label {
+              img {
+                height: 1.8rem;
+              }
+            }
+            &-tasty .coupon-label {
+              img {
+                height: 2.0rem;
+              }
+            }
+            &-shplus .coupon-label {
+              img {
+                height: 1.6rem;
+              }
+            }
+            &-name {
+              @include fontHeight(1.4);
+              overflow: hidden;
+              display: block;
+              color: $darkBlue70;
+              font-weight: $fontMedium;
+              text-align: center;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            &-title {
+              @include fontHeight(1.8);
+              overflow: hidden;
+              display: -webkit-box;
+              margin-top: 0.7rem;
+              font-weight: $fontBold;
+              align-items: center;
+              justify-content: center;
+              word-wrap: break-word;
+              word-break: break-word;
+              text-overflow: ellipsis;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
+            &-info {
+              @include fontHeight(1.4);
+              overflow: hidden;
+              display: block;
+              margin-top: 0.7rem;
+              color: $darkBlue70;
+              font-weight: $fontMedium;
+              text-align: center;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            &-tag {
+              position: relative;
+              display: block;
+              width: 6rem;
+              height: 16rem;
+              border-left: .1rem solid $gray040;
+              border-top-right-radius: .8rem;
+              border-bottom-right-radius: .8rem;
+              &-name {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                color: $black;
+                font-weight: $fontBold;
+                @include fontHeight(1);
+                transform: rotate(90deg) translate(-15%, -50%);
+              }
+            }
+            &-download {
+              position: relative;
+              display: flex;
+              width: 100%;
+              height: 4.8rem;
+              background-color: $bgLightBlue3;
+              border: .1rem solid $bgSteelBlue;
+              border-top: .1rem dashed $bgSteelBlue;
+              border-radius: 0 0 .8rem .8rem;
+              align-items: center;
+              justify-content: center;
+              .icon-download {
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                display: inline-flex;
+                width: 3.2rem;
+                height: 3.2rem;
+                background-color: $bgDarkBlue2;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                transform: translateY(-50%);
+                .icon {
+                  margin-top: -.2rem;
+                }
+                &.checked {
+                  background-color: $bgSteelBlue;
+                  .icon {
+                    margin-top: 0;
+                  }
+                }
+              }
+            }
+            &-date {
+              display: block;
+              @include fontHeight(1.2);
+              color: $darkBlue60;
+            }
+          }
+          & + .coupon-item {
+            margin-top: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+  // 카테고리 결제내역
+  .list-header {
+    padding: 2.4rem 0 1.6rem;
+  }
+}

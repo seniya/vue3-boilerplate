@@ -1,5 +1,5 @@
 <template>
-  <div id="application">
+  <div id="app">
     <mainContainer />
   </div>
 </template>
@@ -22,3 +22,10 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+#app {
+  width: 100%;
+  height: 100%;
+}
+</style>

@@ -1,0 +1,560 @@
+//자산
+.mydata {
+  // 금융추천
+  &.recommend {
+    //금융추천 탭공통
+    .tab-wrap.type5 {
+      .tab-menu {
+        position: static;
+      }
+    }
+    //상품검색 버튼 (금융추천 각 탭메인 공통) 
+    .btn-product-search {
+      width: 100%;
+      height: 4.6rem;
+      margin-bottom: 2.8rem;
+      color: $gray070;
+      font-weight: $fontLight;
+      text-align: left;
+      border-bottom: 0.2rem solid $black;
+      background: url(#{$img-path}/common/icons/default/icon_28_search.svg) no-repeat center right;
+    }
+    &.tab-card {
+      .content-footer {
+        .btn-area {
+          margin: 0;
+          padding-top: 0;
+          padding-bottom: 3.2rem;
+        }
+      }
+    }
+    // 카드
+    // 대출
+    // 대출>대출조회>대출조회결과
+    &.loan-inquiry {
+      .btn-align {
+        padding-top: 2.8rem;
+        padding-bottom: 3rem;
+        text-align: right;
+      }
+      // 리스트
+      .list-item {
+        .item-title {
+          color: $gray090;
+          strong {
+            font-weight: $fontBold;
+            color: $black;
+          }
+        }
+      }
+      // 조회오류
+      .query-error-list {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          flex: 0 0 50%;
+          padding-bottom: 2.4rem;
+          @include fontHeight(1.4);
+          color: $black;
+        }
+      }
+      //<-- 11월 이후 삭제 예정
+      .card {
+        .card-header {
+          padding-top: 4.8rem;
+          padding-bottom: .4rem;
+          .card-title {
+            font-size: 1.6rem;  
+          }
+        }
+        .card-body {
+          padding-bottom: 1.6rem;
+          .item-area-bottom {
+            padding-bottom: 0;
+          }
+        }
+      }
+      // 11월 이후 삭제 예정 -->
+      .list-group {
+        padding-bottom: 1.6rem;
+        .list-header {
+          padding-bottom: 0.4rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+          border-bottom: 0;
+          span {
+            display: block;
+            width: 100%;
+          }
+        }
+        +.list-group {
+          padding-top: 4.8rem;
+          border-top: 1px solid $gray050;
+        }
+        .item-area .item-area-bottom {
+          padding-bottom: 0
+        }
+        &.list-group-align {
+          margin-top: -3.2rem;
+        }
+      }
+    }
+    // 읽어보세요
+    .read-me {
+      padding-top: 2rem;
+      padding-bottom: 2.4rem;
+      border-top: 1px solid $gray030;
+      .title {
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+      }
+      .text {
+        margin-top: 1.2rem;
+        @include fontHeight(1.2);
+        color: $gray080;
+      }
+    }
+    // 이용가능 대출상품 없을 때
+    .no-result-loan {
+      padding-bottom: 2.8rem;
+      border-bottom: 1px solid $gray030;
+      .no-data {
+        padding: 11.8rem 0;
+      }
+    }
+    // 대출상품 상세
+    .finance-goods-info {
+      display: flex;
+      margin-top: 2.4rem;
+      padding: 2.4rem 0 2.2rem;
+      border-radius: .4rem;
+      background-color: $bgLightGray;
+      dl {
+        flex: 1;
+        padding-left: 1.6rem;
+        dt {
+          @include fontHeight(1.4);
+          color: $gray090;
+        }
+        dd {
+          margin-top: .4rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);          
+        }
+        + dl {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            display: block;
+            width: 1px;
+            height: 4rem;
+            background: $gray030;
+          }
+        }
+      }
+    }
+    .finance-goods-detail {
+      padding-top: 1.6rem;
+      .section-header {
+        padding-bottom: 1.2rem;
+        p {
+          @include fontHeight(1.2);
+          color: $gray080;
+        }
+      }
+      .list-group {
+        .item-title {
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+        .item-text {
+          margin-top: .6rem;
+          font-weight: $fontRegular;
+          @include fontHeight(1.8);
+          color: $black;
+        }
+      }
+    }
+    .caution-type2 {
+      margin-top: 1.2rem !important;
+      padding-top: 1.8rem;
+      padding-bottom: 1.8rem;
+      .item-area {
+        padding: 1.4rem 0;
+      }
+      .item-title {
+        @include fontHeight(1.4);
+      }
+      .item-text.fs-12 {
+        padding-top: .8rem;
+        line-height: 1.6rem;
+      }
+    }
+    &.loan-goods {
+      .btn-area {
+        .text-sm {
+          line-height: 1.6rem;
+        }
+        .text-xs {
+          line-height: 1.4rem;
+        }
+        .btn {
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+    // 인증번호 입력
+    .certify-input {
+      padding-top: 4.8rem;
+      .keypad {
+        margin: 6rem -.8rem -3.2rem;
+        border-top: 1px solid #eee;
+      }
+    }
+
+    // 상품검색 - AT9500
+    .modal-bottom-search {
+      margin: 2.4rem -2.4rem -3.2rem;
+      border-top: 0.1rem solid $gray030; 
+      .input-group {
+        border-bottom: none;
+      }
+    }
+    // 상품검색 - AT9501/AT9502
+    .product-search-result {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .result-text {
+        padding: 2rem;
+        border-bottom: 0.1rem solid $gray030;
+        text-align: center;
+        font-weight: $fontLight;
+        @include fontHeight(1.6);
+        color: $gray080;
+        background-color: $white;
+        mark {
+          color: $black;
+          font-weight: $fontBold;
+          background-color: transparent;
+          & + span {
+            margin-left: 0.4rem;
+          }
+        }
+      }
+      .btn-area {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2.4rem 2.4rem 1.2rem;
+        background: linear-gradient(to bottom, white, white 87%, rgba(255, 255, 255, 0));
+        li {
+          .btn {
+            height: 4rem;
+            padding: 1.3rem 1.6rem 1.1rem;
+            color: $gray070;
+            line-height: normal;
+            border-radius: 2rem;
+            background-color: $bgLightGray;
+            &.active {
+              color: $white;
+              background-color: $bgDarkBlue;
+            }
+          }
+          & + li {
+            margin-left: 1.2rem;
+          }
+        }
+        
+      }
+    }
+    .bottom-toast-search {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 0.1rem solid $gray030;
+      box-shadow: 0 0 2rem 0 rgba(15, 16, 29, 0.16);
+    }
+    
+    //상품검색목록, 전체상품목록
+    .product-search-list, .finance-goods-list {
+      .item-area {
+        .item-hashtag {
+          + .item-text {
+            padding-top: 1.6rem;
+            color: $black;
+            font-weight: $fontMedium;
+          }
+        }
+        .item-icon-card-vertical {
+          margin-top: 0.8rem;
+        }
+        mark {
+          color: inherit;
+          background-color: transparent;
+        }
+        .two-line-ellipsis {
+          white-space: normal;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;  
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    }
+    .product-search-list {
+      padding: 12.7rem 0 5.6rem;
+      &.v10 {
+        padding-top: 6.3rem;
+        .card-body .no-data .message {
+          padding-top: 8.4rem;
+        }
+      }
+      .card-body .no-data .message {
+        margin-top: 0;
+        padding: 4.8rem 0 3.2rem;
+        @include fontHeight(1.4);
+      }
+      .card {
+        .card-header {
+          padding-top: 4.8rem;
+          padding-bottom: 0;
+          .card-title {
+            @include fontHeight(1.4);
+            font-weight: $fontRegular;
+            strong {
+              font-weight: $fontBold;
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 1.6rem;
+        }
+        &:first-of-type {
+          .item-left .item-title strong {
+            font-weight: $fontBold;
+          }
+        }
+        &:nth-of-type(2) {
+          .item-full {
+            .item-icon {
+              margin-bottom: 1.6rem;
+              img {
+                height: 2.4rem;
+              }
+            }
+            .item-text-sm  {
+              padding-top: 1.2rem;
+              // color: $gray080;
+            }
+            
+          }
+        }
+        &:last-of-type {
+          .item-thumbnail {
+            min-width: 7rem;
+            width: 7rem;
+            height: 7rem;
+            margin-left: 1.6rem;
+            margin-right: 0;
+            border-radius: 50%;
+          }
+          img {
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .finance-goods-list {
+      &.card-goods {
+        .list-group .list-item .item-title {
+          color: $gray090;
+          strong {
+            color: $black;
+            font-weight: $fontBold;
+          }
+        }
+        .item-area .item-hashtag + .item-text {
+          word-break: keep-all;
+        }
+      }
+      &.insurance-goods {
+        .item-full {
+          .item-icon {
+            margin-bottom: 1.6rem;
+            img {
+              height: 2.4rem;
+            }
+          }
+          .item-text-sm{
+            padding-top: 1.2rem;
+            // color: $gray080;
+          }
+        }
+      }
+      &.invest-goods {
+        .item-left .item-text {
+          padding-top: 1.2rem;
+        }
+        .item-thumbnail {
+          min-width: 7rem;
+          width: 7rem;
+          height: 7rem;
+          margin-left: 1.6rem;
+          margin-right: 0;
+          border-radius: 50%;
+          img {
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    .finance-goods-tab {
+      .finance-goods-list {
+        padding-top: 0.8rem;
+      }
+    }
+    
+    
+    // 금융상품필터 - AT9601/AT9602/AT9603
+    .filter-setting {
+      margin: 1rem -2.4rem 0;
+      border-top: .1rem solid $gray030;
+      .filter-accordion {
+        overflow: hidden;
+        .accordion {
+          .accordion-panel {
+            .ico-toggle {
+              right: 2.4rem;
+            }
+            &::after {
+              display: block;
+              width: 100%;
+              height: .1rem;
+              background-color: $gray030;
+              content: '';
+            }
+            &:last-of-type::after {
+              display: none;
+            }
+            // &.active {
+            //   .accordion-header {
+            //     .accordion-header-inner {
+            //       padding: 1.8rem 5.6rem .8rem 2.4rem;
+            //       .ico-toggle {
+            //         top: 1.6rem;
+            //       }
+            //     }
+            //   }
+            // }
+            .accordion-header {
+              .accordion-header-inner {
+                padding: 1.2rem 5.6rem 1.2rem 2.4rem;
+                .title {
+                  color: $black;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.4);
+                }
+                .sub-title {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: block;
+                  color: $blue080;
+                  @include fontHeight(1.2);
+                  white-space: nowrap;
+                  .selected-tag {
+                    & + .selected-tag {
+                      &::before {
+                        display: inline-block;
+                        width: .1rem;
+                        height: .8rem;
+                        margin: 0 .4rem;
+                        background-color: $gray050;
+                        content: '';
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .accordion-content-inner {
+              padding: 0 2.4rem;
+              .filter-group {
+                .form-control {
+                  font-weight: $fontMedium;
+                }
+              }
+              .form-checkbox-input:disabled:checked +.form-checkbox-btn + .form-checkbox-label {
+                color: $gray080;
+              }
+              .form-checkbox-label {
+                color: $black;
+                font-size: 1.4rem;
+              }
+            }
+            .form-check-list { //dl
+              dt {
+                padding: 0.6rem 0 1rem;
+                border-bottom: .1rem solid $gray030;
+              }
+              dd {
+                padding: 1.4rem 0 1.6rem .8rem;
+              }
+            }
+          }
+        }
+        .list-link {
+          &.type2 {
+            &::after {
+              display: none;
+            }
+            .item {
+              padding: 1.8rem 2.4rem 1.8rem;
+            }
+          }
+          &::after {
+            display: block;
+            width: calc(100% + 4.8rem);
+            height: .1rem;
+            margin: 0 -2.4rem;
+            background-color: $gray030;
+            content: '';
+          }
+          .item {
+            position: relative;
+            display: block;
+            padding: 1.2rem 2.4rem 1rem;
+            &-title {
+              color: $black;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+            }
+            .sub-title {
+              display: block;
+              color: $blue080;
+              @include fontHeight(1.1);
+            }
+            &-icon {
+              position: absolute;
+              top: 50%;
+              right: 2.4rem;
+              transform: rotate(90deg) translate(-50%, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

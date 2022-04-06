@@ -1,0 +1,369 @@
+// 월렛
+.wallet {
+  &.payment {
+    // 1원 송금
+    &.remit-certificate {
+      position: relative;
+      padding: 0.4rem 2.4rem 0 1.6rem;
+      .accordion-panel.type1 {
+        > .accordion-header {
+          .accordion-header-inner {
+            padding-right: 0;
+          }
+        }
+      }
+      .accordion-panel { // 배경
+        position: relative;
+        &::after {
+          content: "";
+          background: url(#{$img-path}/payfan/visual/wallet/bg_wallet_payment01.png) repeat-y;
+          background-size: 0.2rem;
+          position: absolute;
+          top: 0;
+          left: 1.1rem;
+          z-index: 0;
+          width: 0.2rem;
+          height: calc(100% + 2.0rem);
+        }
+        &:first-child {
+          &::after {
+            top: 2.0rem;
+          }
+        }
+        &:last-child {
+          &::after {
+            top: -0.8rem;
+            height: 3rem;
+          }
+        }
+      }
+      .selected-account { // 1번 done
+        //height: 3.2rem;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+        line-height: 2.4rem;
+      }
+      .accordion-header-inner {
+        position: relative;
+        &:nth-of-type(1) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .ico-toggle {
+          display: none;
+        }
+        .list-title {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+          color: $steelBlue;
+          span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-right: 1.2rem;
+            border-radius: 1.2rem;;
+            background-color: $bgSteelBlue;
+            font-weight: $fontBold;
+            @include fontHeight(1.2);
+            line-height: 0.1rem;
+            color: $steelBlue;
+          }
+          &.active { // 공통 active title
+            font-weight: $fontMedium;
+            @include fontHeight(2.4);
+            color: $black;
+            span {
+              background-color: $blue100;
+              @include fontHeight(1.2);
+              line-height: 0.1rem;
+              color: $white;
+            }
+          }
+          &.done + li,
+          &.active + li {
+            padding-bottom: 2.6rem;
+          }
+          &.done + li:last-child,
+          &.active + li:last-child {
+            padding-bottom: 0;
+          }
+          &.done { // 공통 done title
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.6rem;
+            &.list-title {
+              color: $darkBlueGray;
+              span {
+                background: url(#{$img-path}/payfan/icons/default/icon_24_check_blue.svg) no-repeat;
+                background-size: cover;
+                color: transparent;
+              }
+            }
+          }
+        }
+      }
+      //accordion-header-inner
+      .list-content {
+        padding-left: 3.6rem;
+        padding-bottom: 3.0rem;
+      }
+      .btn-account-popup { // 1번 active
+        width: 100%;
+        margin-bottom: 1.6rem;
+        padding: 1.6rem 1.8rem 1.6rem 1.8rem;
+        border: 0.1rem solid $bgDarkBlue2;
+        border-radius: 0.8rem;
+        box-shadow: 0.2rem 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.16);
+        .item-left {
+          text-align: left;
+        }
+        // EDD
+        &.type2 {
+          padding: 2rem 1.8rem;
+          margin-bottom: 0;
+          .item-left {
+            white-space: normal;
+            flex: auto;
+            .item-title {
+              white-space: normal;
+              word-break: keep-all;
+              font-weight: $fontMedium;
+            }
+          }
+        }
+      }
+      .btn-remit { // 1번 active
+        @include fontHeight(1.4);
+      }
+      .result-message { // 2번 active
+        padding-bottom: 0.8rem;
+        font-weight: $fontLight;
+        @include fontHeight(2);
+        strong {
+          font-weight: $fontMedium;
+        }
+      }
+      .output-code { // 3번 인증 코드
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.6rem;
+        padding: 1.2rem 2.0rem 1.4rem 2.0rem;
+        border-radius: 0.4rem;
+        background-color: $bgLightBlue3;
+        .text-left {
+          .title {
+            display: block;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            color: $gray070;
+          }
+          em {
+            display: inline-flex;
+            width: 2.2rem;
+            height: 2.6rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.4rem;
+            margin-right: 0.2rem;
+            border-radius: 0.4rem;
+            background-color: $darkBlue30;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            font-style: normal;
+            color: $white;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+        .text-right {
+          font-weight: $fontBold;
+          @include fontHeight(1.8);
+          strong {
+            @include fontHeight(2);
+          }
+        }
+      }
+      .input-code { // 3번 입력 코드
+        padding-bottom: 3.2rem;
+        border-radius: 0.8rem;
+        border: 0.1rem solid $bgDarkBlue2;
+        box-shadow: 0.2rem 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.16);
+        .guide-message {
+          margin: 2.0rem 2.0rem 3.2rem 2.0rem;
+          padding-bottom: 1.6rem;
+          border-bottom: 0.1rem solid $gray030;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+        }
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          .pad-cnt-wrap { // 입력 키패드
+            display: flex;
+            justify-content: center;
+            height: auto;
+            .key-dots {
+              .dots {
+                display: flex;
+                justify-content: center;
+                > span {
+                  position: relative;
+                  display: block;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  + span {
+                    margin-left: 2.4rem;
+                  }
+                }
+                .dot {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  background-color: $gray030;
+                }
+                .key {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 10;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  background-color: transparent;
+                  text-align: center;
+                  font-weight: $fontBold;
+                  @include fontHeight(2.6);
+                  line-height: 0.1rem;
+                  &.numeric-input {
+                    padding: 0;
+                    line-height: 0;
+                    & > div {
+                      overflow: inherit;
+                      width: 2.4rem;
+                      height: 2.4rem;
+                    }
+                    .numeric-input-text {
+                      display: flex;
+                      width: 2.4rem;
+                      height: 2.4rem;
+                      padding-top: .2rem;
+                      align-items: center;
+                      justify-content: center;
+                      line-height: 0;
+                    }
+                    .numeric-input-cursor {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .time-count {
+            padding-top: 2.4rem;
+            padding-right: 0;
+            text-align: center;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            color: $gray090;
+          }
+          .certificate-error {
+            padding-top: 2.4rem;
+            text-align: center;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            color: $red100;
+          }
+          .btn-resend {
+            text-align: center;
+            margin-top: 1.8rem;
+          }
+        }
+        .input-group {
+          border-bottom: 0 none;
+        }
+      }
+      .certificate-code { // 인증 번호
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 13.2rem;
+        border-radius: 0.4rem;
+        background-color: $gray020;
+        span {
+          padding-bottom: 0.4rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+        }
+        strong {
+          font-weight: $fontMedium;
+          @include fontHeight(3.6);
+          color: $blue100;
+        }
+      }
+      .btn-note {
+        position: relative;
+        padding-top: 1.8rem;
+        .icon {
+          position: relative;
+          top: -0.1rem;
+          margin-right: 0.4rem;
+        }
+      }
+      .btn-remit-certificate {
+        padding-top: 2.4rem;
+        .btn-primary {  
+          @include fontHeight(1.4);
+        }
+      }
+      &:nth-child(1).done + li:nth-child(2).active {
+        padding-bottom: 3.4rem;
+      }
+    }
+    .remit-caution { // 유의사항
+      padding-top: 2.4rem;
+      padding-left: 1.7rem;
+      word-break: keep-all;
+      li {
+        padding-bottom: 1.6rem;
+        text-indent: -1.7rem;
+        font-weight: $fontRegular;
+        @include fontHeight(1.6);
+        color: $gray090;
+        &::before {
+          content: "";
+          position: relative;
+          top: -0.5rem;
+          display: inline-block;
+          width: 0.4rem;
+          height: 0.4rem;
+          margin-right: 1.0rem;
+          border-radius: 0.2rem;
+          background-color: $gray090;
+        }
+      }
+    }
+  }
+  &.certificate-account { // 인증 은행 선택
+    .message {
+      font-weight: $fontRegular;
+      @include fontHeight(1.4);
+      color: $gray080;
+    }
+    ul.list-group {
+      padding-top: 1.4rem;
+    }
+  }
+}

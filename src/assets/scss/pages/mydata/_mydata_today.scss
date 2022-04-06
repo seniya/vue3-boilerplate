@@ -1,0 +1,3962 @@
+//자산
+// 금융기관 연결 
+.modal.alert.induce-mydata {
+  .modal-dialog {
+    .modal-content {
+      width: calc(100% - 4.8rem);
+      max-height: inherit;
+      padding-top: 0 !important;
+      border-radius: .8rem; 
+      .modal-body {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        padding-bottom: .4rem;
+      }
+    }
+  }
+  .section-header {
+    height: 16rem;
+    margin: 0 -2.4rem 0;
+    padding: 4rem 3.2rem;
+    color: #fff;
+    background: $bgDarkBlue url(#{$img-path}/mydata/visual/visual_induce_finance.png) no-repeat top 3.7rem right 1.4rem / 11.4rem auto;
+    h3 {
+      @include fontHeight(1.8);
+    }
+    p {
+      margin-top: 1.2rem;
+      font-weight: $fontRegular;
+      @include fontHeight(1.4);
+      color: $gray030;
+    }
+  }
+  .section-body {
+    .list-group {
+      padding-top: .6rem;
+      padding-bottom: .6rem;
+    }
+  }
+}
+.mydata {
+  // 투데이
+  &.today {
+    // 공통
+    .btn-datalink {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 4.8rem;
+      @include fontHeight(1.4);
+      border: 1px solid $gray030;
+      .text {
+        font-weight: $fontRegular;
+        text-align: left;
+      }
+      .link {
+        font-weight: $fontRegular;
+        @include fontHeight(1.4);
+        text-align: left;
+        .icon {
+          vertical-align: text-bottom;
+        }
+      }
+    }
+    .tooltip-wrap {
+      .tooltip-content {
+        font-weight: $fontRegular;
+        word-break: break-all;
+      }
+    }
+    // main 
+    &.main {
+      //메인>비회원
+      // 로그인 유도
+      .induce-login {
+        border-bottom: 1px solid $gray030;
+        .item-area {
+          padding-top: 3.2rem;
+          padding-bottom: 2.4rem;
+        }
+      }
+      .card {
+        .card-desc {
+          margin-top: 1.6rem;
+          p {
+            font-weight: $fontLight;
+            @include fontHeight(2.2);
+          }
+        }
+        .banner-area {
+          margin-top: 4rem;
+        }
+      }
+      // 서비스안내
+      .mydata-info {
+        position: relative;
+        padding: 0;
+        .card-body {
+          padding-bottom: 0;
+        }
+        .btn-area {
+          position: absolute;
+          width: 100%;
+          padding: 0 2.4rem;
+          bottom: 4.8rem;
+        }
+        .splide.bullet {
+          padding-bottom: 0;
+        }
+        .slide-header {
+          padding-top: 4.8rem;
+          text-align: center;
+          .slide-title {
+            font-weight: $fontMedium;
+            @include fontHeight(2.2);
+          }
+          .slide-text {
+            margin-top: 1.6rem;
+            @include fontHeight(1.4);
+            color: #666;
+          }
+          &.type2 {
+            width: 36rem;
+            margin: 0 auto;
+            padding-left: 2.4rem;
+            text-align: inherit;
+            .slide-title {
+              font-weight: $fontLight;
+              @include fontHeight(2.2);
+            }
+            .slide-text {
+              margin-top: 2.4rem;
+            }
+            strong {
+              position: relative;
+              display: inline-block;
+              font-weight: $fontMedium;
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: .5rem;
+                display: block;
+                width: 100%;
+                height: 1.2rem;
+                background-color: $skyBlue20;
+                z-index: -1;
+              }
+            }
+          }
+        }
+        .slide-inner {
+          height: 54.8rem;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: 100% auto;
+          &.slide-info1 {
+            background-image: url(#{$img-path}/mydata/visual/visual_today_info1.png);
+            background-size: 36rem auto;
+          }
+          &.slide-info2{
+            background-image: url(#{$img-path}/mydata/visual/visual_today_info2.png);
+          }
+          &.slide-info3 {
+            background-image: url(#{$img-path}/mydata/visual/visual_today_info3.png);
+            background-size: 46rem auto;
+          }
+          &.slide-info4 {
+            background-image: url(#{$img-path}/mydata/visual/visual_today_info4.png);
+            background-size: 46.6rem auto;
+            .slide-text {
+              display: flex;
+              flex-direction: column;
+              margin-top: 10rem;
+              color: $black;
+              .user-count {
+                margin-top: 1rem;
+                font-weight: $fontBold;
+                font-size: 3.6rem;
+                line-height: 4.6rem;
+              }
+            }
+          }
+          &.slide-info5 {
+            background-image: url(#{$img-path}/mydata/visual/visual_today_info5.png);
+            background-size: 36rem auto;
+          }
+        }
+        .splide__pagination {
+          bottom: 12.4rem;
+        }
+      }
+      //
+      .img-area {
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      // 메인>회원
+      .total-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: $fontBold;
+        .total-count {
+          @include fontHeight(2.6)
+        }
+        .total-count-lg {
+          @include fontHeight(3);
+        }
+        .money-unit {
+          @include fontHeight(2.4)
+        }
+      }
+      // 내순자산
+      .my-assets {
+        .card-body {
+          padding-top: 3.2rem;
+          padding-bottom: 3.2rem;
+        }
+        .main-swiper {
+          margin: 0 -2.4rem;
+          .slide-inner {
+            padding: 0 2.4rem;
+          }
+          .card-sub-title, .total-area {
+            text-align: center;
+          }
+          .splide__pagination {
+            padding-right: 3.2rem;
+            bottom: 0;
+          }
+          .today-my-assets {
+            padding: 0 1.2rem;
+            .text {
+              margin-top: 4.1rem;
+              margin-bottom: 2rem;
+              padding-top: 2rem;
+              @include fontHeight(1.4);
+              border-top: 1px dotted $gray050;
+              strong {
+                font-weight: $fontBold;
+              }
+            }
+          }
+          .list-group {
+            margin-top: 3.4rem;
+            .list-item {
+              // max-height: 7.4rem;
+              padding: 0 1.6rem;
+              border-radius: 1.6rem;
+              background-color: #fff;
+              box-shadow: 0 .8rem 1.6rem 0 rgba($black, .08);
+              + .list-item {
+                margin-top: .8rem;
+              }
+            }
+            .item-area {
+              // padding: 0 1.6rem;
+              padding-top: 1.4rem;
+              padding-bottom: 1.4rem;
+              .item-title-sm {
+                @include fontHeight(1.4);
+                color: $gray080;
+                +.item-title {
+                  margin-top: -2px;
+                }
+              }
+              .item-title-money {
+                @include fontHeight(1.8);
+              }
+              .money-unit {
+                @include fontHeight(1.6);
+              }
+            }
+          }
+        }
+        .my-chart {
+          .label-group {
+            margin-top: 2rem;
+            text-align: center;
+            .label {
+              @include fontHeight(1.4);
+              &::before {
+                content: '';
+                display: inline-block;
+                width: .8rem;
+                height: .8rem;
+                margin-right: .6rem;
+                border-radius: 50%;
+              }
+              &-save {
+                &::before {
+                  background-color: $skyBlue60;
+                }
+              }
+              &-borrow {
+                margin-left: 1.2rem;
+                &::before {
+                  background-color: $purple100;
+                }
+              }
+            }
+          }
+          .graph-bar {
+            display: flex;
+            align-items: center;
+            margin-top: 4rem;
+            .graph-save {
+              display: block;
+              height: 4.2rem;
+              background-color: $skyBlue60;
+              box-shadow: 4px 8px 16px 0 rgba(19, 33, 73, 0.2);
+            }
+            .graph-borrow {
+              display: block;
+              height: 3rem;
+              background-color: $purple100;
+            }
+          }
+          .my-asset-detail {
+            margin-top: 3.6rem;
+            margin-bottom: 3.8rem;
+            dl {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 5.6rem;
+              padding: 0 2rem;
+              font-size: 1.4rem;
+              border-radius: .4rem;
+              border: 1px solid $gray030;
+              em {
+                position: relative;
+                top: .2rem;
+                margin-right: 1.6rem;
+                font-style: normal;
+                font-weight: $fontMedium;
+                font-size: 2rem;
+              }
+              dd {
+                font-weight: $fontBold;
+              }
+              &.save-money {
+                em {
+                  color: #2caacb;
+                }
+              }
+              &.borrow-money {
+                margin-top: .8rem;
+                em {
+                  color: $purple100;
+                }
+              }
+            }
+          }
+        }
+      }
+      // 업종
+      .expend-list-area {
+        .tab-wrap {
+          margin-top: 2rem;
+        }
+        .tab-con {
+          margin-bottom: 0;
+        }
+        .total-area {
+          justify-content: flex-start;
+        }
+        .expend-list {
+          display: flex;
+          flex-wrap: wrap;
+          height: 41rem;
+          padding-top: 2rem;
+          li {
+            flex-basis: 33.33%;
+            width: 33.33%;
+            padding-left: .6rem;
+            padding-top: .6rem;
+            &:nth-child(3n+1) {
+              padding-left: 0;
+            }
+            &:nth-child(1),&:nth-child(2),&:nth-child(3) {
+              padding-top: 0;
+            }
+            .expend-item {
+              display: block;
+              height: 12.6rem;
+              padding: 1.2rem 1.2rem .8rem;
+              border: 0.1rem solid $gray030;
+              border-radius: 0.4rem;
+              background-color: $bgLightGray;
+            }
+          }
+          .emoji {
+            display: block;
+            height: 2.8rem;
+            font-size: 2.4rem;
+          }
+          .title {
+            overflow: hidden;
+            display: block;
+            width: 100%;
+            margin-top: 2rem;
+            @include fontHeight(1.4);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $gray090;
+          }
+          .expend {
+            display: block;
+            margin-top: 0.2rem;
+            font-weight: $fontBold;
+            @include fontHeight(1.3);
+            word-break: break-all;
+          }
+        }
+        // 지출수단
+        .expend-mehthods {
+          height: 36.8rem;
+          padding-top: 2rem;
+          .list-group {
+            .list-item {
+              padding-left: 2rem;
+              padding-right: 2rem;
+              border-radius: .4rem;
+              border: 1px solid $gray030;
+              .item-title {
+                display: flex;
+                align-items: center;
+              }
+              +.list-item {
+                margin-top: .8rem;
+              }
+            }
+          }
+        }
+        &.v10 {
+          .expend-list {
+            padding-top: .4rem;
+          }
+        }
+      }
+      // 내신용점수
+      .credit-point {
+        .card-desc {
+          position: relative;
+          .btn-tip {
+            position: absolute;
+            right: 0;
+            top: .4rem;
+          }
+        }
+        .btn-multi {
+          margin-top: 4.4rem;
+          border: 0;
+          background: $bgLightGray;
+          &::before {
+            background-color: $gray050;
+          }
+          .btn-space-between {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 5.6rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: 1.4rem;
+          }
+          .title {
+            font-weight: $fontRegular;
+            color: #666;
+          }
+          .amount {
+            font-weight: $fontMedium;
+          }
+        }
+        &.v10 {
+          .btn-area {
+            margin-top: 4.4rem;
+          }
+        }
+      }
+      // 리포트
+      .report {
+        .card-body {
+          .card-sub-title {
+            margin-bottom: 3.4rem;
+          }
+        }
+        .btn-area {
+          display: block;
+          .btn {
+            display: block;
+            width: 100%;
+            margin: 0;
+            .icon {
+              vertical-align: text-top;
+              top: .1rem;
+            }
+            +.btn {
+              margin-top: .8rem;
+            }
+          }
+        }
+        .banner-area {
+          margin-top: 5.6rem;
+        }
+      }
+      // 오늘의 금융정보
+      .today-info {
+        .card-header {
+          justify-content: center;
+          padding-top: 4rem;
+          padding-bottom: 3.2rem;
+          text-align: center;
+          .card-title {
+            font-weight: $fontLight;
+            @include fontHeight(2.2);
+            strong {
+              font-weight: $fontBold;
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 3.6rem;
+        }
+        .payment-area {
+          padding: 1.4rem 2rem .8rem 2rem;
+          border-radius: 1rem;
+          box-shadow: .2rem .6rem 1.6rem 0 rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+          .payment-header {
+            dt {
+              display: flex;
+              align-items: center;
+              margin-left: -.6rem;
+              font-weight: $fontMedium;
+              .icon {
+                margin-right: .8rem;
+              }
+            }
+            dd {
+              padding: 2.4rem 0;
+              font-weight: $fontBold;
+              text-align: center;
+            }
+            .money {
+              @include fontHeight(2.2);
+            }
+            .money-unit {
+              @include fontHeight(2);
+            }
+          }
+        }
+        .table-list {
+          padding-top: 1.6rem;
+          dt {
+            flex-basis: 12rem;
+          }
+          dd {
+            flex-basis: calc(100% - 12rem);
+            span {
+              font-weight: $fontBold;
+            }
+          }
+        }
+        .list-group {
+          margin-top: 1.6rem;
+          .list-item .item-area {
+            padding: 1.6rem 1.8rem 1.6rem 1.4rem;
+            .item-icon {
+              margin-right: .8rem;
+            }
+            .btn-icon {
+              margin-right: -.7rem;
+            }
+            .item-title-arrow {
+              margin-right: -0.6rem;
+            }
+            .item-left {
+              overflow: inherit;
+              white-space: inherit;
+              .tooltip-wrap {
+                top: .2rem;
+                margin-left: .2rem;
+              }
+            }
+          }
+        }
+      }
+      // 자산관리
+      .management {
+        .card-header {
+          padding-bottom: .4rem;
+        }
+        .card-body {
+          padding-bottom: 3.2rem;
+        }
+        .list-item {
+          .item-icon {
+            margin-right: .8rem;
+          }
+        }
+      }
+      // 자산현황
+      .asset-status {
+        .card-body {
+          padding-bottom: 2.8rem;
+        }
+        .list-group {
+          padding-top: 2.4rem;
+          .item-left {
+            position: relative;
+            padding-left: 1.3rem;
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: calc(50% - .2rem);
+              display: block;
+              width: .4rem;
+              height: .4rem;
+              border-radius: 50%;
+              background-color: $black;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+    // 비회원
+    .list-finance {
+      .btn {
+        min-width: 7.7rem;
+      }
+    }
+    // 마이데이터가입
+    .join-header {
+      .join-title {
+        padding-top: 2.6rem;
+        font-weight: $fontLight;
+        font-size: 2.4rem;
+        color: $black;
+      }
+      .join-text {
+        margin-top: 2.2rem;
+        font-size: 1.2rem;
+        color: $gray080;
+      }
+      .join-text2 {
+        margin-top: 1.2rem;
+        font-weight: $fontRegular;
+        font-size: 1.4rem;
+        color: $gray080;
+      }
+      .btn-area {
+        position: sticky;
+        top: 4.4rem;
+        background: #fff;
+        z-index: 1;
+        margin-top: 4.8rem;
+        margin-bottom: 3.6rem;
+        li {
+          flex: 0 0 auto;
+          + li {
+            margin-left: .8rem;
+          }
+        }
+        .btn-pill {
+          min-height: 3.6rem;
+          padding-left: 1.4rem;
+          padding-right: 1.4rem;
+          color: $gray080;
+          border-radius: 1.8rem;
+          background: $bgLightGray;
+          &.active {
+            color: #fff;
+            background: $bgDarkBlue;
+          }
+        }
+      }
+    }
+    // 개별연동>정보제공동의 확인
+    .request-info {
+      .card {
+        .card-header {
+          padding-top: 3.2rem;
+          .card-title {
+            font-weight: $fontMedium;
+            @include fontHeight(2.4);
+          }
+        }
+        .card-body {
+          padding-bottom: 4.8rem;
+          .accordion {
+            margin-top: -2.4rem;
+            .accordion-panel {
+              .tooltip-wrap {
+                display: none;
+              }
+              &.active {
+                .tooltip-wrap {
+                  display: block;
+                }
+              }
+            }
+          }
+          .accordion-header {
+            margin-left: -.8rem;
+            margin-right: -.8rem;
+            padding-left: .8rem;
+            padding-right: .8rem;
+            padding-top: 3.2rem;
+            border-bottom: 1px solid $gray070;
+            .accordion-title {
+              display: flex;
+              align-items: center;
+              .icon {
+                display: block;
+                width: 3.2rem;
+                height: 3.2rem;
+                margin-right: .6rem;
+                img {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .title {
+                font-weight: $fontMedium;
+                @include fontHeight(1.8);
+              }
+            }
+          }
+          .accordion-content-inner {
+            padding-bottom: 2.8rem;
+          }
+          .list-group {
+            padding-top: 3.2rem;
+            .list-header {
+              padding-bottom: 2.4rem;
+              font-weight: $fontBold;
+              @include fontHeight(2);
+              border-bottom: 0;
+            }
+            .item-text {
+              margin-top: 1.6rem;
+              +.item-text {
+                margin-top: .4rem;
+              }
+            }
+            + .list-group {
+              margin-top: 3.2rem;
+              border-top: 1px solid $gray030;
+            }
+          }
+          [class^=account-] {
+            @include fontHeight(1.4)
+          }
+          .account-name {
+            overflow: hidden;
+            width: 15rem;
+            font-weight: $fontMedium;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .account-num {
+            margin-left: auto;
+            color: $gray080;
+          }
+          fieldset {
+            + fieldset {
+              margin-top: -.4rem;
+            }
+          }
+          legend {
+            padding-top: 3.6rem;
+            padding-bottom: 1.2rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+          }
+          .form-group {
+            +.form-group {
+              margin-top: 1.2rem;
+            }
+          }
+          .icon-num {
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+    }
+    // 개별연동>정보제공동의 모달
+    .provide-info-period {
+      color: $blue100;
+    }
+    //금융기관통합연동>마이데이터정보제공동의
+    .info-provision {
+      .btn-line {min-width: 7.7rem;}
+      .form-group {
+        padding-top: 2.8rem;
+        padding-bottom: 2.8rem;
+        &-title {
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          color: $black;
+        }
+        .period {
+          display: block;
+          margin-top: .4rem;
+          margin-bottom: 2rem;
+          @include fontHeight(1.2);
+          color: $blue100;
+        }
+        &.form-inline {
+          .form-radio {
+            display: inline-block;
+            margin-right: 3.2rem;
+          }
+        }
+        +.form-group {
+          border-top: 1px solid $gray030;
+        }
+      }
+    }
+    // 금융기관통합연동>공동인증서
+    .joint-certificate {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .section-header {
+        padding-top: 3.2rem;
+        padding-bottom: .8rem;
+        font-weight: $fontMedium;
+        @include fontHeight(2.4);
+        h3 {
+          font-weight: $fontMedium;
+          @include fontHeight(2.4);
+        }
+      }
+      .item-icon2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 6rem;
+        height: 6rem;
+        margin-right: 2rem;
+        border-radius: 50%;
+        border: 1px solid $gray030;
+        .icon {
+          margin-left: .3rem;
+        }
+      }
+      .certify-list {
+        margin: 1.6rem -.8rem 0;
+        .list-item {
+          // padding: 0 1.8rem 0 2rem;
+          .item-area {
+            padding: 2rem;
+            border-radius: .6rem;
+            border: 1px solid $gray070;
+            &.disabled {
+              border-color: $gray040;
+              span {
+                color: $gray070 !important;
+              }            
+              .icon {
+                opacity: .2;
+                filter: grayscale(100%);
+              }
+            }
+          }
+          +.list-item {
+            margin-top: 1.6rem;
+          }
+          .name {
+            font-weight: $fontBold;
+            @include fontHeight(1.8);
+          }
+          .date {
+            margin-left: 1rem;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            color: $gray080;
+            .date-limit {
+              color: $blue100;
+            }
+          }
+        }
+      }
+      .caution-area {
+        margin-top: .4rem;
+        padding: 1.6rem 1.2rem;
+        @include fontHeight(1.3);
+        border-radius: .8rem;
+        background: $bgWarmGray;
+        p {
+          position: relative;
+          padding-left: 1.5rem;
+          color: $gray090;
+          &::before {            
+            content: '※';
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+    .finance-list {
+      .btn-area {
+        z-index: 1;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        position: sticky;
+        top: 0;
+        background: #fff;
+        margin: 0 -2.4rem;
+        padding: 1.6rem 2.4rem 1.4rem 2.4rem;
+        background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,1) 87%, rgba(255,255,255,0));
+        li {
+          flex: 0 0 auto;
+          + li {
+            margin-left: .6rem;
+          }
+        }
+        .btn-pill {
+          min-height: 4rem;
+          padding-left: 1.6rem;
+          padding-right: 1.6rem;
+          color: $gray080;
+          border-radius: 2rem;
+          vertical-align: middle;
+          background: $bgLightGray;
+          &.active {
+            color: #fff;
+            background: $bgDarkBlue;
+          }
+          .icon {
+            position: relative;
+            top: -.2rem;
+            margin-left: .2rem;
+          }
+        }
+      }
+      p.recommand-title {
+        padding-top: 2.6rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.4);
+        strong {
+          font-weight: $fontMedium;
+        }
+      }
+      &.recommand {
+        .btn-area {
+          .btn-pill {
+            &.active {
+              background: $darkBlue80;
+            }
+          }
+        }
+        .recommand-title {
+          display: flex;
+          margin: 2.8rem 0 3rem;
+          @include fontHeight(2);
+          p {font-weight: $fontMedium;}
+          .form-all-check {
+            margin-left: auto;
+            @include fontHeight(1.4);
+            .form-checkbox-label {
+              padding-left: 0;
+            }
+          }
+          .tip-info {
+            li {
+              @include fontHeight(1.2);
+              .icon {
+                margin-right: 0.4rem;
+              }
+              +li {
+                margin-top: 0.6rem;
+              }
+            }
+          }
+        }
+        .financial-group {
+          .financial-group-item {
+            +.financial-group-item {
+              margin-top: 2.2rem;
+            }
+            .financial-group-header {
+              margin-bottom: 0.8rem;
+              .financial-group-title {
+                font-weight: $fontMedium
+              }
+            }
+          }
+          .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            .form-checkbox {
+              flex: 0 0 calc(50% - .5rem);
+              margin-bottom: 1rem;
+              + .form-checkbox {
+                margin-top: 0;
+              }
+              &:nth-child(2n) {
+                margin-left: 1rem;
+              }
+              .form-checkbox-btn {
+                border: 0 !important;
+                background: transparent !important;
+                img {
+                  width: 2.4rem;
+                  height: 2.4rem;
+                }
+              }
+              .symbol-icon {
+                display: flex;
+                flex: 0 0 2.4rem;
+                width: 2.4rem;
+                height: 2.4rem;
+                margin-left: 1.4rem;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+            .form-checkbox-input {
+              &:checked ~ .form-checkbox-label {
+                font-weight: $fontMedium;
+                color: $black;
+                border-color: $darkBlue30;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+              }
+              + .form-checkbox-btn {
+                margin-left: 1.4rem;
+              }
+            }
+            .form-checkbox-label {
+              display: flex;
+              align-items: center;
+              height: 5.2rem;
+              margin-left: -4.2rem;
+              padding: 0 2.4rem 0 4.8rem;
+              font-size: 1.3rem;
+              line-height: 1.38;
+              color: $gray090;
+              border-radius: .4rem;
+              border: .1rem solid $gray030;
+            }
+            .form-checkbox-label {
+              display: flex;
+              align-items: center;
+              height: 5.2rem;
+              margin-left: -4.2rem;
+              padding: 0 2.4rem 0 4.8rem;
+              font-size: 1.3rem;
+              line-height: 1.38;
+              color: $gray090;
+              border-radius: .4rem;
+              border: .1rem solid $gray030;
+            }
+            // 개인화 추천
+            // .personal {
+            //   background: url(#{$img-path}/common/icons/default/icon_14_star_gold.svg) no-repeat right .8rem top .8rem / 1.2rem 1.2rem;
+            // }
+            // 연결완료
+            // .connected {
+            //   background: url(#{$img-path}/common/icons/default/icon_14_check_blue.svg) no-repeat right .8rem top .8rem / 1.2rem 1.2rem;
+            // }
+            // 연결오류
+            // .error {
+            //   background: url(#{$img-path}/common/icons/default/icon_14_absence_red.svg) no-repeat right .8rem top .8rem / 1.2rem 1.2rem;
+            // }
+            label {
+              position: relative;
+              &::before, &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 1.4rem;
+                height: 1.4rem;
+                background-size: 100% 100%;
+              }
+              &::before {
+                right: 0.8rem;
+                top: 0.8rem;
+              }
+              &::after {
+                right: 0.8rem;
+                bottom: 0.8rem;
+              }
+              &.connected {
+                &::before {
+                  background-image: url(#{$img-path}/common/icons/default/icon_14_link_blue.svg)
+                }
+              }
+              &.error {
+                &::before {
+                  background-image: url(#{$img-path}/common/icons/default/icon_14_absence_red.svg)
+                }
+              }
+              &.personal {
+                &::before {
+                  background-image: url(#{$img-path}/common/icons/default/icon_14_star_gold.svg)
+                }
+                &.connected {
+                  &::after {
+                    background-image: url(#{$img-path}/common/icons/default/icon_14_link_blue.svg)
+                  }
+                }
+                &.error {
+                  &::after {
+                    background-image: url(#{$img-path}/common/icons/default/icon_14_absence_red.svg)
+                  }
+                }
+              }
+            }
+          }
+        }
+        .tooltip-guide {
+          top: 4.3rem;
+          left: 1.8rem;
+          width: 26.9rem;
+          height: 6.8rem;
+          transition: all .2s;
+          visibility: hidden;
+          opacity: 0;
+          .img-area {
+            width: 26.9rem;
+            height: 6.8rem;
+          }
+          .tooltip-delete {
+            top: 1.6rem;
+          }
+          &.is-active {
+            top: 5.3rem;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    //간편 비밀번호 입력
+    .pw-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 -.8rem;
+      padding-top: 3.2rem;
+      padding-bottom: 4.8rem;
+      text-align: center;
+      border-bottom: .1rem solid $gray030;
+      .pad-cnt-wrap {
+        margin-top:.8rem;
+        .key-dots {
+          margin: 0 auto;
+        }
+      }
+      +.keypad {
+        margin-top: 1.2rem;
+      }
+    }
+    // 금융사연동>연동가능 여부 확인
+    [class*=financial-connecting]{
+      position: relative;
+      .section-header {
+        position: relative;
+        height: 27.7rem;
+        margin: 0 -2.4rem;
+        padding: 2.8rem 2.4rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.4);
+      }
+      .deco {
+        // position: absolute;
+        // bottom: 0;
+        // width: 100%;
+        // height: 10rem;
+        // margin: 0 -2.4rem 2.8rem;
+        // background: url(#{$img-path}/mydata/visual/visual_financial_connect1.png) no-repeat right -3.2rem top 50% / 35.2rem auto;
+        height: 14rem;
+        margin: 0 -2.4rem;
+        background: none;
+      }
+      .progress-bar {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: .2rem;
+        left: 0;
+        bottom: 0;
+        .bar {
+          display: block;
+          background: $gray030;
+          .progress {
+            display: block;
+            width: 0;
+            height: .2rem;
+            background: $blue100;
+            animation: loader 6s linear infinite;
+            &.done {
+              width: 100%;
+              animation: none;
+            }
+          }
+        }
+        @keyframes loader {
+          0% {width: 0;}
+          25% {width: 25%;}
+          50% {width: 50%;}
+          75% {width: 75%;}
+          100% {width: 100%;}
+        }
+      }
+      .loader {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      .list-group {
+        margin-top: 2rem;
+      }
+      // 연결상태
+      [class^=connect] {
+        display: flex;
+        align-items: center;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+        .icon {
+          margin-right: .2rem;
+        }
+      }
+      .connect-success {
+        color: $blue100;
+      }
+      .connect-error {
+        color: $red100;
+      }
+    }
+    // 정보계좌 > 정보계좌 관리
+    .account-manage {
+      .card {
+        .card-body {
+          padding-bottom: 4.8rem;
+        }
+      }
+      .financial-connect {
+        .card-header {
+          padding-top: 4.8rem;
+        }
+        .card-desc {
+          .status {
+            + .status {
+              &::before {
+                height: 1.6rem;
+                margin: 0 1.2rem;
+              }
+              .status-title {
+                color: $gray070;
+              }
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 2.8rem;
+        }
+        .status {
+          @include fontHeight(1.4);
+          .status-title {
+            color: $gray080;
+          }
+          .status-data {
+            padding-left: .4rem;
+            font-weight: $fontBold;
+          }
+          +.status {
+            &::before {
+              content: '';
+              display: inline-block;
+              width: .1rem;
+              height: 1rem;
+              margin: 0 .8rem;
+              background-color: $gray030;
+            }
+          }
+        }
+        .list-item {
+          .item-title {
+            font-weight: $fontRegular;
+          }
+        }
+      }
+    }
+    // 내 프로필
+    .my-profile {
+      .card-desc {
+        margin-top: 2.8rem;
+        @include fontHeight(1.8);
+        strong {
+          font-weight: $fontBold;
+        }
+      }
+      .btn-select {
+        font-weight: $fontMedium;
+        color: $darkBlue70;
+        border-radius: .2rem;
+        background-color: $bgLightGray;
+      }
+      .favorite-list {
+        padding-top: 2.4rem;
+        border-top: .1rem solid $gray030;
+        .btn-md {
+          background-color: $bgLightGray;
+        }
+      }
+      .no-data {
+        padding: 4rem 0;
+        font-size: 1.2rem;
+        text-align: center;
+        border-top: .1rem solid $gray030;
+        border-bottom: .1rem solid $gray030;
+      }
+    }
+    // 내정보관리>데이터수집,제공
+    .myinfo-management-filter {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: $dim070;
+      z-index: 1;
+      .filter-list {
+        max-height: 100%;
+        overflow: scroll;
+      }
+      .btn-filter {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        height: 3.6rem;
+        padding-left: 1.2rem;
+        background: #fff;
+      }
+      .pills-group {
+        padding: 1.6rem 6.4rem 0 2.4rem;
+        background: $white;
+        &::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .pill-radio {
+          float: left;
+          width: 50%;
+          margin-bottom: 2rem;
+          .form-radio-label {
+            font-size: 1.4rem;
+            color: $black;            
+          }
+        }
+      }
+      .linked-groups {
+        position: sticky;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        margin-top: auto;
+        padding: 1.8rem 2.4rem 1.6rem;
+        font-size: 1.4rem;
+        color: $black;
+        background-color: $white;
+        box-shadow: 0 -.4rem 1rem 0 rgba(0,0,0,.08);
+        .amount {
+          font-weight: $fontBold;
+        }
+      }
+    }
+    .myinfo-management-list {
+      overflow-y: auto;
+      height: 100%;
+      margin: 0 -2.4rem;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &.complete {
+        align-items: inherit;
+        text-align: inherit;
+        .div-center {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 9.6rem;
+        }
+      }
+      .section-header {
+        position: sticky;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 1.6rem 0 2rem;
+        border-bottom: 1.2rem solid $gray030;
+        background-color: $white;
+        z-index: 1;
+        &.no-sticky {
+          position: static;
+          padding: 0;
+        }
+        .btn-area.period-select {
+          margin-top: 2.8rem;
+          padding: 0 2.4rem;
+        }
+      }
+      .swiper-area {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 4rem;
+        // background: gold;
+        // width: calc(100% - 5rem);
+        // padding: 0 2.4rem;
+        // &::-webkit-scrollbar {
+        //   display: none;
+        // }
+        &::after {
+          content: '';
+          position: fixed;
+          right: 5rem;
+          top: 1.3rem;
+          display: block;
+          width: 2.4rem;
+          height: 4.6rem;
+          // background: linear-gradient(90deg, rgba(255,255,255, .0) 0, #fff 2.4rem, #fff 50%);
+          background-image: linear-gradient(to left, rgba($white, 77%), rgba($white, 0));
+        }
+        .btn-area {
+          position: fixed;
+          right: 0;
+          top: 1.3rem;
+          z-index: 10;
+        }
+        .btn-filter {
+          width: 5rem;
+          height: 4.6rem;
+          padding-left: 1.2rem;
+          text-align: left;
+          border-left: .1rem solid $gray030;
+          background: #fff;
+          .icon {
+            top: 0.2rem;
+          }
+        }
+        &.show {
+          background-color: $dim070;
+          &::after {
+            display: none;
+          }
+          .pills-group {
+            flex-wrap: wrap;
+            padding: 0 2.4rem 1.6rem;
+            background-color: $white;
+            .pill-radio {
+              flex: 1;
+              flex-basis: 50%;
+              margin: 1rem 0 1rem 0;
+            }
+          };
+          .btn-filter {
+            right: 2.4rem;
+            border-left: 0;
+            .icon {
+              transform: rotate(0deg);
+            }
+          }
+        }
+      }
+      .pills-group {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        overflow-x: auto;
+        width: calc(100% - 5rem);
+        padding: 0 0 0 2.4rem;
+        // background: red;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .pill-radio {
+          flex: 0 0 auto;
+        }
+        &.pills {
+          .pill-radio {
+            padding-right: 1rem;
+          }
+          .form-group {
+            .form-radio {
+              .form-radio-btn {
+                display: none;
+              }
+              .form-radio-label {
+                align-items: center;
+                height: 4rem;
+                padding: 0 1.6rem;
+                color: $gray080;
+                border-radius: 2rem;
+                background-color: $bgLightGray;
+              }
+              .form-radio-input {
+                &:checked ~ .form-radio-label {
+                  color: $white;
+                  background-color: $bgDarkBlue;
+                }
+              }
+            }
+          }
+        }
+      }
+      .list-group {
+        .list-header {
+          @include fontHeight(1.4);
+        }
+      }
+      .data-history {
+        .date {
+          margin-top: 3.2rem;
+          font-size: 1.2rem;
+          margin-bottom: 1.2rem;
+        }
+        +.data-history {
+          margin-top: 3.6rem;
+        }
+      }
+      &.show {
+        overflow: hidden;
+        .section-header {
+          position: fixed;
+          left: 0;
+          top: 0;
+          top: 5.6rem;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          background: $dim070;
+        }
+        .swiper-area {
+          overflow-y: auto;
+          max-height: 100%;
+          padding-right: 0;
+          &::after {
+            display: none;
+          }
+          .btn-filter {
+            right: 2.4rem;
+            top: 1.6rem;
+            height: 3.6rem;
+            padding-left: 1.2rem;
+            background: #fff;
+            .icon {
+              transform: rotate(0deg)
+            }
+          }
+        }
+        .pills-group {
+          overflow-x: inherit;
+          padding: 1.6rem 2.4rem 0;
+          display: block;
+          background: $white;
+          &::after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+          .pill-radio {
+            float: left;
+            width: 50%;
+            margin-bottom: 2rem;
+            margin-bottom: 30rem;
+          }
+        }
+        .linked-groups {
+          position: sticky;
+          bottom: 0;
+          z-index: 1;
+          width: 100%;
+          margin-top: auto;
+          padding: 1.8rem 2.4rem 1.6rem;
+          background-color: $white;
+          box-shadow: 0 -.4rem 1rem 0 rgba(0,0,0,.08);
+          .amount {
+            font-weight: $fontBold;
+          }
+        }
+      }
+      .period-area {
+        padding-top: 0;
+      }
+      .section-body {
+        padding: 4rem 2.4rem 0;
+      }
+    }
+    //연결완료
+    .financial-connecting-done {
+      .section-header {
+        height: inherit;
+      }
+      .list-group {
+        margin-top: 0;
+      }
+      .connect-success {
+        color: $black;
+      }
+    }
+    .financial-connecting {
+      .connect-success {
+        color: $black;
+      }
+    }
+    .financial-connecting2 {
+      .deco {
+        position: absolute;
+        bottom: 0;
+        // background-image: url(#{$img-path}/mydata/visual/visual_financial_connect2.png);
+      }
+      .connect-success {
+        color: $black;
+      }
+    }
+    // 마이데이터>금융사 연결현황
+    .connection-status {
+      .section-header {
+        padding-top: 2.4rem;
+      }
+      .btn-multi {
+        height: 4.8rem;
+        margin-top: 2rem;
+        .icon {
+          margin-right: .5rem;
+        }
+      }
+      .section-body {
+        .card {
+          .card-header {
+            padding-top: 4.8rem;
+            padding-bottom: 0;
+          }
+          .card-body {
+            padding-bottom: 2.8rem;
+          }
+        }
+      }
+      &.v12 {
+        .section-header {
+          padding: 2.4rem 2.4rem 0;
+        }
+        .btn-multi {
+          justify-content: flex-end;
+          height: auto;
+          margin-top: 1.6rem;
+          border: 0;
+          .btn {
+            flex: 0 0 auto;
+            margin: 0 1.2rem 0 0;
+            +.btn {
+              position: relative;
+              margin: 0 0 0 1.2rem;
+              &::before {
+                content: '';
+                position: absolute;
+                left: -2.4rem;
+                top: 50%;
+                display: block;
+                width: 1px;
+                height: 1rem;
+                margin: 0 1.2rem;
+                background-color: $gray040;
+                transform: translateY(-50%);
+              }
+            }
+          }
+          .icon {
+            margin-right: .3rem;
+          }
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .finance-connect {
+        padding-top: 3.4rem;
+        .tab-menu {
+          width: 30.4rem;
+          height: 4.4rem;
+          margin: 0 auto -1.4rem;
+          padding: 0;
+          .splide__track .splide__list .splide__slide {
+            height: 4.4rem;
+          }
+        }
+        .empty {
+          padding-top: 1.4rem;
+        }
+        .div-center {
+          margin-top: 12rem;
+        }
+      }
+    }
+    // 마이데이터>금융사 연결이력
+    .connection-history {
+      padding-top: 1.6rem;
+      .item-area {
+        .item-title a {
+          &::after {
+            content: '';
+            position: relative;
+            top: .2rem;
+            display: inline-block;
+            width: 1.6rem;
+            height: 1.6rem;
+            background: url(#{$img-path}/common/icons/default/icon_16_arrow1.svg) no-repeat 0 0 / 1.6rem 1.6rem;
+            transform: rotate(90deg)
+          }
+        }
+        [class*=connect] {
+          display: inline-flex;
+          align-items: center;
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+          .icon {
+            margin-right: .8rem;
+          }
+        }
+        .connect-success {
+          color: $blue100;
+        }
+        .connect-error {
+          color: $red100;
+        }
+      }
+    }
+    // 마이데이터>금융사 연결현황>철회/삭제
+    .financial-withdrawal {
+      padding-top: 2rem;
+      strong {
+        font-weight: $fontBold;
+      }
+      p {
+        padding-top: 2.4rem;
+        border-top: 1px solid $gray050;
+      }
+      .form-checkbox-label {
+        padding-left: 0.8rem;
+        color: $gray080;
+      }
+      .form-checkbox-input:checked ~ .form-checkbox-label {
+        color: $black;
+      }
+      .table-list {
+        padding-bottom: .8rem;
+        dt, dd {
+          margin-bottom: 1.2rem;
+        }
+        dt {
+          flex-basis: 13rem;
+          font-weight: $fontMedium;
+          color: $black;
+        }
+        dd {
+          flex-basis: calc(100% - 13rem);
+        }
+        .btn-icon {
+          margin-top: .4rem;
+          span {
+            color: $gray080;
+          }
+        }
+      }
+    }
+    // 마이데이터>서비스 갱신
+    .service-update {
+      .section-header {
+        padding-top: 2.8rem;
+        padding-bottom: 2.4rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.4);
+      }
+      .form-group {
+        .form-checkbox-btn {
+          align-self: flex-start;
+          margin-top: 1rem;
+          margin-right: 1.2rem;
+        }
+      }
+      .list-group {
+        .item-area {
+          .item-text {
+            +.item-text {
+              padding-top: 0;
+            }
+            .sub-text {
+              &.fc-blue {
+                margin-right: .4rem;
+              }
+              + .sub-text {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    //symbol
+    .symbol-group {
+      margin-top: 3.2rem;
+      .symbol-group-header {
+        display: flex;
+        justify-content: space-between;
+        .symbol-group-title {
+          margin-bottom: 1.6rem;
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          color: $black;
+          &.title-sm {
+            margin-bottom: 1.4rem;
+            @include fontHeight(1.6);
+          }
+        }
+        .form-checkbox {
+          .form-checkbox-input:checked ~ .form-checkbox-label {
+            color: $black;
+          }
+          .form-checkbox-label {
+            padding-left: 0;
+            @include fontHeight(1.4);
+            color: #666;
+          }
+        }
+      }
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -.6rem;
+      }
+      .symbol-checkbox {
+        flex-basis: 33.33%;
+        width: 33.33%;
+        margin-bottom: 1.2rem;
+        &.partial-linked {
+          position: relative;
+          > .icon {
+            position: absolute;
+            left: 1.4rem;
+            top: .8rem;
+          }
+        }
+        &.error, &.connected {
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            right: 1.2rem;
+            top: 0.8rem;
+            display: block;
+            width: 1.6rem;
+            height: 1.6rem;
+            // z-index: 1;
+          }
+        }
+        &.error {
+          &::after {
+            background-image: url(#{$img-path}/common/icons/default/icon_16_absence3_red.svg)
+          }
+        }
+        &.connected {
+          &::after {
+            background-image: url(#{$img-path}/common/icons/default/icon_16_link_blue.svg)
+          }
+        }
+        input[type=checkbox] {
+          &:checked + label {
+            border-color: $line3;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+          }
+          &:disabled + label {
+            .symbol-checkbox-label {
+              // color: $gray080;
+            }
+            img {
+              opacity: 0.2;
+            }
+          }
+        }
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 7.8rem;
+          margin: 0 .6rem;
+          border-radius: .6rem;
+          border: 1px solid $gray030;
+          background-color: #fff;
+        }
+        .symbol-icon {
+          display: inline-block;
+          width: 3.2rem;
+          height: 3.2rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .symbol-checkbox-label {
+          overflow: hidden;
+          width: 100%;
+          margin-top: .8rem;
+          // padding: 0 .4rem;
+          text-align: center;
+          @include fontHeight(1.4);
+          letter-spacing: -0.05rem;
+          color: $black;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    // 내정보관리>데이터재테크
+    .period-area {
+      padding-top: 2.8rem;
+      padding-bottom: 3.2rem;
+      .btn-type {
+        .form-radio {
+          label {
+            margin-right: .6rem;
+          }
+          .form-radio-input {
+            &:checked + {
+              .form-radio-label {
+                color: $white;
+                border-color: $bgDarkBlue2;
+                background-color: $bgDarkBlue2;
+              }
+            }
+          }
+          .form-radio-label {
+            min-width: inherit;
+            padding: .9rem 1.4rem .7rem;
+            font-weight: $fontMedium;
+            color: $darkBlueGray;
+            border-color: $gray050;
+            background-color: #fff;
+          }
+        }
+      }
+      .period {
+        margin-top: 1.2rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+      }
+    }
+    // 데이터재테크
+    .data-finance {
+      .my-point {
+        width: 100%;
+        padding-top: .4rem;
+        padding-bottom: 1rem;
+        .item-area {
+          padding: 0;
+          .item-title-lg {
+            @include fontHeight(2.6)
+          }
+        }
+      }
+      .status {
+        color: $blue100;
+      }
+      .period-area {
+        padding-bottom: 0;
+      }
+      .list-group {
+        .list-body {
+          padding-top: .8rem;
+        }
+        .list-header {
+          padding-top: 4rem;
+          + .list-body {
+            padding-top: 0;
+          }
+        }
+      }
+      &.empty {
+        .complete {
+          height: calc(100% - 13rem) !important;
+        }
+      }
+    }
+    // 내정보관리>데이터재테크>동의하기,철회하기
+    .data-finance-agree {
+      .list-group {
+        .save-point {
+          padding: 2.8rem 0 2.2rem;
+          .item-title-lg {
+            @include fontHeight(2.6)
+          }
+          .item-title {
+            @include fontHeight(1.4);
+            color: $gray080;
+          }
+        }
+        .status {
+          color: $blue100;
+        }
+      }
+      .table-list {
+        flex-wrap: wrap;
+        padding-top: 2.8rem;
+        border-top: 1px solid $gray030;
+        dt {
+          flex-basis: 7.5rem;
+        }
+        dd {
+          flex: 1 0 calc(100% - 7.5rem);
+        }
+        .list-supply {
+          li {
+            strong {
+              display: block;
+            }
+            + li {
+              margin-top: 1.6rem;
+            }
+          }
+        }
+      }
+      .info-text {
+        padding: 2rem 0 3.6rem;
+        @include fontHeight(1.2);
+        color: $gray080;
+        border-top: 1px solid $gray030;
+      }
+    }
+
+    // 10월버전
+    .bucket-area.v10 {
+      padding-top: 4.8rem;
+      padding-bottom: 2rem;
+      .bucket-header {
+        margin-bottom: 2.4rem;
+        text-align: center;
+        .bucket-title-area {
+          padding-bottom: 3.8rem;
+          +.progress-area {
+            margin-bottom: 1rem;
+          }
+        }
+        .bucket-title {
+          margin-bottom: .6rem;
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          color: $black;
+        }
+        .bucket-text {
+          margin-top: 0.2rem;
+          @include fontHeight(1.6);
+          &-category {
+            font-weight: $fontMedium;
+            color: $skyBlue100;
+            +.bucket-text-task {
+              margin-left: 0.4rem;
+            }
+          }
+          &-task {
+            color: $gray080;
+            .task-money {
+              font-weight: $fontMedium;
+              color: $black;
+            }
+          }
+        }
+        .progress-area {
+          margin-top: 1.6rem;
+          margin-bottom: 0;
+          padding: 1.2rem 0 0.8rem;
+          &.cancel-item, &.success-item, &.done-item {
+            &::before, &::after {
+              content: '';
+              position: absolute;
+            }
+          }
+          // 도전 취소
+          &.cancel-item, &.done-item {
+            position: relative;
+            &::after {
+              z-index: 2;
+              content: '도전 취소';
+              left: 50%;
+              top: 50%;
+              font-weight: $fontBold;
+              @include fontHeight(1.4);
+              // color: $white;
+              color: $black;
+              // border-radius: .2rem;
+              // background-color: $black;
+              box-sizing: border-box;
+              transform: translate(-50%, -50%);
+            }
+            .progress-bg {
+              &::after {
+                content: '';
+                z-index: 1;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                background-color: rgba($white, .8);
+                opacity: 0.89;
+              }
+            }
+          }
+          // 도전성공
+          &.success-item {
+            position: relative;
+            &::before {
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              width: calc(100% + 4.8rem);
+              height: 100%;
+              margin: 0 -2.4rem;
+              background: url(#{$img-path}/mydata/visual/bucket_success_bg.png) no-repeat 0 0 / 100% auto;
+            }
+            .progress-bg {
+              &::after {
+                content: '도전 성공';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: flex;
+                // align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                padding-top: 12rem;
+                font-weight: $fontBold;
+                @include fontHeight(1.4);
+                color: $white;
+                box-sizing: border-box;
+                background: rgba(#0095be, .8) url(#{$img-path}/mydata/visual/bucekt_success_icon.png) no-repeat 50% 4.3rem / 5rem 6.6rem;
+                z-index: 2;
+              }
+            }
+          }
+          // 도전 종료
+          &.done-item {
+            &::after {
+              content: '도전 종료';
+            }
+          }
+        }
+      }
+      .bucket-body {
+        .bucket-total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 1.2rem;
+          .total {
+            font-weight: $fontMedium;
+            @include fontHeight(2);
+            color: $black;
+          }
+        }
+        .table-list {
+          padding: 1.6rem 1.6rem 0.8rem;
+          border-radius: 0.4rem;
+          background: $bgWarmGray;
+        }
+        // 목표금액,목표충전횟수
+        .goal-group {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 3.2rem;
+          dl {
+            display: flex;
+            // flex: 0 1 auto;
+            flex-direction: column;
+            + dl {
+              position: relative;
+              &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                display: block;
+                width: 1px;
+                height: 2rem;
+                background: #d8d8d8;
+                transform: translateY(-50%)
+              }
+            }
+          }
+          .goal-amount {
+            padding-right: 2rem;
+          }
+          .goal-charge {
+            padding-left: 2rem;
+          }
+          dt, dd {
+            @include fontHeight(1.4);
+            text-align: center;
+          }
+          dt {
+            color: $gray080;
+          }
+          dd {
+            font-weight: $fontMedium;
+          }
+        }
+      }
+    }
+    // 버킷 목표금액 입력
+    .bucket-input-area {
+      padding-top: 1.4rem;
+      margin-bottom: 1rem;
+      .btn-area {
+        padding-top: 2.2rem;
+        padding-bottom: 1.6rem;
+        margin: 0 -0.8rem;
+        border-bottom: .1rem solid $gray030;
+      }
+    }
+    // 버킷리스트 상세
+    .bucket-detail {
+      // 도전가능
+      &.detail-view {
+        .bucket-detail-header {
+          padding-top: 2rem;
+        }
+        .bucket-detail-body {
+          margin-top: 3.2rem;
+          .bucket-img-area {
+            margin: 0 -2.4rem;
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+      // 응모형 
+      &.detail-draw {
+        .bucket-detail-header {
+          padding-top: 2rem;
+        }
+        .bucket-detail-body {
+          margin-top: 3.2rem;
+        }
+      }
+      // 도전형
+      &.detail-challenge {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% + 5.6rem);
+        margin-top: -5.6rem;
+        .bucket-detail-header {
+          margin: 0 -2.4rem;
+        }
+        .header-title-area {
+          position: absolute;
+          bottom: 3.2rem;
+          padding: 0 2.4rem;
+          width: 100%;
+          &.type2 {
+            bottom: 2.4rem;
+          }
+          a {
+            color: $white;
+            &::after {
+              content: '';
+              position: relative;
+              top: .2rem;
+              display: inline-block;
+              width: 2rem;
+              height: 2rem;
+              background: url(#{$img-path}/common/icons/default/icon_20_arrow1_wh.svg) no-repeat 100% 0 / 100% auto;
+              transform: rotate(90deg);
+            }
+          }
+        }
+        // 도전형 10월
+        &.detail-challenge.v10 {
+          display: flex;
+          flex-direction: column;
+          height: calc(100% + 5.6rem);
+          margin-top: -5.6rem;
+          .bucket-detail-header {
+            margin: 0 -2.4rem;
+            .graph-area {
+              padding-top: 2rem;
+              .label-group {
+                .label {
+                  flex: 1;
+                }
+              }
+            }
+          }
+          .header-title-area {
+            position: absolute;
+            bottom: 3.2rem;
+            padding: 0 2.4rem;
+            width: 100%;
+            &.type2 {
+              bottom: 2.4rem;
+            }
+            a {
+              color: $white;
+              &::after {
+                content: '';
+                position: relative;
+                top: .2rem;
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                background: url(#{$img-path}/common/icons/default/icon_20_arrow1_wh.svg) no-repeat 100% 0 / 100% auto;
+                transform: rotate(90deg);
+              }
+            }
+          }
+        }
+        .bucket-detail-body {
+          margin-top: 3.2rem;
+          .body-text-area {
+            padding: 3.2rem 0 1.6rem;
+            .text {
+              font-weight: $fontLight;
+              @include fontHeight(1.8);
+              color: $black;
+              +.text {
+                padding-top: 0.2rem;
+              }
+            }
+          }
+        }
+        .bucket-detail-info {
+          .card-body {
+            padding-top: 3.6rem;
+            padding-bottom: 4.2rem;
+            .bucket-total {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding-bottom: 1.2rem;
+              .total {
+                font-weight: $fontMedium;
+                @include fontHeight(2);
+                color: $black;
+              }
+            }
+          }
+        }
+        // 10월버전
+        .bucket-detail-info.v10 {
+          .card-body {
+            padding-top: 0;
+            padding-bottom: 4.2rem;
+          }
+          .bucket-success {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 16.8rem;
+            margin-bottom: -0.4rem;
+            padding-top: 2.4rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+            text-align: center;
+            border-bottom: 1px solid $gray030;
+            &::after, &::before {
+              content: '';
+              display: block;
+            }
+            &::after {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: calc(100% + 4.8rem);
+              height: 100%;
+              margin: 0 -2.4rem;
+              background: url(#{$img-path}/mydata/visual/bucket_success_bg2.png) no-repeat 0 0 / 100% auto;
+            }
+            &::before {
+              z-index: 2;
+              width: 6.2rem;
+              height: 8.3rem;
+              margin-bottom: 1.6rem;
+              background: url(#{$img-path}/mydata/visual/bucekt_success_icon2.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          .bucket-total {
+            padding-top: 3.6rem;
+          }
+          .goal-group {
+            display: flex;
+            margin-top: 1.2rem;
+            margin-bottom: 2.4rem;
+            .goal-amount {
+              flex: 0 0 11.4rem;
+            }
+            dt {
+              color: $gray080;
+            }
+            dd {
+              font-weight: $fontMedium;
+            }
+          }
+          .table-list {
+            margin-top: 3.2rem;
+            padding-top: 0;
+            border-top: 0;
+          }
+        }
+      }
+      .bucket-detail-footer {
+        padding-top: 1.6rem;
+        padding-bottom: 2rem;
+        .footer-refer-area {
+          padding: 1.6rem;
+          background-color: $bgLightGray;
+          border-radius: 0.4rem;
+          @include fontHeight(1.4);
+          ul {
+            li {
+              position: relative;
+              padding-left: 1.4rem;
+              color: $gray080;
+              + li {
+                margin-top: 0.8rem;
+              }
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0.8rem;
+                left: 0;
+                display: block;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 0.4rem;
+                background-color: $gray080;
+              }
+            }
+          }
+        }
+      }
+      // header
+      &-header {
+        position: relative;
+        &.white {
+          .title {
+            color: $white;
+          }
+          .date {
+            color: $white;
+          }
+          .text {
+            color: $white;
+          }
+          .sub-title {
+            color: $white;
+            &.type2 {
+              dl {
+                dt {
+                  color: $gray050;
+                }
+              }
+            }
+          }
+        }
+        .header-img-area {
+          position: relative;
+          width: 100%;
+          padding-top: 88.89%;
+          // padding-bottom: 67.7%;
+          overflow: hidden;
+          &.type2 {
+            height: inherit;
+            padding-top: 100%;
+          }
+          img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:after {
+            position: absolute;
+            top: 0;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.68);
+          }
+        }
+        .tag-area {
+          .tag-end {
+            display: none;
+            width: 4.3rem;
+            height: 2.6rem;
+            background: url(#{$img-path}/common/icons/default/icon_tip_end.png) no-repeat 0 0 / 4.3rem auto;
+          }
+        }
+        .title {
+          padding-top: 0.8rem;
+          font-weight: $fontMedium;
+          @include fontHeight(2.2);
+          color: $black;
+        }
+        .text {
+          padding-top: 0.6rem;
+          @include fontHeight(1.6);
+          .task-money {
+            margin-left: 0.4rem;
+            font-weight: $fontMedium;
+          }
+        }
+        .date {
+          padding-top: 0.6rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+        .sub-title {
+          padding-top: 2rem;
+          @include fontHeight(1.4);
+          color: $black;
+          &.type2 {
+            display: flex;
+            padding-top: 2.4rem;
+            dl {
+              display: flex;
+              margin-right: 2.8rem;
+              dt {
+                margin-right: 0.6rem;
+              }
+              dd {
+                font-weight: $fontMedium;
+              }
+            }
+          }
+        }
+        .graph-area {
+          padding-top: 3.2rem;
+          .graph-bar {
+            height: 0.6rem;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 0.3rem;
+            .active-bar {
+              background-image: linear-gradient(to right, #00c2ff 2%, #009eeb 100%);
+              border-radius: 0.3rem;
+            }
+          }
+          .label-group {
+            padding-top: 0.8rem;
+            .label {
+              @include fontHeight(1.4);
+              color: $gray070;
+              &.active-label {
+                color: $skyBlue100;
+              }
+            }
+          }
+        }
+      }
+    
+      // 종료
+      &.end {
+        &.detail-draw {
+          .bucket-detail-header {
+            padding-top: 1.6rem;
+            .header-title-area {
+              .title, .date, .sub-title {
+                color: $gray070;
+              }
+              .title {
+                padding-top: 1.2rem;
+              }
+            }
+          }
+          .bucket-detail-body {
+            position: relative;
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: rgba(0,0,0,0.7);
+            }
+          }
+        }
+        .bucket-detail-header {
+          .tag-area {
+            .tag {
+              margin-right: 0.8rem;
+            }
+            .tag-end {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+    //  버킷리스트 pay머니 계좌 연결
+    .bucket-pay-connect {
+      padding-top: 1.6rem;
+      .list-group {
+        margin: 0 -0.8rem;
+        .form-radio-label {
+          .item-area {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // 투데이>신용관리
+    .financial-connecting-document {
+      .section-header {
+        height: 32.2rem;
+        padding-top: 3.2rem;
+      }
+      .deco {
+        height: 14rem;
+        margin: 0 -2.4rem;
+        background: none;
+        // background-position: 0 50%;
+        // background-image: url(#{$img-path}/mydata/visual/visual_connect_document.gif);
+        // background-size: 100% auto;
+      }
+    }
+    .financial-connecting-result {
+      .section-header {
+        height: 32.2rem;
+        padding-top: 3.2rem;
+      }
+      .deco {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 14rem;
+        margin: 0 -2.4rem;
+        background-position: 100% 50%;
+        background-image: url(#{$img-path}/mydata/visual/visual_connect_result.png);background-size: 100% auto;
+      }
+    }
+    // 신용정보분석 그래프
+    .credit-point-area {
+      position: relative;
+      margin-top: 4rem;
+      margin-bottom: .8rem;
+      padding-top: 6rem;
+      .credit-point {
+        height: 1rem;
+        border-radius: .2rem;
+        background-image: linear-gradient(to right, #0ac0c6, #3be2bb);
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -.5rem;
+          display: block;
+          width: .1rem;
+          height: 2rem;
+          border-right: .1rem dashed $black;
+          transform: translateX(-50%);
+        }
+        [class*=point-] {
+          position: absolute;
+          top: 0;
+          dt {
+            @include fontHeight(1.4);
+            color: $gray080;
+          }
+          dd {
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+          }
+        }
+        .point-average {
+          left: 50%;
+          text-align: center;
+          transform: translateX(-50%);
+        }
+        .point-high {
+          right: 0;
+          text-align: right;
+        }
+      }
+    }
+    // 투데이>신용관리>신용점수올리기
+    .credit-pointup-info {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding-top: 3.2rem;
+      .deco {
+        flex: 0 0 auto;
+        height: 15rem;
+        margin: 2.4rem -2.4rem;
+        background: url(#{$img-path}/mydata/visual/visual_creditup_info.png) no-repeat 50% 50% / 100% auto;
+      }
+    }
+    // 투데이>신용관리>신용정보비교
+    .credit-info-comparison {
+      .card {
+        &:first-of-type {
+          .card-header {
+            padding-top: 3.2rem;
+          }
+        }
+        .card-header {
+          padding-top: 4.8rem;
+          .card-title {
+            font-weight: $fontLight;
+            @include fontHeight(2.2);
+          }
+        }
+        .card-body {
+          padding-bottom: 4.8rem;
+        }
+      }
+    }
+    // 투데이>신용관리>신용점수 관리 Tip
+    .document {
+      .item-title-lg {
+        + .item-text {
+          margin-top: 1.6rem;
+        }
+      }
+      .item-text {
+        + .item-text {
+          margin-top: 1.2rem;
+        }
+      }
+    }
+    // 투데이>신용관리>신용평가정보
+    .credit-rate-info {
+      .tab-slot,.section {
+        height: 100%;
+      }
+      .section {
+        display: flex;
+        flex-direction: column;
+      }
+      .card {
+        &:nth-child(1) {
+          .card-header {
+            padding-bottom: 4.8rem;
+            .card-title {
+              font-weight: $fontLight;
+              @include fontHeight(2.2);
+            }
+            +.card-body {
+              margin-top: -2.8rem;
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 2.8rem;
+          // 210720 금액+원 가운데정렬을 위해
+          .item-title-money {
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+      .caution {
+        margin-bottom: 0;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+      }
+      .no-data {
+        padding-top: 9.2rem;
+        padding-bottom: 10.8rem;
+        .message {
+          margin-top: 1.6rem;
+          @include fontHeight(1.6);
+        }
+      }
+      .card-info {
+        .card-header {
+          .card-title {
+            font-weight: $fontLight;
+            @include fontHeight(2.2);
+          }
+        }
+      }
+      .label-group .price {
+        font-weight: $fontBold;
+      }
+    }
+    // 투데이>통신요금
+    .communication-charge {
+      // 고객정보
+      .my-info {
+        padding-top: .8rem;
+        .card-header {
+          padding-bottom: 3.2rem;
+        }
+        .card-body {
+          padding-bottom: 0;
+        }
+        .user-name {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+        }
+        .total-payment {
+          font-weight: $fontMedium;
+          @include fontHeight(2.6);
+        }
+        .btn-text.btn-icon {
+          font-weight: $fontMedium;
+        }
+        .date {
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+      }
+    }
+    .charge-month {
+      .btn.btn-text.btn-icon {
+        span {font-weight: $fontMedium}
+      }
+      .total-payment-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3.6rem 0 1.6rem;
+        .total-payment {
+          font-weight: $fontMedium;
+          @include fontHeight(2.6);
+        }
+        [class*=status-] {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;;
+          width: 6.5rem;
+          height: 2.6rem;
+          @include fontHeight(1.3);
+          color: #fff;
+          border-radius: .2rem;
+        }
+        .status-tobe {
+          color: $purple90;
+          background-color: rgba($purple90, .1);
+        }
+        .status-complete {
+          color: $blue080;
+          background-color: rgba($blue080, .1);
+        }
+      }
+    }
+    
+  }
+  // 투데이>연말정산
+  .income-deduction {
+    // common
+    .btn-line.btn-sm {
+      .text-xs {
+        @include fontHeight(1.3);
+      }
+    }
+    .list-dot {
+      li {
+        padding-left: .6rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+        &:before {
+          top: .7rem;
+        }
+        +li {
+          margin-top: .4rem;
+        }
+      }
+    }
+    .card {
+      .card-header {
+        .card-title {
+          @include fontHeight(2);
+        }
+        .card-desc {
+          p {
+            margin-top: .8rem;
+            @include fontHeight(1.4);
+            color: $gray080;
+          }
+        }
+      }
+      .card-body {
+        padding-bottom: 5.2rem;
+      }
+      .list-group {
+        .list-header {
+          padding-top: 5.2rem;
+          .list-title {
+            display: inline-flex;
+            align-items: center;
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+            .tooltip-wrap {
+              top: -.2rem;
+              margin-left: .4rem;
+            }
+          }
+          .item-title {
+            font-weight: $fontBold;
+          }
+          .item-title-money {
+            @include fontHeight(1.6);
+          }
+          .money-unit {
+            @include fontHeight(1.4);
+          }
+        }
+        .list-body {
+          margin-top: .4rem;
+          .item-left {
+            .item-title {
+              font-weight: $fontRegular;
+              @include fontHeight(1.6);
+              color: $black;
+            }
+          }
+          .item-right {
+            .btn-arrow {
+              @include fontHeight(1.4);
+              color: $black;
+            }
+          }
+        }
+      }
+      .income-info {
+        margin-top: 3.6rem;
+        .text {
+          @include fontHeight(1.8);
+          color: $gray090;
+          strong {
+            font-weight: $fontBold;
+            color: $black;
+          }
+        }
+        .text-sm {
+          margin-top: 1.2rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+      }
+      .income-tip {
+        margin-top: 1.4rem;
+        margin-bottom: 3.2rem;
+        strong {
+          font-weight: $fontBold;
+        }
+        .text-sm {
+          @include fontHeight(1.6);
+          + .text-md {
+            margin-top: 1.2rem;
+          }
+        }
+        .text-md {
+          @include fontHeight(1.8);
+        }
+      }
+    }
+    .graph-area {
+      margin-top: 2.8rem;
+      margin-bottom: 4.2rem;
+      &.model {
+        .label-group {
+          height: 4rem;
+          .label {
+            @include fontHeight(1.4);
+          }
+        }
+      }
+      .label-group {
+        position: relative;
+        display: block;
+        height: 6rem;
+        .label {
+          position: absolute;
+          display: inline-block;
+          width: auto;
+          padding-bottom: 1.2rem;
+          @include fontHeight(1.6);
+          color: $darkBlue50;
+          text-align: center;
+          transform: translateX(-50%);
+          .arrow {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: .7rem solid $bgDarkBlue;
+            border-left: .4rem solid transparent;
+            border-right: .4rem solid transparent;            
+            transform: translateX(-50%);
+          }
+          strong {
+            font-weight: $fontBold;
+          }
+          &.type2 {
+            position: static;
+            transform: inherit;
+            .arrow {
+              bottom: .8rem;
+            }
+          }
+        }
+      }
+      .graph-bar {
+        height: 4rem;
+        margin: 0;
+        border-radius: 0;
+        background-color: #e4e4eb;
+        .active-bar {
+          border-radius: 0;
+          background-color: rgba($darkBlue80, .8);
+          &.type2 {
+            background-color: rgba($blue080, .8);
+          }
+          span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+            color: $white;
+          }
+        }
+      }
+    }
+    .info-area {
+      margin-top: 2.8rem;
+      margin-bottom: 2.2rem;
+      padding: 2rem 2rem 2.4rem;
+      border-radius: .4rem;
+      background-color: #f4f7fc;
+      .graph-area {
+        margin-top: 0;
+      }
+      .graph-bar {
+        background-color: #d0dae6;
+      }
+      .income-tip {
+        margin-bottom: 0;
+        .text-md {
+          margin-top: 1.4rem !important;
+          padding-top: 1.6rem;
+          border-top: 1px solid #e7e9ee;
+        }
+      }
+      .graph-standard .max span {
+        background-color: #f4f7fc;
+      }
+      .label-group {
+        z-index: 1;
+      }
+      .dash-line {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 6rem;
+        width: .1rem;
+        height: 4rem;
+        border-left: 1px dotted rgba($line3, .5);
+        transform: translateX(-50%);
+      }
+      .label-limit .dash-line {
+        top: -5.4rem;
+      }
+    }
+    @mixin make-infoarea($info-header-image, $info-body-color, $strong-line-color, $graph-bg, $graph-active-bar, $tip-border) {
+      .info-area2 {
+        .info-header {
+          background-image: url('#{$img-path}/mydata/visual/income_deduction_' + $info-header-image +'.png');
+          strong::after {
+            background-color: $strong-line-color;
+          }
+        }
+        .info-body {
+          background-color: $info-body-color;
+        }
+        .graph-area {
+          +.income-tip {
+            margin-top: 3.7rem;
+            padding-top: 2.8rem;
+            border-top: 1px solid $tip-border;
+          }
+        }
+        .graph-standard {
+          .max {
+            border-color: #2c3548;
+            span {
+              background-color: $info-body-color;
+            }
+          }
+        } 
+        .graph-area {
+          .graph-bar {
+            background-color: $graph-bg;
+            .active-bar {
+              background-color: $graph-active-bar
+            }
+          }
+        }
+      }
+    }
+    .info-area2 {
+      padding-top: 3.2rem;
+      .info-header {
+        min-height: 7.4rem;
+        font-weight: $fontLight;
+        @include fontHeight(2);
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+        background-size: auto 7.4rem;
+        strong {
+          position: relative;
+          display: inline-block;
+          font-weight: $fontBold;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 1.3rem;
+          }
+        }
+      }
+      .info-body {
+        margin: 0 -2.4rem;
+        padding: 2.8rem 2.4rem 0;
+        .graph-area {
+          margin: 0;
+          .label-group {
+            height: 4.4rem;
+            .label-zero {
+              text-align: right;
+              transform: translateX(-100%);
+              .arrow {
+                left: calc(0% + 4px);
+              }
+            }
+            .label-left {
+              text-align: left;
+              transform: translateX(calc(0% - 4px));
+              .arrow {
+                left: 0%;
+                transform: translateX(0%);
+              }
+              &.label-use {
+                transform: translateX(calc(0% - 4px));
+                .arrow {
+                  left: calc(0% + 4px);
+                }
+                .dash-line {
+                  left: calc(0% + 4px);
+                  transform: translateX(0%);
+                }
+              }
+            }
+            .label-right {
+              text-align: right;
+              transform: translateX(-100%);
+              .arrow {
+                left: 100%;
+              }
+              &.label-standard {
+                .arrow {
+                  transform: translateX(-100%);
+                }
+                .dash-line {
+                  left: 100%;
+                  transform: translateX(100%);
+                }
+              }
+              &.label-use {
+                // transform: translateX(calc(-100% + 4px));
+                .arrow {
+                  left: calc(100% - 4px);
+                }
+                .dash-line {
+                  left: 100%;
+                }
+              }
+            }
+            .label-full {
+              text-align: right;
+              transform: translateX(-100%);
+              .arrow {
+                left: calc(100% - 4px);
+              }
+              &.label-use {
+                .arrow {
+                  transform: rotate(180deg) translateX(100%);
+                }
+              }
+            }
+          }
+        }
+      }
+      .graph-standard {
+        .max {
+          border-color: #2c3548;
+        }
+      }
+      .income-tip {
+        margin-top: 0;
+        margin-bottom: 2.4rem;
+        padding-bottom: 2.8rem;
+        text-align: center;
+        .tip-text {
+          font-weight: $fontBold;
+          @include fontHeight(1.8)
+        }
+        .tip-text-sm {
+          margin-top: 1.2rem;
+          @include fontHeight(1.4);
+          color: $darkBlueGray;
+          word-break: keep-all;
+        }
+      }
+    }
+    .info {
+      position: relative;
+      top: 5rem;
+      z-index: 5;
+      display: inline-block;
+      height: 2.4rem;
+      padding: .5rem .8rem 0;
+      font-weight: $fontMedium;
+      @include fontHeight(1.2);
+      color: #fff;
+      border-radius: .4rem;
+      background-color: $bgDarkBlue;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -1.1rem;
+        display: inline-block;
+        width: 11px;
+        height: 12px;
+        background: url(#{$img-path}/common/bg_tooltip_tail6.png) no-repeat 0 0 / 100% auto;
+        transform: translateX(-50%) rotate(180deg);
+      }
+    }
+    .graph-standard {
+      .max {
+        position: relative;
+        height: 1rem;
+        margin-top: 1.2rem;
+        color: $darkBlue50;
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+        border-color: $black;
+        span {
+          position: absolute;
+          left: 50%;
+          padding: 0 1.2rem;
+          @include fontHeight(1.4);
+          background-color: $white;
+          transform: translateX(-50%);
+          strong {
+            font-weight: $fontBold;
+          }
+        }
+      }
+    }
+    // 카드
+    .card-income {
+      .card-header {
+        padding-top: 5.6rem;
+        padding-bottom: 0;
+      }
+      .info-body {
+        .graph-area {
+          position: relative;
+          height: 12.6rem;
+          padding-top: 4.3rem;
+          .label-group {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            z-index: 1;
+            .dash-line {
+              display: block;
+              position: absolute;
+              left: 50%;
+              top: 4.3rem;
+              width: .1rem;
+              height: 4rem;
+              border-left: 1px dotted rgba($line3, .5);
+              transform: translateX(-50%);
+            }
+            .label-standard {
+              left: 25%;
+              top: 0;
+            }
+            .label-use {
+              bottom: 0;
+              padding-top: 1.2rem;
+              padding-bottom: 0;
+              .arrow {
+                top: 0;
+                transform: rotate(180deg) translateX(50%);
+              }
+              .dash-line {
+                top: -4.9rem;
+              }
+            }
+          }
+        }
+      }
+      .graph-area {
+        position: relative;
+        height: 16.6rem;
+        padding-top: 6rem;
+        .label-group {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          .label-standard {
+            left: 25%;
+            top: 0;
+          }
+          .label-limit {
+            bottom: 0;
+            padding-top: 1.2rem;
+            padding-bottom: 0;
+
+            .arrow {
+              top: 0;
+              transform: rotate(180deg) translateX(50%);
+            }
+          }
+        }
+        &.model {
+          height: auto;
+          margin-bottom: 0;
+          padding-top: 4rem;
+          .label-group {
+            height: auto;
+            .label-standard {
+              left: calc(30.77% + 1px)
+            }
+            .label-limit {
+              left: calc(30.77% + 2px + 37.18% + 2px);
+              top: 0;
+              bottom: auto;
+              padding-top: 0;
+              padding-bottom: 1.2rem;
+              .arrow {
+                top: auto;
+                bottom: 0;
+                transform: rotate(0) translateX(-50%);
+              }
+            }
+          }
+          .graph-tip {
+            position: relative;
+            top: -4rem;
+            height: 19.6rem;
+            margin-bottom: -.8rem;
+            color: $darkBlue40;
+            [class*=part] {
+              position: absolute;
+              z-index: 1;
+              top: 0;
+              display: block;
+              height: 100%;
+              padding-top: 8.6rem;
+              @include fontHeight(1.4);
+              text-align: center;
+              strong {
+                font-weight: $fontBold;
+              }
+            }
+            .part1 {
+              width: 30.77%;
+              background-image: linear-gradient(to bottom, rgba(76, 143, 187, 0.2), rgba(76, 143, 187, 0));
+            }
+            .part2 {
+              width: 37.18%;left: calc(30.77% + 2px);
+              background-image: linear-gradient(to bottom, rgba(90, 160, 141, 0.2), rgba(90, 160, 141, 0), rgba(108, 47, 191, 0));
+            }
+            .part3 {
+              width: 30.77%;left: calc(30.77% + 2px + 37.18% + 2px);
+              background-image: linear-gradient(to bottom, rgba(76, 143, 187, 0.2), rgba(76, 143, 187, 0));
+            }
+            .deduction-apply {
+              position: absolute;
+              bottom: 0;
+              display: block;
+              width: 100%;
+              padding-bottom: 1.2rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+              text-align: center;
+            }
+          }
+        }
+      }
+      @include make-infoarea(
+        $info-header-image: card,
+        $info-body-color : #fffdf3,
+        $strong-line-color : rgba(#f4db45, 0.2),
+        $graph-bg: #e6e2d0,
+        $graph-active-bar: #f4db45,
+        $tip-border: rgba(#e6e2d0, .5),
+      );
+    }
+    // 주택자금
+    .housing-fund {
+      @include make-infoarea(
+        $info-header-image: housingfund,
+        $info-body-color : $bgLightBlue,
+        $strong-line-color : rgba(#3561ff, 0.1),
+        $graph-bg: $bgSteelBlue,
+        $graph-active-bar: rgba(#5d6994, .8),
+        $tip-border: rgba($bgSteelBlue, .5),
+      );
+      .graph-area {
+        &.model {
+          .label-group {
+            height: 4rem;
+            .label-limit {
+              left: calc(40%)
+            }
+          }
+        }
+      }
+    }
+    // 연금
+    .pension-income {
+      @include make-infoarea(
+        $info-header-image: pension,
+        $info-body-color : #f3f5ee,
+        $strong-line-color : rgba(#d3e789, 0.3),
+        $graph-bg: #dbe2c2,
+        $graph-active-bar: rgba(#a5c23e, .8),
+        $tip-border: rgba(#dbe2c2, .5),
+      );
+      .info-area {
+        padding-top: 0;
+      }
+      .info-area2 {
+        .graph-standard .max {
+          border-color: rgba(#344200, .4);
+        }
+      }
+      .pension-income-graphic {
+        position: relative;
+        .graph-area {
+          margin: 0;
+        }
+        .label-group {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 6.6rem;
+          .label {
+            width: 40%;
+            bottom: .5rem;
+            font-size: 1.4rem;
+            color: $darkBlue50;
+            &.label-standard1 {
+              left: 41.5%;
+            }
+            &.label-standard2 {
+              left: calc(80.5% - 1px)
+            }
+          }
+        }
+        .table-area {
+          position: relative;
+        }
+        .table-bg-area {
+          [class*=table-bg] {
+            position: absolute;
+            top: 6.7rem;
+            width: 19.23%;
+            height: calc(100% - 3rem);
+            &::after {
+              content: '';
+              position: absolute;
+              top: -7px;
+              right: -1px;
+              display: block;
+              width: 1px;
+              height: calc(100% - 3rem);
+              background: $black;
+            }
+          }
+          .table-bg1 {
+            left: 22%;
+            background-image: linear-gradient(to bottom, rgba(63, 174, 171, 0.2), rgba(63, 174, 171, 0.02) 92%, rgba(15, 143, 140, 0), rgba(108, 47, 191, 0));
+          }
+          .table-bg2 {
+            left: 41.5%;
+            background-image: linear-gradient(to bottom, rgba(90, 160, 141, 0.2), rgba(90, 160, 141, 0.02) 92%, rgba(90, 160, 141, 0), rgba(108, 47, 191, 0));
+            &::after {
+              display: none;
+            }
+          }
+          .table-bg3 {
+            left: 61%;
+            background-image: linear-gradient(to bottom, rgba(76, 143, 187, 0.2), rgba(76, 143, 187, 0));
+          }
+          .table-bg4 {
+            left: 80.5%;
+            background-image: linear-gradient(to bottom, rgba(76, 96, 187, 0.2), rgba(83, 76, 187, 0));
+            &::after {
+              display: none;
+            }
+          }
+        }
+        table {
+          width: 100%;
+          margin-bottom: 3.2rem;
+          thead {
+            th {
+              padding: 3.2rem 0 1.2rem;
+              font-weight: $fontBold;
+              @include fontHeight(1.6);
+              text-align: inherit;
+              color: $darkBlue50;
+            }
+            th, td {              
+              border-bottom: 1px solid $black;
+            }
+          }
+          tbody {
+            th,td {
+              height: 5.8rem;
+              border-bottom: 1px solid $gray030;
+            }
+            th {
+              width: 22%;
+              font-weight: $fontMedium;
+              font-size: 1.2rem;
+              text-align: inherit;
+              color: $darkBlue40;
+            }
+            td {
+              width: 19.5%;
+              font-size: 1.1rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .pension-graph {
+        display: flex;
+        flex-wrap: wrap;
+        color: $darkBlue50;
+        dt {
+          position: relative;
+          width: 4.8rem;
+          font-weight: $fontBold;
+          @include fontHeight(1.4);
+          span {
+            position: absolute;
+            top: 0;
+            min-width: 4rem;
+            text-align: center;
+          }
+          &:nth-child(1) {
+            span {
+              top: inherit;
+              bottom: 7.2rem;
+            }
+          }
+        }
+        dd {
+          width: calc(100% - 4.8rem);
+          .graph-area {
+            margin-top: 0;
+          }
+          &:nth-child(2) {
+            .graph-area {
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
+      .more-area {
+        padding-top: 2rem;
+        padding-bottom: 2.2rem;
+        text-align: center;
+        border-top: 1px solid $gray030;
+      }
+    }
+    // 보험
+    .insurance-income {
+      @include make-infoarea(
+        $info-header-image: insurance,
+        $info-body-color : #f4f4ff,
+        $strong-line-color : rgba(#9696de, .3),
+        $graph-bg: #dcdcfc,
+        $graph-active-bar: rgba(#8080d8, .8),
+        $tip-border: rgba(#dcdcfc, .5)
+      );
+      .graph-area {
+        &.model {
+          .label-group {
+            .label-standard {
+              left: calc(30.77% + 1px)
+            }
+            .label-limit {
+              left: calc(35.9% + 0px)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.financial-list {
+  margin: 0 -.6rem;  
+}
+
+// 비회원
+.mydata.today {
+  // 마이데이터연결
+  // 마이데이터 가입현황 확인 안내
+  .guide-check {
+    padding-top: 2rem;
+    section + section {
+      padding-top: 2.4rem;
+      border-top: 1px solid $gray030;
+    }
+    .guide-check1 {
+      padding-bottom: 3.2rem;
+      text-align: center;
+      p {
+        @include fontHeight(1.8);
+        strong {
+          font-weight: $fontBold;
+        }
+      }
+      .deco {
+        display: inline-flex;
+        align-items: center;
+        height: 2.9rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+        border-radius: 1.4rem;
+        background-color: rgba(#f46f51, .1);
+        span {
+          margin-left: .2rem;
+          font-weight: $fontBold;
+          @include fontHeight(1.4);
+          color: #f46f51;
+        }
+      }
+    }
+    .guide-check2 {
+      p {
+        @include fontHeight(1.4);
+        text-align: center;
+        color: $gray090;
+        strong {
+          font-weight: $fontBold;
+        }
+      }
+    }
+    .guide-check-list {
+      margin: 2rem 0 2.8rem;
+      .num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 0.8rem;
+        font-size: 1.2rem;
+        line-height: 1.67;
+        color: #fff;
+        border-radius: 50%;
+        background-color: #f46f51;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        height: 5.2rem;
+        padding: 0 0 0 1.4rem;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+        border-radius: .8rem;
+        background-color: $bgWarmGray;
+        + li {
+          margin-top: .8rem;
+        }
+      }
+    }
+    .guide-check3 {
+      p {
+        margin-bottom: 1.4rem;
+        @include fontHeight(1.4);
+        color: $gray090;
+        strong {
+          font-weight: $fontBold;
+        }
+      }
+    }
+  }
+}
+
+// 신용관리
+.mydata.today {
+  // 신용관리>메인
+  &.today-credit {
+    .card {
+      .card-header {
+        padding-top: 4.8rem;
+      }
+      .card-body {
+        padding-bottom: 4.8rem;
+      }
+      &.credit-point {
+        .card-header {
+          padding-top: 4rem;
+          .tooltip-wrap {
+            top: 1px;
+          }
+        }
+        .card-body {
+          padding-bottom: 4rem;
+        }
+      }
+      // 신용정보분석
+      &.credit-comparison {
+        .card-header {
+          // padding-top: 4.8rem;
+          margin-bottom: 2.2rem;
+        }
+        .credit-comparison-swiper {
+          margin: 0 -2.4rem;
+          .splide {
+            .splide__track {
+              padding-bottom: 2.4rem;
+            }
+            .splide__pagination {
+              bottom: 0;
+              width: calc(100% - 4.8rem);
+              height: .4rem;
+              border-radius: .2rem;
+              background-color: $bgLightBlue;
+              li {
+                flex: 1;
+                height: 100%;
+              }
+              .splide__pagination__page {
+                width: 100%;
+                transform: scale(0.2);
+                &.is-active{
+                  // width: 33.33%;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: .2rem;
+                  background-color: $steelGray;
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 1.6rem 2rem;
+            background-color: #f4f7fc;
+            word-break: keep-all;
+          }
+          .deco {
+            display: block;
+            width: 2.6rem;
+            height: 3.6rem;
+            font-size: 2.6rem;
+          }
+          .finance {
+            display: flex;
+            align-items: center;
+            margin-top: 4.8rem;
+            margin-bottom: .2rem;
+            @include fontHeight(1.4);
+            color: $black;
+            img {
+              vertical-align: baseline;
+            }
+            .icon {
+              position: relative;
+              top: -.2rem;
+            }
+          }
+        }
+        }
+      // 신용평가 정보
+      &.credit-info {
+        .card-header {
+          padding-bottom: 1.2rem;
+        }
+        .card-body {
+          .table-list {
+            margin-bottom: 2rem;
+            padding: 2rem 2rem 1.2rem;
+            dt, dd {
+              margin-bottom: .8rem;
+            }
+            dd {
+              font-weight: $fontMedium;
+            }
+          }
+          // 210720 금액+원 가운데정렬을 위해
+          .item-title-money {
+            position: relative;
+            top: 1px;
+          }
+        }
+        .banner-area {
+          margin-top: 2.8rem !important;
+        }
+      }
+      // 내 대출 현황
+      &.my-loan {
+        .card-body {
+          padding-bottom: 2.8rem !important;
+        }
+        .list-group {
+          .item-area {
+            padding-top: 2.8rem;
+            padding-bottom: 2rem;
+          }
+          .item-area-bottom {
+            padding-left: 4.8rem;
+            padding-bottom: 2.8rem;
+            .btn {
+              width: 100%;
+            }
+          }
+        }
+        .no-data {
+          padding-top: 4.8rem;
+          padding-bottom: 3.6rem;
+        }
+        &.v10 {
+          .list-group {
+            .item-area {
+              padding-bottom: 2.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 신용관리>신용점수
+  .credit-point.tab-slot {
+    .card {
+      .card-header {
+        padding-top: 4.4rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.2);
+        .card-title {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .card-credit-point {
+      .card-desc {
+        position: relative;
+        p.text-sm {
+          margin-top: .8rem;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          color: $gray070;
+        }
+      }
+      .card-body {
+        padding-bottom: 4rem;
+      }
+    }
+    .table-list {
+      .table-list-header {
+        padding-top: 4.8rem;
+        align-items: center;
+        dt {
+          flex-basis: inherit;
+          min-width: calc(100% - 8.2rem);
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+        }
+        dd {
+          flex-basis: inherit;
+          min-width: 8.2rem;
+        }
+      }
+      .table-list-body {
+        padding-top: 2rem;
+        dt, dd {
+          @include fontHeight(1.4);
+        }
+      }
+    }
+  }
+  // 정보전송요구
+  &.rating-system {
+    .tooltip-guide {
+      bottom: 13.3rem;
+      left: 2.4rem;
+      opacity: 0;
+      transition: all .2s;
+      &.is-active {
+        bottom: 14.3rem;
+        opacity: 1;
+      }
+      .img-area {
+        width: 24.8rem;
+        height: 8.5rem;
+        .tooltip-delete {
+          top: 1.2rem;
+          right: 1.6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,20 +1,24 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
+import routerGuide from '@/router/routes/guide.router'
 import routerPages from '@/router/routes/pages.router'
-import routerMembers from '@/router/routes/members.router'
-import routerPosts from '@/router/routes/posts.router'
 import { setupRouterGuard } from '@/router/guard.config'
 
+const guideComponent = () => import('@/views/_guide/listIA.vue')
+
 const routes: Array<RouteRecordRaw> = [
+  routerGuide,
   routerPages,
-  routerMembers,
-  routerPosts,
   {
     path: '/',
     redirect: '/pages/main',
     meta: {
       title: 'HomeMain'
     }
+  },
+  {
+    path: '*',
+    component: guideComponent
   }
 ]
 

@@ -1,0 +1,107 @@
+//layout
+html, body {
+  height: 100%;
+}
+#app {
+  height: 100%;
+}
+#page {
+  height: 100%;
+  #header {
+    display: none;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 2.4rem;
+  &.floating {
+    // 하단버튼 full 2개일 때
+    &.type2 {
+      .content-body {
+        padding-bottom: 14.4rem;
+      }
+      .content-footer {
+        .btn-area {
+          display: block;
+          .btn {
+            width: 100%;
+            & + .btn {
+              margin-left: 0;
+              margin-top: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    .content-body {
+      padding-bottom: 8rem;
+    }
+    .content-footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 50;
+      transition: bottom .1s ease-in-out;
+      .btn-area {
+        margin: 0;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,0), #fff 14%);
+      }
+    }
+  }
+  &.floating2 {
+    .content-body {
+      padding-bottom: 11.4rem;
+    }
+    .content-footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0px -.4rem .6rem 0 rgba(0, 0, 0, .05);
+      .btn-area2 {
+        padding: 2rem 1.6rem 0;
+        text-align: right;
+        .btn {
+          color: $gray080;
+        }
+      }
+      .btn-area {
+        margin: 0;
+        .btn {
+          box-shadow: 0 .6rem 1.2rem 0 rgba(22, 25, 36, .5);
+        }
+      }
+    }
+  }
+}
+.content-header {
+  padding-top: 2rem;
+}
+.content-body {
+  &.full-body {
+    height: 100%;
+  }
+  &.full-body2 {
+    height: calc(100% - 8rem);
+  }
+  &.full-body3 {
+    height: calc(100% - 6.4rem);
+  }
+}
+.content-footer {
+  margin-top: auto;
+  .btn-area {
+    margin: 0 -2.4rem;
+    padding: 1.6rem;
+    .btn {
+      font-weight: $fontMedium;
+      span {
+        font-weight: $fontMedium;
+      }
+    }
+  }
+}

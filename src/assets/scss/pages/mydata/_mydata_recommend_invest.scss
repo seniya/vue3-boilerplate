@@ -1,0 +1,186 @@
+// 자산>금융추천>투자
+.mydata.recommend {
+  .offer-invest {
+    // 메인 스와이퍼
+    .main-invest-swiper {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 2rem;  
+      .slide-inner {
+        padding: 0 2.4rem;
+        .card-header {
+          padding-bottom: 2.8rem !important;
+        }
+        .card-body {
+          padding-bottom: 2rem;
+        }
+        .main-img-area + .btn-area {
+          margin-top:2rem;
+        }
+      }      
+    }
+    // .splide {
+    //   .slide-box {
+    //     .card-body {
+    //       padding-bottom: 0;
+    //     }
+    //   }
+    //   &.bullet {
+    //     padding-bottom: 4rem;
+    //     .splide__pagination {
+    //       bottom:0;
+    //     }
+    //   }
+    // }
+    .chart-wrap {
+      margin-bottom: 4rem;
+    }
+    .offer-invest-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        flex-basis: calc(50% - 0.8rem);
+        padding-bottom: 4.4rem;
+        overflow: hidden;
+        a {
+          display: flex;
+          flex-direction: column;
+        }
+        .img-area {
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          &-inner {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            border-radius: 50%;
+            background-color: $gray050;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+        .list-hashtag {
+          display: block;
+          padding-top: 1.6rem;
+          @include fontHeight(1.2);
+          color: $gray080;
+          + .list-title {
+            padding-top: 0.2rem;
+          }
+        }
+        .list-title {
+          display: block;
+          padding-top: 1.2rem;
+          font-weight: $fontMedium;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .list-text {
+          display: block;
+          padding-top: 0.8rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+          word-break: keep-all;
+        }
+      }
+      &.v12 {
+        .list-hashtag, .list-title, .list-text {
+          text-align: center;
+        }
+      }
+    }
+    .invest-category-header {
+      margin: 0 -2.4rem;
+      padding: 2.3rem 2.4rem;
+      min-height: 25.8rem;
+      text-align: center;
+      background-color: $bgLightGray;
+      .icon  {
+        &-default {
+          display: block;
+          width: 10rem;
+          height: 10rem;
+          background-color: $gray030;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .title {
+        margin-top: 2rem;
+        @include fontHeight(2);
+        font-weight: $fontMedium;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .hashtag {
+        margin-top: 0.2rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        span + span {
+          padding-left: 0.8rem;
+        }
+      }
+      .text {
+        margin-top: 1.6rem;
+        @include fontHeight(1.4);
+        white-space: normal;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;  
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    .invest-category-list {
+      padding: 1.6rem 0;
+      .item-label {
+        .label {
+          display: block;
+          margin-bottom: 1.2rem;
+          color: $black;
+          @include fontHeight(1);
+          font-weight: $fontBold;
+        }
+      }
+      .item-icon {
+        margin-right: 2rem;
+      }
+      .item-left .item-text {
+        margin-top: 1.4rem;
+        color: $black;
+        font-weight: $fontMedium;
+      }
+    }
+  }
+  .invest-complete {
+    .message {
+      &::before {
+        content: '';
+        display: block;
+        width: 9.8rem;
+        height: 9.8rem;
+        margin: 0 auto 2.4rem;
+        background: url(#{$img-path}/mydata/visual/visual_insurance_nodata.png) 0 0 / 100% auto
+      }
+    }
+  }
+}
