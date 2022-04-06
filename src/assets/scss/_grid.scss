@@ -1,0 +1,169 @@
+$padding-x: 24px;
+$grid-gutter-width: 8px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+
+@mixin make-container() {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    // padding-right: $padding-x;
+    // padding-left: $padding-x;
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter / 2;
+    margin-right: -$gutter / 2;
+}
+
+@mixin make-col-ready() {
+    position: relative;
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+}
+
+@mixin make-col($size, $columns) {
+    flex: 0 0 percentage($size / $columns);
+    max-width: percentage($size / $columns);
+}
+
+@mixin make-col-auto() {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+
+@mixin make-col-offset($size, $columns) {
+    $num: $size / $columns;
+    margin-left: if($num==0, 0, percentage($num));
+}
+
+@mixin row-cols($count) {
+    >* {
+        flex: 0 0 100% / $count;
+        max-width: 100% / $count;
+    }
+}
+
+//breakpoint
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min !=0, $min, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, '', '-#{$name}');
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+    %grid-column {
+        position: relative;
+        width: 100%;
+        padding-right: $gutter / 2;
+        padding-left: $gutter / 2;
+    }
+
+    @each $breakpoint in map-keys($breakpoints) {
+        $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+        @if $columns>0 {
+            @for $i from 1 through $columns {
+                .col#{$infix}-#{$i} {
+                    @extend %grid-column;
+                }
+            }
+        }
+
+        .col#{$infix},
+        .col#{$infix}-auto {
+            @extend %grid-column;
+        }
+
+        @include media-breakpoint-up($breakpoint, $breakpoints) {
+            .col#{$infix} {
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+            }
+            
+            .col#{$infix}-auto {
+                @include make-col-auto();
+            }
+
+            @if $columns>0 {
+                @for $i from 1 through $columns {
+                    .col#{$infix}-#{$i} {
+                        @include make-col($i, $columns);
+                    }
+                }
+            }
+
+            .order#{$infix}-first {
+                order: -1;
+            }
+
+            .order#{$infix}-last {
+                order: $columns + 1;
+            }
+
+            @for $i from 0 through $columns {
+                .order#{$infix}-#{$i} {
+                    order: $i;
+                }
+            }
+
+            @if $columns>0 {
+
+                // `$columns - 1` because offsetting by the width of an entire row isn't possible
+                @for $i from 0 through ($columns - 1) {
+                    @if not ($infix==''and $i==0) {
+
+                        // Avoid emitting useless .offset-0
+                        .offset#{$infix}-#{$i} {
+                            @include make-col-offset($i, $columns);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include make-grid-columns();
+
+.container,
+.container-fluid {
+    @include make-container();
+}
+
+.row {
+    @include make-row();
+
+    &.no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+
+        >.col,
+        [class*=col-] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}

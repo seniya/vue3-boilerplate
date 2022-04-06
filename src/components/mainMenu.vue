@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <a-menu v-model:selectedKeys="current" mode="horizontal">
     <a-menu-item key="home">
       <router-link to="/">home</router-link>
@@ -28,18 +29,22 @@
       </a-menu-item-group>
     </a-sub-menu>
   </a-menu>
+=======
+  <div>
+    메뉴영역
+  </div>
+>>>>>>> 7679459afc961a48c78cc175ba95372fcaf99ee1
 </template>
 
 <script lang="ts">
 import { useAuthStore } from '@/service/auth/auth.module'
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
+import { defineComponent, onMounted, onUnmounted } from 'vue'
 import { logger } from '@/utils/instance.logger'
 
 export default defineComponent({
   name: 'mainMenu',
   components: { },
   setup () {
-    const current = ref<string[]>(['home'])
     const authStore = useAuthStore()
 
     onMounted(() => {
@@ -53,7 +58,6 @@ export default defineComponent({
     })()
 
     return {
-      current,
       authStore
     }
   }

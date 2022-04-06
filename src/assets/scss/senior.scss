@@ -1,0 +1,290 @@
+@charset 'UTF-8';
+@import 'value';
+//시니어
+.senior {
+  // 메인 
+
+  // uu-icon 배경으로 변경
+  .search-under-group {
+    .btn-input {
+      &:after {
+        display: block;
+        width: 2.8rem;
+        height: 2.8rem;
+        background: url(#{$img-path}/payfan/icons/default/icon_28_search.png) no-repeat 0 0 / 100% auto;
+        content: '';
+      }
+      .icon {
+        display: none;
+      }
+    }
+  }
+  .card-toolbar {
+    .btn.btn-text {
+      &:after {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background: url(#{$img-path}/payfan/icons/default/icon_20_arrow1.png) no-repeat -.2rem 0 / 100% auto;
+        transform: rotate(90deg);
+        transform-origin: center;
+        -webkit-transform: rotate(90deg);
+        -webkit-transform-origin: center;
+        content: '';
+      }
+      .icon {
+        display: none;
+      }
+    }
+  }
+  // 비로그인
+  .card-logout {
+    padding-bottom: 5.6rem;
+    .title-box {
+      padding: 5.2rem 0 4rem;
+      @include fontHeight(1.8);
+      p {
+        margin-bottom: 1rem;
+      }
+      .main-text {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: $fontBold;
+        @include fontHeight(2.4);
+        span {
+          position: relative;
+          display: inline-block;
+          z-index: 1;
+        }
+        &:after {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: inline-block;
+          width: 100%;
+          height: 1.2rem;
+          background-color: #5454e6;
+          opacity: .1;
+          content: '';
+        }
+      }
+    }
+    .btn-area {
+      .btn.btn-line {
+        border: .2rem solid $black;
+        color: $black;
+      }
+    }
+  }
+  
+  .card-area + .btn-area.pb12 {
+    .btn.btn-line {
+      &:before {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: .6rem;
+        content: '';
+      }
+      .icon {
+        display: none;
+      }
+      &:first-child:before {
+        background: url(#{$img-path}/payfan/icons/default/icon_24_touchpay.png) no-repeat 0 0 / 100% auto;
+      }
+      &:last-child:before {
+        background: url(#{$img-path}/payfan/icons/default/icon_24_barcode.png) no-repeat 0 0 / 100% auto;
+      }
+      .btn-icon + span {
+        padding-top: .2rem;
+      }
+    }
+  }
+  .btn-refresh {
+    padding-left: 3.2rem;
+    &:after {
+      position: absolute;
+      top: .3rem;
+      left: .4rem;
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background: url(#{$img-path}/payfan/icons/default/icon_24_refresh.png) no-repeat 0 0 / 100% auto;
+      content: '';
+    }
+    .icon {
+      display: none;
+    }
+  }
+  .card-icon {
+    position: relative;
+    margin: 4.8rem 0 1.6rem;
+    padding-right: 6rem;
+    .uu-icon {
+      position: absolute;
+      top: 50%;
+      right: 1.2rem;
+      transform: translateY(-50%);
+    }
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 1.2rem;
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      background: url(#{$img-path}/payfan/icons/default/icon_40_graph.png) no-repeat 0 0 / 100% auto;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      content: '';
+    }
+    .icon {
+      display: none;
+    }
+  }
+  .card-slide {
+    margin: 0 -2.4rem;
+    background-color: $bgWarmGray;
+    .slide-inner {
+      width: 100%;
+      height: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  .card-area {
+    position: relative;
+    margin-top: 1.6rem;
+    .card-name {
+      overflow: hidden;
+      width: 100%;
+      padding-right: 4.8rem;
+      color: $black;
+      font-weight: $fontBold;
+      @include fontHeight(2.6);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .card-info {
+      display: flex;
+      padding-top: .4rem;
+      color: $black;
+      @include fontHeight(1.4);
+      align-items: center;
+      .card-item {
+        display: block;
+        & + .card-item {
+          padding-left: .6rem;
+          &.card-logo {
+            display: block;
+            width: 4rem;
+            height: 2rem;
+            padding-left: 0;
+            margin-top: -.2rem;
+            text-align: center;
+            img {
+              max-height: 100%;
+            }
+            & + .card-item {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+    .card-img {
+      position: absolute;
+      top: 2.4rem;
+      right: -1.4rem;
+      display: block;
+      width: 7.6rem;
+      height: 4.8rem;
+      transform: rotate(90deg);
+      img {
+        width: 100%;
+      }
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+    .used-price {
+      padding: 3.2rem 0 3.6rem;
+      color: $black;
+      font-weight: $fontBold;
+      @include fontHeight(1.6);
+      span + span {
+        padding-left: 1rem;
+      }
+    }
+  }
+  .btn-refresh {
+    position: relative;
+    margin-top: 3.2rem;
+    margin-bottom: 1.2rem;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 50%;
+      background-color: $gray020;
+      content: '';
+    }
+    .text {
+      display: block;
+      margin-top: .2rem;
+      padding-left: .8rem;
+      color: $gray090;
+      font-weight: $fontMedium;
+      @include fontHeight(1.6);
+    }
+  }
+  .card .card-header {
+    .card-toolbar {
+      .icon.direction-right {
+        margin-top: -.2rem;
+      }
+    }
+  }
+  .card-group {
+    padding: 4.4rem 0 1.2rem;
+    li + li {
+      border-top: .1rem solid $gray030;
+    }
+    li {
+      &:first-child {
+        .btn-area {
+          padding-bottom: 4rem;
+        }
+      }
+      &:last-child {
+        .card-title {
+          padding-top: 3.6rem;
+        }
+      }
+      &:only-child {
+        .card-title {
+          padding-top: 0;
+        }
+        .btn-area {
+          padding-bottom: 0;
+        }
+      }
+    }
+    
+  }
+  .btn.btn-line {
+    display: inline-flex;
+    height: 5.2rem;
+    align-items: center;
+    justify-content: center;
+    .btn-icon {
+      display: inline-block;
+      margin-right: .6rem;
+    }
+  }
+}

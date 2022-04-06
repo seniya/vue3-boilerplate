@@ -1,0 +1,1532 @@
+//자산
+.mydata {
+  // 자산현황
+  &.status {
+    .btn-line span.fc-red {
+      -webkit-text-fill-color : $red100;
+    }
+    .property-money-list .item-area .item-right{
+      .item-title-money, .money-unit {
+        vertical-align: top;
+      }
+      .money-unit + .item-title-money {
+        padding-left: 0.4rem;
+      }
+    }
+    .bank-balance-list {
+      .item-area > .item-flex + .item-flex {
+        margin-top: 0.8rem;
+        padding-left: 4.8rem;
+      }
+      .text-bar {
+        color: $gray040;
+      }
+    }
+    // 메인
+    &.main {
+      // 공통
+      .section-card-tab {
+        margin-left: -2.4rem;
+        margin-right: -2.4rem;
+        padding-top: 4rem;
+        border-top: 1.2rem solid #eee;
+        .tab-wrap {
+          .tab-menu {
+            padding: 0 2.4rem;
+          }
+          .card {
+            margin-left: 0;
+            margin-right: 0;
+            .list-group {
+              .item-flex + .item-text {
+                margin-top: 0.1rem;
+                padding-left: 4rem;
+              }
+            }
+            &.card-tooltip {
+              .card-sub-title .item-left {
+                overflow: initial;
+                .tooltip-wrap {
+                  top: 0.4rem;
+                }
+              }
+            }
+          }
+          .no-data {
+            padding: 6.2rem 0 7.2rem;
+            .message {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+      .section-card {
+        margin-left: -2.4rem;
+        margin-right: -2.4rem;
+        padding: 0 2.4rem;
+        border-top: 1.2rem solid #eee;
+        border-bottom: 1.2rem solid #eee;
+      }
+      .status-tag {
+        display: inline-block;
+        min-width: 6.5rem;
+        padding: 0.6rem 0.8rem 0.4rem;
+        font-weight: $fontMedium;
+        @include fontHeight(1.2);
+        border-radius: 0.2rem;
+        text-align: center;
+        &.type1 {
+          color: #0073ae;
+          background-color: rgba(#0073ae, 0.1);
+        }
+        &.type2 {
+          color: $purple90;
+          background-color: rgba($purple90, 0.1);
+        }
+        &.type3 {
+          color: $blushGreen100;
+          background-color: rgba($blushGreen100, 0.1);
+        }
+      }
+      .card-sub-title {
+        &.item-area {
+          + .btn-area {
+            margin-top: -0.6rem;
+          }
+        }
+        .item-left {
+          text-overflow: unset;
+          white-space: normal;
+          overflow: auto;
+          word-break: break-all;
+        }
+        .item-right {
+          .btn-arrow {
+            vertical-align: middle;
+          }
+        }
+      }
+      .main-status-list-area {
+        .status-tag {
+          +.list-group {
+            padding-top: 0.4rem;
+          }
+        }
+        +.main-status-list-area {
+          padding-top: 2rem;
+        }
+      }
+  
+      .my-assets {
+        .card-header {
+          padding-top: 2rem;
+          padding-bottom: 2.4rem;
+          .btn-my-assets {
+            align-items: flex-start;
+            &-text {
+              @include fontHeight(1.8);
+            }
+            &-icon {
+              display: block;
+              width: 2rem;
+              height: 2rem;
+              margin-top: 0.2rem;
+            }
+          }
+          .total-count-area {
+            padding-top: 0.2rem;
+            font-weight: $fontBold;
+            .total-count {
+              @include fontHeight(2.6);
+            }
+            .money-unit {
+              @include fontHeight(2.4);
+            }
+          }
+        }
+        .card-body {
+          .list-group {
+            margin-top: 4rem;
+            .list-item {
+              .item-area .item-left .item-title {
+                position: relative;
+                padding-left: 1.6rem ;
+                color: $gray090;
+                font-weight: $fontRegular;
+                &::before {
+                  display: block;
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  width: 0.8rem;
+                  height: 0.8rem;
+                  transform: translateY(-50%);
+                  border-radius: 50%;
+                  background-color: lightgray;
+                  content: '';
+                }
+              }
+              &:first-of-type {
+                .item-area {
+                  .item-left .item-title::before {
+                    background-color: #4abfde;
+                  }
+                }
+              }
+              &:last-of-type {
+                .item-area {
+                  padding-bottom: 0;
+                  .item-left .item-title::before {
+                    background-color: $purple100;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .graph-group {
+          .graph-item {
+            padding: 1.8rem 2rem 2rem;
+            border-radius: 0.6rem;
+            border: 0.1rem solid $gray030;
+            +.graph-item {
+              margin-top: 1.2rem;
+            }
+            .graph-area {
+              .label-group {
+                align-items: center;
+                overflow: hidden;
+                .title {
+                  font-weight: $fontMedium;
+                }
+                .price {
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  .money {
+                    font-weight: $fontBold;
+                    @include fontHeight(1.6);
+                  }
+                  .money-unit {
+                    font-weight: $fontBold;
+                  }
+                }
+              }
+              .graph-bar {
+                margin: 1rem 0 0;
+                height: 1.2rem;
+                background-color: #f2f3f6;
+                &.type1 {
+                  .active-bar {
+                    background-color: #4abfde;
+                  }
+                }
+                &.type2 {
+                  .active-bar {
+                    background-color: $purple100;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.v12 {
+          .card-header {
+            padding-top: 6.2rem;
+            padding-bottom: 2.8rem;
+            justify-content: center;
+            .btn-my-assets {
+              &-text {
+                @include fontHeight(2.2);
+              }
+            }
+          }
+          .card-body {
+            .list-group {
+              margin-top: 4rem;
+              .list-item {
+                .item-area .item-left .item-title {
+                  position: relative;
+                  padding-left: 1.6rem ;
+                  color: $gray090;
+                  font-weight: $fontRegular;
+                  &::before {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    transform: translateY(-50%);
+                    border-radius: 50%;
+                    background-color: lightgray;
+                    content: '';
+                  }
+                }
+                &:first-of-type {
+                  .item-area {
+                    .item-left .item-title::before {
+                      background-color: #4abfde;
+                    }
+                  }
+                }
+                &:last-of-type {
+                  .item-area {
+                    padding-bottom: 0;
+                    .item-left .item-title::before {
+                      background-color: $purple100;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .tab-card-inner {
+        padding-top: 4.8rem;
+        .banner-area {
+          margin-bottom: -3.2rem;
+        }
+      }
+
+      // 10월 자산 메인(회원/비회원 공통)
+      &.v10 {
+        &.content {
+          .card {
+            padding: 0;
+            & + .card {
+              border-top: 0;
+            }
+            &-sub-title {
+              padding-top : 5.4rem;
+              @include fontHeight(2.2);
+              font-weight: $fontBold;
+              text-align: center;
+            }
+            &-sub-text {
+              padding: 1.6rem 0 3rem;
+              @include fontHeight(1.4);
+              color: $gray090;
+              text-align: center;
+            }
+            .card-body {
+              padding-bottom: 0;
+              .img-area {
+                position: relative;
+                img {
+                  display: block;
+                  margin: 0 auto;
+                }
+              }
+            }
+            
+            &:first-of-type {
+              background-color: #f5f5f9;
+              .card-sub-title span{
+                &:first-of-type {
+                  @include fontHeight(2.8);
+                }
+                &:nth-of-type(2){
+                  @include fontHeight(1.6);
+                  background: linear-gradient(to top, rgba(#d7d7e8,0.58) 60%, transparent 40%);
+                }
+              }
+              .card-sub-text {
+                padding-bottom: 4.4rem;
+              }
+              .img-area img {
+                width: 100%;
+              }
+            }
+            &:nth-of-type(2){
+              background-color: #f6f7fb;
+              .card-body {
+                position: relative;
+                padding-bottom: 4rem;
+                .img-area img {
+                  width: 32rem;
+                }
+                .lottie-area {
+                  position: absolute;
+                  left: 50%;
+                  bottom: 2rem;
+                  width: 36rem;
+                  margin-left: -18rem;
+                  z-index: 1;
+                }
+              }
+            }
+            &:nth-of-type(3) {
+              background-color: #6c59f0;
+              .card-sub-title {
+                color: $white;
+                span {
+                  &:first-of-type {
+                    font-weight: $fontLight;
+                  }
+                }
+              }
+              .img-area img {
+                width: 31.2rem;
+              }
+              .splide {
+                &__slide {
+                  .card-sub-title {
+                    opacity: 0%;
+                    transform: translateX(15px);
+                    transition: all 1s;
+                  }
+
+                  .img-area {
+                    opacity: 0%;
+                    transform: translateX(50px);
+                    transition: 1s all .3s;
+                  }
+
+                  &.is-active {
+                    .card-sub-title {
+                      opacity: 1;
+                      transform: translateX(0);
+                    }
+                    .img-area {
+                      opacity: 1;
+                      transform: translateX(0);
+                    }
+                  }
+                }
+                &.bullet {
+                  padding-bottom: 0;
+                }
+                .card-sub-title {
+                  padding-bottom: 3rem;
+                }
+                &__pagination.type1 {
+                  width: auto;
+                  bottom: -2.4rem;
+                  transform: translateX(-3rem);
+                  z-index: 1;
+                }
+                &__autoplay {
+                  position: absolute;
+                  left: 50%;
+                  bottom: -3.2rem;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  margin-left: 1.4rem;
+                  overflow: hidden;
+                  z-index: 1;
+                  button {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    line-height: 0;
+                  }
+                  .splide__play {
+                    transform: translateY(0);
+                    opacity: 1;
+                  }
+                  .splide__pause {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                  }
+                  &.is-play {
+                    .splide__play {
+                      transform: translateY(-100%);
+                      opacity: 0;
+                    }
+                    .splide__pause {
+                      transform: translateY(0);
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+            }
+            &:last-of-type {
+              a {
+                display: flex;
+                flex-direction: column;
+                margin-top: 7.5rem;
+              }
+              .card-sub-title {
+                padding-top: 0;
+                font-weight: $fontLight;
+                .highlight {
+                  font-weight: $fontBold;
+                  background: linear-gradient(to top, #e3f4fa 60%, transparent 40%);
+                }
+              }
+              .bubble-area .bubble2 {
+                padding: 0.8rem 1.3rem;
+                @include fontHeight(1.4);
+                font-weight: $fontBold;
+                color: $white;
+                text-align: center;
+                background-color: $darkBlue70;
+                transform: translateX(-50%);
+                strong {
+                  font-weight: inherit;
+                  color: #9ff8ff;
+                }
+                .bubble-content {
+                  justify-content: center;
+                  align-items: center;
+                }
+                .bubble-tale {
+                  top: 95%;
+                  transform: rotate(180deg);
+                  background-image: url(#{$img-path}/common/bg_tooltip_tail_center.png);
+                }
+              }
+              .img-area img {
+                padding-top: 5.8rem;
+                width: 36rem;
+              }
+            }
+          }
+          .notice-update-section {
+            position: relative;
+            padding-top: 4.8rem;
+            padding-bottom: 8rem;
+            .section-header {
+              text-align: center;
+              h3{
+                @include fontHeight(2.2);
+                color: $darkBlue100;
+                font-weight: $fontBold;
+              }
+              .sub-text {
+                margin-top: 1.6rem;
+                @include fontHeight(1.4);
+                color: $gray080;
+                strong {
+                  color: $black;
+                  font-weight: $fontBold;
+                  background-color: rgba(#476eff, 0.1);
+                }
+              }
+              button {
+                margin-top: 1.2rem;
+                padding: 0 2rem;
+                height: 4.2rem;
+                font-weight: $fontMedium;
+                border-radius: 2rem;
+              }
+            }
+            .section-body {
+              margin-top: 3.6rem;
+              .list-group {
+                padding: 0 2.6rem;
+                .item-icon {
+                  margin-left: 0.8rem;
+                  margin-right: 1.6rem;
+                }
+                .item-left .item-title {
+                  color: $darkBlue90;
+                  font-weight: $fontBold;
+                }
+              }
+            }
+          }
+          .notice-update-tip {
+            position: absolute;
+            bottom: 0rem;
+            left: 0;
+            margin: 0 -2.4rem;
+            padding: 1.2rem 0;
+            width: 100vw;
+            @include fontHeight(1.3);
+            color: $gray080;
+            text-align: center;
+            background-color: $bgLightGray;
+          }
+        }
+      }
+    }
+    // card-header 
+    .card {
+      .card-header {
+        padding-top: 4.8rem;
+        color: $black;
+      }
+      .card-body {
+        padding-bottom: 2.4rem;
+      }
+      // 상세 배너영역 상단 여백
+      .table-list {
+        +.banner-area {
+          padding-top: 1.6rem;
+        }
+      }
+      .body-more {
+        +.banner-area {
+          padding-top: 3.8rem;
+        }
+      }
+      // 자동차, 부동산, 기타자산 목록 헤더
+      &.etc-assets {
+        .card-header {
+          padding-top: 2rem;
+          padding-bottom: 2.8rem;
+          .card-title {
+            font-weight: $fontRegular;
+          }
+        }
+        .total-money-area {
+          padding-bottom: 0.4rem;
+        }
+      }
+
+      // 금융상세
+      &.assets-detail {
+        .item-area.item-flex {
+          padding-top: 2.4rem;
+          padding-bottom: 4rem;
+          .item-title {
+            font-weight: $fontMedium;
+          }
+          .item-text {
+            color: $gray080;
+          }
+        }
+        .money-title-area {
+          padding-bottom: 1.6rem;
+        }
+        .table-list {
+          // 첫번째 테이블만 상단 여백
+          &:first-of-type {
+            padding-top: 2.4rem;
+          }
+          + .btn-list-more {
+            padding-top: 1.6rem;
+            padding-bottom: 2.4rem;
+          }
+          + .banner-area {
+            padding-top: 2rem;
+          }
+          + .banner-btn-area {
+            padding-top: 1.6rem;
+          }
+        }
+        .btn-list-more {
+          + .banner-area {
+            padding-top: 1.2rem;
+          }
+        }
+        .banner-area {
+          padding-bottom: 2.4rem;
+        }
+        .banner-btn-area {
+          padding-top: 0.2rem;
+          padding-bottom: 1.2rem;
+          &:last-of-type {
+            padding-bottom: 2.4rem;
+          }
+        }
+
+        &.type2 {
+          .card-body {
+            padding-bottom: 3.2rem;
+          }
+          + .type2 {
+            .card-body {
+              padding-top: 2.4rem;
+            }
+          }
+        }
+
+        // 카드청구내역
+        &-card {
+          .total-money-area {
+            padding-top: 3.2rem;
+            padding-bottom: 2.4rem;
+          }
+        }
+        .disc {
+          margin-top: 0.8rem;
+          padding: 1.6rem 0 0.8rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+          border-top: 0.1rem solid $gray030;
+        }
+      }
+
+      // 계정목록 조회
+      .assets-account-list {
+        padding-top: 1.2rem;
+        border-bottom: 0.1rem solid $gray030;
+      }
+
+      // pay 상세내역
+      .assets-pay-table-list {
+        padding-top: 3.2rem;
+        .btn-text .text-sm {
+          color: $gray080;
+        }
+      }
+
+      // 상세 - 금융투자 자산현황 상단 타이틀
+      &.assets-invest-card {
+        .card-body {
+          padding-bottom: 3.2rem;
+        }
+        .invest-name-area {
+          padding-top: 3.2rem;
+          padding-bottom: 3.2rem;
+          .invest-name {
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+            color: $black;
+          }
+          .invest-name-detail {
+            padding-top: 0.4rem;
+            @include fontHeight(1.4);
+            color: $gray080;
+            .detail-text {
+              +.detail-text {
+                padding-left: 0.6rem;
+              }
+              strong {
+                color: $gray090;
+              }
+            }
+          }
+        }
+        // 상세 - 금융투자 자산현황 loader-area 
+        .loader-area {
+          margin-top: 3.8rem;
+          margin-bottom: 3.8rem;
+        }
+        + .assets-invest-card {
+          .invest-name-area {
+            padding-top: 4.8rem;
+          }
+        }
+      }
+
+      // 상세 - 대출이자
+      &.assets-loan-interest {
+        .table-list {
+          padding-top: 3.2rem;
+          padding-bottom: 1.6rem;
+          border-bottom: 0.1rem solid $gray030;
+        }
+      }
+
+      // 상세 - 충전정보 목록
+      &.assets-pay-charge {
+        .pay-section {
+          padding-top: 3.2rem;
+          padding-bottom: 1.6rem;
+          border-bottom: 0.1rem solid $gray030;
+          .pay-title {
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+          }
+          .table-list {
+            padding-top: 2.4rem;
+          }
+        }
+      }
+    }
+    
+    // 은행 이름 타이틀
+    .bank-name-area {
+      display: flex;
+      align-items: flex-end;
+      .bank-name {
+        margin-left: 1rem;
+        font-weight: $fontMedium;
+        @include fontHeight(1.6);
+      }
+    }
+    // 금융기관 목록 상단 타이틀 영역
+    // 최상단 타이틀
+    .total-money-top-area {
+      padding-top: 4rem;
+      padding-bottom: 2.4rem;
+      text-align: center;
+      .title-area {
+        .title {
+          @include fontHeight(1.6);
+          color: $black;
+          + .text-total {
+            margin-top: .2rem;
+          }
+        }
+        .text-total {
+          font-weight: $fontBold;
+          @include fontHeight(2.6);
+          color: $black;
+        }
+        .text-refer {
+          margin-top: 1.6rem;
+          color: $gray080;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    // 2번쨰부터 타이틀
+    .total-money-area {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 1.2rem;
+      .title-area {
+        .title {
+          font-weight: $fontLight;
+          @include fontHeight(2.2);
+          color: $black;
+          + .text-total {
+            margin-top: .2rem;
+          }
+          &-sm {
+            font-weight: $fontRegular;
+            @include fontHeight(1.6);
+            color: $black;
+            + .text-total {
+              margin-top: .2rem;
+            }
+          }
+        }
+        .text-total {
+          font-weight: $fontMedium;
+          @include fontHeight(2.6);
+          color: $black;
+        }
+        .text-refer {
+          margin-top: 1.6rem;
+          color: $gray080;
+          @include fontHeight(1.4);
+        }
+        .total-btn-area {
+          margin-top: 3.2rem;
+          .btn {
+            min-width: 14rem;
+          }
+        }
+      }
+      .btn-refresh {
+        margin-left: auto;
+      }
+      + .list-group {
+        padding-top: 1.6rem;
+        padding-bottom: 0.4rem;
+        &.item-gap-24 {
+          padding-top: 1.2rem;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    // 상세 money title
+    .money-title-area {
+      // 210429 mydata 공통으로 이동
+      // padding-bottom: 2.4rem;
+      // text-align: right;
+      // border-bottom: 0.1rem solid $gray030;
+      &.type2 {
+        padding-bottom: 0.8rem;
+        text-align: left;
+        border-bottom: 0;
+      }
+      .title-flex-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      // 210429 mydata 공통으로 이동
+      // .money-title {
+      //   font-weight: $fontMedium;
+      //   @include fontHeight(2.6);
+      //   color: $black;
+      // }
+      .money-sub-title {
+        padding-bottom: 0.4rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+      }
+      .money-text {
+        @include fontHeight(1.2);
+        color: $black;
+        .icon {
+          vertical-align: text-top;
+        }
+      }
+      .tag {
+        padding: 0.4rem 1.2rem;
+        font-weight: $fontBold;
+        @include fontHeight(1);
+        border-radius: 1.4rem;
+        color: $white;
+        &.done {
+          background-color: $bgDarkBlue;
+        }
+        &.expect {
+          background-color: $blue100;
+        }
+        &.unpaid {
+          background-color: $red060;
+        }
+      }
+    }
+
+    // 상세 code-title
+    .code-title-area {
+      padding: 2.4rem 0;
+      border-bottom: 0.1rem solid $gray030;
+      .code-title {
+        font-weight: $fontMedium;
+        @include fontHeight(2.6);
+      }
+      .code-text {
+        @include fontHeight(1.4);
+        color: $gray080;
+        + .code-title {
+          padding-top: 0.4rem;
+        }
+      }
+    }
+
+    // 주식 상세 영역
+    .stock-detail-area {
+      padding-bottom: 4rem;
+      +.stock-detail-area {
+        padding-top: 2.4rem;
+        border-top: 0.1rem solid $gray030;
+      }
+    }
+
+    // 자동차, 부동산 상세 영역
+    .detail-view-area {
+      padding-top: 2rem;
+      // title
+      .detail-title-area {
+        display: flex;
+        padding-bottom: 2.8rem;
+        border-bottom: 0.1rem solid $gray030;
+        
+        .title-left {
+          overflow: hidden;
+          .detail-title {
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .detail-text {
+            padding-top: 0.2rem;
+            @include fontHeight(1.4);
+            color: $gray080;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .sub-text {
+              display: inline-block;
+              +.sub-text {
+                padding-left: 0.6rem;
+              }
+              &-bar {
+                position: relative;
+                padding-left: 1.3rem;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: .2rem;
+                  left: .6rem;
+                  display: inline-block;
+                  width: .1rem;
+                  height: 1.2rem;
+                  background: #d9d9d9;
+                }
+              }
+            }
+          }
+        }
+        .title-right {
+          margin-left: auto;
+          .img-area {
+            width: 7.5rem;
+            height: 4.8rem;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+      &.car {
+        padding-top: 0;
+        .detail-title-area {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 3.2rem 0 0.8rem;
+          border-bottom: 0;
+          .detail-title {
+            margin-top: 2.4rem;
+            @include fontHeight(2);
+            font-weight: $fontMedium
+          }
+          .detail-text {
+            margin-top: 0.2rem;
+            @include fontHeight(1.4);
+            color: $gray080;
+          }
+        }
+      }
+      .total-money-area {
+        margin-top: 2.8rem;
+        margin-bottom: 1.6rem;
+        &.etc {
+          margin-top: 3.6rem;
+        }
+        .title-area {
+          .text-total {
+            @include fontHeight(2.6);
+          }
+          .flu-compare {
+            margin-left: 1.2rem;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+            color: $gray080;
+            vertical-align: middle;
+            .icon {
+              margin-right: 0.2rem;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      .table-list {
+        padding-top: 2.4rem;
+        padding-bottom: 1.4rem;
+        + .table-list {
+          border-top: 0.1rem dashed $gray050;
+        }
+        .table-item-money, .table-money-unit {
+          font-weight: $fontBold;
+          vertical-align: top;
+        }
+        .table-item-money {
+          padding-left: 0.4rem;
+          @include fontHeight(1.6);
+        }
+        .table-money-unit {
+          @include fontHeight(1.4);
+        }
+        dt, dd {
+          margin-bottom: 1rem;
+        }
+        .flu-compare {
+          @include fontHeight(1.6);
+          .icon {
+            margin-right: 0.4rem;
+            vertical-align: middle;
+          }
+          &.increase {
+            color: $red100;
+          }
+          &.decrease {
+            color: $blue100;
+          }
+        }
+      }
+      .detail-etc-area {
+        padding-top: 3.2rem;
+        .table-list {
+          border-top: 0.1rem dashed $gray050;
+          border-bottom: 0.1rem solid $gray030;
+        }
+        .detail-btn-area {
+          padding-top: 2.8rem;
+          text-align: center;
+        }
+      }
+    }
+
+    // 자동차, 부동산 등록 타이틀
+    .register-area {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding-top: 1.2rem;
+    }
+    .register-title-area {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      .register-title {
+        font-weight: $fontLight;
+        @include fontHeight(2);
+        color: $black;
+        +.register-text {
+          padding-top: 1.8rem;
+        }
+      }
+      .register-text {
+        @include fontHeight(1.4);
+        color: $black;
+      }
+      + .search-result-detail-area {
+        padding-top: 0rem;
+        .address-area {
+          &.type2 {
+            .zipcode {
+              padding-top: 2rem;
+            }
+          }
+        }
+      }
+    }
+    .register-car-num {
+      position: relative;
+      padding-bottom: 2.4rem;
+      .invalid-feedback {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .register-center-area {
+      margin-top: -0.3rem;
+      .input-tip-area {
+        padding-top: 0;
+        .tip-text {
+          padding-right: 0.4rem;
+        }
+      }
+      .register-price-area {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.2rem;
+        padding-bottom: 5.2rem;
+        .price-text {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+          color: $black;
+        }
+        .btn-input-modal {
+          .price-text {
+            padding-right: 0.4rem;
+            vertical-align: text-bottom;
+          }
+        }
+      }
+    }
+    .register-bottom-area {
+      margin-top: auto;
+      padding: 2.4rem 0 0.8rem;
+      text-align: center;
+    }
+    .input-tip-area {
+      display: flex;
+      align-items: center;
+      padding-top: 1.2rem;
+      .tip-text {
+        padding-top: 0.1rem;
+        padding-right: 0.2rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+      }
+    }
+    .search-address-area {
+      padding-top: 0.6rem;
+    }
+    .search-result-detail-area {
+      padding-top: 2rem;
+      padding-bottom: 2.8rem;
+      .address-area {
+        padding-bottom: 2.8rem;
+        &.type1 {
+          .address-tag {
+            margin-bottom: 1.6rem;
+          }
+        }
+        &.type2 {
+          padding-top: 3.6rem;
+          border-top: 0.1rem solid $gray030;
+          .address-tag {
+            margin-bottom: 1.6rem;
+          }
+          .address {
+            @include fontHeight(1.4);
+            color: $black;
+          }
+        }
+        .address-big {
+          .address {
+            display: block;
+            @include fontHeight(2.2);
+            color: $black;
+          }
+          .zipcode {
+            display: block;
+            font-weight: $fontBold;
+            @include fontHeight(1.6);
+            color: $black;
+          }
+          &.flex {
+            display: flex;
+            align-items: center;
+            .zipcode {
+              margin-left: auto;
+              padding-left: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    .search-result-list-area {
+      padding-top: 4rem;
+      .result-count {
+        @include fontHeight(1.4);
+        color: $black;
+      }
+      .item {
+        display: block;
+        padding-bottom: 0.2rem;
+      }
+      .address-list {
+        display: flex;
+        align-items: flex-start;
+        + .address-list {
+          padding-top: 0.6rem;
+        }
+        .address {
+          padding-top: 0.3rem;
+          @include fontHeight(1.4);
+          color: $black;
+          word-break: keep-all;
+        }
+        .address-tag {
+          flex: 0 0 6.5rem;
+          margin-right: 1.2rem;
+        }
+      }
+      .zipcode {
+        display: block;
+        padding-bottom: 1.2rem;
+        font-weight: $fontBold;
+        @include fontHeight(1.6);
+        color: $black;
+      }
+    }
+    .search-result-no {
+      .div-center {
+        margin-top: 5.2rem;
+      }
+    }
+    .address-tag {
+      display: block;
+      width: 6.5rem;
+      padding: 0.5rem 0;
+      text-align: center;
+      background-color: rgba(61, 74, 100, 0.1);
+      font-weight: $fontMedium;
+      @include fontHeight(1.2);
+      color: $darkBlue70;
+      border-radius: 0.2rem;
+    }
+    .detail-address-modal-body {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 0.1rem solid $lineGrey3 ;
+      .form-group {
+        padding-bottom: 6.4rem;
+      }
+    }
+
+
+    // 부동산 등록 검색 결과 리스트
+    .register-result-list {
+      padding: 1.6rem 0;
+      li {
+        a { 
+          color: $gray080;
+          span {
+            font-weight: $fontMedium;
+            color: $blue100;
+          }
+        }
+        + li {
+          padding-top: 1.2rem;
+        }
+      }
+    }
+    .my-asset-label-group {
+      padding-top: 1.6rem;
+      margin-bottom: 1.6rem;
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.2rem;
+        .label {
+          display: inline-flex;
+          align-items: center;
+        }
+        .dot {
+          position: relative;
+          top: -.1rem;
+          display: inline-block;
+          width: .8rem;
+          height: .8rem;
+          margin-right: 1.2rem;
+          border-radius: 50%;
+          background-color: #00466d;
+        }
+        .price {
+          font-weight: $fontBold;
+          font-style: normal;
+        }
+      }
+    }
+    // 부동산 조회 실패 > 시세조회 TIP
+    .quotation-tip {
+      ul li {
+        padding-left: 1.2rem;
+        &::before {
+          position: absolute;
+          left: 0;
+          display: block;
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 50%;
+          content: '';
+        }
+      }
+      &-text {
+        li {
+          position: relative;
+          margin-bottom: 1rem;
+          color: $gray090;
+          &::before {
+            top: 0.8rem;
+            background-color: $gray090;
+          }
+        }
+      }
+      &-example {
+        margin-top: 2.4rem;
+        padding: 2rem;
+        @include fontHeight(1.4);
+        background-color: $bgWarmGray;
+        border-radius: 0.8rem;
+        .title {
+          padding-bottom: 1.2rem;
+          border-bottom: 0.1rem solid $gray040;
+        }
+        .text {
+          padding-top: 1.4rem;
+          font-weight: $fontBold;
+          li {
+            position: relative;
+            margin-bottom: 0.4rem;
+            &::before {
+              top: 0.7rem;
+              background-color: $black;
+            }
+          }
+        }
+      }
+      // &.v12 {
+      //   .title {
+      //     border-bottom: 0;
+      //   }
+      //   .addr {
+      //     padding-bottom: 1.6rem;
+      //     @include fontHeight(1.6);
+      //     font-weight: $fontBold;
+      //   }
+      //   .text {
+      //     color: $gray080;
+      //     font-weight: $fontRegular;
+      //     border-top: 0.1rem solid $gray040;
+      //   }
+      // }
+    }
+
+    // 리스트 송금가능/마이너스 공통
+    .list-group .sub-text {
+      &.remitment {
+        color: $blue080;
+      }
+
+      &.minus {
+        color: #a550d4;
+      }
+    }
+
+    // 마이카연동 자동차 등록 
+    .mycar-agreement-area {
+      .acc-item-1 .terms-depth3 {
+        .accordion-panel {
+          &+.accordion-panel {
+            margin-top: 0.2rem;
+          }
+
+          .terms-depth4 {
+            padding-bottom: 1.6rem;
+          }
+        }
+      }
+
+      .acc-item-2 .terms-depth3 {
+        .accordion-panel {
+          &+.accordion-panel {
+            margin-top: 1rem;
+          }
+
+          .terms-depth4 {
+            padding-bottom: 0.6rem;
+          }
+        }
+      }
+
+      .terms-depth3 .accordion-panel {
+        &:last-of-type .terms-depth4 {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    // 내 자산 보텀모달
+    .my-assets-modal {
+      position: relative;
+      .total-assets {
+        z-index: 200;
+        position: fixed;
+        top: 5.6rem;
+        left: 0;
+        width: 100%;
+        padding: 0.8rem 2.4rem 1.6rem;
+        @include fontHeight(1.4);
+        font-weight: $fontMedium;
+        background: $white;
+        .title {
+          margin-right: 0.5rem;
+        }
+        .amounts {
+          color: $darkBlue70;
+        }
+      }
+
+      .my-assets-tab {
+        .tab-menu {
+          z-index: 200;
+          position: fixed;
+          top: 9.9rem;
+          left: 0;
+          width: 100%;
+        }
+        .tab-content {
+          padding: 11.9rem 0.8rem 0.8rem;
+          min-height: 37.5rem;
+        }
+
+        .money-area {
+          margin-bottom: 1.6rem;
+          font-weight: $fontBold;
+          text-align: center;
+
+          .money-num {
+            @include fontHeight(3)
+          }
+
+          .money-unit {
+            @include fontHeight(2.8)
+          }
+        }
+
+        .list-group .item-area {
+          .item-icon {
+            flex-basis: 7.2rem;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.4rem;
+            @include fontHeight(3.2);
+          }
+
+          .item-left {
+            .item-text {
+              color: $black;
+            }
+
+            .item-title {
+              .item-title-money {
+                @include fontHeight(2);
+                font-weight: $fontMedium;
+              }
+
+              .money-unit {
+                @include fontHeight(1.8);
+                font-weight: $fontMedium;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 자산현황 리스트 공통
+    .calendar-detail-list-item .list-group .title-item-flex {
+      margin-bottom: 1rem;
+    }
+
+    // 자동차 조회 완료
+    .car-search-body {
+      height: calc(100% - 8rem);
+      & > section {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .car-search-complete {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 27.5rem;
+        border-bottom: 0.1rem solid $gray030;
+        background-color: $white;
+        .message {
+          margin-top: 2.4rem;
+          @include fontHeight(2.2);
+          font-weight: $fontMedium;
+          text-align: center;
+        }
+      }
+      .car-search-list {
+        position: relative;
+        padding: 1.2rem 0 0.9rem;
+        overflow: hidden;
+      }
+    }
+    &.floating {
+      .car-search-body {
+        height: auto;
+        .car-search-complete {    
+          position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1;
+          &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -1.7rem;
+            left: 0;
+            width: 100%;
+            height: 1.6rem;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+          }
+        }
+      }
+    }
+  }
+}

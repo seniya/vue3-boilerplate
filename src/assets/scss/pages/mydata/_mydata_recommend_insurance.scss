@@ -1,0 +1,806 @@
+// 자산>금융추천>보험
+.mydata.recommend {
+  .offer-insurance {
+    .main-img-area + .btn-area {
+      margin-top: 4rem;
+      .tip-type-etc {
+        left: 50%;
+        transform: translateX(-50%);
+        .tooltip-close {
+          top: 1.5rem;
+        }
+      }
+    }
+    .chart-wrap {
+      position: relative;
+      margin-bottom: 4rem;
+      .chart-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.1rem 1.2rem 1.1rem 1.6rem;
+        border-radius: 0.8rem;
+        -webkit-backdrop-filter: blur(0.4rem);
+        backdrop-filter: blur(0.4rem);
+        box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.15);
+        background-color: rgba(255, 255, 255, 0.8);
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+        .message-emoji {
+          font-size: 2.5rem;
+          +.message-text {
+            margin-left: 0.8rem;
+          }
+        }
+        .message-text {
+          font-weight: $fontMedium;
+          @include fontHeight(1.2);
+        }
+      }
+    }
+    // 메인 스와이퍼
+    .main-insurance-swiper {
+      padding-bottom: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      .slide-inner {
+        padding: 0 2.4rem;
+      }
+      .inner-img {
+        height: 100%;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          height: calc(100% - 12rem);
+          padding-bottom: 0;
+        }
+        .main-img-area {
+          img {
+            max-width: 31.2rem;
+            margin: 0 auto;
+          }
+        }
+      }
+      .inner-chart {
+        .card-body {
+          padding-bottom: 0.8rem;
+        }
+      }
+      .banner-area {
+        margin: 2rem 2.4rem 1.2rem;
+      }
+      .splide.bullet.only-slide {
+        padding-bottom: 2.4rem;
+      }
+    }
+    // 메인 부족 보험 추천
+    .main-insurance-recommend {
+      .card-body {
+        padding-bottom: 1.2rem !important;
+      }
+      .sub-title {
+        font-weight: $fontLight;
+        @include fontHeight(2.2);
+        &.type2 {
+          padding-top: 5.2rem;
+        }
+        &.type3 {
+          padding-top: 4.8rem;
+        }
+        // 210823 여백추가
+        +.insurance-goods {
+          margin-top: 1.2rem;
+        }
+      }
+      .list-group {
+        padding-bottom: 0.8rem;
+      }
+    }
+    .offer-insurance-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-top: 4rem;
+      li {
+        flex-basis: calc(50% - 0.8rem);
+        padding-bottom: 4rem;
+        .img-area {
+          display: block;
+          position: relative;
+          padding-top: 100%;
+          width: 100%;
+          &-inner {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0.8rem;
+            background-color: $gray050;
+            overflow: hidden;
+          }
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .list-title {
+          display: block;
+          padding-top: 1.2rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+        }
+        .list-text {
+          display: block;
+          padding-top: 0.8rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+      }
+    }
+    // 보맵분석
+    .analysis-list {
+      margin-bottom: 4rem;
+      li {
+        height: 52px;
+        border-radius: 8px;
+        background-color: $white;
+        box-shadow: 0 6px 16px 0 rgba(18, 16, 38, 0.06);
+        + li {
+          margin-top: .8rem;
+        }
+        .item-area {
+          padding-right: 1.6rem;
+          padding-left: 2rem;
+          .item-left {
+            .item-title {
+              font-weight: $fontMedium;
+            }
+          }
+          .item-text {
+            display: flex;
+            .emoji {
+              font-size: 2.1rem;
+            }
+            .sub-text {
+              margin-left: .4rem;
+              font-weight: $fontBold;
+            }
+            .sub-text-bar {
+              padding-left: 1.9rem;
+              &::before {
+                left: 1rem;
+                height: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 보유 보험 분석 리스트
+    .insurance-analysis-area {
+      padding-top: 2.4rem;
+      padding-bottom: 4.4rem;
+      .section-text {
+        @include fontHeight(1.4);
+        strong {
+          font-weight: $fontBold;
+        }
+      }
+      .insurance-analysis-list {
+        padding-top: 2rem;
+        li {
+          padding: 2.8rem 0;
+          border-bottom: 0.1rem solid $gray030;
+          &.point-list-item {
+            border-bottom: 0.1rem dashed $black;
+            .btn-arrow {
+              span {
+                font-weight: $fontBold;
+              }
+            }
+          }
+          .btn-arrow {
+            span {
+              @include fontHeight(1.8);
+              &::after {
+                background: url(#{$img-path}/common/icons/default/icon_16_arrow1.svg) no-repeat 0 0 / 1.6rem 1.6rem;
+              }
+            }
+          }
+          .list-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.2rem;
+            &-item {
+              flex-basis: calc(100% - 2rem);
+              &.right {
+                text-align: right;
+              }
+              .content-item-name {
+                @include fontHeight(1.4);
+                color: $gray080;
+              }
+              .content-item-price {
+                font-weight: $fontBold;
+                @include fontHeight(1.6);
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+      .btn-list-more {
+        padding-top: 2.8rem;
+      }
+    }
+    .all-insurance-list {
+      padding: 1.2rem 0;
+      .item-area {
+        .item-thumbnail {
+          width: 7rem;
+          min-width: 7rem;
+          height: 7rem;
+          margin-right: 2rem;
+        }
+        .item-full .item-text {
+          white-space: normal;                                            
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;  
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          word-break: keep-all;
+        }
+      }
+    }
+    // 보험 
+    // 내 보험
+    .my-insurance {
+      .card-header {
+        padding-top: 2.4rem;
+        padding-bottom: 0.4rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.2);
+        strong {
+          font-weight: $fontMedium;
+        }
+      }
+      .card-body {
+        .item-title {
+          display: -webkit-box;
+          white-space: normal;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;  
+          -webkit-box-orient: vertical;
+        }
+      }
+      .my-insurance-info {
+        padding-bottom: 2.4rem;
+        .table-list {
+          .table-list-header {
+            padding-top: 3.6rem;
+            dt, dd {
+              @include fontHeight(1.6);
+            }
+            dt {
+              color: $gray080;
+              .tooltip-wrap {
+                margin-left: .2rem;
+                vertical-align: super;
+                .tooltip-content {
+                  p {
+                    margin-top: .6rem;
+                    color: $gray090;
+                  }
+                }
+              }
+            }
+            dd {
+              font-weight: $fontBold;
+            }
+            .money-unit {
+              position: relative;
+              top: -.1rem;
+              @include fontHeight(1.4);
+            }
+          }
+          .table-list-body {
+            dt {
+              overflow: hidden;
+              flex-basis: calc(100% - 4rem);
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+            dd {
+              flex-basis: 4rem;
+            }
+          }
+        }
+      }
+    }
+    // 내 보험(보맵 미연동)
+    .my-insurance-list {
+      .item-title {
+        padding-bottom: 0.8rem;
+      }
+      .item-text {
+        + .item-text {
+          padding-top: .2rem;
+        }
+        .sub-text {
+          + .sub-text {
+            font-weight: $fontBold;
+            color: $black;
+          }
+        }
+      }
+    }
+    // 내 보험(보맵연동)
+    .my-insurance-list-agree {
+      padding-bottom: 1.6rem;
+      .item-area {
+        flex-wrap: wrap;
+        .item-text {
+          .sub-text-bar {
+            &::before {
+              height: 1.2rem;
+            }
+          }
+        }
+      }
+      .item-icon {
+        flex: 0 0 100%;
+        height: 2.4rem;
+        margin-bottom: 1.6rem;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    // 내 보험 상태
+    .my-inssurance-status {
+      .card-header {
+        padding-bottom: .4rem;
+      }
+      .card-title {
+        font-weight: $fontMedium;
+        @include fontHeight(2);
+        [class*=status] {
+          position: relative;
+          top: -.2rem;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 4.3rem;
+          margin-left: .4rem;
+          padding: .6rem 0 .4rem;
+          @include fontHeight(1.2);
+          border-radius: 1.3rem;
+        }
+        .status-normal {
+          font-weight: $fontBold;
+          color: $white;
+          background: $darkBlueGray;
+        }
+        .status-termination {
+          font-weight: $fontMedium;
+          color: $darkBlueGray;
+          background: $bgLightBlue;
+        }
+      }
+    }
+    .fit-recommend {
+      height: 21rem;
+      border-radius: 1.2rem 1.2rem 0 0;
+      background-color: $white;
+    }
+    // 카테고리별 보험상품
+    .insurance-category {
+      .card-header {
+        padding-top: 4.8rem;
+        padding-bottom: 1.2rem;
+        .card-desc {
+          margin-top: 2rem;
+          @include fontHeight(2.2);
+        }
+      }
+      .no-data {
+        .message {
+          margin-top: 0;
+          &::before {
+            content: '';
+            display: block;
+            width: 9.8rem;
+            height: 9.8rem;
+            margin: 6rem auto 2.4rem;
+            background: url(#{$img-path}/mydata/visual/visual_insurance_nodata.png) 0 0 / 100% auto
+          }
+        }
+      }
+    }
+  }
+  // 내 보험 보장분석
+  .my-insurane-analysis {
+    margin: 0 -2.4rem;
+    padding-top: 1.6rem;
+    .card {
+      margin: 0;
+      // padding: 0;
+      .card-title {
+        @include fontHeight(2);
+      }
+    }
+    // 분석 정보
+    .analysis-info {
+      .card-header {
+        padding-top: 1.6rem;
+        padding-bottom: 3.2rem;
+        .list-dot-12 {
+          margin-bottom: 2.4rem;
+          li {
+            padding-left: .4rem;
+            font-weight: $fontRegular;
+            color: $gray080;
+            &::before {
+              background-color: $gray070;
+            }
+          }
+        }
+      }
+      [class*=status] {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          bottom: 0;
+          display: block;
+          width: 100%;
+          height: 1.2rem;
+        }
+      }
+      .status-normal::after {
+        background-color: $green20;
+      }
+      .status-lack::after {
+        background-color: $orange20;
+      }
+      .card-body {
+        padding-bottom: 4rem;
+      }
+    }
+    // 분석 정보 상세
+    .analysis-detail {
+      .card-header {
+        padding-bottom: 2.4rem;
+      }
+      .card-desc {
+        margin-top: .6rem;
+        @include fontHeight(1.4);
+        color: $gray080;
+      }          
+      .tooltip-wrap {
+        top: .2rem;
+        .tooltip-content {
+          dl {
+            ~ dl {
+              // margin-top: 1.6rem;
+              dt {
+                padding-top: 1.6rem;
+              }
+            }
+            dt {
+              margin-bottom: .6rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.2);
+              color: $black;
+            }
+            dd {
+              color: $gray090;
+            }
+          }
+          .notes {
+            margin-top: .6rem;
+            color: $blue080;
+          }
+          ul {
+            li {
+              + li {
+                margin-top: 1.6rem;
+              }
+              dl {
+                ~ dl dt {
+                  padding-top: .6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .analysis-praise {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3.6rem;
+        padding-top: 2.8rem;
+        border-top: 1px solid $gray030;
+        .praise-text {
+          font-weight: $fontLight;
+          strong {
+            font-weight: $fontMedium;
+          }
+        }
+        .praise-icon {
+          @include fontHeight(3.6);
+        }
+      }
+    }
+  }
+  // 보장분석 표
+  .analysis-table {
+    width: 100%;
+    th, td {
+      padding: 1.6rem 0 1.6rem;
+      font-weight: $fontMedium;
+      font-size: 1.4rem;
+      text-align: center;
+      border-left: 1px dotted $gray040;
+    }
+    thead {
+      th, td {
+        border-bottom: 1px solid $line2;
+      }
+      th {
+        color: $gray080;
+        &:first-child {
+          border-left: 0;
+        }
+      }
+    }
+    tbody {
+      tr {
+        th, td {
+          padding: 1.6rem 1rem;
+          border-top: 1px solid $gray030;
+        }
+        &:first-child {
+          th, td {
+            border-top: 1px solid $gray030;
+          }
+        }
+      }
+      th {
+        border-left: 0;
+        background-color: $bgLightGray;
+      }
+      .text-sm {
+        font-size: 1.3rem;
+        line-height: 1.38;
+        color: $gray080;
+      }
+    }
+    &.dim {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba($white, .7)
+      }
+    }
+  }
+  // 보장 핏팅
+  .fit-insurance {
+    padding-bottom: 29rem;
+    .card-header {
+      .card-title {
+        @include fontHeight(2);
+      }
+    }
+    .fit-graph {
+      .card-header {
+        padding-top: 2rem;
+        padding-bottom: 2.4rem;
+      }
+      .card-body {
+        padding-bottom: 4rem;
+      }
+    }
+    .analysis-detail {
+      .card-body {
+        padding-bottom: 4rem;
+      }
+    }
+  }
+  // 보장 핏팅 상품
+  .fit-recommend {
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    height: 29rem;
+    padding: 2.4rem 2.4rem;
+    border-radius: 1.2rem 1.2rem 0 0;
+    background-color: $white;
+    box-shadow: 0 0 20px 0 rgba(15, 16, 29, 0.12);
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $gray030;
+      .title {
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .tooltip-wrap {
+        top: .1rem;
+        dl {
+          + dl {
+            margin-top: 1.6rem;
+          }
+          dt {
+            font-weight: $fontMedium;
+            color: $black;
+          }
+          dd {
+            margin-top: .6rem;
+            color: $gray090;
+          }
+        }
+      }
+      .form-group {
+        margin-top: -.4rem;
+        &.form-inline {
+          .form-radio {
+            display: inline-block;
+            margin: 0;
+            + .form-radio {
+              margin-top: 0;
+              margin-left: .4rem;
+            }
+            .form-radio-label {
+              padding-left: 0;
+              @include fontHeight(1.4)
+            }
+          }
+        }
+      }
+    }
+    &-body {
+      .fit-goods {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+        .goods-title {
+          margin-top: .8rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+        }
+        .goods-tag {
+          margin-top: .2rem;
+          margin-bottom: .6rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.2);
+          color: $blue080;
+          span + span {
+            margin-left: .6rem;
+          }
+        }
+        .goods-img {
+          order: -1;
+          img {
+            height: 2rem;
+          }
+        }
+        .goods-join, .goods-certification {
+          font-size: 1rem;
+          color: $gray070;
+        }
+      }
+      .splide__pagination {
+        bottom: 4.8rem;
+      }
+    }
+  }
+  // 보험>내 보험 상세보기
+  .my-insurance-detail {
+    .info-card {
+      .card-body {
+        padding-bottom: 2.4rem;
+      }
+      .item-area {
+        .item-icon {
+          height: 2.4rem;
+          margin-bottom: 2rem;
+          img {
+            height: 100%;
+          }
+        }
+        .item-title {
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          + .item-text {
+            margin-top: .6rem;
+          }
+        }
+        .item-text {
+          color: $gray080;
+        }
+      }
+    }
+    .info-card2 {
+      .card-body {
+        padding-top: 5.2rem;
+        padding-bottom: 0;
+      }
+      .list-group {
+        padding-bottom: 0.4rem;
+        + .list-group {
+          padding-top: 3.2rem;
+          border-top: 1px solid $gray050;
+        }
+        .list-header {
+          padding-bottom: 0;
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          border-bottom: 0;
+        }
+        .list-body {
+          padding-top: 2rem;
+          padding-bottom: 1.6rem;
+          +.list-body {
+            padding-top: 2.8rem;
+            border-top: 1px solid $gray030;
+          }
+        }
+        .table-title {
+          margin-bottom: 2rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6)           
+        }
+        .table-list {
+          dt, dd {
+            margin-bottom: 1.2rem;
+          }
+          dt {
+            color: $gray080;
+          }
+        }
+      }
+    }
+  }
+  // 보맵 설문
+  .insurance-servey-area {
+    padding: 2.4rem 0;
+    .form-group + .form-group {
+      margin-top: 2.4rem;
+    }
+  }
+  .children-num-modal {
+    position: relative;
+    height: 100%;
+    p {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      padding-bottom: 1.6rem;
+      background-color: $white;
+      z-index: 11;
+    }
+  }
+}

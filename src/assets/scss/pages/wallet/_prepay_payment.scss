@@ -1,0 +1,442 @@
+.wallet {
+  // 이용 안내
+  .card-useinfo {
+    word-break: keep-all;
+    //이용안내
+    .guide-title {
+      padding: 3.2rem 0 4rem;
+      h3 {
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(2.2);
+        & + .item-text {
+          padding-top: 1.6rem;
+          @include fontHeight(1.6);
+          color: $gray090;
+        }
+      }
+      .item-list{
+        padding-top: .8rem;
+        li {
+          position: relative;
+          padding: 1.6rem 0 0 1.4rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+          color: $gray090;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 2.2rem;
+            left: 0;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $gray070;
+          }
+        }
+      }
+    }
+    .guide-list {
+      padding: 4rem 0;
+      border-top: .1rem solid $gray030;
+      &:last-child {
+        padding: 4rem 0 2.4rem;
+        border: none;
+      }
+      h4 {
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .item-text {
+        padding-top: 1.6rem;
+        color: $gray090;
+      }
+      .item-list {
+        padding-top: 2.4rem;
+        > li {
+          @include fontHeight(1.6);
+          + li {
+            margin-top: 2.4rem;
+          }
+          position: relative;
+          color: $gray090;
+          font-weight: $fontMedium;
+          p {
+            @include fontHeight(1.4);
+            color: $gray080;
+            font-weight: $fontRegular;
+            &.desc{ 
+              &::before{  
+                display: inline-block; 
+                @include fontHeight(1.2);
+                content:'※';
+              }
+            }
+          }
+        }
+      }
+      ul.item-list {
+        > li {
+          padding-left: .8rem;
+          &::before {
+            content: '';
+            position: absolute;
+            top: .65rem;
+            left: 0;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $black;
+          }
+        }
+      }
+      .line-list {
+        padding-top: 1rem;
+        li {
+          display: flex;
+          margin-top: .6rem;
+          color: $gray080;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          span {
+            display: block;
+            margin-right: .4rem;
+          }
+          &.desc{
+            position: relative;
+            padding-left: 1.1rem;
+            &::before{
+              position: absolute;
+              display: inline-block;
+              top: .2rem;
+              left: 0;
+              @include fontHeight(1);
+              content:'※';
+            }
+          }
+        }
+      }
+      .sub-list {
+        padding-top: 1rem;
+        li {
+          margin-top: .6rem;
+          color: $gray080;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          .sub-text {
+            position: relative; 
+            padding-left: 1.2rem;
+            &::before{
+              position: absolute;
+              display: inline-block;
+              content: '-';
+              left: 0;
+            }
+          }
+          .desc {
+            position: relative; 
+            padding-left: 1.2rem;
+            &::before{
+              position: absolute;
+              display: inline-block;
+              top: .2rem;
+              left: 0;
+              @include fontHeight(1);
+              content:'※';
+            }
+          }
+          span {
+            display: inline-block;
+            margin-right: .4rem;
+          }
+        }
+      }
+    }
+    .guide-useinfo{
+      border-top: 1.2rem solid $gray030;
+      margin: 0 -2.4rem;
+      padding: 2.8rem 2.4rem;
+      background-color: $bgWarmGray;
+      h4 {
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .sub-title {
+        display: block;
+        font-weight: $fontMedium;
+        color: $gray090;
+        @include fontHeight(1.6);
+        padding-top: .4rem;
+        padding-bottom: 2.4rem;
+      }
+      .item-list{
+        // margin-top: -.8rem;
+        li {
+          position: relative;
+          padding: 1.2rem 0 0 1.4rem;
+          @include fontHeight(1.4);
+          &::before {
+            content: '';
+            position: absolute;
+            top: 1.9rem;
+            left: 0;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $gray070;
+          }
+          &:first-child {
+            padding-top: 0;
+            &::before{
+              top: .6rem;
+            }
+          }
+        }
+        & + .sub-title {
+          padding-top: 3.2rem;
+        }
+      }
+      .accordion {
+        .accordion-panel {
+          background-color: $bgWarmGray;
+          &.active {
+            padding-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+    //편의점 충전
+    .guide-charge-title {
+      padding: 3.2rem 0 4.8rem;
+      h3 {
+        color: $black;
+        font-weight: $fontLight;
+        @include fontHeight(2);
+      }
+      .code { 
+        text-align: center;
+        .bar-code {
+          position: relative;
+          margin: 4.8rem auto 2.4rem;
+          max-width: 26.4rem;
+          img {
+            width: 100%;
+            vertical-align: middle;
+          }
+        }
+        .code-number {
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    .guide-charge-list {
+      padding: 4rem 0;
+      border-top: .1rem solid $gray030;
+      h4 {
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .item-text {
+        padding-top: 1.6rem;
+        color: $gray090;
+      }
+      ul.item-list {
+        padding-top: 1rem;
+        li {
+          margin-top: .6rem;
+          color: $gray080;
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          position: relative; 
+          padding-left: 1.2rem;
+          &::before{
+            position: absolute;
+            display: inline-block;
+            content: '-';
+            left: 0;
+          }
+          .sub-text {
+            padding-top: .7rem;
+          }
+          .sub-desc {
+            position: relative; 
+            padding-left: 1.2rem;
+            padding-top: .7rem;
+            &::before{
+              position: absolute;
+              display: inline-block;
+              top: .9rem;
+              left: 0;
+              @include fontHeight(1);
+              content:'※';
+            }
+          }
+        }
+      }
+      ol.item-list {
+        padding-top: 2.4rem;
+        > li {
+          position: relative;
+          color: $gray090;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+          padding-left: 2.2rem;
+          + li {
+            margin-top: 1.2rem;
+          }
+        }
+        &.order-list { 
+          counter-reset: item;
+          list-style-type: none;
+          li {
+            font-weight: $fontRegular;
+            &:before { 
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: inline-block;
+              content: counter(item) "  "; 
+              counter-increment: item;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 잔액 옮기기 - 내용 확인
+  .confirm-area {
+    padding-top: 1.6rem;
+    align-self: flex-start;
+    text-align: left;
+    .input-tooltip {
+      padding-left: 2.8rem;
+      padding-bottom: .8rem;
+    }
+    .input-message {
+      margin-top: .8rem;
+      font-weight: $fontLight;
+      @include fontHeight(2.4);
+      .text {
+        margin-top: 0;
+        font-weight: $fontLight;
+        + .text {
+          margin-top: 1rem;
+        }
+      }
+      .input-text {
+        padding: .2rem .4rem 0;
+        font-weight: $fontMedium;
+        border-radius: .4rem;
+        background: $bgLightBlue;
+      }
+    }
+  }
+  // 결제카드 선택
+  .paycard-list {
+    margin: 0 -.8rem;
+    .form-group.card-type {
+      .form-radio {
+        &:first-child {
+          padding-top: 3rem;
+          &.card-space {
+            padding-top: 3rem;
+          }
+        }
+        &.card-space {
+          padding: 1rem 0;
+        }
+        & + .form-radio {
+          margin: 0;
+        }
+      }
+      .form-radio-input:checked + .form-radio-label {
+        border: .2rem solid $bgDarkBlue2;
+        border-radius: .8rem;
+        box-shadow: .2rem .2rem 1.2rem 0 rgba(0, 0, 0, 0.16);
+      }
+      .form-radio-label {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        // align-items: center;
+        min-height: 8rem;
+        position: relative;
+        width: 100%;
+        padding: 1.6rem 1.8rem 1.4rem;
+        border: .2rem solid transparent;
+        .card-name {
+          overflow: hidden;
+          display: block;
+          padding-right: 11rem;
+          color: $black;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          align-items: center;
+        }
+        .card-number {
+          display: block;
+          padding-top: .4rem;
+          color: $gray080;
+          @include fontHeight(1.4)
+        }
+        .card-img {
+          position: absolute;
+          top: 50%;
+          right: 2rem;
+          width: 2.8rem;
+          height: 4.4rem;
+          transform: translate(-20%, -32%);
+          margin: 0;
+          img {
+            width: 4.4rem;
+            height: 2.8rem;
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+  // 잔액 옮기기
+  .moeny-move-area {
+    padding-top: 3.2rem;
+    .money-title {
+      color: $gray070;
+      @include fontHeight(1.4);
+    }
+    .money-choice {
+      .item-area {
+        padding: .6rem 0;
+        @include fontHeight(2.2);
+        border-bottom: .1rem solid $gray020;
+      }
+    }
+  }
+  &.modal {
+    //옮길 금액 입력
+    .money-move-input {
+      padding: 2.4rem 0 .8rem;
+      .input-helper  {
+        .helper3 {
+          color: $gray070;
+        }
+      }
+      .charge-amount-btns {
+        .row {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          .btn {
+            white-space: nowrap;
+            padding: 0;
+          }
+
+        }
+      }
+    }
+  }
+}

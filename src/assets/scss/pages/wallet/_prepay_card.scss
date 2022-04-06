@@ -1,0 +1,784 @@
+
+.wallet {
+  &.wallet-card {
+    // 신한Pay머니-틴즈,플레이트 
+    // 카드 발급하기 안내
+    .card-issuance {
+      display: flex;
+      flex-direction: column;
+      margin: 0 -2.4rem;
+      .prepay-mobile-card {
+        position: relative;
+        // height: 57.2rem;
+        height : 0;
+        // padding-top : calc(572 / 360 * 100%);
+        padding-top: calc(100vh - 16.6rem);
+        h2 {
+          position: absolute;
+          // top: 11.6rem;
+          top: 11.6vh;
+          width: 100%;
+          text-align: center;
+          font-weight: $fontLight;
+          @include fontHeight(1.8);
+          span {
+            font-weight: $fontMedium;
+            font-style: normal;
+            @include fontHeight(2.4);
+          }
+        }
+        .desc-benefit {
+          position: absolute;
+          // bottom: 4.8rem;
+          bottom: 4.5vh;
+          width: 100%;
+          font-weight: $fontLight;
+          text-align: center;
+          .list-benefit {
+            max-width: 36rem;
+            margin:0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            li{
+              position: relative;
+              padding: .2rem .8rem 0;
+              @include fontHeight(1.4);
+            }
+            em{
+              font-weight: $fontMedium;
+              font-style: normal;
+            }  
+          }
+          .btn-issue {
+            @include fontHeight(1.6);
+            width: 19.6rem;
+            height: 4.8rem;
+            padding: .2rem 2rem 0;
+            color: $white;
+            border-radius: 2.4rem;
+            background: #293143;
+            box-shadow: 2px 6px 16px 0 rgba(0, 0, 0, 0.2);
+            // margin: 3.2rem auto 0;
+            margin: 6% auto 0;
+          }
+        }
+
+        &.prepay-tinz{
+          background: #8035d9 url(#{$img-path}/payfan/visual/wallet/@spay_tinz.png) center center / contain no-repeat;
+          h2 {
+            color: $white;
+          }
+          .desc-benefit {
+            color: $white;
+            .list-benefit {
+              flex-direction: row;
+              justify-content: center;
+              li{
+                // flex: 1 50%;
+                // &:nth-child(1), &:nth-child(3) {
+                //   text-align: right;
+                // }
+                &:nth-child(even) {
+                  // text-align: left;
+                  &::before {
+                    position: absolute;
+                    left: 0;
+                    top: .3rem;
+                    display: block;
+                    content: '';
+                    width: .1rem;
+                    height: 1.2rem;
+                    background-color: $white;
+                    opacity: .3;
+                  }
+                }
+              }
+            }
+            .btn-issue {
+              background: #4d1f82;
+            }
+          }
+        }
+        &.prepay-plate{
+          height : 0;
+          // padding-top : calc(1144 / 720 * 100%);
+          background: url(#{$img-path}/payfan/visual/wallet/@spay_plate.png) center center / cover no-repeat;
+        }
+      }
+      .prepay-mobile-only {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-top: .1rem solid $gray040;
+        padding: 3.2rem;
+        .info-text{
+          font-weight: $fontLight;
+          strong {
+            padding-top: .2rem;
+            @include fontHeight(2);
+          }
+          p {
+            padding-top: 1.8rem;
+            @include fontHeight(1.2);
+            color: $gray080;
+          }
+        }
+        .info-card{
+          width: 9.2rem;
+          text-align: center;
+        }
+        .img-area {
+          margin-bottom: .8rem;
+          img {
+            width: 7.6rem;
+          }
+        }
+        .btn-issue{
+          width: 9.2rem;
+          height: 3.8rem;
+          padding-top: .1rem;
+          border-radius: 1.9rem;
+          border: solid 1px #cccccc;
+          text-align: center;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    .card-introduce{
+      .visual-area {
+        position: relative;
+        height: 48.0rem;
+        margin: 0 -2.4rem;
+        background: url(#{$img-path}/payfan/visual/wallet/visual_shpaymoney.png) no-repeat center center;
+        background-size: cover;
+        color: $white;
+        &.visual-flex{
+          background-image: url(#{$img-path}/payfan/visual/wallet/visual_shpayflex.png)
+        }
+        &.visual-meme{
+          background-image: url(#{$img-path}/payfan/visual/wallet/visual_shpaymeme.png)
+        }
+        // &:before {
+        //   position: absolute;
+        //   display: block;
+        //   content: '';
+        //   width: 100%;
+        //   height: 100%;
+        //   background-color: rgba(0, 0, 0, 0.6)
+        // }
+        h2 {
+          position: absolute;
+          bottom: 11.6rem;
+          left: 2.4rem;
+          font-weight: $fontLight;
+          @include fontHeight(3);
+          span {
+            font-weight: $fontMedium;
+            font-style: normal;
+          }
+        }
+        .text {
+          position: absolute;
+          bottom: 5.6rem;
+          left: 2.4rem;
+        }
+      }
+      .list-benefit-area {
+        li {
+          position: relative;
+          padding: 4.8rem 0;
+          text-align: center;
+          &:not(:first-child):before { 
+              position: absolute;
+              content: '';
+              display: block;
+              top: 0;
+              width: 100%;
+              height: 1px;
+              background-image: linear-gradient(to right,$gray040 33%, rgba(255,255,255,0) 0%);
+              background-position: bottom; 
+              background-size: 8px 3px;/*점선 간격 수정*/
+              background-repeat: repeat-x; 
+          }
+          .text {
+            display: block;
+            @include fontHeight(2);
+            text-align: center;
+            padding-bottom: 1.6rem;
+          }
+          .thumbs {
+            margin: 0 -2.4rem;
+            img {
+              display: block;
+              width: 100%;
+              max-width: 72rem;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+      .list-required-area {
+        border-top: 1.2rem solid $gray030;
+        padding: 4.8rem 2.4rem .4rem;
+        margin: 0 -2.4rem;
+        .title{
+          display: block;
+          @include fontHeight(2.2);
+          padding-bottom: 1.2rem;
+        }
+        .desc-required {
+          dl {
+            padding: 2rem 0 ;
+            &:not(:first-of-type) {
+              border-top: .1rem solid $gray030;
+            }
+            dt {
+              color: $gray080;
+              &.blue100 {
+                color: $blue100;
+              }
+            }
+            dd {
+              padding-top: 1.2rem;
+              word-break: keep-all;
+              .desc {
+                position: relative;
+                padding-left: 1.4rem;
+                margin-top: .6rem;
+                @include fontHeight(1.4);
+                color: $gray080;
+                &::before {
+                  position: absolute;
+                  display: block;
+                  content: '※';
+                  left: 0;
+                }
+              }
+              .blue100 {
+                color: $blue100;
+              }
+            }
+            &.line {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              dd {
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+      .list-sub-area {
+        li {
+          position: relative;
+          padding-left: 1.2rem;
+          color: $gray090;
+          &:before {
+            content: "";
+            position: absolute;
+            top: .7rem;
+            left: .2rem;
+            width: 0.4rem; 
+            height: 0.4rem;
+            border-radius: 50%;
+            background-color: $black;
+          }
+          .sub-text {
+            position: relative;
+            @include fontHeight(1.4);
+            color: $gray080;
+            margin-top: .6rem;
+            &:before {
+              position: absolute;
+              top: 0;
+              left: -1rem;
+              display: block;
+              content: '-'
+            }
+          }
+          .desc {
+            position: relative;
+            @include fontHeight(1.4);
+            color: $gray080;
+            margin-top: .6rem;
+            margin-left: -1.2rem;
+            padding-left: .4rem;
+            &:before {
+              position: absolute;
+              top: 0;
+              left: -1rem;
+              display: block;
+              content: '※'
+            }
+          }
+          + li {
+            margin-top: 1.2rem;
+          }
+          &.blue100 {
+            color: $blue100;
+            &::before {
+              background-color: $blue100;
+            }
+          }
+        }
+      }
+    }
+    // 이용약관
+    .agreement {
+      &.agreement-area{
+        // 틴즈,플레이트 약관동의
+        .terms-title {
+          @include fontHeight(1.4);
+          padding: 2.4rem 0 .6rem;
+        }
+        .terms-depth2 {
+          .list-group {
+            .list-item {
+              // .item-area {
+              //   padding-top: .6rem;
+              //   padding-bottom: .6rem;
+              //   .item-left {
+              //     display: flex;
+              //     align-self: center;
+              //   }
+              // }
+              .terms-depth4 {
+                .item-bg-box {
+                  display: block;
+                  padding: 1.2rem;
+                  margin: 0.2rem 2.8rem 1.6rem 4.2rem;
+                  border-radius: 0.4rem;
+                  background-color: $gray020;
+                  .form-checkbox {
+                    margin-left: -.8rem;
+                    +.form-checkbox {
+                      margin-top: 0.2rem;
+                    }
+                    .form-checkbox-input {
+                      +.form-checkbox-btn {
+                        +.form-checkbox-label {
+                          padding-left: 0.6rem;
+                          font-size: 1.2rem;
+                        }
+                      }
+                    }
+                  }
+                  // 2분할
+                  &.grid {
+                    .form-group {
+                      display: flex;
+                      flex-wrap: wrap;
+                      .form-checkbox {
+                        margin-top: 0rem;
+                        margin-bottom: 0.2rem;
+                        flex-basis: 50%;
+                        &.w-100 {
+                          flex-basis: 100%;
+                        }
+                      }
+                    }
+                  }
+                  .list-group {
+                    .list-item {
+                      padding-top: 0;
+                      +.list-item {
+                        .item-area {
+                          margin-top: .2rem;
+                        }
+                      }
+                      .item-right {
+                        margin: .6rem 0;
+                      }
+                    }
+                  }
+                } 
+              }
+            }
+          }
+        }
+      }
+    }
+    // 카드 디자인 선택
+    .card-select {
+      padding: 0;
+      margin: 0 -2.4rem;
+      .slide-area {
+        .title {
+          padding: 4rem 0 .8rem;
+          font-weight: $fontBold;
+          @include fontHeight(2.4);
+          text-align: center;
+        }
+        .card-desc {
+          color: $gray080;
+          text-align: center;
+        }
+        .splide__slide {
+          .slide-inner {
+            margin: 20rem -5.6rem 5.6rem;
+            .card-img {
+              transform: translate(0, -50%) rotate(90deg);
+              opacity: 0.4;
+              img {
+                max-width: 100%;
+                border-radius: 1rem;
+                box-shadow: 0 1.2rem 2.4rem 0 rgba(56, 59, 90, 0.35);
+                transform: scale(0.8);
+                transform-origin: center;
+              }
+            }
+          }
+          &.is-active {
+            .slide-inner{
+              position: relative;
+              animation: cardMove .1s;
+              .card-img{
+                opacity: 1;
+                img{
+                  max-width: 100%;
+                  border: solid 3px #476eff;
+                  border-radius: 1.8rem;
+                  transform: scale(1);
+                }
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                left: 50%;
+                width: 4rem;
+                height: 4rem;
+                background: $blue100 url(#{$img-path}/common/icons/default/icon_13_checkbox_wh.svg) no-repeat 50% 50% / 2rem auto;
+                border-radius: 50%;
+                transform: translate(-50%, -136%);
+              }
+            }
+          }
+        }
+        .splide__pagination {
+          bottom: 0;
+        }
+      }
+    }
+    @keyframes cardMove {
+      0% {
+        transform: scale(0.8);
+        animation-timing-function: ease-in;
+      }
+      100% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+      }
+    }
+    // 배송지 입력
+    .shipping-area {
+      .form-group {
+        + .form-group {
+          padding-top: 2.4rem;
+        }
+      }
+      .address-text {
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem;
+        p {
+          position: relative;
+          padding-left: 1.4rem;
+          color: $gray090;
+          @include fontHeight(1.4);
+          &::before {
+            content: '';
+            position: absolute;
+            top: .7rem;
+            left: .2rem;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 100%;
+            background-color: $gray070;
+          }
+        }
+      }
+    }
+    // 주소검색
+    .address-area {
+      .guide-text {
+        padding: 1.2rem 0 2.8rem 0;
+        h3 { 
+          font-weight: $fontLight;
+          @include fontHeight(2);
+        }
+      }
+      .search-address-area {
+        padding-top: 0;
+      }
+      .search-result-list-area {
+        .address-list {
+          + .address-list {
+            padding-top: .8rem;
+          }
+        }
+      } 
+    }
+    // 카드 발급
+    .auth-area, .shipping-area {
+      .guide-text {
+        padding: 1.2rem 0 2.8rem 0;
+        h3 {
+          font-weight: $fontLight;
+          @include fontHeight(2);
+        }
+      }
+      .form-group {
+        .input-group + .input-group {
+          padding-top: 1.2rem;
+        }
+      }
+    }
+    // 카드 발급 완료
+    .complete-issued {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      .complete-main {
+        .message {
+          margin-top: 2rem;
+          font-weight: $fontMedium;
+          @include fontHeight(2.2);
+          color: $black;
+          + .btn {
+            margin-top: 2.4rem;
+          }
+        }
+      }
+      .card-img {
+        padding: 8rem 0 6rem;
+        img { 
+          border: 1px;
+          width: 22.2rem; 
+          border-radius: .8rem;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    // 가입정보확인
+    .issued-area{
+      .guide-text {
+        padding: 1.2rem 0;
+        h3 {
+          font-weight: $fontLight;
+          @include fontHeight(2);
+        }
+        &-sub {
+          font-weight: $fontRegular;
+          color: $gray080;
+          @include fontHeight(1.4);
+          padding-top: .4rem;
+        }
+      }
+      .result-info-list {
+        dl {
+          position: relative;
+          width: 100%;
+          padding: 2rem 0;
+          &:not(:first-of-type) {
+            border-top: 1px solid $gray030;
+          }
+        }
+        dt {
+          width: 100%;
+          font-size: 1.4rem;
+          color: $gray070;
+        }
+        dd {
+          font-weight: $fontMedium;
+          min-height: 2.6rem;
+          @include fontHeight(1.8);
+          padding-top: .4rem;
+          &.card-name {
+            width: 85%;
+          }
+          &.card-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5.6rem;
+            height: 3.6rem;
+            text-align: right;
+            transform: rotate(90deg) translateX(45%) translateY(-35%);
+            img {
+              height: 3.6rem;
+            }
+          }
+        }
+      }
+    }
+    // 신한PAY머니-송금할 내용 확인
+    .write-area {
+      .input-message {
+        .text {
+          margin-top: 1rem;
+          word-break: keep-all;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        .text2 {
+          padding: .2rem 0 0 .4rem;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    //송금받기
+    .choice-paymoney {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .complete {
+        flex: 1;
+        overflow: auto;
+        padding: 6rem 0 0;
+      }
+    }
+    //받을머니선택
+    .choice-account {
+      width: 100%;
+      text-align: left;
+      .item-area {
+        .item-left {
+          @include fontHeight(1.8);
+          font-weight: $fontMedium;
+        }
+      }
+      & + .list-group {
+        border-top: 1px solid $gray030;
+      }
+    }
+  }
+  // 완료페이지
+  .complete {
+    //신한Pay머니-송금받기 완료
+    .tooltip-middle {
+      margin-top: 2.4rem;
+      .tooltip-text {
+        color: $gray080;
+        @include fontHeight(1.4);
+      }
+      .tooltip-wrap {
+        margin-top: 1.3rem;
+      }
+    }
+    .complete-area {
+      margin: auto;
+    }
+  }
+  // 모달
+  &.modal{
+    // 신한PAY머니-발급완료충전안내
+    &.charge-guide {
+      .charge-message {
+        @include fontHeight(1.6);
+        padding: 2.4rem 0;
+      }
+      .guide-area {
+        padding: 3rem 0 2.4rem;
+        h2 {
+          color: $gray090;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+        }
+        ul {
+          padding-top: 1.6rem;
+          li {
+            padding-left: 1.2rem;
+            color: $gray080;
+            @include fontHeight(1.4);
+            + li {
+              margin-top: .6rem;
+            }
+          }
+        }
+      }
+    }
+    // 해지 동의
+    .agree-message-guide {
+      @include fontHeight(1.6);
+      font-weight: $fontMedium;
+      padding: 3rem 0 0;
+      + .bottom-agreement {
+        padding-top: 0;
+      }
+    }
+    // facepay start - 결제카드선택 :: 211101 전체메뉴 영역으로 이동. 차후 삭제 예정
+    &.facepay {
+      .modal-content {
+        max-height: calc(100vh - 14rem);
+      } 
+    }
+    .card-filter-group { 
+      position: relative;
+      .card-filter-title{
+        position: sticky;
+        top: 0;
+        padding: .8rem 0;
+        background-color: $white;
+        border-bottom: 1px solid #686868;
+        z-index: 11;
+        .tip {
+          color: $gray080;
+          padding-bottom: 2.8rem;
+        }
+      }
+      .list-group {
+        .list-item {
+          border-bottom: 1px solid $gray030;
+          &:last-child{
+            border-bottom-width: 0;
+          }
+        }
+        .form-radio {
+          label {
+            align-items: center;
+            .form-radio-input {
+              + .form-radio-btn {
+                + .form-radio-label {
+                  display: flex;
+                  flex-direction: column;
+                  padding: .8rem 1.2rem;
+                  .label-title {
+                    color:$black;
+                    font-weight: $fontMedium;
+                    @include fontHeight(1.6);
+                  }
+                  .label-text {
+                    margin-top: .4rem;
+                    color: $gray080;
+                  }
+                  + .item-icon-card-vertical{
+                    margin-top: .6rem;
+                    margin-right: -.8rem;
+                    -webkit-tap-highlight-color : rgba(0,0,0,0);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .no-data {
+        text-align: center;
+        @include fontHeight(1.6);
+        color: $gray080;
+        padding: 4rem 0 4.8rem;
+        p {
+          padding-top: .6rem;
+        }
+      }
+    }    
+    // facepay end
+  }
+}

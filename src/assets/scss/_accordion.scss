@@ -1,0 +1,85 @@
+.accordion-panel {
+  background-color: #fff;
+  .accordion-header-inner {
+    overflow: hidden;
+  }
+  &.type1, &.type2 {
+    & > .accordion-header {
+      & > .accordion-header-inner {
+        position: relative;
+        width: 100%;
+        padding: 2rem 0;
+        padding-right: 3.2rem;
+        text-align: inherit;
+        .ico-toggle, .btn-toggle {
+          position: absolute;
+          transition: all .2s;
+          .icon {
+            display: block;
+          }
+          &.gray{
+            .icon {
+              opacity: 0.2;
+            }
+          }
+        }
+      }
+    }
+    &.active {
+      & > .accordion-header{
+        .ico-toggle, .btn-toggle {
+          transform: rotate(-180deg);
+          &.gray {
+            .icon {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  } 
+  &.type1 {
+    & > .accordion-header {
+      .accordion-header-inner {
+        padding: 2rem 0;
+        padding-right: 3.2rem;
+        .ico-toggle, .btn-toggle {
+          right: 0.3rem;
+          top: 31.25%;
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+    }
+    
+  }
+  &.type2 {
+    & > .accordion-header {
+      .accordion-header-inner {
+        @include fontHeight(1.2);
+        padding: 0.9rem 0;
+        padding-right: 2.8rem;
+        .ico-toggle, .btn-toggle {
+          top: 28.1%;
+          right: 0.6rem;
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+      & + .accordion-content {
+        @include fontHeight(1.2);
+      }
+    }
+  }
+}
+.accordion-content {
+  overflow: hidden;
+  transition: height .3s ease-out;
+  &-enter-active, &-leave-active {
+    //will-change: height;
+    transition: all .2s ease;
+  }
+  &-enter, &-leave-to {
+    height: 0 !important;
+  }
+}

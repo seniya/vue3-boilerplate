@@ -1,0 +1,1201 @@
+//월렛
+.wallet {
+  &.detail {
+    .bg-gray {
+      background-color: $bgLightGray;
+    }
+    // 신분증
+    .identification {
+      &.card {
+        padding: 4rem 2.4rem 2rem;
+        &:last-child {
+          padding-bottom: 4rem;
+        }
+        .card-body {
+          padding-bottom: 0;
+        }
+      }
+      .title {
+        padding-bottom: 2rem;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+        line-height: 2.2rem;     
+      }
+      .mobile {
+        .area {
+          + .area {
+            margin-top: 1.6rem;
+          }
+          position: relative;
+          width: 100%;
+          border-radius: 1.2rem;
+          border: .1rem solid $bgSteelBlue;
+          background-color: $bgLightBlue3;
+          .certificate {
+            display: flex;
+            flex-direction: column;
+            padding: 3.3rem 2rem;
+            .item-top {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .item-left {
+                display: flex;
+                align-items: center;
+                font-weight: $fontMedium;
+                .icon {
+                  margin-bottom: .4rem;
+                }
+              }
+              .item-right {
+                color: $gray090;
+              }
+            }
+            .item-bottom {
+              padding-top: 1rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              .item-left {
+                .item-text {
+                  display: block;
+                  padding-top: 1.2rem;
+                  color: $darkBlue70;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.2);
+                }
+                .banner {
+                  display: block;
+                  padding-top: 1rem;
+                  span {
+                    display: block;
+                    width: 12rem;
+                    min-height: 1.2rem;
+                    border-radius: .6rem;
+                    background-color: $bgSteelBlue;
+                    + span {
+                      margin-top: .8rem;
+                    }
+                    &:first-child{
+                      width: 9.4rem;
+                    }
+                  }
+                }
+              }
+              .item-right {
+                width: 6.4rem;
+                height: 7.3rem;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+            &.type2 {
+              padding: 3.2rem 2rem;
+              .item-top {
+                .item-left {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  .item-title {
+                    display: flex;
+                  }
+                  .item-text {
+                    margin-top: 1.2rem;
+                    color: $gray080;
+                    font-weight: $fontRegular;
+                    @include fontHeight(1.4);
+                  }
+                }
+                .item-right {
+                  width: 7.2rem;
+                  height: 7.2rem;
+                  padding-right: .8rem;
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .explanation {
+        padding-top: 1.2rem;
+        .list-group {
+          padding-top: 0;
+          .list-item {
+            .item-area {
+              align-items: center;
+              padding: 2rem 0;
+              .item-thumbnail {
+                min-width: 4.8rem;
+                width: 5.6rem;
+                height: 5.6rem;
+                img {
+                  background-color: transparent;
+                }
+              }
+              .item-left {
+                .item-title {
+                  @include fontHeight(1.4);
+                  + .item-text {
+                    margin-top: .2rem;
+                  }
+                }
+                .item-text {
+                  @include fontHeight(1.2);
+                }
+              }
+              .item-right {
+                .btn {
+                  box-sizing: border-box;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 신분증-이용안내
+    .guide {
+      h2 {
+        padding: 2.4rem 0;
+        font-weight: $fontMedium;
+        @include fontHeight(2.2);
+      }
+      ul {
+        li {
+          position: relative;
+          padding-left: 1.6rem;
+          color: $gray090;
+          @include fontHeight(1.6);
+          word-break: keep-all;
+          + li {
+            margin-top: 1.6rem;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            top: .65rem;
+            left: .2rem;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $gray090;
+          }
+        }
+      }
+    }
+    // 모바일신분증 - 학생증
+    .mobile-studentcard {
+      .code {
+        padding: 7.2rem 0 4.4rem;
+        .qr-code {
+          width: 10.6rem;
+          height: 10.6rem;
+          margin: 0 auto;
+          img {
+            width: 100%;
+          }
+        }
+        .bar-code {
+          position: relative;
+          margin: 4rem auto 0;
+          width: 27.2rem;
+          height: 8.8rem;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .card {
+        .card-header {
+          padding-top: 3.2rem;
+          padding-bottom: .8rem;
+          .card-toolbar {
+            .btn-line {
+              color: $black;
+            }
+          }
+        }
+        .card-body {
+          .list-group {
+            padding-bottom: 2.8rem;
+            .list-item {
+              .item-area {
+                padding: 0;
+                .item-img {
+                  overflow: hidden;
+                  width: 9.6rem;
+                  height: 12rem;
+                  border-radius: .4rem;
+                  img {
+                    width: 100%;
+                  }
+                }
+                .item-left {
+                  padding: 2rem 2.4rem;
+                  white-space: normal;
+                  .item-title {
+                    margin-bottom: 1.2rem;
+                  }
+                  .item-text {
+                    margin: 0;
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.popup {
+        position: relative;
+        display: flex;
+        height: calc(100% + 3.2rem);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .qr-code {
+          width: 15.6rem;
+          height: 15.6rem;
+          margin: auto auto 0;
+          img {
+            width: 100%;
+          }
+        }
+        .item-message {
+          margin-top: auto;
+          padding-bottom: 8rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+          text-align: center;
+        }
+        .bar-code {
+          height: 36rem;
+          margin-top: auto;
+          img {
+            height: 11.6rem;
+            transform: rotate(90deg) translateX(12.2rem);
+          }
+        }
+        .code-number {
+          margin-top: 3.2rem;
+          @include fontHeight(1.4);
+        }
+      }
+      .bottom-pop-text {
+        padding: 2.4rem 5rem 2.4rem 0;
+        @include fontHeight(1.6);
+      }
+      &.list-no {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        .message {
+          padding-top: 1.6rem;
+          color: $gray080;
+          @include fontHeight(1.6);
+        }
+      }
+    }
+    // 부가서비스
+    .additional { 
+      .additional-content {
+        margin: 0 -2.4rem;
+        padding-bottom: 1.6rem;
+        .tab-menu {
+          position: sticky;
+          top: 0;
+          width: auto;
+          // margin: 0 -2.4rem;
+          padding: 2.4rem 0;
+          z-index: 1;
+        }
+        .tab-slot {
+          padding: 0 2.4rem;
+        }
+        .additional-title {
+          padding-top: 1.6rem;
+          .tip {
+            @include fontHeight(1.4);
+            font-weight: $fontMedium;
+          }
+          .title-area {
+            padding-top: 1.6rem;
+            dt {
+              + dd {
+                position: relative;
+                margin-top: .4rem;
+                .btn-refresh {
+                  position: absolute;
+                  top: -.2rem;
+                  right: 0;
+                  .text-sm {
+                    font-weight: $fontMedium;
+                    padding-top: .2rem;
+                  }
+                }
+              }
+            }
+            .item-title {
+              @include fontHeight(2.6);
+              font-weight: $fontLight;
+            }
+            .item-text {
+              @include fontHeight(1.4);
+              color: $gray080;
+            }
+          }
+        }
+        .additional-list {
+          padding: 4rem 0 1.6rem;
+          
+          .list-group {
+            .list-item {
+              position: relative;
+              .item-area {
+                padding: 2.4rem 0;
+                .item-icon {
+                  margin-right: 1.6rem;
+                }
+                .item-left {
+                  .item-title {
+                    font-weight: $fontRegular;
+                    span {
+                      color: $blue100;
+                    }
+                  }
+                }
+                .item-left-area {
+                  display: flex;
+                  align-items: center;
+                  .item-left {
+                    display: flex;
+                    flex-direction: column;
+                    .num {
+                      margin-top: .4rem;
+                      color: $gray080;
+                      @include fontHeight(1.4);
+                    }
+                  }
+                }
+                .item-right {
+                  .complete-btn {
+                    display: flex;
+                    align-items: center;
+                    min-height: 2.4rem;
+                    padding: 0 1rem;
+                    border: .1rem solid $bgLightBlue2;
+                    border-radius: .2rem;
+                    background-color: $gray020;
+                    span {
+                      color: $steelGray;
+                      @include fontHeight(1.1);
+                      font-weight: $fontMedium;
+                    }
+                  }
+                  .icon-area {
+                    width: 2.4rem;
+                    min-height: 2.4rem;
+                    height: 2.4rem;
+                    .icon {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+              .item-btn {
+                position: absolute;
+                top: 2rem;
+                right: 0;
+                z-index: 1;
+              }
+            }
+          }
+          //NFT 서비스 리스트
+          .list-group-img {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 3.2rem 2rem;
+            margin-bottom: 3.2rem;
+            margin-top: 2rem;
+            min-height: 18rem;
+            .item-box {
+              display: block;
+              width: 100%;
+            }
+            .item-img {
+              position: relative;
+              overflow: hidden;
+              display: block;
+              width: 100%;
+              padding-bottom: 100%;
+              border-radius: 0.4rem;
+              .img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+            .item-desc {
+              padding-top: 1.2rem;
+              .product-text {
+                @include fontHeight(1.4);
+                font-weight: $fontMedium;
+                overflow: hidden;
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+                -webkit-line-clamp: 2; /* ellipsis line */
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+          .btn-service-disconnect {
+            padding: 3rem 0 0;
+            text-align: center;
+            .btn-text {
+              @include fontHeight(1.4);
+              color: $gray080;
+              text-decoration: underline;
+            }
+          }
+          .desc-service-disconnect {
+            @include fontHeight(1.4);
+            padding: 3.2rem 0 .8rem;
+          }
+        }
+        // NFT 비회원, 10월 버전
+        .nft-guest-area {
+          padding: 4.4rem 0 4rem;
+          // .btn-area {
+          //   box-shadow: 0 .4rem .8rem 0 rgba(0, 0, 0, 0.1);
+          //   margin-bottom: 3.2rem;
+          //   .btn-dash {
+          //     flex-direction:column;
+          //     @include fontHeight(1.4);
+          //     font-weight: $fontMedium;
+          //     color: $black;
+          //     height: 17.6rem;
+          //     .icon-area {
+          //       padding: 1rem 1rem .4rem;
+          //       margin-bottom: 1.4rem;
+          //       border-radius: 50%;
+          //       box-shadow: 0 .4rem .8rem 0 rgba(0, 0, 0, 0.1);
+          //     }
+          //   }
+          // }
+          .desc-nft {
+            dt {
+              font-weight: $fontMedium;
+            }
+            dd {
+              &.text-translate {
+                @include fontHeight(1.2);
+                color: $gray080;
+                font-weight: $fontMedium;
+              }
+              &.text-desc {
+                color: $gray090;
+                @include fontHeight(1.4);
+                padding-top: 1.4rem;
+              }
+            }
+          }
+          //10월 오픈 버전
+          .title-teaser {
+            text-align: center;
+            @include fontHeight(1.8);
+            font-weight: $fontLight;
+            .item-img {
+              margin: 0 -2.4rem;
+              padding: 1.4rem 0 2.4rem;
+              .img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        // NFT 카카오톡 미연동
+        .nft-connect-area{
+          .cont-nft-connect{
+            padding: 7.2rem 0 5.6rem;
+            font-weight: $fontMedium;
+            text-align: center;
+            .btn-connect-kakaotalk{
+              display: block;
+              @include fontHeight(1.4);
+              text-align: center;
+              margin: 1.2rem 0 0;
+              padding: 1.2rem 0;
+              border-radius: 4px;
+              border: solid 1px #ffcd69;
+              background-color: #ffe600;
+              .item-text {
+                padding-left: .6rem;
+              }
+            }
+          }
+          .desc-nft {
+            padding: 4rem 0;
+            border-top: 1px solid $gray030;
+            dt {
+              @include fontHeight(1.6);
+              font-weight: $fontMedium;
+            }
+            dd {
+              &.text-translate {
+                color: $gray080;
+                @include fontHeight(1.2);
+                font-weight: $fontMedium;
+              }
+              &.text-desc {
+                color: $gray090;
+                @include fontHeight(1.4);
+                font-weight: $fontRegular;
+                padding-top: 1.4rem;
+              }
+            }
+          }
+        }
+        // NFT 상세
+        .mynft-detail-thumb {
+          background-color: #f4f7fc;
+          padding: 8.8rem 4.8rem 4.8rem;  
+            .item-img {
+            width: 100%;
+            box-shadow: 0 1.6rem 2.4rem 0 rgba(5, 15, 38, 0.3);
+            .img {
+              width: 100%;
+              height: 100%;
+              vertical-align: middle;
+            }
+          }
+        }
+        .mynft-detail-title{
+          @include fontHeight(2.6);
+          font-weight: $fontBold;
+          padding: 4rem 3.2rem .8rem;
+          word-break: break-word;
+        }
+        .mynft-detail-desc{
+          @include fontHeight(1.4);
+          padding: 0 3.2rem .8rem;
+          color: $gray080;
+          word-break: break-word;
+        }
+        .mynft-detail-group {
+          padding-top: 2.4rem;
+          padding-bottom: 3.2rem;
+          &.card {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 3.2rem;
+            padding-right: 3.2rem;
+            + .card {
+              padding-top: 4.8rem;
+            }
+          }
+          .title{
+            @include fontHeight(1.6);
+            font-weight: $fontBold;
+            margin-bottom: .8rem;
+          }
+          .list-group{
+            .list-item{
+              display: flex;
+              flex-direction: column;
+              padding: 1.6rem 0;
+              .item-title{
+                @include fontHeight(1.4);
+                color: $gray080;
+                font-weight: $fontRegular;
+              }
+              .item-text{
+                padding-top: .4rem;
+                color: $black;
+                font-weight: $fontMedium;
+                word-break: break-all;
+                .item-copy {
+                  display: inline-block;
+                  width: auto;
+                  max-width: 100%;
+                  padding: .8rem 1rem .2rem 1.2rem;
+                  border-radius: 4px;
+                  background-color: #f4f7fc;
+                  .text-copy {
+                    display: inline-block;
+                    width: auto;
+                    max-width: calc(100% - 3rem);
+                    padding: .2rem 0;
+                    word-break: break-all;
+                    vertical-align: top;
+                  }
+                  button {
+                    margin-left: .6rem;
+                    margin-top: -.2rem;
+                  }
+                }
+              }
+            }
+          }
+          .list-tag { 
+            display: flex;
+            flex-wrap: wrap;
+            padding: .8rem 0 1.6rem;
+            margin-right: -.8rem;
+            a {
+              @include fontHeight(1.4);
+              flex: none;
+              max-width: 100%;
+              margin: .8rem .8rem 0 0;
+              padding: 0 1.0rem;
+              font-weight: $fontMedium;
+              line-height: 2.8rem;
+              color: $black;
+              border: solid 1px $gray030;
+              border-radius: 1.5rem;
+              box-sizing: border-box;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+    }
+    // 부가서비스-하단 배너
+    .additional-banner {
+      padding-bottom: 1.6rem;
+    }
+    // 통합이용내역-공통
+    // &.combine {
+    //   .content-body {
+    //     overflow: hidden;
+    //   }
+    // }
+    &.floating {
+      .content-body {
+        padding-bottom: 0;
+      }
+    }
+    &.combine {
+      &.content {
+        padding: 0;
+        .content-body {
+          height: 100%;
+          //overflow-y: hidden;
+          .section {
+            //overflow-y: hidden;
+            height: 100%;
+            .absence {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding-top: 6.3rem;
+              padding-bottom: 13rem;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .integration {
+      //overflow: hidden;
+      height: 100%;
+      padding-top: 6rem;
+      .detail-content.btn-type {
+        position: relative;
+      }
+      .active-state {
+        border-radius: 2.6rem;
+      }
+      .splide-active-bar {
+        height: 100%;
+        top: 0;
+      }
+      .tab-menu {
+        position: fixed;
+        top: .8rem;
+        width: calc(100% - 3.2rem);
+        margin: 0 1.6rem;
+        .splide__track {
+          height: 5.2rem;
+          border-radius: 2.6rem;
+          .splide__list {
+            .splide__slide {
+              height: 5.2rem;
+              border-radius: 2.6rem;
+              flex-basis: 24%;
+              &:nth-child(2) {
+                flex-basis: 28%;
+              }
+            }
+          }
+        }
+      }
+      .tab-con {
+        height: 100%;
+        .splide__track {
+          height: 100%;
+          .splide__list {
+            height: 100%;
+            .splide__slide {
+              height: 100%;
+              .tab-panel {
+                //height: calc(100vh - 6rem);
+                //overflow: hidden;
+                .tab-slot {
+                  display: flex;
+                  flex-direction: column;
+                  flex: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 통합이용내역-상단 달력(월)
+    @at-root .ios .wallet.detail .top-sticky {
+      position: absolute;
+      top: 0;
+    }
+    .top-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6.3rem;
+      border-bottom: 0.1rem solid $gray030;
+      background-color: $white;
+      z-index: 2;
+      & + .detail-content {
+        padding-top: 6.3rem;
+      }
+      .tab-remit {
+        margin: 1.2rem 1.6rem 0;
+        padding: 0;
+      }
+      .calendar-detail-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.4rem 2rem 1.6rem 2rem;
+        height: 6.2rem;
+        .btn-prev, .btn-next {
+          width: 2.2rem;
+          height: 2.2rem;
+          .icon {
+            vertical-align: middle;
+          }
+          &:disabled {
+            pointer-events: none;
+            .icon object {
+              display: none;
+            }
+          }
+        }
+      }
+      + .means {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 8.7rem 2.4rem 0;
+        z-index: 1;
+        .btn {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .text-area {
+            .title {
+              color: $bgDarkBlue;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+            }
+            .text {
+              margin-left: .8rem;
+              color: $gray080;
+              font-weight: $fontRegular;
+              @include fontHeight(1.2);
+            }
+          }
+        }
+      }
+      + .absence {
+        margin-top: 6.3rem;
+      }
+    }
+    // 통합이용내역-리스트
+    .detail-content {
+      //height: 100%;
+      background-color: $white;
+      //overflow-y: auto;
+      .card {
+        margin: 0;
+        .card-body {
+          padding-bottom: 1.6rem;
+        }
+        .card-header {
+          padding: 4rem 0 0;
+          .card-title {
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+          }
+        }
+        .card-body {
+          padding-top: .8rem;
+          .list-group {
+            .list-item {
+              .item-area {
+                padding: 2.4rem 0;
+                .item-thumbnail {
+                  &.type2 {
+                    min-width: 7.6rem;
+                    width: 7.6rem;
+                    height: 4.8rem;
+                    margin-right: 2rem;
+                    font-weight: $fontRegular;
+                    border-radius: 0;
+                    img {
+                      border-radius: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.floating-type {
+        .card {
+          &:last-child {
+            padding-bottom: 7.4rem;
+          }
+        }
+      }
+      // 통합이용내역-버튼
+      .item-btn {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1.2rem;
+      }
+      // 통합이용내역-송금/충전
+      &.wait-content {
+        background-color: $bgLightGray;
+        padding: 2.4rem 2rem;        
+        .wait {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 2rem;
+          .icon {
+            margin-bottom: .4rem;
+            + span {
+              margin-left: .6rem;
+              + span {
+                margin-left: .2rem;
+                font-weight: $fontBold;
+              }
+            }
+          }
+        }
+        .list-group {
+          padding-top: 0;
+          .list-item {
+            padding: 2rem;
+            border-radius: .8rem;
+            border: .1rem solid $gray030;
+            background-color: $white;
+            + .list-item {
+              margin-top: 1.2rem;
+            }
+            .item-area {
+              padding: 0;
+              .item-button-area {
+                padding-top: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+      &.btn-type {
+        .card {
+          .card-body {
+            .list-group {
+              .list-item {
+                .item-area {
+                  width: 100%;
+                  .item-flex {
+                    .item-left {
+                      text-align: left;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .absence {
+          min-height: calc(100vh - 6rem);
+          background-color: $white;
+        }
+      }
+    }
+    // 통합이용내역-이용내역없음
+    .absence {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      // height: calc(100vh - 19.7rem);
+      .text {
+        margin-top: 1.2rem;
+        color: $gray080;
+        @include fontHeight(1.6);
+      }
+      .btn-area {
+        margin-top: 4rem;
+      }
+    }
+    // 통합이용안내-결제수단 선택
+    .filter-group {
+      padding-top: .2rem;
+      form {
+        width: 100%;
+        .terms-depth2 {
+          .list-group {
+            .list-item {
+              .item-area {
+                padding: 0;
+              }
+            }
+          }
+          .form-radio {
+            label {
+              align-items: center;
+              .form-radio-input {
+                + .form-radio-btn {
+                  + .form-radio-label {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1.2rem 0 1.2rem 1rem;
+                    .label-title {
+                      color:$black;
+                      font-weight: $fontMedium;
+                      @include fontHeight(1.4);
+                    }
+                    .label-text {
+                      margin-top: .4rem;
+                      color: $gray080;
+                      @include fontHeight(1.2);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 통합이용내역-대중교통
+    .accordion-area {
+      .card {
+        padding: 0;
+        .card-header {
+          padding-left: 2.4rem;
+        }
+        .card-body {
+          padding-bottom: 0rem;
+        }
+      }
+      .list-item {
+          &:last-child {
+          .accordion {
+            .accordion-panel {
+              border: none;
+              &.type1 {
+                > .accordion-header {
+                  .accordion-header-inner {
+                    padding-bottom: 4rem;
+                  }
+                }
+              }
+            }
+            .active {
+              &.type1 {
+                > .accordion-header {
+                  .accordion-header-inner {
+                    padding-bottom: 2.4rem;
+                  }
+                }
+              }
+            }
+            .accordion-content {
+              .traffic {
+                padding-bottom: 2rem;
+              }
+            }
+          }
+          }
+      }
+      .accordion {
+        .accordion-panel {
+          margin: 0 2.4rem;
+          border-bottom: .1rem solid $gray030;
+          &.type1 {
+            > .accordion-header {
+              .accordion-header-inner {
+                padding: 2.4rem 2.4rem 2.4rem 0;
+                .list-item {
+                  display: block;
+                  .item-area {
+                    padding: 0;
+                  }
+                }                
+                .ico-toggle {
+                  top: 2.1rem;
+                }
+              }
+            }
+          }
+          &.active {
+            margin: 0;
+            padding: 0 2.4rem;
+            background-color: $bgLightGray;
+            > .accordion-header {
+              .accordion-header-inner {
+                padding: 2.4rem 2.4rem 2rem 0;
+              }
+            }
+          }
+        }
+        .accordion-content {
+          .traffic {
+            padding-bottom: .4rem;
+            .list-item {
+              position: relative;
+              padding-bottom: 2rem;
+              &::before {
+                content: '';
+                position: absolute;
+                top: 2.6rem;
+                left: .9rem;
+                width: .2rem;
+                height: 3.2rem;
+                background: url(#{$img-path}/common/bg/bg_traffic.png) no-repeat center center / 100% auto;
+              }
+              &:first-child {
+                .item-area {
+                  padding-top: 0;
+                }
+              }
+              &:last-child {
+                &::before {
+                  display: none;
+                }
+              }
+              .item-area {
+                padding: 0;
+                &.item-flex {
+                  align-items: flex-start;
+                }
+                .item-icon {
+                  margin-right: 1.6rem;
+                  .icon-size-xm {
+                    display: block;
+                    width: 2rem;
+                    height: 2rem;
+                    img {
+                      width: 100%;
+                    }
+                  }
+                }
+                .item-left {
+                  .item-title {
+                    @include fontHeight(1.4);
+                  }
+                  .item-text {
+                    display: flex;
+                    margin: .2rem 0 0 .2rem;
+                    span {
+                      text-overflow: ellipsis;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      + span {
+                        margin-left: .6rem;
+                      }
+                      &.get {
+                        height: 1.6rem;
+                        padding: .1rem .4rem 0;
+                        color: $white;
+                        font-weight: $fontBold;
+                        @include fontHeight(1);
+                        border-radius: .2rem;
+                      }
+                      &.get-on {
+                        background-color: $darkBlue60;
+                      }
+                      &.get-off {
+                        background-color: $blue080;
+                      }
+                      &.text {
+                        @include fontHeight(1.2);
+                        + .text {
+                          position: relative;
+                          padding-left: .6rem;
+                          &::before {
+                            content: '';
+                            position: absolute;
+                            top: .2rem;
+                            left: 0;
+                            width: .1rem;
+                            height: .9rem;
+                            background-color: $gray030;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // 약관
+  .agreement-top {
+    padding-top: 2.4rem;
+    font-weight: $fontLight;
+    @include fontHeight(1.8);
+    span {
+      font-weight: $fontMedium;
+    }
+  }
+  .agreement-area {
+    padding-top: 2.8rem;
+    .terms-check-all {
+      padding-bottom: 2.4rem;
+    }
+    .terms {
+      + .terms {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+      } 
+    }
+  }
+}

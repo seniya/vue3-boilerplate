@@ -1,0 +1,95 @@
+// 월렛
+.wallet {
+  &.modal-body-0 {
+    .modal-body {
+      padding: 0 !important;
+    }
+  }
+  .pt60 {
+    padding-top: 6rem;
+  }
+  .pt148 {
+    padding-top: 14.8rem !important;
+  }
+  .darkbluegray {
+    color: $darkBlueGray;
+  }
+  // 송금
+  &.remit {
+    em {
+      font-style: normal;
+    }
+    // 공유하기
+    .share-area {
+      padding: 3.1rem .6rem 2rem;
+      li {
+        margin: 0 2.4rem;
+      }
+    }
+    // 송금할 내용 확인(연락처로 보내기)
+    .top-left {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .bottom-table {
+      .table-list {
+        &:first-child {
+          border-top: none;
+        }
+        dt {
+          color: $gray080 !important;
+          font-weight: $fontRegular !important;
+        }
+      }
+      .tooltip-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 2rem;
+        dt {
+          display: flex;
+          align-items: center;
+          color: $gray080;
+          font-weight: $fontRegular;
+          span {
+            padding-right: .4rem;
+          }
+        }
+      }
+      .item-area {
+        padding: 1.6rem 0;
+      }
+    }
+    .table-text {
+      margin-right: .4rem;
+      color: $black;
+      text-decoration: underline;
+    }
+    // 모달일 때
+    &.modal-box {
+      .modal-body {
+        height: 100%;
+      }
+      .content-body {
+        height: 100%;
+      }
+    }
+    // 신한PAY머니-송금-하단 배너
+    .bottom-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.6rem;
+      padding: 2rem;
+      border-radius: .4rem;
+      background-color: $bgLightGray;
+      span {
+        color: $black;
+        @include fontHeight(1.2);
+        span {
+          font-weight: $fontBold;
+        }
+      }
+    }
+  }
+}

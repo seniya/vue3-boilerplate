@@ -1,0 +1,51 @@
+// 서비스 살펴보기
+
+.integrate.service {
+  .accordion-list {
+    padding-top: .4rem;
+    .accordion {
+      .accordion-panel {
+        & + .accordion-panel {
+          margin-top: 2rem;
+        }
+        &.active {
+          .accordion-header {
+            .accordion-header-inner {
+              border-color: $black;
+            }
+          }
+        }
+        .accordion-header {
+          .accordion-header-inner {
+            overflow: hidden;
+            padding: 1.2rem 3.2rem 1.2rem 0;
+            border-bottom: .1rem solid $gray030;
+            .title {
+              font-weight: $fontBold;
+              @include fontHeight(2);
+            }
+            .ico-toggle {
+              top: auto;
+              bottom: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+    .service-details {
+      padding: .8rem .8rem 1.2rem;
+      .list-group {
+        border-bottom: .1rem solid $gray030;
+        .list-item .item-area {
+          padding: 2rem 0 1.8rem;
+        }
+        .item-area .item-title-arrow:after {
+          width: 1.6rem;
+          height: 1.6rem;
+          background: url(#{$img-path}/common/icons/default/icon_16_arrow1_darkblue070.svg) no-repeat 0 0 / 1.6rem auto;
+        }
+      }
+      
+    }
+  }
+}

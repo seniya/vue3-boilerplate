@@ -1,0 +1,598 @@
+.mzzone {
+  &.main {
+    position: relative;
+    padding: 0;
+    scroll-behavior:smooth;
+    scroll-snap-type: y mandatory;
+    .content-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      background-color: $white;
+      z-index: 10;
+    }
+    .content-body {
+      padding-top: 5rem;
+      .card {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    // tab
+    .btn-tab {
+      position: relative;
+      overflow: hidden;
+      overflow-x: auto;
+      padding-top: .8rem;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .btn-area {
+        display: inline-flex;
+        padding: 0 1.2rem;
+        li {
+          width: auto;
+          height: 4.2rem;
+          padding: 0 1.2rem;
+          .btn-move {
+            display: inline-flex;
+            height: 4.2rem;
+            color: $gray090;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            &.active {
+              color: $black;
+              font-weight: $fontBold;
+            }
+          }
+        }
+      }
+      .active-bar {
+        position: absolute;
+        left: 2.4rem;
+        bottom: 0;
+        width: 8.2rem;
+        height: .3rem;
+        background-color: $black;
+        transition: left 0.3s;
+      }
+    }
+
+    // content
+    .content-top {
+      display: flex;
+      margin: 4rem 0 3.2rem;
+      padding: 0 2.4rem;
+      .title {
+        font-weight: $fontBold;
+        @include fontHeight(2);
+        flex: 1;
+      }
+      .btn-share {
+        width: 4.4rem;
+        height: 4.4rem;
+        background: url(#{$img-path}/payfan/icons/default/icon_44_share.png) no-repeat 0 / 100% auto;
+      }
+    }
+    // card
+    .card {
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 2.4rem;
+        width: calc(100% - 4.8rem);
+        height: .1rem;
+        background-color: $gray030;
+        content: '';
+      }
+      & + .card {
+        border-top: 0;
+      }
+      // 인터랙션
+      &.before {
+        .card-toolbar {
+          // 텍스트
+          opacity: 0;
+          transform: translateY(5rem);
+        }
+        .card-header {
+          // 텍스트
+          opacity: 0;
+          transform: translateY(5rem);
+        }
+        .card-body .img-box {
+          &:before {
+            // 배경
+            opacity: 0;
+            transform: translateY(5rem);
+          }
+          img {
+            // 비주얼
+            opacity: 0;
+            transform: translateY(5rem);
+          }
+        }
+      }
+      &.enter {
+        .card-toolbar {
+          // 텍스트
+          opacity: 1;
+          transform: translateY(0);
+          transition: all 0.5s;
+        }
+        .card-header {
+          // 텍스트
+          opacity: 1;
+          transform: translateY(0);
+          transition: all 0.5s;
+        }
+        .card-body .img-box {
+          &:before {
+            // 배경
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s;
+            transition-delay: 0.1s;
+          }
+          img {
+            // 비주얼
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1s;
+            transition-delay: 0.2s;
+          }
+        }
+      }
+      &.type01 {
+        &:before {
+          display: none;
+        }
+        .card-badge {
+          background-color: rgba(#f1d2f5, 0.34);
+          color: #b26abb;
+        }
+        .card-toolbar {
+          top: 1.8rem;
+        }
+        .card-banner {
+          padding-top: 4.6rem;
+        }
+        .card-body .img-box:before {
+          right: 0;
+          background-image: linear-gradient(107deg, #b51cc6 3%, #8336c2);
+          border-radius: 100px 0 0 100px;
+        }
+      }
+      &.type02 {
+        .card-badge {
+          background-color: rgba(#b3dce7, 0.34);
+          color: #0e8cad;
+        }
+        .card-body .img-box:before {
+          left: 0;
+          background-image: linear-gradient(107deg, #1cc4bb 3%, #0294cc);
+          border-radius: 0 100px 100px 0;
+        }
+      }
+      &.type03 {
+        .card-badge {
+          background-color: rgba(#ffc6c2, 0.34);
+          color: #914860;
+        }
+        .card-body .img-box:before {
+          right: 0;
+          background-image: linear-gradient(107deg, #940303 3%, #de5723);
+          border-radius: 100px 0 0 100px;
+        }
+      }
+      &.type04 {
+        .card-badge {
+          background-color: rgba(#a9d0ce, 0.34);
+          color: #1a8b61;
+        }
+        .card-body .img-box:before {
+          left: 0;
+          background-image: linear-gradient(107deg, #009dc0 3%, #009822);
+          border-radius: 0 100px 100px 0;
+        }
+      }
+      &.type05 {
+        .card-badge {
+          background-color: rgba(#f5e5c1, 0.34);
+          color: #ce6928;
+        }
+        .card-body .img-box:before {
+          right: 0;
+          background-image: linear-gradient(107deg, #ff6911 3%, #ffd72e);
+          border-radius: 100px 0 0 100px;
+        }
+      }
+      &.type06 {
+        .card-badge {
+          background-color: rgba(#c2dee8, 0.34);
+          color: #5d637e;
+        }
+        .card-body .img-box:before {
+          left: 0;
+          background-image: linear-gradient(107deg, #2fb5c0 3%, #223de5);
+          border-radius: 0 100px 100px 0;
+        }
+      }
+      &.type07 {
+        .card-badge {
+          background-color: rgba(#dfc9ca, 0.34);
+          color: #b36468;
+        }
+        .card-body .img-box:before {
+          right: 0;
+          background-image: linear-gradient(107deg, #02e167 3%, #0060ef);
+          border-radius: 100px 0 0 100px;
+        }
+      }
+      &.type08 {
+        .card-badge {
+          background-color: rgba(#dfc9ca, 0.34);
+          color: #b36468;
+        }
+        .card-body .img-box {
+          margin-top: .8rem;
+          &:before {
+            top: 27%;
+            left: 0;
+            background-image: linear-gradient(107deg, #4e018e 3%, #0091c4);
+            border-radius: 0 100px 100px 0;
+          }
+        }
+      }
+      &.type09 {
+        &:before {
+          display: none;
+        }
+        .card-badge {
+          background-color: rgba(#ffb1d2, 0.34);
+          color: #e65b94;
+        }
+        .card-toolbar {
+          top: 1.8rem;
+        }
+        .card-banner {
+          padding-top: 4.6rem;
+        }
+        .card-body .img-box:before {
+          top: 50.2%;
+          right: 0;
+          background-image: linear-gradient(107deg, #de3d9d 3%, #ae1452);
+          border-radius: 100px 0 0 100px;
+        }
+      }
+      .card-toolbar {
+        position: absolute;
+        top: 3.6rem;
+        left: 0;
+        display: flex;
+        width: 100%;
+        padding: 0 1.2rem 0 2.2rem;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        .card-badge {
+          display: inline-flex;
+          height: 2.8rem;
+          padding: 0 .8rem;
+          border-radius: 1.4rem;
+          font-weight: $fontBold;
+          @include fontHeight(1.2);
+          align-items: center;
+          span {
+            padding-top: .2rem;
+          }
+        }
+        .btn-service {
+          height: 2.8rem;
+          padding: .6rem 1rem;
+          .text-xs {
+            color: $gray090;
+          }
+        }
+      }
+      .card-banner {
+        display: block;
+        padding-top: 6.4rem;
+      }
+      .card-header {
+        display: block;
+        padding: 1.2rem 2.4rem 0;
+        .card-title {
+          display: block;
+          font-weight: $fontBold;
+          @include fontHeight(2.6);
+        }
+        .banner-link {
+          position: relative;
+          display: inline-block;
+          // padding: 0 2.6rem 0 0;
+          margin-top: .6rem;
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+          &:after {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-left: .2rem;
+            background: url(#{$img-path}/common/icons/default/icon_24_arrow2.svg) no-repeat 0 0 / 100% auto;
+            transform: rotate(90deg);
+            vertical-align: middle;
+            content: '';
+          }
+        }
+      }
+      .card-body {
+        display: block;
+        padding-bottom: 1.6rem;
+        .img-box {
+          position: relative;
+          display: block;
+          padding-top: 73.89%;
+          &:before {
+            position: absolute;
+            top: 35%;
+            display: block;
+            width: calc(100% - 1.6rem);
+            height: 37.6%;
+            content: '';
+          }
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    // 추천 카드리스트
+    .suggestion-card {
+      padding: 3.2rem 2.4rem 5.6rem;
+      .title {
+        position: relative;
+        font-weight: $fontBold;
+        @include fontHeight(2.6);
+        span { 
+          position: relative;
+          display: inline-block;
+          &:after {
+            position: absolute;
+            bottom: .6rem;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: .6rem;
+            background-color: rgba($skyBlue60, 0.5);
+            z-index: -1;
+            content: '';
+          }
+        }
+      
+      }
+      .list-group {
+        margin: .8rem 0;
+        .list-item {
+          .item-area {
+            padding: 3.2rem 0;
+            .item-title {
+              display: block;
+              margin-bottom: 1.6rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.8);
+            }
+            .item-flex {
+              align-items: flex-start;
+            }
+            .item-left {
+              display: block;
+              text-overflow: inherit;
+              overflow: inherit;
+              flex: 0;
+              .item-icon-card-vertical {
+                display: block;
+                width: 7.4rem;
+                height: 11.9rem;
+                margin: 0;
+                border-radius: .6rem;
+                overflow: hidden;
+                img {
+                  position: relative;
+                  top: 2.3rem;
+                  left: -2.3rem;
+                  width: 11.9rem;
+                  height: 7.4rem;
+                }
+              }
+            }
+            .item-right {
+              padding-left: 3.4rem;
+              text-align: left;
+              flex: 1;
+              .item-text {
+                display: block;
+                & + .item-text {
+                  margin-top: 1rem;
+                }
+                span {
+                  display: block;
+                  padding-top: .2rem;
+                  color: $gray080;
+                  @include fontHeight(1.2);
+                }
+                strong {
+                  display: block;
+                  padding-top: .2rem;
+                  color: $black;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1.3);
+                }
+              }
+            }
+            
+          }
+        }
+      }
+      .btn-more {
+        text-align: center;
+      }
+    }
+  }
+  // 공유하기
+  .share-list {
+    margin: 0 -2.4rem;
+    padding: 3.8rem 0 2.8rem;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 0.6rem;
+      li {
+        button {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &::before {
+            content: "";
+            display: block;
+            width: 5.2rem;
+            height: 5.2rem;
+          }
+          &.line {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_line.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.kakao {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_kakao.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.text {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_text.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.link {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_link.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.facebook {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_facebook.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.twitter {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_twitter.png) no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        span {
+          @include fontHeight(1.2);
+          display: block;
+          padding-top: 0.8rem;
+          font-weight: $fontRegular;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  // 약관동의
+  &.bottom-agreement {
+    .modal-content {
+      .modal-body {
+        padding: 1.4rem 2.0rem 0.8rem;
+      }
+    }
+    .agreement-tip {
+      margin: 0 0 1.4rem;
+      .tip-box {
+        dt {
+          position: relative;;
+          @include fontHeight(1.3);
+          display: flex;
+          align-items: center;
+          span {
+            display: block;
+            width: 100%;
+            flex: 1;
+            white-space: nowrap;
+          }
+          &:after {
+            display: block;
+            width: 100%;
+            height: .1rem;
+            margin-left: 1.6rem;
+            background-color: $gray030;
+            content: '';
+          }
+        }
+        dd {
+          .item-flex {
+            display: flex;
+            margin-top: 1rem;
+            align-items: center;
+           .item-left {
+             display: block;
+             flex: 1;
+            .item-title {
+              display: block;
+              font-weight: $fontBold;
+              @include fontHeight(1.4);
+            }
+            .item-text {
+              display: block;
+              padding-top: .1rem;
+              color: $gray080;
+              @include fontHeight(1.2);
+            }
+           }
+           .item-right {
+             display: block;
+             height: 2.4rem;
+           }
+          }
+        }
+      }
+    }
+    .agreement.bottom.full {
+      .terms-depth1 + .terms {
+        padding: 2.6rem 0 3rem;
+      }
+      .terms-depth2 {
+        &:only-of-type {
+          .list-item:only-of-type {
+            margin-bottom: .4rem;
+          }
+        }
+        & + .terms-depth2 {
+          margin-top: 1.8rem;
+        }
+        & > .list-group {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

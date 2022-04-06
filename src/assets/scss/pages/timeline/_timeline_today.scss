@@ -1,0 +1,218 @@
+// 타임라인 투데이
+.timeline, .timeline.today {
+  &.bg {
+    height: auto;
+    background-color: $bgLightGray;
+  }
+  //영수증
+  .receipt {
+    position: relative;
+    height: 100%;
+    margin: 0 -2.4rem;
+    padding: 2.8rem 1.6rem 2.4rem;
+    .receipt-box {
+      position: relative;
+      padding: 2.8rem 2rem 2.6rem;
+      background-color: $white;
+      &::before {
+        position: absolute;
+        top: 24rem;
+        left: 50%;
+        display: block;
+        width: 27rem;
+        height: 4.6rem;
+        background: url(#{$img-path}/common/visual/visual_watermark.png) repeat-x 0 0 / auto 100%;
+        transform: translateX(-50%);
+        content: '';
+      }
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        display: block;
+        width: 100%;
+        height: 1rem;
+        background: url(#{$img-path}/common/bg/bg_dotpaper.png) repeat-x 0 0 / auto 1rem;
+        content: '';
+      }
+      .title {
+        color: $black;
+        @include fontHeight(1.6);
+      }
+      .total-price {
+        margin-top: 1.6rem;
+        color: $black;
+        font-weight: $fontBold;
+        @include fontHeight(2.4);
+      }
+      .text-footer {
+        display: flex;
+        color: $gray080;
+        @include fontHeight(1.4);
+        align-items: center;
+        .pay {
+          padding-left: .4rem;
+        }
+      }
+      .receipt-details {
+        position: inherit;
+        border-top: .1rem solid $black;
+        border-bottom: .1rem solid $gray040;
+        li {
+          padding: 2.8rem 0 2.2rem;
+          & + li {
+            border-top: .1rem solid $gray030;
+          }
+        }
+        .table-list.type4{
+          dt, dd {
+            margin-bottom: .6rem;
+            @include fontHeight(1.4);
+          }
+          dt {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  //할부 거래 계약서
+  .text-list {
+    li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: $black;
+      & + li {
+        margin-top: 1.6rem;
+      }
+      &::before {
+        position: absolute;
+        top: .8rem;
+        left: 0;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 50%;
+        background-color: $gray070;
+        content: '';
+      }
+    }
+  }
+
+  //qr공유
+  &.qr_share {
+    .body-header {
+      .modal-title {
+        margin-top: -.2rem;
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.8);
+      }
+      .btn-header {
+        position: absolute;
+        top: 1.6rem;
+        right: 1.6rem;
+      }
+    }
+    .qr-area {
+      padding: 6rem 0 8.8rem;
+      text-align: center;
+      span {
+        display: inline-block;
+        width: 17rem;
+        height: 17rem;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  
+  // 공유하기
+  &.share-receipt {
+    &.modal.bottom .modal-content.hide-footer .modal-body {
+      padding: 0;
+    }
+    .share-list {
+      padding: 3.8rem 0 6.0rem 2.4rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      ul {
+        display: flex;
+        li {
+          padding-right: 2.4rem;
+          button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &::before {
+              content: "";
+              display: block;
+              width: 5.2rem;
+              height: 5.2rem;
+            }
+            &.kakao {
+              &::before {
+                background: url(#{$img-path}/payfan/icons/default/icon_52_kakao.png) no-repeat;
+                background-size: contain;
+              }
+            }
+            &.text {
+              &::before {
+                background: url(#{$img-path}/payfan/icons/default/icon_52_text.png) no-repeat;
+                background-size: contain;
+              }
+            }
+            &.email {
+              &::before {
+                background: url(#{$img-path}/payfan/icons/default/icon_52_email.png) no-repeat;
+                background-size: contain;
+              }
+            }
+            &.link {
+              &::before {
+                background: url(#{$img-path}/payfan/icons/default/icon_52_link.png) no-repeat;
+                background-size: contain;
+              }
+            }
+            &.qrcode {
+              &::before {
+                background: url(#{$img-path}/payfan/icons/default/icon_52_qrcode.png) no-repeat;
+                background-size: contain;
+              }
+            }
+          }
+          span {
+            display: block;
+            padding-top: 0.8rem;
+            font-weight: $fontRegular;
+            @include fontHeight(1.2);
+            color: $black;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 포인트 팡팡
+.modal.bottom.timeline.point-modal {
+  .modal-content {
+    overflow: visible;
+  }
+  .anibox {
+    position: absolute;
+    top: -40.3rem;
+    left: 50%;
+    z-index: 1;
+    width: 36.0rem;
+    height: 40.3rem;
+    transform: translateX(-50%);
+  }
+}

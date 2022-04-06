@@ -1,0 +1,759 @@
+//약관동의
+.agreement {
+  @include fontHeight(1.4);
+  // 주의사항 타입 1
+  .caution-type1 {
+    padding-top: 2.8rem;
+    margin: 0 0.8rem -0.8rem;
+    @include fontHeight(1.2);
+    color: $gray080;
+  }
+  // 동의등급제 
+  .consent-rating-area {
+    padding-top: 3.2rem;
+    padding-bottom: 0.4rem;
+    margin: 0 1.4rem;
+    .rating-title {
+      font-weight: $fontMedium;
+      @include fontHeight(1.6);
+    }
+    .rating-graph {
+      display: flex;
+      width: 100%;
+      padding-top: 1.6rem;
+      padding-bottom: 1.2rem;
+      .rating {
+        flex-basis: 20%;
+        padding: 0.7rem 0 0.5rem;
+        text-align: center;
+        font-weight: $fontBold;
+        @include fontHeight(1.2);
+        color: $white;
+        &:first-of-type {
+          border-top-left-radius: 0.4rem;
+          border-bottom-left-radius: 0.4rem;
+        }
+        &:last-of-type {
+          border-top-right-radius: 0.4rem;
+          border-bottom-right-radius: 0.4rem;
+        }
+        + .rating {
+          border-left: 1px solid $white;
+        }
+        &.level1 {
+          background-color: $skyBlue100;
+        }
+        &.level2 {
+          background-color: #55d26e;
+        }
+        &.level3 {
+          background-color: #c07f00;
+        }
+        &.level4 {
+          background-color: #ffb626;
+        }
+        &.level5 {
+          background-color: #da1d1d;
+        }
+      }
+    }
+    .rating-text {
+      word-break: keep-all;
+      @include fontHeight(1.4);
+      color: $gray080;
+    }
+  }
+  // arrow 버튼 공통
+  .btn-arrow-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  // 공통
+  .list-group {
+    .list-item {
+      .item-area {
+        align-items: flex-start;
+        .item-left{
+          overflow: auto;
+          text-overflow: unset;
+          white-space: normal;
+          .item-text {
+            overflow: auto;
+            text-overflow: unset;
+            white-space: normal;
+          }
+        }
+      }
+    }
+  }
+  .form-checkbox {
+    label {
+      align-items: flex-start;
+    }
+    .form-checkbox-input {
+      + .form-checkbox-btn {
+        +.form-checkbox-label {
+          display: block;
+        }
+      }
+    }
+    .form-checkbox-label {
+      &.rating-label {
+        // flex-direction: column;
+        padding-bottom: 0rem !important;
+      }
+      .label-category {
+        +.label-text {
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+  .rating-tag {
+    display: block;
+    width: 5.6rem;
+    padding: 0.3rem 0.5rem 0.1rem;
+    margin-top: 0.4rem;
+    text-align: center;
+    font-weight: $fontBold;
+    @include fontHeight(1.2);
+    color: $white;
+    border-radius: 0.4rem;
+    &.level1 {
+      background-color: $skyBlue100;
+    }
+    &.level2 {
+      background-color: #55d26e;
+    }
+    &.level3 {
+      background-color: #c07f00;
+    }
+    &.level4 {
+      background-color: #ffb626;
+    }
+    &.level5 {
+      background-color: #da1d1d;
+    }
+  }
+  // 풀팝업 style check
+  &.full {
+    margin: 0 -0.4rem;
+    // 전체 체크
+    .terms-check-all {
+      margin: 0 -0.4rem;
+      padding-bottom: 2.8rem;
+      border-bottom: 0.1rem solid $gray050;
+      .form-checkbox {
+        margin: 0 0.8rem;
+        .form-checkbox-input {
+          +.form-checkbox-all {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            padding: 1.4rem 1.2rem;
+            border: 0.1rem solid $bgLightBlue2;
+            border-radius: 0.4rem;
+            .form-checkbox-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex: 0 0 2.4rem;
+              width: 2.4rem;
+              height: 2.4rem;
+              box-sizing: border-box;
+              border: .1rem solid $gray050;
+              border-radius: 50%;
+              span {
+                display: block;
+                width: 1.3rem;
+                height: .9rem;
+                background: url(#{$img-path}/common/icons/default/icon_13_checkbox_gray2.svg) no-repeat 0 0 / 1.3rem auto;
+              }
+            }
+            .form-checkbox-label {
+              margin-left: 0.8rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+              color: $black;
+            }
+          }
+          &:checked {
+            +.form-checkbox-all {
+              .form-checkbox-btn {
+                background-color: $blue100;
+                border-color: $blue100;
+                span {
+                  background: url(#{$img-path}/common/icons/default/icon_13_checkbox_wh.svg) no-repeat 0 0 / 1.3rem auto;
+                  -webkit-animation: scale .1s;
+                  animation: scale .1s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 약관 공통
+    .terms {
+      + .terms {
+        margin-top: 2.4rem;
+        margin-bottom: 2.4rem;
+        border-top: 0.1rem solid $gray030;
+      }
+      .terms-title {
+        padding-top: 2.4rem;
+      }
+      .terms-depth2 {
+        .form-checkbox .form-checkbox-input:disabled + .form-checkbox-btn span {
+          background: url(#{$img-path}/common/icons/default/icon_13_checkbox_gray2.svg) no-repeat 0 0 / 1.3rem auto;
+        }
+      }
+      .terms-depth3 {
+        .depth3-text {
+          margin-top: -.6rem;
+          padding-left: 4.2rem;
+          padding-right: 2.8rem;
+          @include fontHeight(1.2);
+          color: $gray080;
+        }
+        .list-group {
+          .list-item {
+            padding-top: 0.2rem;
+            .item-area {
+              padding: 0;
+              .form-checkbox {
+                .form-checkbox-input {
+                  +.form-checkbox-btn {
+                    +.form-checkbox-label {
+                      @include fontHeight(1.2);
+                    }
+                  }
+                }
+              }
+              .item-left {
+                &:only-child {
+                  padding-right: 2.8rem;
+                }
+              }
+              .item-right {
+                padding-left: 0.4rem;
+              }
+            }
+          }
+        }
+        &:last-child {
+          .accordion{
+            .accordion-panel {
+              .accordion-header + .accordion-content {
+                .accordion-content-inner {
+                  margin-bottom: 0;
+                  .terms-depth4 {
+                    .list-group {
+                      .list-item {
+                        .item-bg-box {
+                          margin: 0.8rem 2.8rem 1.6rem 4.2rem;
+                        }
+                        &:only-child {
+                          .item-bg-box {
+                            margin: 0.8rem 2.8rem 0 4.2rem;
+                          }
+                        }
+                      // + .list-item {
+                      //   margin-top: 1.6rem;
+                      // }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .item-bg-box {
+        display: block;
+        padding: 1.2rem;
+        margin: 0.8rem 2.8rem 1.6rem 4.2rem;
+        border-radius: 0.4rem;
+        background-color: $gray020;
+        // 2분할
+        &.grid {
+          .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            .form-checkbox {
+              margin-top: 0rem;
+              margin-bottom: 0.2rem;
+              flex-basis: 50%;
+              &.w-100 {
+                flex-basis: 100%;
+              }
+            }
+          }
+        }
+        dl {
+          display: flex;
+          + dl {
+            margin-top: 1rem;
+          }
+          dt {
+            flex: 0 0 4.6rem;
+            word-break: keep-all;
+          }
+          dd {
+            padding-left: 1.6rem;
+            color: $gray080;
+            word-break: keep-all;
+          }
+        }
+        .form-checkbox {
+          +.form-checkbox {
+            margin-top: 0.2rem;
+          }
+          .form-checkbox-input {
+            +.form-checkbox-btn {
+              +.form-checkbox-label {
+                padding-left: 0.6rem;
+              }
+            }
+          }
+        }
+        .list-group {
+          .list-item {
+            .item-area {
+              padding-left: 0;
+            }
+            +.list-item {
+              .item-area {
+                margin-top: 1.8rem;
+              }
+            }
+          }
+        }
+        .text {
+          color: $gray080;
+          +.form-group {
+            padding-top: 1rem;
+          }
+        }
+        + .depth4-text {
+          margin-top: -0.8rem;
+        }
+      }
+      .depth4-item {
+        .item-left{
+          padding-left: 3rem;
+          .item-text{
+            @include fontHeight(1.2);
+            padding: 0.8rem 0;
+          }
+        }
+      }
+      .depth4-title {
+        padding-top: 0.8rem;
+        padding-left: 4.2rem;
+        padding-right: 2.8rem;
+        @include fontHeight(1.2);
+        color: $gray080;
+        &-sub {
+          padding: 1rem 0 0 4.2rem;
+          color: $gray100;
+        }
+      }
+      .depth4-text {
+        padding-left: 5.4rem;
+        padding-right: 2.8rem;
+        @include fontHeight(1.2);
+        color: $gray080;
+        &-sub {
+          color: $gray100;
+          padding: .8rem 2.8rem 0 4.2rem;
+          &:last-of-type{
+            padding-bottom: .8rem;
+          }
+        }
+      }
+    }
+    // 2depth
+    .terms-depth2 {
+      // depth2 공통
+      .form-checkbox {
+        .form-checkbox-input {
+          +.form-checkbox-btn {
+            +.form-checkbox-label {
+              padding-left: 1rem;
+              color: $gray080;
+            }
+          }
+          &:checked {
+            +.form-checkbox-btn {
+              +.form-checkbox-label {
+                color: $black;
+              }
+            }
+            &:disabled {
+              +.form-checkbox-btn {
+                +.form-checkbox-label {
+                  color: $gray080;
+                }
+              }
+            }
+          }
+        }
+        .form-checkbox-label {
+          padding-top: 0.6rem;
+          padding-bottom: 0.6rem;
+        }
+      }
+      .terms-title {
+        padding-top: 2.4rem;
+        color: $black;
+      }
+      // accordion
+      .accordion-header {
+        .accordion-header-inner {
+          padding: 2.4rem 2.8rem 0 0;
+          .ico-toggle, .btn-toggle {
+            position: absolute;
+            right: 0rem;
+            top: 2.7rem;
+          }
+        }
+      }
+      // list
+      .list-group {
+        .list-item {
+          .item-area {
+            padding: 1.2rem 0rem;
+          }
+        }
+      }
+      > .list-group {
+        padding-top: 1.2rem;
+      }
+    }
+    // 3depth
+    .terms-depth3 {
+      padding-top: 0.6rem;
+      +.terms-depth3 {
+        padding-top: 0.2rem;
+      }
+      // accordion
+      .accordion-header {
+        .accordion-header-inner {
+          padding: 0rem 2.8rem 0 0;
+          .ico-toggle, .btn-toggle {
+            position: absolute;
+            right: 0;
+            top: 0.4rem;
+            width: 2.4rem;
+            height: 2.4rem;
+            padding: 0.4rem
+          }
+        }
+      }
+      .accordion-content {
+        .accordion-content-inner {
+          margin-bottom: 1rem;
+        }
+      }
+      .form-checkbox {
+        .form-checkbox-label {
+          padding-top: 0.8rem;
+          padding-bottom: 0.8rem;
+        }
+      }
+
+      &:last-child {
+        .list-item {
+          &:last-child {
+            .terms-depth4 {
+              &:last-child {
+                .item-bg-box {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      // 4depth
+      .terms-depth4 {
+        .list-group {
+          .list-item {
+            .item-area {
+              padding-left: 1.2rem;
+              .item-left {
+                &:only-child {
+                  padding-right: 2.8rem;
+                }
+              }
+            }
+          }
+        }
+        .item-bg-box {
+          .list-group {
+            .list-item {
+              .item-area {
+                padding-left: 0;
+                .item-text {
+                  @include fontHeight(1.2);
+                }
+                .item-right {
+                  button {
+                    display: flex;
+                  }
+                }
+              }
+              +.list-item {
+                .item-area {
+                  margin-top: 1.6rem;
+                }
+              }
+            }
+          }
+        }
+        @include fontHeight(1.2);
+      }
+    }
+    .terms-btn {
+      padding: 2.4rem 0 3.2rem 4.2rem;
+      .btn {
+        color: $gray080;
+      }
+    }
+  }
+  // 바텀팝업 style check
+  &.bottom {
+    .form-checkbox {
+      label {
+        align-items: flex-start;
+      }
+      .form-checkbox-label {
+        .label-category {
+          +.label-text {
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }
+    .terms-depth1 {
+      .form-checkbox {
+        .form-checkbox-input {
+          +.form-checkbox-btn {
+            +.form-checkbox-label {
+              padding-left: 1rem;
+              color: $gray080;
+            }
+          }
+          &:checked {
+            +.form-checkbox-btn {
+              +.form-checkbox-label {
+                color: $black;
+              }
+            }
+            &:disabled {
+              +.form-checkbox-btn {
+                +.form-checkbox-label {
+                  color: $gray080;
+                }
+              }
+            }
+          }
+        }
+        .form-checkbox-label {
+          padding-top: 0.6rem;
+          padding-bottom: 0.4rem;
+          @include fontHeight(1.6);
+        }
+      }
+      +.terms {
+        padding: 2.6rem 0;
+      }
+      .accordion-panel {
+        &.type1 {
+          >.accordion-header {
+            .accordion-header-inner {
+              padding: 1.6rem  3.2rem 1.6rem 0;
+            }
+          }
+        }
+      }
+    }
+    .terms-depth2 {
+      // accordion
+      .accordion-header {
+        .accordion-header-inner {
+          padding: 0rem 3.6rem 0 0;
+          .ico-toggle, .btn-toggle {
+            position: absolute;
+            right: 0.4rem;
+            top: 26%;
+          }
+        }
+      }
+      .accordion-content {
+        .accordion-content-inner {
+          margin-bottom: 1.6rem;
+        }
+      }
+      .form-checkbox {
+        .form-checkbox-label {
+          padding-top: 0.7rem;
+          padding-bottom: 0.5rem;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    .terms {
+      padding-top: 2.6rem;
+      padding-bottom: 1.8rem;
+      border-top: 0.1rem solid $gray050;
+      +.terms {
+        border-top: 0.1rem solid $gray030;
+      }
+      .terms-title {
+        padding-top: 1.6rem;
+        padding-bottom: 1rem;
+        color: $black;
+      }
+      .list-group {
+        .list-item {
+          .item-area {
+            padding: 0.6rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+// 동의등급제 약관
+.rating-type-select {
+  margin-bottom: 2.8rem;
+  .rating-type-title {
+    display: flex;
+    align-items: center;
+    height: 2.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1.6rem;
+    > span {
+      margin: .2rem .4rem 0 0;
+      @include fontHeight(1.4);
+    }
+    .tooltip-wrap {
+      position: relative;
+      top: .3rem;
+      margin: 0;
+    }
+  }
+  .rating-type-radio {
+    margin: 0 -.8rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $bgLightBlue2;
+    .form-radio {
+      padding: 0 .8rem;
+      .form-radio-input {
+        + .form-radio-label {
+          width: 100%;
+          padding: 1.1rem 1rem .9rem;
+          font-size: 1.3rem;
+          background-color: #fff;
+        }
+        &:checked + .form-radio-label {
+          border-color: $blue080;
+          background-color: $blue080;
+        }
+      }
+    }
+  }
+}
+.rating-system {
+  .pagination {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.2rem 2.4rem 0.4rem;
+    background-color: #fff;
+    box-shadow: 0 .6rem 1.2rem 0 rgba(22, 25, 36, .5);
+    box-shadow: 0 -2px 4px 0 rgba(48, 49, 51, 0.1);
+    .page-item {
+      font-weight: $fontBold;
+      @include fontHeight(1.6);
+      color: $gray040;
+    }
+    .page-current {
+      color: $black;
+    }
+    .btn {
+      $btnBgColor: #797979;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: rgba($btnBgColor, .12) url(#{$img-path}/common/icons/default/icon_18_arrow1_navi.svg) 50% 50%;
+      &:disabled {
+        // background-color: rgba($btnBgColor, 0.04);
+        opacity: .3;
+      }
+      &.btn-prev {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .message {
+      flex: 0 0 100%;
+      padding: .8rem 0 2.4rem 0;
+      font-weight: $fontRegular;
+      @include fontHeight(1.4);
+      text-align: center;
+      strong {
+        font-weight: $fontBold
+      }
+    }
+  }
+  .agreement-area {
+    margin-top: 1.8rem;
+  }
+  .tab-wrap {
+    height: calc(100% - 4.2rem);
+    // padding: 0 2.4rem;
+  }
+  .tab-menu {
+    .splide__list .splide__slide .tab-btn {
+      @include fontHeight(1.6);
+    }
+  }
+  .tab-con {
+    margin: 0 -2.4rem;
+    .splide__slide {
+      .tab-panel {
+        padding-bottom: 1.8rem;
+      }
+      &:nth-child(2) {
+        .tab-panel {
+          padding-bottom: 5.8rem;
+        }
+      }
+    }
+    .tab-slot {
+      padding-top: 1.8rem;
+      padding: 1.8rem 2.4rem 0;
+    }
+  }
+  .modal-footer {
+    box-shadow: 0 .6rem 1.2rem 0 rgba(22, 25, 36, .5);
+  }
+  .content-footer {
+    background-color: #fff;
+  }
+}

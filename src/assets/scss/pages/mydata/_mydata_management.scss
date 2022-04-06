@@ -1,0 +1,1142 @@
+//자산
+.mydata {
+  // 지출관리
+  &.management {
+    hr {
+      margin: 0 -2.4rem;
+      border: 0;
+      height: 0.1rem;
+      background-color: #f1f1f3;
+    }
+    .list-group {
+      .item-percent {
+        align-self:flex-start;
+        flex-basis: 6rem;
+        color: $gray080;
+      }
+    }
+    .list-tag {
+      display: inline-block;
+      width: 6.5rem;
+      padding: 0.6rem 1.2rem 0.4rem;
+      @include fontHeight(1.2);
+      font-weight: $fontMedium;
+      text-align: center;
+      border-radius: 0.2rem;
+      background-color: lightgray;
+      &.blue {
+        color: #0073ae;
+        background-color: rgba(#0073ae,0.1);
+      }
+      &.purple {
+        color: $purple90;
+        background-color: rgba($purple90,0.1);
+      }
+    }
+    .budget-sticky-header {
+      position: fixed;
+      top: -100px;
+      width: 100%;
+      margin: 0 -2.4rem;
+      padding: 2.2rem 2.4rem 2rem;
+      background-color: none;
+      overflow: hidden;
+      transition: all 0.3s;
+      opacity: 0;
+      z-index: 999;
+      .item-area {
+        padding: 0;
+        .item-title {
+          font-weight: $fontMedium;
+        }
+      }
+      &.sticky {
+        top: 0;
+        background-color: $white;
+        border-bottom: 0.1rem solid $bgGray;
+        opacity: 1;
+      }
+    }
+    &.main {
+      .total-area {
+        font-weight: $fontMedium;
+        .total-count {
+          @include fontHeight(2.6);
+        }
+        .money-unit {
+          @include fontHeight(2.2);
+        }
+      }
+      .card.summary {
+        .card-sub-title {
+          @include fontHeight(1.6);
+          text-align: center;
+          .icon {
+            top: 0.2rem;
+          }
+          &.v12 {
+            margin-top: 5.6rem;
+            margin-bottom: 0.4rem;
+          }
+        }
+        .total-area {
+          text-align: center;
+          font-weight: $fontBold;
+          .total-count {
+            @include fontHeight(2.6);
+          }
+          .money-unit {
+            @include fontHeight(2.4);
+          }
+        }
+      }
+      .card-tooltip {
+        .card-sub-title {
+          overflow: initial;
+          .tooltip-wrap {
+            top: 0.4rem;
+          }
+        }
+      }
+      .expend-list {
+        margin-top: 1.6rem;
+        .item-area .item-icon-card-vertical {
+            margin-left: -0.3rem;
+            img {
+              width: 3.4rem;
+              height: 2.2rem;
+              border-radius: 0.2rem;
+            }
+        }
+      }
+    }
+    .assets-mgt-graph {
+      position: relative;
+      // &::before {
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 1rem;
+      //   border-width: 0.1rem 0.1rem 0;
+      //   border-style: solid;
+      //   border-color: $gray040;
+      //   content: '';
+      // }
+      strong {
+        font-weight: bold;
+        .won {
+          top: -0.2rem;
+          @include fontHeight(1.4);
+        }
+      }
+      .max-value {
+        margin-bottom: 1rem;
+        text-align: center;
+        background: url(#{$img-path}/common/bg/bg_graph_line.png) no-repeat 0 80% / 100%;;
+        &-center {
+          padding: 0 1rem;
+          @include fontHeight(1.6);
+          background-color: $white;
+        }
+      }
+      .label-group {
+        position: relative;
+        margin-top: 1rem;
+        height: 5.7rem;
+        .label {
+          position: absolute;
+          display: block;
+          left: 0;
+          top: 0;
+          width: auto;
+          @include fontHeight(1.6);
+          text-align: center;
+          > span {
+            display: block;
+          }
+          .arrow {
+            line-height: 0;
+            &::before{
+              display: inline-block;
+              width: 0;
+              height: 0;
+              margin: 0 auto 0.3rem;
+              border-bottom: 0.7rem solid #383b5a;
+              border-left: 0.4rem solid transparent;
+              border-right: 0.4rem solid transparent;
+              content: '';
+            }
+          }
+        }
+      }
+      .graph-bar {
+        margin: 0;
+        height: 2.8rem;
+        background-color: $bgSteelBlue;
+        overflow: hidden;
+        .active-bar {
+          border-radius: 0.2rem 0 0 0.2rem;
+          background-color: $green70;
+        }
+      }
+      &.red {
+        .active-bar {
+          background-color: $red060;
+        }
+      }
+    }
+    .spend-details-header {
+      margin: 0 -2.4rem;
+      padding: 4rem 2.4rem 4.8rem;
+      background-color: $bgLightGray;
+      .store-name {
+        margin-top: 1.6rem;
+        @include fontHeight(2);
+        font-weight: $fontMedium;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        &.blind {
+          color: $gray080;
+        }
+      }
+      .btn-store-name {
+        margin: 0.4rem 0 1.2rem;
+      }
+      .date {
+        margin-top: 0.2rem;
+        @include fontHeight(1.4);
+        font-weight: $fontLight;
+        color: $gray080;
+      }
+      .card-name {
+        margin-top: 1.6rem;
+        @include fontHeight(2.4);
+        font-weight: $fontBold;
+      }
+    }
+    .spend-entry-list {
+      padding: 1.8rem 0;
+      .item-area {
+        .item-left {
+          flex: none;
+          flex-basis: 4.5rem;
+          text-overflow: initial;
+          white-space: initial;
+          overflow: initial;
+          .item-title{
+            @include fontHeight(1.4);
+            font-weight: $fontRegular;
+            color: $gray070;
+            overflow: initial;
+          }
+        }
+        .item-right {
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+          .item-title{
+            flex: 1;
+            width: 100%;
+            padding-right: 0.6rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            &.item-complete {
+              color: $blue100;
+            }
+          }
+          .item-placeholder {
+            flex: 1;
+            padding-right: 0.6rem;
+            color: $gray080;
+          }
+        }
+      } 
+    }
+    .spend-delete-area {
+      .item-area {
+        .item-right {
+          line-height: 0;
+        }
+        .item-text {
+          margin-top: 0.8rem;
+          word-break: keep-all;
+        }
+      }
+    }
+
+  .total-budget-header {
+    position: relative;
+    padding: 2.8rem 0 4.8rem;
+    .title-area {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items :flex-start;
+      justify-content: space-between;
+      @include fontHeight(2.4);
+      font-weight: $fontLight;
+      color: $black;
+      .btn-line {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    .graph-area.type3 {
+      margin-top: 2.8rem;
+    }
+    .assets-mgt-graph {
+      margin-top: 3.2rem;
+    }
+    .div-area {
+      margin-top: 3.6rem;
+    }
+    &.v12 {
+      padding: 3.2rem 0;
+    }
+  }
+  .total-budget-list {
+    + .total-budget-list {
+      .card-header {
+        padding-top: 3.4rem;
+      }
+    }
+    .no-data {
+      padding: 4.3rem 0 6rem;
+    }
+    .list-group {
+      .item-right {
+        .btn-modify {
+          min-height: 2rem;
+          padding: 0;
+          margin-top: -0.1rem;
+          margin-left: 0.8rem;
+          font-size: 0;
+          line-height: 0;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+      
+    //바 그래프
+    .bar-graph-area {
+      margin-top: 2.8rem;
+      .graph-helper {
+        .table-list dt:last-of-type, .table-list dd:last-of-type {
+          margin-bottom: 0;
+        }
+        .dot {
+          display: inline-block;
+          margin-right: 0.8rem;
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          background-color: #dadcde;
+        }
+      }
+    }
+
+    .category-detail-modal {
+      .card {
+        padding: 0
+      }
+      .card-header {
+        .card-title {
+          padding-left: 2.4rem;
+          padding-right: 2.4rem;
+          @include fontHeight(1.8);
+          strong {
+            font-weight: $fontBold;
+          }
+        }
+      }
+      .total-summary-area{
+        padding-top: 2.4rem;
+        .total-cost {
+          .cost {
+            @include fontHeight(2.4);
+            font-weight: $fontMedium;
+          }
+          .text {
+            margin-top: 1.2rem;
+            @include fontHeight(1.6);
+            font-weight: $fontMedium;
+          }
+          .tip {
+            position: relative;
+            margin-top: 0.6rem;
+            padding-left: 1.5rem;
+            @include fontHeight(1.4);
+            font-weight: $fontRegular;
+            color: $gray080;
+            &::before {
+              content: '※';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+        .div-area {
+          margin-top: 2.4rem;
+        }
+      }
+      .budget-detail-list {
+        .budget-detail-item {
+          padding: 2.8rem 2.4rem 0;
+          &:first-of-type {
+            padding-top: 3.2rem;
+          }
+          &:last-of-type {
+            border-bottom: 0;
+          }
+          .li-title {
+            @include fontHeight(1.4);
+            margin-bottom: 1.2rem;
+          }
+          .item-area .item-left .item-title.blind {
+            color: $gray080;
+          }
+        }
+      }
+    }
+
+    .assets-set-modal {
+      .title {
+        padding-bottom: 2rem;
+        font-weight: $fontMedium;
+        border-bottom: 0.1rem solid $gray030;
+        .tip {
+          margin-top: 1.2rem;
+          @include fontHeight(1.4);
+          font-weight: $fontRegular;
+          color: $gray080;
+        }
+      }
+      .set-area{
+        padding-top: 2.4rem;
+        form {
+          margin-top: 1.2rem;
+          .form-radio .form-radio-input + .form-radio-btn + .form-radio-label {
+            @include fontHeight(1.4);
+          }
+        }
+      }
+    }
+
+    //리포트
+    .btn-select-report {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mgt-report {
+      position: relative;
+
+      .report-info {
+        padding: 3.2rem 0 2rem;
+        @include fontHeight(1.4);
+        .title {
+          color: $darkBlue90;
+        }
+        .text-bar {
+          margin: 0 0.8rem;
+          @include fontHeight(1);
+          color: $gray050;
+        }
+        .period {
+          color: $gray080;
+        }
+        &.v10, &.v12 {
+          padding: 0;
+        }
+      }
+
+      .card {
+        &.summary {
+          padding-top: 0;
+          .card-header {
+            padding-top: 2.5rem;
+          }
+          .card-sub-title {
+            @include fontHeight(2.6);
+            margin-bottom: 0.4rem;
+          }
+        }
+        &.summary2 {
+          background: url(#{$img-path}/mydata/visual/visual_mgt_report.png) no-repeat right 2rem bottom / 13.3rem 8.4rem;
+          .card-header {
+            padding: 0;
+          }
+          .card-body {
+            padding-bottom: 4.4rem;
+          }
+          .card-sub-title {
+            margin-bottom: 0;
+            @include fontHeight(2.6);
+          }
+        }
+        &.spend-method {
+          padding-top: 0;
+          background-color: $bgLightBlue3;
+        }
+        .card-header {
+          padding-top: 5.2rem;
+          .card-title {
+            color: $black;
+          }
+        }
+
+        .card-body {
+          padding-bottom: 5.2rem;
+        }
+
+        .card-sub-title {
+          font-size: 2.2rem;
+          font-weight: $fontLight;
+        }
+        .div-area {
+          margin-top: 3.2rem;
+        }
+      }
+      [class*=card-list]{
+        .item-title, .item-text {
+          @include fontHeight(1.4);
+          font-weight: $fontRegular;
+        }
+      }
+      .card-list-1 {
+        padding: 2.6rem 0;
+      }
+      .card-list-2 {
+        padding-top: 0.6rem;
+        .list-item {
+          &+.list-item {
+            border-top-color: $gray040;
+          }
+          .item-area {
+            &.item-flex {
+              align-items: center;
+            }
+            .item-icon {
+              align-self: flex-start;
+            }
+            .item-right img {
+              width: 4rem;
+              height: 2.6rem;
+              transform: rotate(90deg);
+            }
+            .item-right {
+              line-height: 0;
+            }
+          }
+        }
+      }
+
+      .grid-box {
+        display: grid;
+        grid-template-rows: 8.4rem 6.6rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        .item {
+          display: flex;
+          justify-content: space-between;
+          padding: 1.2rem 1.6rem 1.2rem 1.2rem;
+          border-radius: 0.4rem;
+          overflow: hidden;
+          .emoji {
+            padding-right: 0.9rem;
+          }
+          .box {
+            display: inline-flex;
+            flex-direction: column;
+            align-self: center;
+            width: 100%;
+            color: $white;
+            text-align: right;
+            overflow: hidden;
+            .title {
+              @include fontHeight(1.4);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .text {
+              @include fontHeight(1.6);
+              font-weight: $fontBold;
+            }
+          }
+
+          &:first-of-type {
+            flex-direction: column;
+            grid-row: 1/3;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+            background-color: $purple100;
+            .box {
+              align-self: flex-end;
+              .title.blind {
+                color: #9696de;
+              }
+              .text {
+                @include fontHeight(2);
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            background-color: #8383e2;
+            .box .title.blind {
+              color: $darkBlue20;
+            }
+          }
+          &:last-of-type {
+            background-color: #a4a4d1;
+            .box .title.blind {
+              color: #dcdcf4;
+            }
+          }
+        }
+        &.v10, &.v12 {
+          .item {
+            display: block;
+            justify-content: initial;
+            padding: 0;
+            a {
+              display: flex;
+              justify-content: space-between;
+              height: 100%;
+              padding: 1.2rem 1.6rem 1.2rem 1.2rem;
+              box-sizing: border-box;
+              overflow: hidden;
+            }
+            &:first-of-type {
+              flex-direction: initial;
+              padding: 0;
+              a {
+                flex-direction: column;
+                padding-right: 2rem;
+                padding-bottom: 2rem;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+
+      .average-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.4rem;
+        border-radius: 0.4rem;
+        background-color: $white;
+
+        .inequality-sign {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 2rem;
+          height: 2rem;
+          background: url(#{$img-path}/mydata/visual/visual_mgt_average.png) no-repeat center / 10px 20px;
+          transform: translate(-50%, -50%);
+
+          &.more {
+            transform-origin: center;
+            transform: translate(-50%, -50%) rotate(180deg);
+          }
+
+          &.same {
+            background: url(#{$img-path}/mydata/visual/visual_mgt_average_same.png) no-repeat center / 1.8rem;
+          }
+        }
+
+        .title {
+          margin-bottom: 0.2rem;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+
+        .text {
+          font-weight: $fontBold;
+          .money {
+            @include fontHeight(1.6);
+            word-break: break-all;
+          }
+          .unit {
+            @include fontHeight(1.4);
+          }
+        }
+
+        .my-money {
+          flex-basis: 50%;
+          padding-right: 1.5rem;
+        }
+
+        .average-money {
+          flex-basis: 50%;
+          padding-left: 1.5rem;
+          text-align: right;
+        }
+      }
+
+      .asset-status-list {
+        .item-left .item-title {
+          @include fontHeight(1.4);
+        }
+        .item-right {
+          padding-left: 0.6rem;
+        }
+        .item-percent {
+          flex-basis: 4.6rem;
+          @include fontHeight(1.4);
+        }
+      }
+
+      .mgt-regular-item {
+        & + .mgt-regular-item {
+          margin-top: 4rem;
+        }
+        .title {
+          padding: 1.2rem 0;
+          @include fontHeight(2.2);
+          font-weight: $fontMedium;
+          border-bottom: 0.1rem solid $line3;
+        }
+        .accordion-panel {
+          .accordion-header {
+            border-bottom: 0.1rem solid $gray030;
+            &-inner {
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              overflow: hidden;
+              .money {
+                font-weight: $fontBold;
+              }
+              .unit {
+                top: 0.1rem;
+                @include fontHeight(1.4);
+                font-weight: $fontBold;
+              }
+            }
+          }
+          .accordion-content {
+            padding-bottom: 2.8rem;
+            border-bottom: 0.1rem solid $gray030;
+            .table-list-body {
+              padding: 1.6rem 0;
+              dt, dd {
+                margin-bottom: 0.4rem;
+              }
+            }
+          }
+        }
+        &.v12-5 {
+          .accordion-panel {
+            .accordion-header {
+              &-inner {
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: center;
+                padding-left: 3.2rem;
+                font-size: 1.8rem;
+                .unit {
+                  position: relative;
+                  top: -0.1rem;
+                  @include fontHeight(1.6);
+                }
+              }
+            }
+            .accordion-content {
+              padding-bottom: 1.3rem;
+              .regular-group {
+                padding: 3.2rem 0;
+                + .regular-group {
+                  border-top: 0.1rem dashed $gray050;
+                }
+              }
+              .table-list-body {
+                margin-bottom: 1.6rem;
+                padding: 0;
+                dt, dd {
+                  &:first-of-type {
+                    margin-bottom: 1.2rem;
+                    @include fontHeight(1.6);
+                    color: $black;
+                    .money {
+                      font-weight: $fontBold;
+                    }
+                    .unit {
+                      position: relative;
+                      top: -0.1rem;
+                      @include fontHeight(1.4);
+                      font-weight: $fontBold;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 금융캘린더 
+    .fc-calendal-area {
+      .filter-box {
+        display: flex;
+        justify-content: space-between;
+        .left-box {
+          display: flex;
+          overflow-x: auto;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .filter-item {
+            display: inline-flex;
+            white-space: nowrap;
+            & + .filter-item {
+              margin-left: 0.6rem;
+            }
+            .btn-filter {
+              min-width: 6rem;
+              height: 3.4rem;
+              padding: 0 1.2rem;
+              font-size: 1.4rem;
+              font-weight: $fontMedium;
+              line-height: 3.4rem;
+              text-align: center;
+              border-radius: 1.7rem;
+              border: 0.1rem solid transparent;
+              & + .btn-filter {
+                margin-left: 0.6rem;
+              }
+              &.spend {
+                background-color: rgba($color: #4799ff, $alpha: 0.12);
+              }
+              &.statement {
+                background-color: rgba($color: $blushGreen50, $alpha: 0.1);
+              }
+              &.alarm {
+                background-color: $bgLightGray;
+              }
+              &.memo {
+                background-color: rgba($color: $purple100, $alpha: 0.06);
+              }
+              &.off {
+                border-color: $gray030;
+                background-color: $white !important;
+                .fc-bullet {
+                  &.spend {
+                    background-color: $gray050;
+                  }
+                  &.statement {
+                    background-color: $gray050;
+                  }
+                  &.alarm {
+                    background-image: url(#{$img-path}/common/icons/default/icon_16_bell_gr.svg);
+                  }
+                  &.memo {
+                    background-image: url(#{$img-path}/common/icons/default/icon_16_pencil_gr.svg);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .right-box {
+          display: flex;
+          align-items: center;
+          padding-left: 0.5rem;
+        }
+        .tooltip-wrap .tooltip2 .tooltip-content {
+          word-break: break-all;
+        }
+      }
+      
+      .fc-calendal-view {
+        margin: 0 -0.8rem;
+        .fc-calendal {
+          width: 100%;
+          table-layout: fixed;
+          @include fontHeight(1.4);
+          thead tr .day-name {
+            padding: 1.2rem 0;
+            font-weight: $fontMedium;
+          }
+          tbody tr {
+            border-top: 0.1rem solid $gray030;
+            td {
+              overflow:hidden;
+              height: 8.6rem;
+              padding: 0.8rem 0.4rem;
+              text-align: center;
+              vertical-align: top;
+              line-height: 0;
+              .day-num {
+                display: block;
+                width: 2.8rem;
+                height: 2.8rem;
+                text-align: center;
+                line-height: 3rem;
+                margin: 0 auto 0.4rem;
+                font-weight: $fontMedium;
+                border-radius: 50%;
+                &.today {
+                  font-weight: $fontBold;
+                  background-color: $bgGray;
+                }
+                &.off {
+                  color: $gray060;
+                }
+              }
+              .day-cont {
+                display: block;
+                width: 3rem;
+                margin: 0 auto;
+              }
+              .fc-bullet {
+                margin-right: 0.2rem;
+                margin-bottom: 0.2rem;
+                &:nth-child(3n){
+                  margin-right: 0;
+                }
+                &.alarm {
+                  width: 0.8rem;
+                  height: 0.8rem;
+                }
+                &.memo {
+                  width: 0.8rem;
+                  height: 0.8rem;
+                }
+              }
+            }
+          }
+          &.v10, &.v12 {
+            tbody tr td .day-cont {
+              width: 100%;
+              margin: auto;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .fc-list-view {
+        .filter-box {
+          justify-content: center;
+          width: 28.1rem;
+          height: 3.4rem;
+          margin: 0 auto;
+
+          .left-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 2rem;
+            border: 0.1rem solid $gray030;
+            border-radius: 1.8rem;
+
+            .filter-item {
+              display: flex;
+              align-items: center;
+              margin-top: 0.2rem;
+              font-size: 1.4rem;
+              color: $black;
+              font-weight: $fontMedium;
+              text-align: center;
+
+              .fc-bullet {
+                margin-right: 0.4rem;
+                margin-top: -0.3rem;
+              }
+            }
+          }
+          .right-box {
+            display: none;
+          }
+        }
+        .list-box {
+          position: relative;
+          .array-area {
+            position: absolute;
+            top: 4rem;
+            right: 0;
+          }
+          .fc-list {
+            > li {
+              padding: 4rem 0 1.4rem;
+              + li {
+                border-top: 0.1rem solid $gray030;
+              }
+              .li-title {
+                min-height: 2.2rem;
+                margin-bottom: 1.6rem;
+              }
+            }
+            .day-detail-list {
+              .item-left.title-two-line {
+                .item-title {
+                  white-space: normal;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;  
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+        .complete {
+          height: calc(100% - 7.8rem);
+        }
+        &.v10, &.v12 {
+          .list-box{
+            .array-area {
+              top: 0;
+            }
+            .fc-list {
+              > li:first-of-type {
+                padding-top: 0;
+              }
+            }
+          } 
+          .filter-box {
+            justify-content: space-between;
+            width: auto;
+            height: auto;
+            margin: 0 -0.8rem;
+
+            .left-box {
+              display: flex;
+              justify-content:initial;
+              align-items: initial;
+              width: auto;
+              padding: 0;
+              border: none;
+              border-radius: 0;
+
+              .filter-item {
+                display: inline-flex;
+                align-items: initial;
+                margin-top: 0;
+                text-align: initial;
+
+                .fc-bullet {
+                  margin-right: 0;
+                  margin-top: 0;
+                }
+              }
+            }
+
+            .right-box {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+
+    // 금융알림 바텀모달
+    .fc-alarm-area {
+      padding: 2.4rem 0;
+      .table-list.type8 {
+        dt:last-of-type, dd:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      .disc {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        @include fontHeight(1.2);
+        color: $gray080;
+        border-top: 0.1rem solid $gray030;
+      }
+    }
+
+    // 가맹점명 노출하기 : AT500021 
+    .store-title-exposure {
+      position: relative;
+      // .section-header {
+      //   padding: 2.8rem 0;
+      //   h3 {
+      //     @include fontHeight(2);
+      //     font-weight: $fontBold;
+      //   }
+      // }
+      .section-body {
+        position: relative;
+        .list-group {
+          .list-item {
+             padding-bottom: 2.2rem;
+             background: url(#{$img-path}/common/bg/bg_dot_line.png) no-repeat 1.1rem 2.8rem / 0.2rem;
+             &:last-of-type {
+               padding-bottom : 0;
+               background: none;
+             }
+            .item-area {
+              padding: 0;
+              .item-icon {
+                padding-top: 0;
+              }
+              .item-title {
+                font-weight: $fontRegular;
+                strong {
+                  font-weight: $fontBold;
+                }
+              }
+              .item-text {
+                color: $gray090;
+              }
+            }
+            // &::before {
+            //   position: absolute;
+            //   top: 0;
+            //   left: 1.2rem;
+            //   width: 0.2rem;
+            //   height: 100%;
+            //   background: url(#{$img-path}/common/bg/bg_dot_gray.png) repeat-y center center / 100% auto;
+            //   content: '';
+            // }
+          }
+        }
+        .tip-box {
+          padding: 2rem;
+          @include fontHeight(1.4);
+          border-radius: 0.4rem;
+          background-color: $bgLightGray;
+          .title {
+            font-weight: $fontBold;
+            color: $gray090;
+            .icon {
+              top: 0.2rem;
+              margin-right: 0.3rem;
+            }
+          }
+          .text {
+            margin-top: 1.1rem;
+            color: $gray080;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+
+    .store-exposure-footer-tip {
+      position: absolute;
+      bottom: 8.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      @include fontHeight(1.4);
+      text-align: center;
+    }
+  }
+}

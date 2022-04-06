@@ -1,0 +1,190 @@
+// 가이드 따라해보기
+.integrate.guide {
+  padding-left: 0;
+  padding-right: 0;
+  .full-body {
+    .section {
+      height: 100%;
+      .search-body {
+        height: 100%;
+      }
+    }
+  }
+  .section {
+    position: relative;
+  }
+  .search-section {
+    position: relative;
+    .search-header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 1.6rem 2.4rem 0;
+      background-color: $white;
+      transform: translate3d(0, 0, 0);
+      touch-action: none;
+    }
+    // 탭 + 내용
+    .search-body {
+      position: fixed;
+      top: 6rem;
+      width: 100%;
+      height: calc(100% - 6rem);
+      padding-top: 6rem;
+      overflow-y: auto;
+      .search-tab {
+        .tab-wrap.type5 {
+          height: 100%;
+          .tab-menu {
+            position: fixed;
+            top: 6rem;
+            width: 100%;
+            padding: 1.6rem 0 2rem;
+          }
+          .tab-con {
+            .splide__track .tab-panel {
+              overscroll-behavior: contain;
+            }
+            .splide__slide {
+              //height: calc(100% - 7.6rem);
+            }
+          }
+        }
+        .tab-body {
+          position: relative;
+          padding: 0 2.4rem 2.4rem;
+          .list-header {
+            display: flex;
+            padding: 2rem 0 1rem;
+            align-items: center;
+            .item-title {
+              color: $black;
+              @include fontHeight(1.4);
+            }
+            .item-subtitle {
+              display: block;
+              padding-left: .4rem;
+              color: $black;
+              font-weight: $fontBold;
+              @include fontHeight(1.2);
+            }
+          }
+          .list-group.line {
+            .item-area .item-left .item-title,
+            .item-area .item-right .item-title {
+              font-weight: $fontMedium;
+            }
+            .item-area .item-left .item-text {
+              color: $gray080;
+            }
+          }
+        }
+      }
+      .no-result {
+        position: relative;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        &-area {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          &::before {
+            display: block;
+            width: 17.5rem;
+            height: 12rem;
+            background: url(#{$img-path}/common/visual/visual_noresult.png) no-repeat 0 0 / 100% auto;
+            content: '';
+          }
+        }
+        &-text {
+          padding-top: 2.4rem;
+          @include fontHeight(1.6);
+        }
+        .banner-area {
+          // position: fixed;
+          // bottom: 3.2rem;
+          // left: 2.4rem;
+          position: relative;
+          display: flex;
+          width: calc(100% - 3.2rem);
+          height: 7.6rem;
+          margin: auto 0 3.2rem;
+          border-radius: 3.8rem;
+          background-color: $bgDarkBlue;
+          align-items: center;
+          &::after {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 6.6rem;
+            height: 6rem;
+            background: url(#{$img-path}/common/visual/visual_fani.png) no-repeat 0 0 / 100% auto;
+            transform: translateY(-50%);
+            content: '';
+          }
+          .banner-text {
+            width: 100%;
+            padding: 0 7rem 0 3.2rem;
+            color: $white;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+          }
+        }
+      }
+    }
+  }
+  .card {
+    &:first-child .card-header {
+      padding: 2.8rem 0 1.2rem;
+    }
+    .card-header {
+      padding: 4.8rem 0 1.2rem;
+      .card-title {
+        height: 2.2rem;
+        font-weight: $fontRegular;
+        @include fontHeight(1.4);
+        .card-title-count {
+          padding-left: .4rem;
+          font-weight: $fontBold;
+        }
+      }
+      .btn-arrow {
+        & span::after {
+          top: -.1rem;
+        }
+      }
+    }
+    .card-body {
+      padding-bottom: 0;
+      & + .card-body {
+        border-top: .1rem solid $gray030;
+        .list-title {
+          padding-top: 3.6rem;
+        }
+      }
+      .list-group.line {
+        .item-area .item-left {
+          overflow: inherit;
+          white-space: inherit;
+          text-overflow: inherit;
+          .item-title {
+            overflow: inherit;
+            white-space: inherit;
+            text-overflow: inherit;
+          }
+        }
+      }
+      .list-title {
+        padding: 2rem 0 .4rem;
+        color: $black;
+        font-weight: $fontMedium;
+        @include fontHeight(1.6);
+      }
+    }
+  }
+}

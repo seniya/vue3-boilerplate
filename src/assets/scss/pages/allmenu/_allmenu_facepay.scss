@@ -1,0 +1,70 @@
+.allmenu {
+  &.facepay {
+    // facepay - 카드 등록
+    &.bottom {
+      .modal-content {
+        max-height: calc(100vh - 14rem);
+      } 
+    }
+    .card-filter-group { 
+      position: relative;
+      .card-filter-title{
+        position: sticky;
+        top: 0;
+        padding: .8rem 0;
+        background-color: $white;
+        border-bottom: 1px solid #686868;
+        z-index: 11;
+        .tip {
+          color: $gray080;
+          padding-bottom: 2.8rem;
+        }
+      }
+      .list-group {
+        .list-item {
+          border-bottom: 1px solid $gray030;
+          &:last-child{
+            border-bottom-width: 0;
+          }
+        }
+        .form-radio {
+          label {
+            align-items: center;
+            .form-radio-input {
+              + .form-radio-btn {
+                + .form-radio-label {
+                  display: flex;
+                  flex-direction: column;
+                  padding: .8rem 1.2rem;
+                  .label-title {
+                    color:$black;
+                    font-weight: $fontMedium;
+                    @include fontHeight(1.6);
+                  }
+                  .label-text {
+                    margin-top: .4rem;
+                    color: $gray080;
+                  }
+                  + .item-icon-card-vertical{
+                    margin-top: .6rem;
+                    margin-right: -.8rem;
+                    -webkit-tap-highlight-color : rgba(0,0,0,0);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .no-data {
+        text-align: center;
+        @include fontHeight(1.6);
+        color: $gray080;
+        padding: 4rem 0 4.8rem;
+        p {
+          padding-top: .6rem;
+        }
+      }
+    }    
+  }
+}

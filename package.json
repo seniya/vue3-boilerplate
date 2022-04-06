@@ -1,15 +1,13 @@
 {
-  "name": "vue3-boilerplate",
+  "name": "vue3-boilerplate-publish",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serveFe": "vue-cli-service serve --mode development",
-    "serveBe": "json-server --delay 1000 --watch ./src/assets/demoApi.js",
+    "serve": "vue-cli-service serve --mode development",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "ant-design-vue": "^2.2.8",
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
     "dayjs": "^1.11.0",
@@ -41,7 +39,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
-    "json-server": "^0.17.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "typescript": "~4.5.5"
