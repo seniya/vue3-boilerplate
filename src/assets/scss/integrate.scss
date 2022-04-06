@@ -1,0 +1,93 @@
+@charset 'UTF-8';
+@import 'value';
+//통합가이드
+@import 'pages/integrate/integrate_guide';
+@import 'pages/integrate/integrate_service';
+
+.integrate {
+  // 메인
+  &.main {
+    height: auto;
+    min-height: 100vh;
+    background-color: $bgLightGray;
+    .content-body {
+      margin: 0 -2.4rem;
+      padding: 0 2.4rem;
+      .content-inner {
+        margin: 0 -.8rem;
+      }
+    }
+    .top-text {
+      padding: 3.6rem 0 4.4rem;
+      .title {
+        font-weight: $fontBold;
+        @include fontHeight(2.4);
+      }
+      .sub-title {
+        padding-top: 1.6rem;
+        @include fontHeight(1.4);
+      }
+    }
+    // card-list
+    .list-group.box.type2 {
+      .list-item {
+        border-radius: 1.2rem;
+        box-shadow: 0 .4rem 1.2rem 0 rgba(48, 49, 51, 0.1);
+        & + .list-item {
+          margin-top: 1.2rem;
+        }
+        .item-area {
+          padding: 2.4rem;
+          .item-thumbnail {
+            overflow: hidden;
+            display: flex;
+            width: 6.2rem;
+            height: 6.2rem;
+            margin-right: 2.4rem;
+            background-color: $bgLightGray;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: center;
+            .icon {
+              font-size: 3.2rem;
+              line-height: 4rem;
+            }
+          }
+          .item-text {
+            color: $black;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+          }
+          .item-text-sm {
+            padding-top: .8rem;
+            color: $gray080;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+    }
+    // slide
+    .slide-area {
+      margin: 0 -1.6rem;
+      padding: 3.2rem 0 5.2rem;
+      overflow: hidden;
+      .splide .splide__pagination.type3.top-right {
+        padding-right: 4rem;
+      }
+      .slide-box {
+        overflow: hidden;
+        border-radius: .8rem;
+        .slide-inner {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

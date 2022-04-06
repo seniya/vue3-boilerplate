@@ -1,0 +1,285 @@
+// 자산>금융추천>카드
+.mydata.recommend {
+  .offer-card {
+    .main-img-area {
+      margin-bottom: 2.4rem;
+      //max-width: 36rem;
+      // img {
+      //   width: calc(100% + 4.8rem) !important;
+      //   margin-left: -2.4rem;
+      //   margin-right: -2.4rem;
+      // }
+    }
+    // 보통,소소,듬뿍 말풍선
+    .speech-bubble {
+      position:relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 6.4rem;
+      height: 5.8rem;
+      margin-left: 1rem;
+      border-radius: 18px;
+      text-align: center;
+      background-color: $white;
+      box-shadow: 0 .4rem .8rem 0 rgba(0, 0, 0, .15);
+      .bubble-title {
+        display: none;
+        @include fontHeight(1.4);
+        color: $gray080;
+      }
+      .bubble-emoji {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        margin-bottom: 0.6rem;
+      }
+      .bubble-text {
+        font-weight: $fontBold;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        color: $black;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -1.9rem;
+        display: block;
+        width: 2.6rem;
+        height: 1.7rem;
+        transform: translate(0, -50%) rotate(-90deg);
+        background: url(#{$img-path}/common/bg_tooltip_tail_center_wh.png) no-repeat center / 100%;
+      }
+    }
+    // 메인 최상단(카드 혜택)
+    .main-card-benefit {
+      .card-header {
+        padding-bottom: 0.8rem !important;
+      }
+      .card-body {
+        padding-bottom: 2.8rem !important;
+      }
+      .list-group {
+        .list-item .item-title {
+          color: $gray090;
+          strong {
+            color: $black;
+            font-weight: $fontBold;
+          }
+        }
+        + .btn-area {
+          padding-top: 1rem;
+          padding-bottom: 2.4rem;
+        }
+        // li 한 개일 때
+        .list-item:only-child  {
+          .item-area.item-flex {
+            display: flex;
+            flex-direction: column;
+            .item-icon-card-vertical {
+              margin: 0;
+              img {
+                width: 15rem;
+                height: 9.2rem;
+                transform: rotate(0deg);
+              }
+            }
+            .item-left {
+              padding-top: 2.8rem;
+              text-align: center;
+              text-overflow: initial;
+              white-space: normal;
+              overflow: initial;
+              .item-title {
+                @include fontHeight(1.4);
+                text-overflow: initial;
+                white-space: normal;
+                overflow: initial;
+                + .item-text {
+                  margin-top: 0.2rem;
+                }
+              }
+            }
+            .item-right {
+              width: 100%;
+              margin-left: 0;
+              padding-left: 0;
+              padding-top: 2rem;
+              .speech-bubble {
+                flex-direction: row;
+                width: 100%;
+                margin-left: 0;
+                padding: 1.2rem 2rem;
+                border-radius: 1.2rem;
+                &::before {
+                  display: none;
+                }
+                .bubble-title {
+                  display: block;
+                  margin-right: auto;
+                }
+                .bubble-emoji {
+                  margin-bottom: 0;
+                }
+                .bubble-text {
+                  padding-left: 0.4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .item-icon-card-vertical {
+        margin-top: 0;
+      }
+      a.item-area {
+        overflow: visible;
+      }
+      .item-icon-card-vertical {
+        margin-left: 0;
+      }
+    }
+    // 메인 2,3번째(카드 추천)
+    .main-card-recommend {
+      .card-header {
+        padding-bottom: 1.6rem !important;
+      }
+      .card-body {
+        padding-bottom: 2rem !important;
+      }
+      .sub-title {
+        padding-bottom: 1.2rem;
+        font-weight: $fontLight;
+        @include fontHeight(2.2);
+        &.type2 {
+          padding-top: 5.2rem;
+        }
+        &.type3 {
+          padding-top: 4.8rem;
+        }
+      }
+      .list-group {
+        .item-icon-card-vertical {
+          margin-top: 0.8rem;
+        }
+      }
+      .item-icon-card-vertical {
+        margin-left: 0;
+      }
+    }
+    // 혜택 분석 
+    .benefit-analysis {
+      padding-top: 0.8rem;
+      padding-bottom: 2.4rem;
+      a.item-area {
+        overflow: initial;
+      }
+      .item-icon-card-vertical {
+        position: absolute;
+      }
+      .item-left {
+        padding-left: 4.8rem;
+        .item-title strong {
+          font-weight: $fontBold;
+        }
+      }
+    }
+    // 카드 사용 분석 - 상단
+    .offer-card-use-top {
+      padding-top: 0.8rem;
+      .item-area {
+        padding: 2.4rem 0;
+        .item-title {
+          font-weight: $fontMedium;
+        }
+        .item-text {
+          color: $gray080;
+        }
+      }
+      .offer-card-use-score {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 0;
+        border-top: 0.1rem dotted $gray050; 
+        .item-left {
+          display: flex;
+          align-items: center;
+          .item-title {
+            margin-left: 0.6rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+          }
+        }
+        .item-right {
+          .item-score {
+            font-weight: $fontBold;
+            .num {
+              @include fontHeight(2);
+              vertical-align: middle;
+            }
+            .unit {
+              @include fontHeight(1.6);
+              
+            }
+          }
+        }
+      }
+      border-bottom: 0.1rem solid $gray030; 
+    }
+    .offer-card-use-body {
+      .offer-card-use-content {
+        padding: 2.8rem 0 2rem;
+        +.offer-card-use-content {
+          border-top: 0.1rem solid $gray030;
+        }
+        .offer-card-use-text {
+          padding-bottom: 2.8rem;
+          font-weight: $fontLight;
+          @include fontHeight(1.8);
+          color: $black;
+        }
+        .offer-card-chart-label {
+          padding-bottom: 2rem;
+          color: $black;
+        }
+        .offer-card-tip-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 8.6rem;
+          margin-top: 2.8rem;
+          padding: 2rem 1.6rem 2rem 1.6rem;
+          -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+          box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.15);
+          background-color: $white;
+          border-radius: 0.8rem;
+          color: $black;
+          .tip-icon-area {
+            text-align: center;
+            span {
+              display: block;
+            }
+            .icon-emoji {
+              font-size: 1.8rem;
+              line-height: 1.8rem;
+            }
+            .icon-text {
+              margin-top: 0.1rem;
+              @include fontHeight(1.3);
+              font-weight: $fontBold;
+            }
+          }
+          .tip-text {
+            flex: 1;
+            padding-left: 1.2rem;
+            @include fontHeight(1.4);
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1831 @@
+// 월렛
+.wallet {
+  // 결제, 제휴멤버십 결제, 결제완료
+  &.payment {
+    color: $black;
+    &.bg-gray {
+      background-color: $bgGray;
+      .content-footer {
+        background-color: $bgGray;
+        margin: 0 -2.4rem;
+        padding: 0 2.4rem;
+      }
+      &.floating {
+        .content-footer {
+          margin: 0;
+          padding: 0;
+          box-shadow: 0 -2px 4px 2px $bgGray;
+          .btn-area {
+            background-image: linear-gradient(to bottom, $bgGray, $bgGray);
+          }
+        }
+      }
+    }
+    .icon-size60 {
+      width: 6rem;
+      height: 6rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    // 공통-결제-충전금액 직접입력
+    .offline-input {
+      .account-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: .8rem;
+        padding: 1.2rem 1.6rem;
+        border-radius: .4rem;
+        border: .1rem solid $gray030;
+        @include fontHeight(1.4);
+        span {
+          color: $gray080;
+        }
+      }
+      .form-group {
+        margin: .8rem 0;
+        .error {
+          color: $red100;
+        }
+        .charge-amount-btns {
+          .btn-sm {
+            padding: 0 .6rem;
+            span {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+      .pester-area {
+        .money-area {
+          margin-top: 4rem;
+          display: flex;
+          justify-content: space-between;
+          flex: auto;
+          width: 100%;
+          .btn-sm {
+            flex: 1;
+            min-width: auto;
+            padding: 0;
+            color: $black;
+            font-weight: $fontRegular;
+            border-radius: .4rem;
+          }
+        }
+      }
+    }
+    .common-request {
+      padding-top: 10.4rem;
+      .title-area {
+        .title {
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+        }
+        .money {
+          margin-top: .8rem;
+          font-weight: $fontBold;
+          @include fontHeight(3.6);
+        }
+      }
+      .table-area {
+        padding: 4.4rem 0 1.2rem;
+        .title {
+          color: $gray080;
+          @include fontHeight(1.6);
+        }
+        .table-box {
+          border-top: .1rem solid $gray030;
+          border-bottom: .1rem solid $gray030;
+          margin-top: 1.2rem;
+          padding: 2rem 0 1.2rem;
+          .top {
+            @include fontHeight(1.2);
+            p {
+              + p {
+                margin-top: .4rem;
+              }
+            }
+          }
+          .table-list {
+            margin-top: 1.6rem;
+          }
+        }
+      }
+      .text-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5.7rem;
+        color: $gray080;
+        text-align: center;
+        .close {
+          padding-top: 1.9rem;
+          @include fontHeight(1.2);
+          span {
+            color: $blue100;
+          }
+        }
+      }
+    }
+    //결제완료-오프라인 결제완료-일반
+    .section:nth-child(2) > div.payment-method {
+      padding: 4rem 0 1rem;
+    }
+    .section:nth-child(3) > div.benefit {
+      width: calc(100% + 4.8rem);
+      padding: 5rem 2.4rem 0;
+      border-top: 1.2rem solid $gray030;
+      transform: translateX(-2.4rem);
+    }
+    .section:nth-child(2) > div.benefit {
+      padding: 4rem 0 0;
+    }
+    .receipt {
+      position: relative;
+      height: 100%;
+      margin: 0 -2.4rem;
+      padding: 3.2rem 2.4rem 4rem;
+      background-color: $bgGray;
+      .top-red {
+        border-top: .2rem solid $red100;
+      }
+      .top-blue {
+        border-top: .2rem solid $blue100;
+      }
+      .receipt-area {
+        position: relative;
+        padding: 5.4rem 3.2rem 2.8rem;
+        background-color: $white;
+        box-shadow: 2px 4px 16px 0 rgba(0, 0, 0, 0.16);
+        &::after {
+          position: absolute;
+          left: 0;
+          bottom: -.4rem;
+          display: block;
+          width: 100%;
+          height: .4rem;
+          content: '';
+          background: url(#{$img-path}/common/bg/bg_dotbg.png) repeat-x 0 0 / auto .4rem;
+        }
+        .common-request {
+          padding-top: 0;
+          h2 {
+            @include fontHeight(2.4);
+            span {
+              font-weight: $fontBold;
+            }
+          }
+          .title-area {
+            display: flex;
+            flex-direction: column;
+            margin-top: 7.8rem;
+            .title {
+              @include fontHeight(1.6);
+            }
+            .text {
+              margin-top: .4rem;
+              @include fontHeight(1.4);
+            }
+          }
+          .table-area {
+            padding: 1.6rem 0 0;
+            .table-box {
+              margin-top: 0;
+              .table-list {
+                margin-top: 0;
+                dt, dd {
+                  @include fontHeight(1.4);
+                }
+              }
+            }
+          }
+          .text-area {
+            margin-top: 2.4rem;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+      .more-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
+        .more {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 19.2rem;
+          min-height: 3.6rem;
+          text-align: center;
+          border: .1rem solid $gray050;
+          background-color: $bgGray;
+          span {
+            color: $darkBlueGray;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+          }
+        }
+      }
+      &.pc-receipt {
+        height: calc(100vh - 8rem);
+        padding: 6rem 2.4rem 0;
+        .pc-area {
+          width: 100%;
+          padding: 6rem 3.2rem 4.4rem;
+          .title {
+            padding-bottom: 1.2rem;
+            @include fontHeight(1.8);
+            font-weight: $fontBold;
+            border-bottom: .2rem solid $gray100;
+          }
+          .content-text {
+            padding: 6rem 0 6.4rem;
+            .sub {
+              padding-top: 3.2rem;
+              color: $gray080;
+              @include fontHeight(1.4);
+              span {
+                color: $blue100;
+              }
+            }
+          }
+          .result {
+            border-top: .1rem dashed $gray050;
+            .market {
+              padding-top: 2.8rem;
+            }
+            .money {
+              display: block;
+              margin-top: .4rem;
+              @include fontHeight(2.6);
+              font-weight: $fontBold;
+            }
+            .account {
+              display: block;
+              margin-top: .8rem;
+              @include fontHeight(1.4);
+              span {
+                margin-left: .8rem;
+                color: $gray080;
+              }
+            }
+          }
+        }
+      }
+    }
+    .payment-method {
+      .title-area {
+        .title {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+        }
+      }
+      .list-group {
+        padding: 2.4rem 0;
+        .list-item {
+          & + .list-item {
+            margin-top: .6rem;
+          }
+          .icon-size48 {
+            width: 4.8rem;
+            height: 4.8rem;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          .item-area {
+            padding: 0;
+            .item-icon {
+              margin-right: .8rem;
+            }
+            .item-title {
+              font-weight: $fontRegular;
+            }
+          }
+        }
+      }
+    }
+    .benefit {
+      .title-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+        }
+        .coupon {
+          display: flex;
+          align-items: center;
+          span {
+            @include fontHeight(1.4);
+          }
+          .icon {
+            margin-bottom: .2rem;
+          }
+        }
+      }
+      .list-group {
+        padding-top: .8rem;
+        .list-item {
+          position: relative;
+          .item-area {
+            padding: 2.4rem 0;
+            .item-icon {
+              margin-right: 2.4rem;
+            }
+            .item-left {
+              .item-text {
+                color: $black;
+                @include fontHeight(1.4);
+              }
+              .item-title {
+                font-weight: $fontRegular;
+                @include fontHeight(1.8);
+                + .item-text {
+                  margin-top: .6rem;
+                  @include fontHeight(1.4);
+                }
+              }
+            }
+          }
+          .right {
+            position: absolute;
+            top: 4.1rem;
+            right: .8rem;
+            height: 3.2rem;
+            .btn {
+              padding: 0;
+              min-width: 3.2rem;
+              min-height: 3.2rem;
+              height: 3.2rem;
+            }
+          }
+        }
+      }
+    }
+    // 카드/계좌/Pay머니 상세
+    .card-details {
+      &.account {
+        .card-area {
+          padding-bottom: 4rem;
+          .card-info {
+            padding-top: 3.4rem;
+            .card-info-group {
+              .btn-icon {
+                margin-right: .8rem;
+              }
+              .item-icon-btn {
+                display: inline-flex;
+                margin-bottom: 2rem;
+                @include fontHeight(1.4);
+                align-items: center;
+                justify-content: center;
+                .item {
+                  padding-right: .3rem;
+                }
+              }
+              .btn-underline {
+                padding: .2rem 0 .4rem;
+                font-weight: $fontRegular;
+                @include fontHeight(1.4);
+              }
+            }
+          }
+        }
+        
+      }
+      .card-area {
+        margin: 0 -2.4rem;
+        padding: 1.6rem 0 3.6rem;
+        background-color: $bgLightBlue3;
+        .hashtag {
+          padding-bottom: .8rem;
+          @include fontHeight(1.4);
+          text-align: center;
+          span + span {
+            padding-left: .8rem;
+          }
+        }
+        .card-name {
+          font-weight: $fontBold;
+          @include fontHeight(2.2);
+          text-align: center;
+        }
+        .card-img {
+          width: 15rem;
+          height: 9.2rem;
+          margin: 2.4rem auto 0;
+          text-align: center;
+          img {
+            max-width: 100%;
+            box-shadow: .2rem .4rem .6rem 0 rgba(0, 0, 0, 0.3);
+            border-radius: .6rem;
+          }
+          &.vertical {
+            width: 9.2rem;
+            height: 15rem;
+          }
+        }
+        .card-info {
+          padding-top: 3.2rem;
+          text-align: center;
+          .card-info-group {
+            @include fontHeight(1.4);
+            & + .card-info-group {
+              padding-top: .4rem;
+            }
+            .item + .item {
+              padding-left: .8rem;
+            }
+            em {
+              font-style: normal;
+            }
+          }
+        }
+        .btn-icon-group {
+          padding-top: 1.4rem;
+          text-align: center;
+          .btn-multi {
+            margin: 0 2.4rem;
+            border-color: $gray040;
+          }
+        }
+      }
+    }
+    .card {
+      .card-toolbar {
+        .btn-text.btn-arrow span::after {
+          top: -.1rem;
+        }
+      }
+      // 잔액
+      &.price-group {
+        .card-header {
+          display: block;
+          padding-bottom: 2.4rem;
+          &:only-child {
+            padding-bottom: 4.8rem;
+          }
+          // & + .card-body {
+          //   border-top: .1rem solid $gray030;
+          // }
+          .label {
+            @include fontHeight(1.4);
+          }
+          .price {
+            padding-top: .4rem;
+            font-weight: $fontBold;
+            @include fontHeight(2.2);
+            .money-unit {
+              @include fontHeight(2);
+            }
+          }
+          .card-tooltip {
+            position: relative;
+            .btn-tooltip {
+              text-align: left;
+            }
+            .tooltip-close {
+              top: 2rem;
+            }
+            .type1 {
+              transform: translateX(calc(-50% + 3.2rem)) translateY(.4rem);
+              .tooltip-price {
+                @include fontHeight(1.3);
+              }
+            }
+            .type2 {
+              position: absolute;
+              //transform: translate(.8rem, calc(100% + 1.2rem));
+            }
+            .tooltip-wrap {
+              .small {
+                p {
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 2.8rem;
+          &:only-child {
+            padding-top: 1.6rem;
+            .card-body-title {
+              border-top: 0;
+            }
+          }
+          &.auto-charge {
+            display: flex;
+            padding-top: 2.4rem;
+            border-top: .1rem solid $gray030;
+            align-items: center;
+            justify-content: space-between;
+            &:last-child {
+              padding-bottom: 4.8rem;
+            }
+            .label {
+              color: $gray080;
+              @include fontHeight(1.4);
+              .icon {
+                margin-left: .4rem;
+                margin-top: -.4rem;
+              }
+            }
+            .item-text {
+              display: inline-flex;
+              padding-top: .4rem;
+              color: $gray090;
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+              align-items: center;
+              .icon {
+                margin-left: .4rem;
+                margin-top: -.4rem;
+              }
+            }
+          }
+          .card-body-title {
+            display: flex;
+            padding-top: 1.8rem;
+            border-top: .1rem solid $gray030;
+            align-items: center;
+            justify-content: space-between;
+            & + .list-group.item-gap-20 {
+              .item-area {
+                padding-top: 1.4rem;
+              }
+            }
+          }
+          .sub-title {
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+          }
+          .item-text {
+            color: $gray080;
+            .btn {
+              margin-left: .8rem;
+            }
+            .card-number-text {
+              display: inline-flex;
+              align-items: center;
+              .card-logo {
+                display: inline-block;
+                height: 2rem;
+                margin: 0 .2rem;
+                img {
+                  height: 100%;
+                }
+              }
+            }
+          }
+          .d-flex {
+            align-items: center;
+            justify-content: space-between;
+          }
+          .item-icon-card-vertical.align-self-top {
+            padding-top: .4rem;
+          }
+          .btn.btn-line2 {
+            padding-left: 1.4rem;
+            margin-bottom: 2rem;
+            .text-sm {
+              display: inline-flex;
+              font-weight: $fontMedium;
+              align-items: center;
+              .text-emoji {
+                padding-right: .8rem;
+                @include fontHeight(2.4);
+              }
+            }
+            
+          }
+          
+        }
+      }
+      // 실적
+      &.performance-area {
+        &:first-child {
+          .card-header {
+            padding-top: 4rem;
+          }
+        }
+        .card-header {
+          padding-top: 4.8rem;
+          align-items: flex-start;
+          .card-title {
+            font-weight: $fontLight;
+            @include fontHeight(2);
+            .point {
+              font-weight: $fontMedium;
+            }
+          }
+          &:only-child {
+            padding-bottom: 4.8rem;
+          }
+        }
+        .card-body {
+          padding-bottom: 4.8rem;
+          .table-list.type7 {
+            margin-top: 1.4rem;
+            dt:last-of-type, dd:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+          .list-group.item-gap-10 {
+            margin-top: .6rem;
+            li:last-child {
+              .item-area {
+                padding-bottom: 0;
+              }
+            }
+          }
+          .select-group {
+            padding: .8rem 0 1.6rem;
+          }
+        }
+      }
+      // 카드결제금액
+      &.cardpayment-area {
+        .card-header {
+          padding-top: 4.8rem;
+          align-items: flex-start;
+          .card-title {
+            font-weight: $fontLight;
+            @include fontHeight(2);
+            .point {
+              font-weight: $fontMedium;
+            }
+          }
+          & + .card-body {
+            & div:first-child.table-list-group {
+              & div:first-child.table-header {
+                padding-top: 1.6rem;
+              }
+            }
+          }
+        }
+        .card-body {
+          padding-bottom: 2.8rem;
+          .table-list-group:only-child .table-header:first-child {
+            padding-top: 4.8rem;
+          }
+          // 금액보충
+          .warning-area {
+            display: flex;
+            padding: 1.6rem 0 2.4rem;
+            align-items: center;
+            justify-content: space-between;
+            & + .btn-area {
+              .btn-line {
+                margin: 0 0 2rem;
+              }
+            }
+            & + .table-list-group {
+              div:first-child {
+                &.table-header {
+                  border-top: .1rem solid $gray030;
+                }
+                &.btn-area {
+                  .btn-line {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+            .item-full.d-flex {
+              align-items: center;
+            }
+            .item-icon {
+              display: inline-block;
+              margin-right: .4rem;
+            }
+            .item-text {
+              padding-top: .1rem;
+              @include fontHeight(1.4);
+            }
+          }
+          // 입금예정 & 카드결제일 정보 리스트
+          .table-list-group {
+            .table-header {
+              display: flex;
+              padding-top: 3.2rem;
+              padding-bottom: 1rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+              align-items: center;
+              justify-content: space-between;
+              &:first-child {
+                padding-top: 2rem;
+              }
+            }
+            .table-list.type2 {
+              padding-top: 2rem;
+              dt {
+                display: inline-flex;
+                align-items: center;
+              }
+              dt, dd {
+                margin-bottom: 2rem;
+                @include fontHeight(1.6);
+                flex-basis: 50%;
+              }
+              dd {
+                font-weight: $fontMedium;
+              }
+            }
+            // 날짜별리스트
+            .list-group.line {
+              & + .banner-area {
+                margin: 2rem 0;
+              }
+              .list-item {
+                &.disabled {
+
+                  .item-header {
+                    color: $gray070;
+                  }
+                  .item-body {
+                    a.item-area {
+                      cursor: none;
+                    }
+                    .item-area {
+                      .item-left {
+                        .item-title {
+                          .badge {
+                            color: $gray060;
+                            background-color: $gray030;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                .item-header {
+                  padding: 2.4rem 0 .6rem;
+                  font-weight: $fontBold;
+                  @include fontHeight(1.6);
+                }
+                .item-body {
+                  &:last-of-type {
+                    padding-bottom: 1.4rem;
+                  }
+                  .item-area {
+                    padding: 1rem 0;
+                    .item-left {
+                      .item-title {
+                        font-weight: $fontRegular;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .badge {
+              display: inline-block;
+              padding: .6rem 1rem .4rem;
+              margin-left: .4rem;
+              border-radius: .2rem;
+              background-color: $gray020;
+              color: $gray090;
+              font-weight: $fontBold;
+              @include fontHeight(1.2);
+              white-space: nowrap;
+              &.skyblue {
+                color: $darkBlueGray;
+                background-color: $skyBlue20;
+              }
+              &.purple {
+                color: $darkBlueGray;
+                background-color: $blue020;
+              }
+            }
+          }
+          .banner-area .banner {
+            padding: 1.6rem 2rem;
+            .visual-thumbnail {
+              position: absolute;
+              top: .8rem;
+              right: 1.4rem;
+              margin: -0.8rem -0.2rem -1rem 0;
+              flex: 0 0 auto;
+              display: block;
+              width: 7rem;
+              height: 6.8rem;
+              background: url(#{$img-path}/payfan/visual/wallet/visual_thumbnail.png) no-repeat 0 0 / 100% auto;
+            }
+          }
+          .btn-area {
+            &:first-child {
+              .btn-line {
+                margin: 1.6rem 0 2rem;
+              }
+            }
+            &:only-child {
+              .btn-line {
+                margin-top: 4.8rem;
+              }
+            }
+            .btn-line{
+              margin: .8rem 0 .8rem;
+            }
+            .btn-line2{
+              margin: 1.8rem 0 2rem;
+            }
+            & + .table-list-group {
+              border-top: 0;
+            }
+          }
+        }
+      }
+      // 최근입출금,결제
+      &.lately-area {
+        .card-header {
+          padding: 4rem 0 2rem;
+          align-items: center;
+          &:first-child {
+            padding-top: 4.8rem;
+          }
+          .card-title {
+            font-weight: $fontMedium;
+            @include fontHeight(1.8);
+          }
+        }
+        .card-body {
+          padding-bottom: 2.8rem;
+          &:last-child {
+            padding-bottom: 3.6rem;
+          }
+          & + .card-header {
+            border-top: .1rem solid $gray030;
+          }
+          .no-data {
+            padding: 2.4rem 0 2rem;
+            color: $gray080;
+            @include fontHeight(1.6);
+            text-align: center;
+          }
+          .card-notice {
+            display: flex;
+            width: 100%;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            background-color: $bgLightBlue;
+            border-radius: .4rem;
+            align-items: flex-start;
+            .icon {
+              margin-top: -.1rem;
+            }
+            p {
+              padding-left: .4rem;
+              @include fontHeight(1.2);
+            }
+          }
+        }
+      }
+      // 링크
+      &.card-link {
+        .card-header {
+          position: relative;
+          padding: 0;
+          &:first-of-type {
+            padding-top: 2.4rem;
+          }
+          &:last-of-type {
+            padding-bottom: 1.6rem;
+          }
+          & + .card-header {
+            border-top: .1rem solid $gray030;
+          }
+          .btn {
+            position: absolute;
+            top: 4.4rem;
+            right: 3.2rem;
+          }
+          a {
+            display: flex;
+            width: 100%;
+            padding: 2.4rem 0;
+            align-items: center;
+            .card-title {
+              padding-left: 1.6rem;
+              margin-bottom: -.2rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+            }
+            .icon-link {
+              margin-left: auto;
+            }
+          }
+        }
+        
+      }
+    }
+    // 삭제버튼
+    .btn-card-delete {
+      text-align: center;
+      .btn-underline {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        color: $gray100;
+        font-weight: $fontMedium;
+        @include fontHeight(1.4);
+      }
+    }
+    // 대체설정
+    .settings {
+      .text-area.lg {
+        padding: 3.2rem 0 4rem;
+        .main-text {
+          @include fontHeight(2.2);
+        }
+        .sub-text {
+          padding-top: 1.6rem;
+          color: $gray080;
+          @include fontHeight(1.4);
+        }
+      }
+      .list-group {
+        border-top: .1rem solid $gray030;
+        .list-item {
+          div.item-area {
+            padding: 2.4rem 0 1.6rem;
+          }
+          .item-left {
+            .item-title.text-sm {
+              @include fontHeight(1.4);
+            }
+          }
+          .item-right {
+            height: 2.4rem;
+          }
+          a.item-area {
+            &.disabled {
+              .item-icon-card-vertical {
+                img {
+                  filter: grayscale(100%);
+                  opacity: .2;
+                }
+              }
+              .item-left {
+                .item-title {
+                  color: $black !important;
+                  opacity: .2;
+                }
+              }
+              .item-text.error {
+                color: $red100 !important;
+                .icon {
+                  color: $red100 !important;
+                  filter: none;
+                }
+                &.item-flex {
+                  display: inline-flex;
+                  align-items: center;
+                  .icon {
+                    margin-right: .4rem;
+                    margin-bottom: .2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .no-data {
+        padding-top: 9.6rem;
+        border-top: .1rem solid $gray030;
+        text-align: center;
+        p {
+          padding-top: 1.6rem;
+          color: $gray080;
+          @include fontHeight(1.6);
+        }
+      }
+    }
+    // 카드/계좌 선택
+    .card-select-list {
+      padding-top: 1.4rem;
+    }
+    // 해지
+    .service-out {
+      padding-top: 16rem;
+      &::before {
+        display: block;
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto;
+        background: url(#{$img-path}/common/icons/default/icon_80_absence1.svg) no-repeat 0 0 / 100% auto;
+        content: '';
+      }
+      
+      .main-text {
+        padding-top: 3.2rem;
+        font-weight: $fontMedium;
+        @include fontHeight(2.6);
+        text-align: center;
+      }
+      .sub-text {
+        padding-top: 1.6rem;
+        color: $gray080;
+        @include fontHeight(1.4);
+        text-align: center;
+      }
+    }
+    // 결제일 알림
+    &.payment-alarm-service {
+      word-break: keep-all;
+      .card-title {
+        h3 {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+          strong {
+            color: $blue100;
+          }
+        }
+      }
+      .card-01 {
+        .card-header {
+          padding-top: 2.4rem;
+          padding-bottom: 2.4rem;
+        }
+        p {
+          font-weight: $fontRegular;
+          @include fontHeight(1.6);
+          color: $gray090;
+          &:first-child {
+            padding-bottom: 1.6rem;
+          }
+        }
+        .tip {
+          padding-top: 1.2rem;
+          padding-bottom: 3.2rem;
+          li {
+            @include fontHeight(1.4);
+          }
+        }
+        .splide.bullet {
+          padding-bottom: 3rem;
+          margin-bottom: 1.6rem;
+        }
+        .splide .splide__pagination.type1 {
+          bottom: 0;
+        }
+        .slide-inner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          color: #fff;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .card-02 {
+        .card-header {
+          padding-top: 4.8rem;
+        }
+        .card-body {
+          padding-bottom: 4rem;
+        }
+        &.card .card-body + .card-header,
+        &.card .card-body + .card-body {
+          border-top: 0 none;
+        }
+        &.card .card-body + .card-header {
+          padding-top: 0;
+        }
+        .card-separate {
+          border-bottom: 0.1rem solid $gray030;
+          &:last-child {
+            .card-header:first-of-type {
+              padding-top: 4rem;
+              padding-bottom: 4.8rem;
+            }
+            .card-body:last-of-type {
+              padding-bottom: 4.8rem;
+            }
+          }
+          .card-body {
+            padding-bottom: 3.2rem;
+            &:last-of-type {
+              padding-bottom: 4rem;
+            }
+          }
+          &:last-child {
+            border-bottom: 0;
+          }
+        }
+        p {
+          padding-top: .8rem;
+          padding-bottom: 1.6rem;
+          color: $gray090;
+          font-weight: $fontRegular;
+          @include fontHeight(1.6);
+          &.caution {
+            display: flex;
+            padding-top: 0;
+            align-items: flex-start;
+            color: $gray080;
+            @include fontHeight(1.4);
+            .icon {
+              margin-top: .2rem;
+              margin-right: 0.6rem;
+              flex: none;
+            }
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+        .step {
+          display: flex;
+          padding: .8rem 1.8rem 0;
+          margin-left: -3rem;
+          text-align: center;
+          span {
+            padding-top: 1.6rem;
+            font-weight: $fontRegular;
+            @include fontHeight(1.4);
+          }
+          li {
+            position: relative;
+            display: flex;
+            min-width: 11.2rem;
+            padding: 0 3rem;
+            flex-direction: column;
+            &::before {
+              content: "";
+              display: block;
+              width: 4.8rem;
+              height: 4.8rem;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              top: 2.4rem;
+              display: block;
+              width: 1.3rem;
+              height: .3rem;
+            }
+            &:nth-child(1) {
+              &::before {
+                background-image: url(#{$img-path}/payfan/icons/default/icon_48_walletstep01.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+              &::after {
+                right: 0;
+                background: url(#{$img-path}/payfan/visual/wallet/visual_wallet_stepdot.png) no-repeat 0 0 / auto 100%;
+                transform: translateX(50%);
+              }
+            }
+            &:nth-child(2) {
+              &::before {
+                background-image: url(#{$img-path}/payfan/icons/default/icon_48_walletstep02.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+              &::after {
+                right: 0;
+                background: url(#{$img-path}/payfan/visual/wallet/visual_wallet_stepdot.png) no-repeat 0 0 / auto 100%;
+                transform: translateX(50%);
+              }
+            }
+            &:nth-child(3) {
+              &::before {
+                background-image: url(#{$img-path}/payfan/icons/default/icon_48_walletstep03.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+          }
+        }
+        .claim-guide {
+          padding: 2.4rem 2rem;
+          border-radius: 0.8rem;
+          background-color: $bgWarmGray;
+          p {
+            padding: 0;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+            color: $black;
+          }
+          ul {
+            padding: .8rem 0 0 1rem;
+            li {
+              text-indent: -1rem;
+              @include fontHeight(1.4);
+              font-weight: $fontRegular;
+              color: $gray080;
+              & + li {
+                margin-top: .6rem;
+              }
+            }
+          }
+          strong {
+            display: block;
+            padding: 1.6rem 0 .8rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.4);
+            color: $gray090;
+          }
+          span {
+            display: block;
+            @include fontHeight(1.4);
+            color: $gray080;
+          }
+        }
+      }
+      .card-03 {
+        .card-body {
+          & + .card-header {
+            border-top: .1rem solid $gray030;
+          }
+        }
+        .accordion-header {
+          margin-top: 2.8rem;
+        }
+        .title {
+          font-weight: $fontMedium;
+          @include fontHeight(1.8);
+        }
+        .tip {
+          padding-top: .8rem;
+          margin-bottom: 2rem;
+          li {
+            padding-bottom: 1.6rem;
+            @include fontHeight(1.6);
+          }
+        }
+        .agreement.full .terms-depth2 > .list-group {
+          padding-top: 0;
+        }
+        .agreement.full .terms-depth2 .list-group .list-item .item-area {
+          padding: 0 0 0.8rem;
+        }
+      }
+      .card-04 {
+        .card-header {
+          padding-top: 4.8rem;
+        }
+        .card-body {
+          padding-bottom: 2.4rem;
+        }
+        .tip {
+          margin-top: .8rem;
+          li {
+            padding-bottom: 1.6rem;
+          }
+        }
+      }
+      .tip {
+        padding-left: 1.4rem;
+        li {
+          position: relative;
+          padding-bottom: .6rem;
+          text-indent: -1.4rem;
+          font-weight: $fontRegular;
+          color: $gray080;
+          &::before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            width: 0.4rem;
+            height: 0.4rem;
+            margin: 0 .8rem 0.4rem 0.2rem;
+            border-radius: 0.2rem;
+            background-color: $gray070;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+    // 자금반환청구
+    .return-area {
+      &.agree {
+        .card {
+          &:first-child {
+            .card-header {
+              padding: 2.4rem 0;
+            }
+          }
+          &:last-child {
+            .card-body {
+              padding: 0;
+            }
+          }
+          .card-header {
+            padding-top: 4.5rem;
+            padding-bottom: 1.3rem;
+            .item-text {
+              color: $gray090;
+              @include fontHeight(1.6);
+            }
+          }
+          .card-body {
+            padding-bottom: 3.0rem;
+            .agreement {
+              border-top: .1rem solid $gray030;
+            }
+            .table-list {
+              padding: 3.2rem 0;
+              border-top: .1rem solid $gray030;
+              border-bottom: .1rem solid $gray030;
+              dt {
+                color: $gray080;
+              }
+              dd {
+                font-weight: $fontMedium;
+              }
+              dt, dd {
+                margin-bottom: 1.2rem;
+                @include fontHeight(1.6);
+                &:last-of-type {
+                  margin-bottom: 0;
+                }
+              }
+            }
+            .dot-list {
+              padding: 3.2rem 0 2.4rem;
+              li {
+                position: relative;
+                padding-left: 1.4rem;
+                color: $gray080;
+                @include fontHeight(1.6);
+                & + li {
+                  margin-top: 1.6rem;
+                }
+                &:before {
+                  position: absolute;
+                  top: .6rem;
+                  left: .2rem;
+                  display: block;
+                  width: .4rem;
+                  height: .4rem;
+                  background-color: $gray070;
+                  border-radius: 50%;
+                  content: '';
+                }
+              }
+            }
+          }
+        }
+      }
+      &.account-info {
+        .card {
+          &:first-child {
+            .card-header {
+              padding: .8rem 0 1.2rem;
+            }
+            .card-body {
+              padding-bottom: 2.4rem;
+            }
+          }
+          .card-body {
+            .btn.btn-line2.type2 {
+              > span {
+                color: $bgDarkBlue;
+                font-weight: $fontMedium;
+                @include fontHeight(1.4);
+              }
+              .number {
+                padding-left: .8rem;
+                color: $gray080;
+                font-weight: $fontRegular;
+                @include fontHeight(1.2);
+              }
+            }
+          }
+        }
+        // 신청가능목록
+        .apply-list {
+          margin: 0 -2.4rem;
+          border-top: 1.2rem solid $gray030;
+          .tab-wrap {
+            padding-top: 2.4rem;
+            .tab-menu {
+              margin: 0;
+            }
+          }
+          &.type2 {
+            margin: 0;
+            border-top: 0;
+            .detail-content {
+              padding: 0;
+              .card {
+                &:first-child {
+                  .card-header {
+                    padding-top: 2.4rem;
+                  }
+                }
+                .card-header {
+                  padding: 4rem 0 1.6rem;
+                  .card-title {
+                    font-weight: $fontMedium;
+                    @include fontHeight(1.8);
+                  }
+                }
+                .card-body {
+                  .detail-info {
+                    padding: 0;
+                    li {
+                      border-top: .1rem solid $gray030;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .calendar-detail-list {
+            display: flex;
+            width: 100%;
+            padding: 2.4rem 0 1.6rem;
+            border-bottom: .1rem solid $gray030;
+            align-items: center;
+            justify-content: space-between;
+            button[class^=btn-] {
+              width: 3.2rem;
+              height: 3.2rem;
+              padding: .6rem;
+            }
+            .btn-prev {
+              margin-left: 1.4rem;
+            }
+            .btn-next {
+              margin-right: 1.4rem;
+            }
+            .header-title {
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+            }
+          }
+          .detail-content {
+            padding: 0 2.4rem;
+            .card {
+              &:first-child {
+                .card-header {
+                  padding-top: 4.0rem;
+                }
+              }
+              .card-header {
+                padding: 4.8rem 0 0;
+                .card-title {
+                  font-weight: $fontRegular;
+                  @include fontHeight(1.4);
+                }
+              }
+              .card-body {
+                padding: 0;
+                .detail-info {
+                  padding: 1rem 0 1.6rem;
+                  li {
+                    padding: 2.4rem 0;
+                    & + li {
+                      border-top: .1rem solid $gray030;
+                    }
+                  }
+                  .table-list {
+                    dt, dd {
+                      margin-bottom: .8rem;
+                      @include fontHeight(1.6);
+                      &:last-of-type {
+                        margin-bottom: 1.6rem;
+                      }
+                    }
+                    dt {
+                      color: $gray080;
+                    }
+                    dd {
+                      font-weight: $fontMedium;
+                      .price {
+                        font-weight: $fontBold;
+                        .unit {
+                          @include fontHeight(1.4);
+                        }
+                      }
+                    }
+                  }
+                  .no-data {
+                    position: relative;
+                    width: 100%;
+                    padding: 8rem 0;
+                    text-align: center;
+                    &:before {
+                      display: block;
+                      width: 8rem;
+                      height: 8rem;
+                      margin: 0 auto;
+                      background: url(#{$img-path}/common/icons/default/icon_80_absence.svg) no-repeat 0 0 / 100% auto;
+                      content: '';
+                    }
+                    p {
+                      padding-top: 1.6rem;
+                      color: $gray080;
+                      @include fontHeight(1.6);
+                    }
+                  }
+                }
+                .return-info-form {
+                  padding: 4rem 0 2.4rem;
+                  .form-group {
+                    & + .form-group {
+                      margin-top: 2.4rem;
+                    }
+                  }
+                  > p {
+                    padding-top: .8rem;
+                    color: $gray070;
+                    @include fontHeight(1.2);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.complete {
+        justify-content: space-between;
+        .icon-check {
+          margin-top: auto;
+        }
+        .complete-top-area {
+          margin: auto;
+        }
+        .complete-bottom-area {
+          width: 100%;
+          padding: 0;
+          border-top: .1rem solid $gray030;
+        }
+        .more-area {
+          padding-top: .2rem;
+          padding-bottom: .2rem;
+          text-align: center;
+          .btn-icon {
+            padding: 1.4rem 2rem;
+          }
+        }
+      }
+      &.bottom-modal {
+        padding-top: 1rem;
+      }
+      .detail-content.type2 {
+        .detail-info {
+          padding: 2rem 0 0;
+          & + .detail-info {
+            margin-top: .8rem;
+            border-top: .1rem solid $gray030;
+          }
+          .title {
+            margin-bottom: 1.2rem;
+            font-weight: $fontMedium;
+            @include fontHeight(1.6);
+            text-align: left;
+          }
+          .table-list {
+            &.type2 {
+              border-top: 0;
+              dt, dd {
+                margin-bottom: .8rem;
+                @include fontHeight(1.4);
+              }
+            }
+            dt, dd {
+              margin-bottom: 1.2rem;
+              @include fontHeight(1.6);
+            }
+            dt {
+              color: $gray080;
+              text-align: left;
+            }
+            dd {
+              font-weight: $fontMedium;
+              .price {
+                font-weight: $fontBold;
+                .unit {
+                  @include fontHeight(1.4);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // 계좌선택 팝업
+    .account-bottom-list {
+      padding: 3.0rem 0 1.6rem;
+      .form-radio {
+        label {
+          align-items: flex-start;
+        }
+        & + .form-radio {
+          margin-top: 2.4rem;
+        }
+      }
+      .form-radio-label {
+        flex-direction: column;
+        .item-title {
+          display: block;
+          font-weight: $fontMedium;
+          @include fontHeight(1.4);
+        }
+        .item-text {
+          display: block;
+          padding-top: .4rem;
+          color: $gray080;
+          @include fontHeight(1.2);
+        }
+      }
+    }
+    // 반환청구사유 팝업
+    .reason-bottom-list {
+      padding: 1.4rem 0 0;
+      li:last-child {
+        .item-area {
+          padding-bottom: .8rem;
+        }
+      }
+      .item-area {
+        width: 100%;
+        text-align: left;
+        padding: 1.6rem 0;
+      }
+    }
+    // 자금반환청구 안내 풀팝업
+    .return-guide {
+      .card {
+        &:first-child {
+          .card-header {
+            padding-top: 2.4rem;
+          }
+          .card-body {
+            padding-bottom: 4.8rem;
+          }
+        }
+        .card-header {
+          padding: 4.8rem 0 2.4rem;
+        }
+        .card-body {
+          padding-bottom: 4rem;
+          p {
+            color: $gray090;
+            @include fontHeight(1.6);
+          }
+          .dot-list {
+            padding-top: 2.4rem;
+            li {
+              position: relative;
+              padding-left: 1.4rem;
+              color: $gray080;
+              @include fontHeight(1.4);
+              word-break: keep-all;
+              &:before {
+                position: absolute;
+                top: .6rem;
+                left: .2rem;
+                width: .4rem;
+                height: .4rem;
+                background-color: $gray070;
+                border-radius: 50%;
+                content: '';
+              }
+              & + li {
+                margin-top: .6rem;
+              }
+            }
+          }
+          .step-list {
+            display: flex;
+            justify-content: space-between;
+            li {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              flex-basis: 25%;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              &:before {
+                display: block;
+                width: 3.2rem;
+                height: 3.2rem;
+                content: '';
+              }
+              &:after {
+                position: absolute;
+                top: 1rem;
+                right: -2rem;
+                display: block;
+                width: 1.6rem;
+                height: 1.6rem;
+                background: url(#{$img-path}/common/icons/default/icon_16_arrow1_gray60.svg) no-repeat 0 0 / 1.6rem auto;
+                content: '';
+              }
+              &:first-child {
+                &:before {
+                  background: url(#{$img-path}/payfan/icons/default/icon_32_returnstep1.svg) no-repeat 0 0 / 100% auto;
+                }
+              }
+              &:nth-child(2) {
+                &:before {
+                  background: url(#{$img-path}/payfan/icons/default/icon_32_returnstep2.svg) no-repeat 0 0 / 100% auto;
+                }
+              }
+              &:nth-child(3) {
+                &:before {
+                  background: url(#{$img-path}/payfan/icons/default/icon_32_returnstep3.svg) no-repeat 0 0 / 100% auto;
+                }
+              }
+              &:nth-child(4) {
+                &:before {
+                  background: url(#{$img-path}/payfan/icons/default/icon_32_returnstep4.svg) no-repeat 0 0 / 100% auto;
+                }
+              }
+              &:last-child {
+                &:after {
+                  display: none;
+                }
+              }
+              & + li {
+                margin-left: 2.4rem;
+              }
+              .text {
+                display: block;
+                padding-top: 1.6rem;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      .card-inner {
+        border-top: .1rem solid $gray030;
+        .card-header {
+          padding-top: 4rem;
+        }
+        &:last-of-type {
+          .card-body {
+            padding-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+    // 이체확인증
+    .transfer-confirmation {
+      .shc-logo {
+        height: 2rem;
+        margin: .4rem 0 1.6rem;
+        background: url(#{$img-path}/payfan/visual/wallet/visual_shc_logo.png) no-repeat 0 0 / auto 100%;
+      }
+      .list-area {
+        border-top: .1rem solid $gray030;
+        border-bottom: .1rem solid $gray030;
+        li {
+          padding-top: 2rem;
+          padding-bottom: .4rem;
+          & + li {
+            border-top: .1rem solid $gray030;
+          }
+          &:first-child {
+            dd {
+              font-weight: $fontMedium;
+            }
+          }
+        }
+      }
+      .dot-list {
+        padding-top: 1.6rem;
+        li {
+          position: relative;
+          padding-left: 1.8rem;
+          color: $gray080;
+          @include fontHeight(1.4);
+          word-break: keep-all;
+          & + li {
+            margin-top: .8rem;
+          }
+          &:before {
+            position: absolute;
+            top: .6rem;
+            left: .2rem;
+            display: block;
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: $gray050;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}

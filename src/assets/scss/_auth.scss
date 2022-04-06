@@ -1,0 +1,80 @@
+// 공통 인증
+.certification-area {
+  // 입력 영역 공통
+  position: relative;
+  height: 100%;
+  // padding-bottom: 7.5rem;
+  .list-group:first-child {
+    padding-top: .4rem;
+  }
+  .card-type {
+    .form-label {
+      display: block;
+      padding-bottom: 0.8rem;
+    }
+    .form-radio {
+      display: inline-flex;
+      margin-left: -0.4rem;
+      padding-right: 2.0rem;
+      .form-radio-label {
+        padding-left: 0.4rem;
+        font-weight: $fontRegular;
+        @include fontHeight(1.4);
+        color: $black;
+      }
+      + .form-radio {
+        margin-top: 0;
+      }
+    }
+  }
+  .tooltip-wrap {
+    .btn-tooltip {
+      margin-top: -0.3rem;
+      margin-left: 0.4rem;
+    }
+    .tooltip2.type1 {
+      z-index: 2;
+    }
+    .tooltip-content {
+      p {
+        padding-bottom: 0.6rem;
+        font-weight: $fontRegular;
+        @include fontHeight(1.2);
+        color: $gray090;
+        word-break: break-all;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+  .label-group {
+    display: flex;
+    align-items: center;
+    .form-label {
+      display: block;
+      padding-right: 0.2rem;
+    }
+    .btn-cvc-popup {
+      display: block;
+      height: 1.7rem;
+    }
+  }
+  .guide-text {
+    padding: 2.4rem 0 2.8rem;
+    h3 {
+      display: inline-block;
+      font-weight: $fontLight;
+      @include fontHeight(1.8);
+    }
+    .tooltip-wrap {
+      margin-left: .4rem;
+      .btn-tooltip {
+        margin-left: 0;
+      }
+    }
+  }
+  .form-group + .form-group {
+    padding-top: 2rem;
+  }
+}

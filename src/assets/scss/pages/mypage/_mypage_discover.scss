@@ -1,0 +1,511 @@
+// 마이페이지
+.mypage {
+  // 내 글
+  &.myarticle {
+    padding: 0;
+    .tab-menu {
+      margin: 0 !important;
+    }
+    .tab-content {
+      .list-num {
+        padding: 2.2rem 0 1.4rem;
+      }
+      .community.type2 {
+        padding: 2rem 0;
+        .list-item {
+          padding: 0;
+          border: none;
+        }
+      }
+    }
+    .my-discover {
+      padding: 0 2.4rem;
+    }
+    //페이지 리스트
+    .page-list2 {
+      display: flex;
+      li {
+        + li {
+          margin-left: 1.6rem;
+        }
+        a {
+          color: $gray070;
+          @include fontHeight(1.6);
+          &.choice {
+            padding-bottom: .2rem;
+            color: $black;
+            font-weight: $fontBold;
+            border-bottom: 2px solid $black;
+          }
+        }
+      }
+    }
+    .list-num {
+      position: relative;
+      padding: 1.2rem 0 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      @include fontHeight(1.4);
+      .number {
+        font-weight: $fontBold;
+      }
+      & + .community .list-item {
+          padding-top: 3rem;
+      }
+      & + .community.type2 {
+        padding: 2.2rem 0;
+      }
+      &:after {
+        position: absolute;
+        left: -2.4rem;
+        bottom: 0;
+        display: block;
+        width: calc(100% + 4.8rem);
+        height: .1rem;
+        background-color: $gray030;
+        content: '';
+      }
+    }
+    .blind-article {
+      padding-top: 0.2rem;
+      padding-bottom: 2rem;
+      @include fontHeight(1.4);
+      color: $red100;
+    }
+    .community {
+      .list-item {
+        .item-area {
+          .item-text {
+            color: $black;
+          }
+          .item-top {
+            .item-text {
+              font-weight: $fontMedium;
+            }
+            .item-text-sm {
+              padding-top: .2rem;
+              color: $gray080;
+            }
+            .item-thumbnail {
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+          .item-bottom {
+            .item-title-lg {
+              @include fontHeight(1.6);
+            }
+            .item-text-box {
+              margin-top: 1.6rem;
+              span {
+                -webkit-line-clamp: 2;
+              }
+            }
+            .item-text {
+              color: $gray090;
+              span {
+                -webkit-line-clamp: 3;
+              }
+            }
+            .item-images-box {
+              margin-bottom: 0;
+              .item-number {
+                @include fontHeight(1.2);
+                position: absolute;
+                right: 0.6rem;
+                bottom: 0.6rem;
+                display: block;
+                min-width: 2.2rem;
+                height: 2.1rem;
+                padding: 0;
+                font-weight: $fontBold;
+                line-height: 2.1rem;
+                text-align: center;
+                color: $white;
+                border-radius: 1.1rem;
+                background: rgba(0,0,0,0.7);
+              }
+              .item-images {
+                overflow: hidden;
+                position: relative;
+                display: block;
+                padding-top: 64.103%; // 비율계산
+                border-radius: 0.2rem;
+                img {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  display: block;
+                  transform: translate(-50%, -50%);
+                }
+              }
+            }
+          }
+          .item-icon-box {
+            .item-right {
+              height: 2.4rem;
+              button {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.type2 {
+        padding: 1.4rem 0;
+        .list-item {
+          padding: 0;
+          border: none;
+          .item-area {
+            padding: 1.8rem 0;
+            align-items: flex-start;
+            .item-icon {
+              display: flex;
+              width: 4rem;
+              height: 4rem;
+              border-radius: 50%;
+              border: .1rem solid $gray030;
+              align-items: center;
+              justify-content: center;
+            }
+            .item-title {
+              display: -webkit-box;
+              padding-top: .4rem;
+              color: $gray090;
+              font-weight: $fontRegular;
+              @include fontHeight(1.4);
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              white-space: normal;
+              word-break: keep-all;
+            }
+            .item-text{
+              color: $gray080;
+              @include fontHeight(1.2);
+            }
+          }
+        }
+      }
+      .item-thumbnail {
+        &.type4 {
+          background-color: $white;
+        }
+      }
+    }
+    .no-data {
+      display: flex;
+      padding-top: 9rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        padding-top: 1.4rem;
+        color: $gray080;
+        @include fontHeight(1.4);
+        text-align: center;
+      }
+    }
+  }
+  // 이벤트
+  &.event {
+    .joined-event-list {
+      .list-group.event {
+        padding-top: 5.6rem;
+      }
+    }
+    // 이벤트 리스트 (스타일 필요하면 아래의 내용 다 가져가세요)
+    .list-group.event {
+      display: grid;
+      grid-template-columns: calc(50% - 0.8rem) calc(50% - 0.8rem);
+      grid-gap: 2.8rem 1.6rem;
+      padding-bottom: 4.0rem;
+      .list-item {
+        position: relative;
+        .completed {
+          position: absolute;
+          top: 0.6rem;
+          left: 0.6rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 5.8rem;
+          height: 2.2rem;
+          border-radius: 0.1rem;
+          background-color: $white;
+          @include fontHeight(1);
+          font-weight: $fontBold;
+          color: $blue100;
+        }
+        .item-area {
+          display: block;
+          padding: 0;
+          .item-thumbnail {
+            overflow: hidden;
+            display: block;
+            width: 14.8rem;
+            height: 14.8rem;
+            border-radius: 0.2rem;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .item-bottom {
+            display: block;
+            padding-top: 1.2rem;
+            .item-category {
+              display: flex;
+              .benefit {
+                position: absolute;
+                top: 0.6rem;
+                left: 0.6rem;
+                display: flex;
+                flex-flow: row-reverse;
+                align-items: center;
+                border-radius: 0.1rem;
+                background-color: $blue100;
+                .number {
+                  display: block;
+                  height: 2.2rem;
+                  padding: 0 0.8rem;
+                  font-weight: $fontBold;
+                  @include fontHeight(1);
+                  line-height: 2.2rem;
+                  color: $white;
+                }
+                .unit {
+                  display: block;
+                  height: 2.0rem;
+                  margin-left: 0.1rem;
+                  padding: 0 0.7rem;
+                  border-radius: 0.1rem;
+                  background-color: $white;
+                  font-weight: $fontMedium;
+                  @include fontHeight(1);
+                  line-height: 2.0rem;
+                  color: $blue100;
+                }
+              }
+              .pay-category {
+                position: relative;
+                font-weight: $fontRegular;
+                @include fontHeight(1);
+                color: $black;
+                &:after {
+                  content: "";
+                  position: relative;
+                  top: 0.1rem;
+                  display: inline-block;
+                  width: 0.1rem;
+                  height: 0.8rem;
+                  margin-right: 0.8rem;
+                  padding-left: 0.6rem;
+                  border-right: 0.1rem solid $gray030;
+                }
+              }
+              .shop-category {
+                font-weight: $fontRegular;
+                @include fontHeight(1);
+                color: $blue100;
+              }
+            }
+            .item-title {
+              display: block;
+              margin-top: 0.4rem;
+              margin-bottom: 0.8rem;
+              font-weight: $fontMedium;
+              @include fontHeight(1.4);
+              color: $black;
+            }
+            .item-period {
+              display: block;
+              font-weight: $fontRegular;
+              @include fontHeight(1);
+              color: $gray080;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.coupon {
+    .my-coupon-list {
+      padding-top: 5.6rem;
+      padding-bottom: 4.0rem;
+    }
+    // 쿠폰 리스트 (타임라인꺼)
+    .coupon-list {
+      .coupon-item {
+        position: relative;
+        overflow: hidden;
+        @mixin coupon-dot {
+          z-index: 1;
+          position: absolute;
+          top: -.9rem;
+          right: 5.2rem;
+          display: block;
+          width: 1.8rem;
+          height: 1.8rem;
+          background-color: $white;
+          border: .1rem solid $gray040;
+          border-radius: 50%;
+          box-sizing: border-box;
+          content: '';
+        }
+        &::before {
+          @include coupon-dot;
+        }
+        &::after {
+          @include coupon-dot;
+          top: auto;
+          bottom: -.9rem;
+        }
+        .coupon {
+          display: flex;
+          width: 100%;
+          height: 16rem;
+          background-color: $gray020;
+          border: .1rem solid $gray040;
+          border-radius: .8rem;
+          &-content {
+            position: relative;
+            display: block;
+            width: calc(100% - 6rem);
+            height: 100%;
+            padding: 4.4rem 3.2rem 2.4rem;
+          }
+          &-label {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            display: block;
+            padding: 0 .4rem;
+            color: $white;
+            @include fontHeight(1);
+            background-color: $darkBlue70;
+            border-radius: .1rem;
+          }
+          &-name {
+            position: absolute;
+            top: 2.6rem;
+            left: 50%;
+            display: block;
+            width: 100%;
+            padding: 0 3.2rem;
+            color: $black;
+            @include fontHeight(1.2);
+            text-align: center;
+            transform: translateX(-50%);
+            word-break: keep-all;
+          }
+          &-title {
+            display: flex;
+            height: 5.2rem;
+            color: $black;
+            font-weight: $fontBold;
+            @include fontHeight(1.8);
+            align-items: center;
+            justify-content: center;
+          }
+          &-info {
+            display: block;
+            width: 100%;
+            max-width: 18.6rem;
+            color: $black;
+            padding-top: .4rem;
+            padding-bottom: .4rem;
+            margin: 0 auto;
+            @include fontHeight(1.2);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+          &-date {
+            position: absolute;
+            left: 50%;
+            bottom: 2.4rem;
+            display: flex;
+            color: $gray080;
+            @include fontHeight(1);
+            text-align: center;
+            transform: translateX(-50%);
+          }
+          &-tag {
+            position: relative;
+            display: block;
+            width: 6rem;
+            height: 16rem;
+            border-left: .1rem solid $gray040;
+            border-top-right-radius: .8rem;
+            border-bottom-right-radius: .8rem;
+            &-name {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              color: $black;
+              font-weight: $fontBold;
+              @include fontHeight(1);
+              transform: rotate(90deg) translate(-15%, -50%);
+            }
+          }
+        }
+        & + .coupon-item {
+          margin-top: 1.6rem;
+        }
+      }
+    }
+  }
+  &.event, &.coupon {
+    .content-body {
+      height: 100%;
+    }
+    .no-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 5.6rem);
+      .message {
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem;
+        font-weight: $fontRegular;
+        @include fontHeight(1.8);
+        color: $black;
+      }
+      .btn-area {
+        display: inline-block;
+      }
+    }
+  }
+  // 쿠폰, 이벤트 공통 상단 고정 필터
+  .list-filter-area {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8rem;
+    padding: 0 2.4rem;
+    background: $white;
+    line-height: 4.8rem;
+    .total-area {
+      font-weight: $fontRegular;
+      @include fontHeight(1.4);
+      color: $black;
+      span {
+        padding-left: 0.4rem;
+        font-weight: $fontBold;
+        @include fontHeight(1.2);
+      }
+    }
+    .array-area {
+      font-weight: $fontRegular;
+      @include fontHeight(1.2);
+      color: $black;
+    }
+  }
+}

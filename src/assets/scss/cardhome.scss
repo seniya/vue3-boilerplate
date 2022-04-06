@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+@import 'value';
+// 카드홈
+.cardhome {
+  &.prohibit {
+    // 비회원 이용불가 안내
+    .content-body {
+      height: 100%;
+    }
+    .absenece-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .caution {
+        padding-top: 15.6rem;
+        text-align: center;
+        h3 {
+          padding-top: 2.4rem;
+          padding-bottom: 1.6rem;
+          font-weight: $fontMedium;
+          @include fontHeight(2);
+          color: $black;
+        }
+        .message {
+          font-weight: $fontRegular;
+          @include fontHeight(1.4);
+          color: $gray080;
+        }
+      }
+      .tip {
+        padding-top: 3.8rem;
+        padding-bottom: 7rem;
+        border-top: 0.1rem solid $gray030;
+        font-weight: $fontRegular;
+        text-align: center;
+        @include fontHeight(1.4);
+        color: $black;
+      }
+    }
+  }
+}

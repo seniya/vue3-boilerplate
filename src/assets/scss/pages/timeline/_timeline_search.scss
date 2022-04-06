@@ -1,0 +1,53 @@
+// 타임라인 검색
+
+.timeline.search {
+  position: relative;
+  .content-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    background-color: $white;
+    z-index: 1;
+    .search-under-group {
+      padding: 1.6rem 2.4rem 0;
+    }
+  }
+  .content-body {
+    padding-top: 6rem;
+    .list-header {
+      display: flex;
+      padding: 4rem 0 1rem;
+      align-items: center;
+      .item-title {
+        @include fontHeight(1.4);
+      }
+      .item-subtitle {
+        display: block;
+        padding-left: .4rem;
+        color: $black;
+        font-weight: $fontBold;
+        @include fontHeight(1.2);
+      }
+    }
+    .list-group.line {
+      .list-item {
+        .item-area {
+          .item-title {
+            white-space: normal;
+          }
+        }
+      }
+    }
+    .no-data {
+      padding-top: 16rem;
+      text-align: center;
+      .item-text {
+        padding-top: 1.6rem;
+        color: $gray080;
+        @include fontHeight(1.6);
+      }
+    }
+  }
+}

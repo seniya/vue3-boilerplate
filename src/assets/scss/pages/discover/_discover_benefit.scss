@@ -1,0 +1,1261 @@
+// 디스커버 혜택
+.discover.benefit {
+  // 타이틀
+  .benefit-title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2.8rem;
+    .title {
+      @include fontHeight(2.4);
+      margin-right: auto;
+      font-weight: $fontBold;
+    }
+    .btn {
+      margin-left: auto;
+      &.btn-arrow span:after {
+        top: -.1rem;
+      }
+    }
+  }
+
+  // 상단 대시보드 (비회원)
+  .benefit-login {
+    display: flex;
+    align-items: center;
+    padding: 2.8rem 0;
+    .text {
+      @include fontHeight(1.4);
+      color: $gray080;
+      em {
+        @include fontHeight(1.6);
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: $fontBold;
+        font-style: normal;
+        color: $black;
+      }
+    }
+    .btn {
+      display: block;
+      flex: none;
+      height: 3.8rem;
+      margin-left: auto;
+      line-height: 3.8rem;
+      border-radius: 0.2rem;
+      box-sizing: border-box;
+      span {
+        @include fontHeight(1.4);
+      }
+    }
+  }
+
+  // 상단 대시보드 (회원)
+  .benefit-member {
+    padding: 4.0rem 0 5.2rem;
+    .member {
+      display: flex;
+      align-items: center;
+      .text {
+        @include fontHeight(2.4);
+        flex: 1;
+        font-weight: $fontBold;
+      }
+      .btn-refresh {
+        width: 4.4rem;
+        height: 4.4rem;
+        background: url(#{$img-path}/payfan/icons/default/icon_44_refresh.png) no-repeat 0 0 / 100% auto;
+        &:disabled {
+          pointer-events: none;
+          background: url(#{$img-path}/payfan/icons/default/icon_44_refresh_off.png) no-repeat 0 0 / 100% auto;
+        }
+      }
+      .profile {
+        overflow: hidden;
+        display: block;
+        flex: none;
+        width: 5.4rem;
+        height: 5.4rem;
+        margin-left: 1.6rem;
+        border-radius: 50%;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .benefit {
+      margin-top: 1.8rem;
+      .list-group {
+        .list-item {
+          .item-area {
+            padding: .6rem 0;
+            .item-title {
+              color: $gray070;
+              font-weight: $fontMedium;
+              @include fontHeight(1.6);
+            }
+            .item-title-arrow {
+              .item-title-money {
+                @include fontHeight(2);
+              }
+              .money-unit {
+                @include fontHeight(1.8);
+              }
+            }
+          }
+        }
+      }
+      .text {
+        @include fontHeight(1.2);
+        display: block;
+        font-weight: $fontMedium;
+        color: $gray070;
+      }
+      .number {
+        display: flex;
+        align-items: center;
+        margin-top: 0.4rem;
+      }
+      em {
+        @include fontHeight(3.6);
+        font-weight: $fontBold;
+        font-style: normal;
+      }
+      .unit {
+        @include fontHeight2(3.0);
+        margin-left: 0.2rem;
+        margin-right: 0.8rem;
+        font-weight: $fontBold;
+      }
+      .icon {
+        position: relative;
+        top: -1px;
+      }
+    }
+    .info {
+      display: flex;
+      margin-top: 1.2rem;
+      padding-top: 2.8rem;
+      border-top: 1px solid $gray030;
+      li {
+        flex: auto 1 1;
+        border-left: 1px solid $gray030;
+        &:first-child {
+          border-left: 0;
+          .inner {
+            padding-left: 0;
+          }
+        }
+        &:nth-child(2) {
+          flex-basis: 28%;
+          // 111 117 82 = 310
+        }
+        &:last-child {
+          flex-basis: 18%;
+          // 111 117 82 = 310
+        }
+      }
+      .inner {
+        padding-left: 2.4rem;
+      }
+      .text {
+        @include fontHeight(1.2);
+        display: block;
+        font-weight: $fontMedium;
+        color: $gray070;
+      }
+      .link {
+        @include fontHeight(2.0);
+        display: block;
+        margin-top: 0.7rem;
+        font-weight: $fontBold;
+        a {
+          text-decoration: underline;
+          text-decoration-thickness: 0.2rem;
+        }
+        em {
+          @include fontHeight(2.2);
+          font-style: normal;
+        }
+        i {
+          @include fontHeight(2.2);
+          font-style: normal;
+        }
+        .plus {
+          display: block;
+          max-width: 9rem;
+          @include fontHeight(1.8);
+        }
+      }
+    }
+  }
+
+  // 오늘의 퀴즈
+  .benefit-quiz {
+    margin: 0 -2.4rem;
+    padding-top: 4.8rem;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+    border-top: 1.2rem solid $gray030;
+    .quiz-note {
+      position: relative;
+      padding: 0 6.0rem 2.4rem 0;
+      .text {
+        display: block;
+        font-weight: $fontBold;
+        font-style: normal;
+      }
+      .period {
+        @include fontHeight(1.4);
+        display: block;
+        margin-top: 0.6rem;
+        color: $gray080;
+      }
+    }
+    .quiz-play {
+      overflow: hidden;
+      padding: 2.4rem 2.4rem 2.8rem;
+      background: $bgLightGray;
+      border-radius: 0.6rem;
+      text-align: center;
+      .subtitle {
+        @include fontHeight(1.4);
+        font-weight: $fontBold;
+      }
+      .text {
+        margin-top: 1.0rem;
+        margin-bottom: 1.6rem;
+        font-weight: $fontMedium;
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+      .btn {
+        span {
+          padding-top: .2rem;
+          @include fontHeight(1.4);
+        }
+      }
+    }
+    .btn-share {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 4.4rem;
+      height: 4.4rem;
+      min-height: 0;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 1px solid $gray050;
+      background: $white;
+      border-radius: 50%;
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .quiz-check {
+      display: flex;
+      justify-content: center;
+      li {
+        width: 4.8rem;
+        margin-left: 1.8rem;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      .mark {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        width: 4.8rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        border: 0;
+        text-indent: -1000em;
+        background:url(#{$img-path}/payfan/icons/default/icon_32_check_navi.svg) no-repeat 50%;
+        background-size: 3.2rem auto;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 4.8rem;
+          height: 4.8rem;
+          background-image: url("data:image/svg+xml,%3csvg width='48' height='48' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='48' height='48' fill='none' rx='50%' ry='50%' stroke='%23CCCCCCFF' stroke-width='2' stroke-dasharray='2%2c6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+          content: '';
+        }
+      }
+      .text {
+        @include fontHeight(1.2);
+        display: block;
+        margin-top: 0.8rem;
+        font-weight: $fontMedium;
+        line-height: 1;
+        text-align: center;
+      }
+      .checking {
+        .mark {
+          border: 1px solid $bgDarkBlue;
+          background: $bgDarkBlue url(#{$img-path}/payfan/icons/default/icon_32_check_wh.svg) no-repeat 50%;
+          background-size: 3.2rem auto;
+          &:before {
+            display: none;
+          }
+        }
+      }
+      .unchecking {
+        .mark {
+          border: 1px solid $gray030;
+          background: $gray020 url(#{$img-path}/payfan/icons/default/icon_32_check_gr.svg) no-repeat 50%;
+          background-size: 3.2rem auto;
+          &:before {
+            display: none;
+          }
+        }
+        .text {
+          color: $gray070;
+        }
+      }
+    }
+    .quiz-btn {
+      margin-top: 3.0rem;
+      margin-bottom: 4.8rem;
+      text-align: center;
+      .btn-hint {
+        @include fontHeight(1.4);
+        color: $gray100;
+        text-decoration: underline;
+        .icon {
+          margin-left: 0.3rem;
+          vertical-align: text-top;
+        }
+      }
+      .btn-point {
+        @include fontHeight(1.2);
+        font-weight: $fontMedium;
+        color: $gray100;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // 진행중인 이벤트
+  .benefit-event {
+    margin: 4.8rem 0;
+    .tab-menu {
+      position: relative;
+      width: auto;
+      margin: 0 -2.4rem;
+      margin-bottom: 2.0rem;
+    }
+    .list-group.event {
+      padding-bottom: 0;
+    }
+  }
+
+  // 버즈빌 이벤트 영역
+  .benefit-buzzvil {
+    margin: 4.8rem -2.4rem 0;
+    padding-bottom: 3.8rem;
+    .benefit-title {
+      align-items: center;
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+    }
+    .splide__track {
+      padding-bottom: 1.0rem;
+    }
+    .item-box {
+      display: block;
+      width: 28.0rem;
+      height: 30.2rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 0.1rem 0.3rem 0 rgba(48, 49, 51, 0.1), 0 0.2rem 0.4rem 0 rgba(48, 49, 51, 0.1);
+      background-color: $white;
+    }
+    .item-img {
+      overflow: hidden;
+      height: 14.6rem;
+      border-radius: 1.2rem 1.2rem 0 0;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .item-desc {
+      position: relative;
+      height: 15.6rem;
+      padding: 2.0rem;
+      .title {
+        overflow: hidden;
+        display: block;
+        font-weight: $fontMedium;
+        white-space: nowrap;  
+        text-overflow: ellipsis;
+      }
+      .subtext {
+        @include fontHeight(1.4);
+        overflow : hidden;
+        display: -webkit-box;
+        margin-top: 0.4rem;
+        color: $gray080;
+        word-wrap: break-word;
+        word-break: break-word;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .btn-cta {
+        @include fontHeight(1.2);
+        position: absolute;
+        bottom: 2.0rem;
+        right: 2.0rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        height: 2.6rem;
+        padding: .2rem 1.0rem 0;
+        color: $white;
+        border-radius: 1.3rem;
+        background-color: $blue100;
+        font-weight: $fontBold;
+        &.has-p {
+          padding-left: 2.8rem;
+        }
+        &.has-p::before {
+          content: '';
+          position: absolute;
+          top: 0.2rem;
+          left: 0.2rem;
+          display: block;
+          width: 2.2rem;
+          height: 2.2rem;
+          background: url(#{$img-path}/payfan/visual/discover/icon_point.png) no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    .buzzvil-single {
+      padding: 0 2.4rem;
+      .item-box {
+        width: 100%;
+        height: 28.0rem;
+      }
+      .item-img {
+        height: 16.2rem;
+      }
+      .item-desc {
+        height: 11.8rem;
+      }
+    }
+  }
+
+  // 지금 받을 수 있는 쿠폰
+  .benefit-coupon {
+    margin: 0 -2.4rem;
+    padding-top: 4.8rem;
+    border-top: 1.2rem solid $gray030;
+    .benefit-title {
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+    }
+    .splide {
+      padding-bottom: 4.6rem;
+    }
+    .coupon-list {
+      .coupon-item {
+        .coupon-title {
+          @include fontHeight(1.8);
+          margin-top: 0.7rem;
+        }
+      }
+    }
+  }
+
+  // 맛있는 쿠폰
+  .benefit-tasty {
+    margin-top: 2.8rem;
+    padding-bottom: 4.8rem;
+    .tab-menu {
+      position: relative;
+      width: auto;
+      margin: 0 -2.4rem;
+      margin-bottom: 2.0rem;
+    }
+    .list {
+      li {
+        padding: 2.0rem 0;
+        border-top: 1px solid $gray030;
+        &:first-child {
+          padding-top: 0;
+          border-top: 0;
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+    .item-box {
+      display: flex;
+    }
+    .item-img {
+      position: relative;
+      overflow: hidden;
+      flex: none;
+      width: 8.0rem;
+      height: 8.0rem;
+      margin-right: 1.4rem;
+      border-radius: 50%;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .item-desc {
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .coupon-name {
+      overflow : hidden;
+      display: -webkit-box;
+      font-weight: $fontMedium;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .coupon-price {
+      @include fontHeight(1.4);
+      margin-top: 0.6rem;
+      del {
+        margin-right: 0.6rem;
+        color: $gray070;
+      }
+      em {
+        font-style: normal;
+        font-weight: $fontMedium;
+        color: $black;
+      }
+    }
+    .item-btn {
+      position: relative;
+      overflow: hidden;
+      flex: none;
+      display: flex;
+      align-items: center;
+      width: 4.4rem;
+      margin-left: 0.8rem;
+    }
+    .btn-down {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4.4rem;
+      height: 4.4rem;
+      border: 1px solid $gray030;
+      border-radius: 50%;
+      background: $white;
+    }
+  }
+  
+  // 혜택 소개
+  .benefit-new {
+    margin: 0 -2.4rem;
+    padding-top: 4.8rem;
+    border-top: 1.2rem solid $gray030;
+    &:last-child {
+      padding-bottom: 4.8rem;
+    }
+    .benefit-title {
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+    }
+    .scroll {
+      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .list {
+        display: inline-flex;
+        padding-left: 2.4rem;
+        padding-right: 0.4rem;
+        li {
+          width: 8.8rem;
+          height: 16.6rem;
+          margin-right: 2.4rem;
+        }
+      }
+      .item-img {
+        overflow: hidden;
+        width: 8.8rem;
+        height: 8.8rem;
+        border-radius: 50%;
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .item-desc {
+        height: 7.8rem;
+        padding-top: 1.6rem;
+      }
+      .title {
+        @include fontHeight(1.4);
+        overflow: hidden;
+        display: block;
+        font-weight: $fontMedium;
+        white-space: nowrap;  
+        text-overflow: ellipsis;
+        text-align: center;
+      }
+      .subtext {
+        @include fontHeight(1.4);
+        overflow : hidden;
+        display: -webkit-box;
+        margin-top: 0.2rem;
+        color: $gray080;
+        word-wrap: break-word;
+        word-break: break-word;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-align: center;
+      }
+    }
+  }
+
+  // 롤링 배너 영역
+  .benefit-banner {
+    //margin-top: 4.0rem;
+    .banner {
+      display: block;
+      margin: 0 -2.4rem;
+      padding: 0 2.4rem;
+      background-color: rgba($gray020,.6);
+    }
+    .banner-text {
+      position: relative;
+      display: flex;
+      align-items: center;
+      .text {
+        position: relative;
+      }
+      .icon {
+        margin-left: auto;  
+      }
+    }
+    .banner-point {
+      .banner-text {
+        height: 6.8rem;
+        .text {
+          @include fontHeight(1.4);
+          font-weight: $fontMedium;
+        }
+        .img {
+          overflow: hidden;
+          width: 2.2rem;
+          height: 2.2rem;
+          margin-right: 0.6rem;
+          background: url(#{$img-path}/payfan/visual/discover/icon_point.png) no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    .banner-plus {
+      .banner-text {
+        height: 6.8rem;
+        .img {
+          overflow: hidden;
+          width: 8.8rem;
+          height: 2.4rem;
+          margin: 0 0.4rem 0 0.8rem;
+          text-indent: -1000em;
+          background:url(#{$img-path}/payfan/visual/discover/logo_plus.svg) no-repeat;
+          background-size: 8.8rem auto;
+        }
+        .text {
+          @include fontHeight(1.4);
+          color: $gray090;
+        }
+      }
+    }
+    .banner-img {
+      overflow: hidden;
+      display: block;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .benefit-banner2 {
+    margin: 4.0rem -2.4rem 0;
+    .splide {
+      padding-bottom: 4.6rem;
+    }
+    .banner-img {
+      overflow: hidden;
+      display: block;
+      border-radius: 0.8rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // 진행중인 이벤트 (신한 플러스)
+  .plus-event-list {
+    .list {
+      padding-top: 0.4rem;
+    }
+    li {
+      padding: 2.0rem 0;
+      border-top: 1px solid $gray030;
+      &:first-child {
+        padding-top: 0;
+        border-top: none;
+      }
+    }
+    .text {
+      overflow: hidden;
+      display: -webkit-box;
+      word-wrap: break-word;
+      word-break: break-word;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .text-date {
+      @include fontHeight(1.4);
+      display: block;
+      margin-top: 0.4rem;
+      color: $gray080;
+    }
+  }
+}
+
+// 공통모듈 재정의 or 다른 메뉴 copy
+.discover {
+  // 마이페이지에서 copy
+  .coupon-list {
+    li {
+      margin-bottom: 1.6rem;
+    }
+    .coupon-item {
+      position: relative;
+      overflow: hidden;
+      @mixin coupon-dot {
+        z-index: 1;
+        position: absolute;
+        top: 6.0rem;
+        display: block;
+        width: 2.6rem;
+        height: 2.6rem;
+        background-color: $white;
+        border: .1rem solid $bgSteelBlue;
+        border-radius: 50%;
+        box-sizing: border-box;
+        content: '';
+      }
+      &::before {
+        @include coupon-dot;
+        left: -1.3rem;
+      }
+      &::after {
+        @include coupon-dot;
+        right: -1.3rem;
+      }
+      .coupon {
+        display: flex;
+        width: 100%;
+        height: 18.9rem;
+        background-color: $bgLightBlue3;
+        border: .1rem solid $bgSteelBlue;
+        border-radius: .8rem;
+        &-content {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 18.7rem;
+          padding: 4.0rem 3.2rem 0;
+        }
+        &-label {
+          position: absolute;
+          top: 1.6rem;
+          left: 1.6rem;
+          display: block;
+        }
+        &-myshop {
+          .coupon-label {
+            top: 1.9rem;
+            img {
+              display: block;
+              height: 1.2rem;
+            }
+          }
+          .coupon-title {
+            display: block;
+            white-space: nowrap;
+            -webkit-line-clamp: none;
+            -webkit-box-orient: inline-axis;
+          }
+        }
+        &-topsclub .coupon-label {
+          img {
+            height: 1.8rem;
+          }
+        }
+        &-tasty .coupon-label {
+          img {
+            height: 2.0rem;
+          }
+        }
+        &-shplus .coupon-label {
+          img {
+            height: 1.6rem;
+          }
+        }
+        &-name {
+          @include fontHeight(1.4);
+          overflow: hidden;
+          display: block;
+          color: $darkBlue70;
+          font-weight: $fontMedium;
+          text-align: center;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &-title {
+          @include fontHeight(1.8);
+          overflow: hidden;
+          display: -webkit-box;
+          margin-top: 0.7rem;
+          font-weight: $fontBold;
+          align-items: center;
+          justify-content: center;
+          word-wrap: break-word;
+          word-break: break-word;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        &-info {
+          @include fontHeight(1.4);
+          overflow: hidden;
+          display: block;
+          margin-top: 0.7rem;
+          color: $darkBlue70;
+          font-weight: $fontMedium;
+          text-align: center;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &-date {
+          @include fontHeight(1.2);
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 4.4rem;
+          color: $darkBlue60;
+          border-top: 1px dashed $bgSteelBlue;
+        }
+        &-tag {
+          position: relative;
+          display: block;
+          width: 6rem;
+          height: 16rem;
+          border-left: .1rem solid $gray040;
+          border-top-right-radius: .8rem;
+          border-bottom-right-radius: .8rem;
+          &-name {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            color: $black;
+            font-weight: $fontBold;
+            @include fontHeight(1);
+            transform: rotate(90deg) translate(-15%, -50%);
+          }
+        }
+      }
+    }
+  }
+  // 마이페이지에서 copy
+  .list-filter-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.8rem;
+    margin-bottom: 0.8rem;
+    background: $white;
+    line-height: 4.8rem;
+    .total-area {
+      font-weight: $fontRegular;
+      @include fontHeight(1.4);
+      line-height: 2.0rem;
+      span {
+        padding-left: 0.4rem;
+        font-weight: $fontBold;
+        @include fontHeight(1.2);
+      }
+    }
+    .array-area {
+      button {
+        @include fontHeight(1.2);
+        font-weight: $fontRegular;
+      }
+      .icon {
+        vertical-align: text-top;
+      }
+    }
+  }
+  // 마이페이지에서 copy
+  .list-group.event {
+    display: grid;
+    grid-template-columns: calc(50% - 0.8rem) calc(50% - 0.8rem);
+    grid-gap: 2.8rem 1.6rem;
+    padding-bottom: 4.0rem;
+    .list-item {
+      position: relative;
+      .item-area {
+        display: block;
+        padding: 0;
+        .item-thumbnail {
+          overflow: hidden;
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding-bottom: 100%;
+          border-radius: 0.2rem;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .benefit {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 2.6rem;
+            padding: .2rem 1.0rem 0 2.8rem;
+            border-radius: 1.3rem;
+            background-color: $blue100;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0.2rem;
+              left: 0.2rem;
+              display: block;
+              width: 2.2rem;
+              height: 2.2rem;
+              background: url(#{$img-path}/payfan/visual/discover/icon_point.png) no-repeat;
+              background-size: cover;
+            }
+            .number {
+              @include fontHeight(1.2);
+              display: block;
+              font-weight: $fontBold;
+              color: $white;
+            }
+          }
+          .completed {
+            @include fontHeight(1.2);
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 1.3rem;
+            background-color: $blue100;
+            text-indent: -1000em;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0.2rem;
+              left: 0.2rem;
+              display: block;
+              width: 2.2rem;
+              height: 2.2rem;
+              background: url(#{$img-path}/payfan/visual/discover/icon_check.png) no-repeat;
+              background-size: cover;
+            }
+          }
+        }
+        .item-bottom {
+          display: block;
+          padding-top: 1.2rem;
+          .item-category {
+            display: flex;
+            margin-bottom: 0.2rem;
+            .pay-category {
+              @include fontHeight(1.4);
+              position: relative;
+              color: $gray090;
+              font-weight: $fontMedium;
+            }
+            .shop-category {
+              @include fontHeight(1.4);
+              margin-left: 0.8rem;
+              font-weight: $fontMedium;
+              color: $blue100;
+            }
+          }
+          .item-title {
+            @include fontHeight(1.4);
+            overflow: hidden;
+            display: -webkit-box;
+            height: 4rem;
+            margin-bottom: 0.6rem;
+            font-weight: $fontMedium;
+            word-wrap: break-word;
+            word-break: break-word;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          .item-period {
+            @include fontHeight(1.2);
+            display: block;
+            font-weight: $fontRegular;
+            
+            color: $gray080;
+          }
+        }
+      }
+    }
+  }
+  // 마이페이지에서 copy
+  .no-data {
+    display: flex;
+    margin-top: 9rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .text {
+      @include fontHeight(1.8);
+      margin-top: 1.4rem;
+    }
+    .subtext {
+      @include fontHeight(1.4);
+      margin-top: 1.0rem;
+      color: $gray080;
+      text-align: center;
+    }
+    .btn-area {
+      margin-top: 4.0rem;
+    }
+  }
+  // 페이지 내 탭
+  .in-page {
+    &.type5 {
+      margin: 2.0rem 0 0;
+      .tab-menu {
+        position: relative;
+        width: auto;
+        margin: 0 -2.4rem;
+        margin-bottom: 0.8rem;
+      }
+      .skeleton.relative {
+        height: calc(100vh - 8.8rem);
+      }
+    }
+    &.type2 {
+      .tab-menu {
+        margin-bottom: 3.2rem;
+      }
+      .skeleton.relative {
+        height: calc(100vh - 8.4rem);
+      }
+    }
+    .no-data {
+      margin-top: 5.8rem;
+    }
+  }
+  // 이벤트 상세 포인트 로티
+  .point-area {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+  }
+  .point-box {
+    position: relative;
+    width: 25.0rem;
+    height: 27.2rem;
+    margin-top: -10.0rem;
+    animation: lottie-box 0.4s ease-in-out;
+    .text {
+      position: absolute;
+      bottom: 2.4rem;
+      left: 50%;
+      width: 20.6rem;
+      height: 4.8rem;
+      margin-left: -10.3rem;
+      text-align: center;
+      border-radius: 2.8rem;
+      background-color: $darkBlue100;
+      box-shadow: 0 0.8rem 1.6rem 0 rgba(0, 0, 0, 0.4);
+      opacity: 0.8;
+    }
+    em {
+      @include fontHeight(1.4);
+      font-style: normal;
+      font-weight: $fontMedium;
+      line-height: 4.8rem;
+      color: $white;
+    }
+  }
+}
+
+// 모달
+.modal.discover {
+  // 자산에서 copy
+  .modal-list {
+    margin: 0 -2.4rem;
+    input {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding: 1.4rem 2.4rem 1rem;
+      color: $black;
+      box-sizing: border-box;
+    }
+    input[type="radio"]:checked {
+      &+label {
+        background-color: $gray020;
+      }
+    }
+    &.normal-list {
+      padding-top: 1.8rem;
+      margin-bottom: -0.2rem;
+      label {
+        @include fontHeight(1.6);
+        font-weight: $fontMedium;
+      }
+    }
+  }
+
+  // 퀴즈풀기 쥬니어에서 copy
+  .quiz-box {
+    position: relative;
+    padding-top: 1.6rem;
+    .question {
+      display: flex;
+      align-items: center;
+      height: 12rem;
+      padding: 0 2rem;
+      background-color: $bgLightGray;
+      border-radius: .6rem;
+      font-weight: $fontMedium;
+      @include fontHeight(1.4);
+    }
+    .answer-list {
+      padding: 2.8rem 0;
+      .form-radio + .form-radio {
+        margin-top: 2rem;
+      }
+      .form-radio-input:checked ~ .form-radio-label {
+        color: $black;
+      }
+      .form-radio-label {
+        color: $gray080;
+      }
+    }
+    .notice {
+      color: $gray080;
+      @include fontHeight(1.2);
+    }
+  }
+  &.quiz-modal.modal.bottom .modal-content {
+    max-height: 60rem;
+  }
+
+  // 약관 동의 (공통모듈 copy)
+  .agreement {
+    margin: 1.4rem -0.4rem 0.8rem;
+  }
+
+  // 멤버십/리워드 레이어
+  .membership-list {
+    padding-top: 0.5rem;
+    padding-bottom: 0.8rem;
+    li {
+      margin-top: 2.0rem;
+    }
+    .item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .text {
+      overflow: hidden;
+      flex: 1;
+      font-weight: $fontMedium;
+      white-space: nowrap;  
+      text-overflow: ellipsis;
+      @include fontHeight(1.6);
+    }
+    .btn {
+      @include fontHeight(1.2);
+      overflow: hidden;
+      flex: none;
+      width: 5.1rem;
+      height: 3.2rem;
+      min-height: 0;
+      padding: 0;
+      font-weight: $fontMedium;
+      border: 1px solid $gray050;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+// animation
+@keyframes lottie-box {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

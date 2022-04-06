@@ -1,0 +1,1228 @@
+@charset 'UTF-8';
+@import 'value';
+//주니어
+.junior {
+  // 공통
+  pre {
+    display: inline;
+    font-family: inherit;
+    white-space: pre-wrap;
+    margin: inherit;
+  }
+  .table-list.type6 {
+    padding-top: 2.4rem;
+    dt, dd {
+      margin-bottom: .8rem;
+      @include fontHeight(1.6);
+    }
+  }
+  // 완료화면
+  .complete {
+    display: flex;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .lottie-box {
+      margin-top: auto;
+    }
+    .message {
+      margin-top: 2.4rem;
+      @include fontHeight(2.2);
+    }
+    &-bottom-area {
+      width: 100%;
+      margin-top: auto;
+      padding-top: 2rem;
+      text-align: left;
+    }
+  }
+  // 바텀팝업 basic 리스트
+  .bottom-list {
+    padding: 1.2rem 0 .4rem;
+    .list-item {
+      display: block;
+      padding: 1.2rem 0;
+      color: $black;
+      font-weight: $fontMedium;
+      @include fontHeight(1.6);
+    }
+  }
+  // 퀴즈풀기
+  .quiz-box {
+    position: relative;
+    padding-top: 1.6rem;
+    .question {
+      display: flex;
+      align-items: center;
+      height: 12rem;
+      padding: 2rem;
+      background-color: $bgLightGray;
+      border-radius: .6rem;
+      font-weight: $fontMedium;
+      @include fontHeight(1.4);
+    }
+    .answer-list {
+      padding: 2.8rem 0;
+      .form-radio + .form-radio {
+        margin-top: 1.2rem;
+      }
+    }
+    .notice {
+      color: $gray080;
+      @include fontHeight(1.2);
+    }
+  }
+  // 공유하기
+  .share-list {
+    margin: 0 -1.4rem;
+    padding: 3.8rem 0 2.8rem;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 0.6rem;
+      li {
+        button {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &::before {
+            content: "";
+            display: block;
+            width: 5.2rem;
+            height: 5.2rem;
+          }
+          &.line {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_line.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.kakao {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_kakao.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.text {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_text.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.link {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_link.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.facebook {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_facebook.png) no-repeat;
+              background-size: contain;
+            }
+          }
+          &.twitter {
+            &::before {
+              background: url(#{$img-path}/payfan/icons/default/icon_52_twitter.png) no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        span {
+          display: block;
+          padding-top: 0.8rem;
+          font-weight: $fontRegular;
+          @include fontHeight(1.2);
+          color: $black;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  // 결제카드 선택
+  .paycard-list {
+    margin: 0 -.8rem;
+    .form-group.card-type {
+      .form-radio {
+        &:first-child {
+          padding-top: 3rem;
+          &.card-space {
+            padding-top: 3rem;
+          }
+        }
+        &.card-space {
+          padding: 1.4rem 0;
+        }
+        & + .form-radio {
+          margin: 0;
+        }
+      }
+      .form-radio-input:checked + .form-radio-label {
+        border: .2rem solid $bgDarkBlue2;
+        border-radius: .8rem;
+        box-shadow: .2rem .2rem 1.2rem 0 rgba(0, 0, 0, 0.16);
+      }
+      .form-radio-label {
+        position: relative;
+        width: 100%;
+        padding: 1.6rem 1.8rem 1.4rem;
+        border: .2rem solid transparent;
+        .card-name {
+          overflow: hidden;
+          display: block;
+          padding-right: 11rem;
+          color: $black;
+          font-weight: $fontMedium;
+          @include fontHeight(1.6);
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .card-number {
+          display: block;
+          padding-top: .4rem;
+          color: $gray080;
+          @include fontHeight(1.4)
+        }
+        .card-img {
+          position: absolute;
+          top: 50%;
+          right: 1rem;
+          width: 4.4rem;
+          height: 2.8rem;
+          transform: translateY(-50%) rotate(90deg);
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  //머니 충전하기
+  .paymoney-charge {
+    .list-item {
+      .item-area {
+        padding: 2.4rem 0;
+      }
+    }
+  }
+}
+
+.junior-main .content-body {
+  margin: 0 -2.4rem;
+  padding: 0 3.2rem;
+}
+.junior-item {
+  display: flex;
+  flex-direction: column;
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    // width: 29.6rem;
+    // height: 45.6rem;
+    width: 100%;
+    // height: 62vmax;
+    height: calc(100vh - 4.4rem);
+    margin: 3.0rem auto 1.4rem;
+    border-radius: 1.2rem;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.junior-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  // height: 62vmax;
+  height: calc(100vh - 4.4rem);
+  // min-height: 36rem;
+  margin: 3.0rem auto 1.4rem;
+  padding: 0 2.4rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, 0.3);
+  .top-link {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+    z-index: 1;
+    .link {
+      @include fontHeight(1.4);
+      padding-right: 1.6rem;
+      font-weight: $fontBold;
+      line-height: 1;
+      color: $white;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.3rem;
+        right: 0;
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        background:url(#{$img-path}/payfan/visual/junior/icon_arrow_wh.png) no-repeat;
+        background-size: 1.6rem auto;
+      }
+    }
+  }
+  .visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .title {
+    position: relative;
+    z-index: inherit;
+    @include fontHeight(2.6);
+    font-weight: $fontBold;
+    color: $white;
+    a {
+      font-weight: $fontBold;
+      color: $white;
+    }
+    .btn-refresh {
+      transform: translate(.2rem, .4rem);
+    }
+  }
+  .btn-refresh {
+    display: inline-flex;
+    align-items: center;
+    &:disabled, &.disabled {
+      pointer-events: none;
+      opacity: .5;
+    }
+    .text {
+      display: block;
+      margin-left: .6rem;
+      padding-top: .2rem;
+      color: $white;
+      font-weight: $fontMedium;
+      @include fontHeight(1.6);
+    }
+  }
+  &.card-logout {
+    background:url(#{$img-path}/payfan/visual/junior/visual_logout.png) no-repeat 0 0;
+    background-size: cover;
+    .title-box {
+      margin-top: auto;
+      .title {
+        font-weight: $fontMedium;
+        @include fontHeight(1.6);
+      }
+      .big-text {
+        margin-top: 2rem;
+        color: $white;
+        font-weight: $fontBold;
+        @include fontHeight(2.6);
+      }
+    }
+    .btn-footer {
+      margin-top: auto;
+      text-align: center;
+      .btn-login {
+        height: 4rem;
+        padding: 0 2rem;
+        margin-bottom: 3.2rem;
+        background-color: rgba($black, 0.4);
+        border-radius: 2rem;
+        color: $white;
+        font-weight: $fontBold;
+        @include fontHeight(1.4);
+        span {
+          display: block;
+          padding-top: .2rem;
+        }
+      }
+    }
+  }
+  &.card-point {
+    background: #5454e6;
+    .visual {
+      width: 13.2rem;
+      height: 13.6rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_point.png) no-repeat;
+      background-size: cover;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2.0rem;
+        right: 0;
+        width: 14.0rem;
+        height: 14.0rem;
+        background:url(#{$img-path}/payfan/visual/junior/visual_point2.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .title-box {
+      // padding-top: 17.4rem;
+      margin-top: auto;
+    }
+    .point-btnset {
+      // margin-top: 1.6rem;
+      margin-top: 5%;
+      white-space: nowrap;
+      button {
+        @include fontHeight(1.4);
+        height: 3.8rem;
+        padding: 0 1.6rem;
+        font-weight: $fontMedium;
+        color: $white;
+        border: 1px solid rgba(255,255,255,0.16);
+        background: transparent;
+        border-radius: 1.9rem;
+      }
+      button.btn-charge {
+        margin-left: 0.8rem;
+      }
+    }
+    .point-link {
+      position: relative;
+      margin: 10% 0 2rem;
+      height: 10.4rem;
+      padding: 1.8rem 2.0rem 0;
+      background: #4343d6;
+      border-radius: 1.0rem;
+      .emoji {
+        position: absolute;
+        right: 2.0rem;
+        bottom: 2.0rem;
+        display: block;
+        font-size: 2.4rem;  
+      }
+      .link {
+        position: relative;
+        color: $white;
+        em {
+          font-style: normal;
+          font-weight: $fontBold;
+        }
+      }
+    }
+  }
+  &.card-pay {
+    background: #8035d9;
+    .visual {
+      width: 15.0rem;
+      height: 11.2rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_pay.png) no-repeat;
+      background-size: cover;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2.0rem;
+        right: 0;
+        width: 14.0rem;
+        height: 14.0rem;
+        background:url(#{$img-path}/payfan/visual/junior/visual_pay2.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .title-box {
+      margin: auto 0;
+      padding-top: 30%;
+      .text {
+        display: inline-flex;
+        width: 100%;
+        margin-bottom: 0.5rem;
+
+        a, span {
+          position: relative;
+          overflow: hidden;
+          display: block;
+          width: calc(100% - 3.4rem);
+          margin-right: 0.6rem;
+          padding-right: 0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-style: normal;
+          box-sizing: border-box;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.2rem;
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
+
+        a.link, span.link {
+          padding-right: 2.0rem;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0.6rem;
+            right: 0;
+            display: block;
+            width: 2.0rem;
+            height: 2.0rem;
+            background:url(#{$img-path}/payfan/visual/junior/icon_arrow2_wh.svg) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+      .img-card {
+        width: 7.6rem;
+        // margin-top: 2.4rem;
+        margin-top: 6%;
+        box-shadow: 0 1.0rem 1.6rem 0 rgba(0, 0, 0, 0.28);
+        img {
+          display: block;
+          width: 100%;
+        }
+        &.disabled {
+          opacity: .5;
+          box-shadow: none;
+        }
+      }
+    }
+    .pay-info {
+      margin: 2rem 0 2.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .info {
+        padding-bottom: 0.5rem;
+        .upper {
+          @include fontHeight(1.4);
+          color: rgba(255,255,255,0.6);
+        }
+        .money-group {
+          display: flex;
+          align-items: center;
+          .btn-refresh {
+            margin-top: -.2rem;
+            margin-left: .3rem;
+          }
+        }
+        .money {
+          @include fontHeight(2.2);
+          display: block;
+          font-weight: $fontBold;
+          font-style: normal;
+          color: $white;
+          .unit {
+            font-style: normal;
+            @include fontHeight(2);
+          }
+        }
+      }
+      .btn-pay {
+        @include fontHeight(1.4);
+        height: 4.0rem;
+        padding: 0 2.0rem;
+        font-weight: $fontBold;
+        color: $white;
+        border-radius: 2.0rem;
+        background: rgba(0,0,0,0.4);
+      }
+    }
+  }
+  &.card-send {
+    background: #de5483;
+    .visual {
+      width: 17.7rem;
+      height: 12.0rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_send.png) no-repeat;
+      background-size: cover;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2.0rem;
+        right: 0;
+        width: 15.0rem;
+        height: 14.0rem;
+        background:url(#{$img-path}/payfan/visual/junior/visual_send2.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .title-box {
+      // padding-top: 14.8rem;
+      margin: auto 0 6%;
+      &.only {
+        // padding-top: 11.8rem;
+        margin: auto 0;
+        padding: 5% 0 20%;
+      }
+      .upper {
+        display: block;
+        margin-bottom: 2.0rem;
+        font-style: normal;
+        font-weight: $fontMedium;
+        color: $white;
+      }
+    }
+    .send-join {
+      position: absolute;
+      left: 2.0rem;
+      right: 2.0rem;
+      bottom: 3.2rem;
+      text-align: center;
+      .emoji {
+        position: absolute;
+        // top: -8.4rem;
+        top: -150%;
+        left: 2.4rem;
+        right: 2.4rem;
+        display: block;
+        text-align: center;
+        font-size: 3.2rem;
+        i {
+          margin: 0 1.0rem;
+          font-style: normal;
+        }
+      }
+      .link {
+        @include fontHeight(1.4);
+        display: inline-block;
+        height: 4.0rem;
+        padding: 0 2.0rem;
+        color: $white;
+        font-weight: $fontBold;
+        line-height: 4.0rem;
+        border: 1px solid $white;
+        border-radius: 2.0rem;
+        box-sizing: border-box;
+      }
+    }
+    .send-option {
+      margin: 0 0 2rem;
+      // height: 19.2rem;
+      padding-top: 2.0rem;
+      background: #cd4070;
+      border-radius: 1.0rem;
+      a:first-child {
+        margin-left: 0;
+      }
+      .options {
+        display: flex;
+        justify-content: center;
+        padding: 0 2rem 2rem;
+      }
+      .link {
+        flex: 0 0 33.3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0.2rem;
+      }
+      .thumb {
+        overflow: hidden;
+        width: 4.4rem;
+        height: 4.4rem;
+        margin: 0 auto;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      .text {
+        @include fontHeight(1.4);
+        margin-top: 1.2rem;
+        color: $white;
+        font-weight: $fontBold;
+      }
+      .number {
+        @include fontHeight(1.4);
+        color: #ffc5d8;
+      }
+      .nodata {
+        @include fontHeight(1.4);
+        position: relative;
+        height: 11.6rem;
+        margin-top: 0.2rem;
+        text-align: center;
+        color: #ffc5d8;
+        &::before {
+          content: '';
+          display: block;
+          width: 6.5rem;
+          height: 6.4rem;
+          margin: 0 auto 1.0rem;
+          background: url(#{$img-path}/payfan/visual/junior/icon_absence.png) no-repeat;
+          background-size: cover;
+        }
+      }
+      .other {
+        position: relative;
+        height: 5.5rem;
+        margin: 0 2.0rem;
+        text-align: center;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: rgba(255,255,255,0.08)
+        }
+        .link {
+          @include fontHeight(1.4);
+          display: block;
+          padding: 2.1rem 0;
+          font-weight: $fontBold;
+          line-height: 1;
+          color: $white;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+  &.card-quiz {
+    background: #87d3f9;
+    .visual {
+      width: 14.8rem;
+      height: 12.4rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_quiz.png) no-repeat;
+      background-size: cover;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2.0rem;
+        right: 0;
+        width: 14.0rem;
+        height: 14.0rem;
+        background:url(#{$img-path}/payfan/visual/junior/visual_quiz2.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .top-link {
+      .link {
+        color: $black;
+        &::after {
+          background:url(#{$img-path}/payfan/visual/junior/icon_arrow_navi.png) no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    .title-box {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: auto 0 7%;
+     
+      .title {
+        color: $black;
+      }
+      strong {
+        display: block;
+        font-weight: $fontBold;
+      }
+      .btn-share {
+        overflow: hidden;
+        width: 3.6rem;
+        height: 3.6rem;
+        border: 1px solid rgba(0,0,0,0.15);
+        border-radius: 2.4rem;
+        background:url(#{$img-path}/payfan/visual/junior/icon_share.svg) no-repeat 50%;
+        background-size: 2.0rem auto;
+        text-indent: -1000em;
+      }
+      .link {
+        @include fontHeight(1.4);
+        display: inline-block;
+        height: 3.8rem;
+        margin-top: 0.8rem;
+        padding: 0 1.4rem;
+        font-weight: $fontMedium;
+        line-height: 3.8rem;
+        color: $black;
+        border: 1px solid rgba(0,0,0,0.16);
+        border-radius: 1.9rem;
+        box-sizing: border-box;
+      }
+    }
+    .quiz-box {
+      margin: 0 -2.4rem;
+      height: 18.4rem;
+      padding: 2.8rem 2.4rem 0;
+      border-radius: 0 0 1.2rem 1.2rem;
+      background: $white;
+      &.after {
+        height: 20.8rem;
+        padding-top: 2.4rem;
+      }
+      .btn-play {
+        @include fontHeight(1.4);
+        height: 3.8rem;
+        margin-top: 2.0rem;
+        padding: 0 1.6rem;
+        border: 1px solid $gray030;
+        border-radius: 2.0rem;
+        font-weight: $fontBold;
+      }
+    }
+    .quiz-note {
+      .text {
+        overflow: hidden;
+        display: -webkit-box;
+        font-style: normal;
+        font-weight: $fontBold;
+        word-wrap: break-word;
+        word-break: break-word;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .period {
+        @include fontHeight(1.4);
+        display: block;
+        margin-top: 0.4rem;
+        color: $gray080;
+      }
+    }
+    .quiz-check {
+      display: flex;
+      margin-top: 2.4rem;
+      li {
+        flex: 1;
+        padding-left: 1.2rem;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+      .mark {
+        overflow: hidden;
+        display: block;
+        width: 4.0rem;
+        height: 4.0rem;
+        margin: 0 auto;
+        border-radius: 1.2rem;
+        border: 1px dashed $gray050;
+        text-indent: -1000em;
+        background:url(#{$img-path}/payfan/icons/default/icon_32_check_navi.svg) no-repeat 50%;
+        background-size: 3.2rem auto;
+      }
+      .text {
+        @include fontHeight(1.4);
+        display: block;
+        margin-top: 1.0rem;
+        font-weight: $fontMedium;
+        line-height: 1;
+        text-align: center;
+      }
+      .checking {
+        .mark {
+          border: 1px solid $bgDarkBlue;
+          background: $bgDarkBlue url(#{$img-path}/payfan/icons/default/icon_32_check_wh.svg) no-repeat 50%;
+          background-size: 3.2rem auto;
+        }
+      }
+      .unchecking {
+        .mark {
+          border: 1px solid $gray030;
+          background: $bgWarmGray url(#{$img-path}/payfan/icons/default/icon_32_check_gr.svg) no-repeat 50%;
+          background-size: 3.2rem auto;
+        }
+        .text {
+          color: $gray070;
+        }
+      }
+    }
+  }
+  &.card-event {
+    background: #07ab90;
+    .visual {
+      width: 15.6rem;
+      height: 12.8rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_event.png) no-repeat;
+      background-size: cover;
+      &::after {
+        content: '';
+        position: absolute;
+        top: -2.0rem;
+        right: 0;
+        width: 14.0rem;
+        height: 14.0rem;
+        background:url(#{$img-path}/payfan/visual/junior/visual_event2.png) no-repeat;
+        background-size: cover;
+      }
+    }
+    .title-box {
+      margin: auto 0 5%;
+    }
+    .scroll {
+      overflow: hidden;
+      overflow-x: auto;
+      // margin-top: 2.4rem;
+      margin-left: -2.4rem;
+      margin-right: -2.4rem;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .list {
+        display: inline-flex;
+        padding-left: 2.4rem;
+        padding-right: 1.2rem;
+        li {
+          margin-right: 1.2rem;
+        }
+      }
+      .benefit {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 0.8rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        height: 2.6rem;
+        padding: 0 1.0rem 0 2.8rem;
+        border-radius: 1.3rem;
+        background-color: $blue100;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0.2rem;
+          left: 0.2rem;
+          display: block;
+          width: 2.2rem;
+          height: 2.2rem;
+          background: url(#{$img-path}/payfan/visual/junior/icon_point.png) no-repeat;
+          background-size: cover;
+        }
+        .number {
+          @include fontHeight(1.2);
+          display: block;
+          font-weight: $fontBold;
+          color: $white;
+        }
+      }
+      .completed {
+        @include fontHeight(1.2);
+        position: absolute;
+        bottom: 0.4rem;
+        left: 0.8rem;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 1.3rem;
+        background-color: $blue100;
+        text-indent: -1000em;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0.2rem;
+          left: 0.2rem;
+          display: block;
+          width: 2.2rem;
+          height: 2.2rem;
+          background: url(#{$img-path}/payfan/visual/junior/icon_check.png) no-repeat;
+          background-size: cover;
+        }
+      }
+      .item-box {
+        display: block;
+        width: 10.0rem;
+        height: 19.8rem;
+      }
+      .item-img {
+        overflow: hidden;
+        position: relative;
+        width: 10.0rem;
+        height: 10.0rem;
+        border-radius: 1.0rem;
+        background-color: $bgLightGray;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .item-desc {
+        padding-top: 1.2rem;
+        .text {
+          @include fontHeight(1.4);
+          overflow: hidden;
+          display: -webkit-box;
+          max-height: 4.0rem;
+          font-weight: $fontBold;
+          color: $white;
+          word-wrap: break-word;
+          word-break: break-word;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        .period {
+          @include fontHeight(1.2);
+          display: block;
+          margin-top: 0.6rem;
+          color: rgba(255,255,255,0.8);
+        }
+      }
+    }
+  }
+}
+// 카드 발급상태
+.junior-area {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  // height: 62vmax;
+  height: calc(100vh - 4.4rem);
+  // min-height: 36rem;
+  margin: 3.0rem auto 1.4rem;
+  padding: 0 2.4rem;
+  box-shadow: 0 .4rem 1rem 0 rgba(0, 0, 0, 0.3);
+  border-radius: 1.2rem;
+  background-image: linear-gradient(213deg, #5c8be3, #ae69c8 100%);
+  .top-link {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+    z-index: 1;
+    @include fontHeight(1.4);
+    font-weight: $fontBold;
+    color: $white;
+    line-height: 1.6;
+    .link {
+      @include fontHeight(1.4);
+      padding-right: 1.6rem;
+      font-weight: $fontBold;
+      line-height: 1;
+      color: $white;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.3rem;
+        right: 0;
+        display: block;
+        width: 1.6rem;
+        height: 1.6rem;
+        background:url(#{$img-path}/payfan/visual/junior/icon_arrow_wh.png) no-repeat;
+        background-size: 1.6rem auto;
+      }
+    }
+  }
+  .visual {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15.0rem;
+    height: 13.1rem;
+    background:url(#{$img-path}/payfan/visual/junior/visual_pay_meme.png) no-repeat;
+    background-size: cover;
+    border-top-right-radius: 1.2rem;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2.0rem;
+      right: 0;
+      width: 14.0rem;
+      height: 14.0rem;
+      background:url(#{$img-path}/payfan/visual/junior/visual_pay_meme2.png) no-repeat;
+      background-size: cover;
+    }
+  }
+  .title-area {
+    position: relative;
+    padding-top: 8.8rem;
+    flex-grow: 1;
+    .img-card {
+      width: 7.6rem;
+      margin: -5.5rem 0 0 -1.4rem;
+      padding: 5.4rem 0 3.2rem;
+      img {
+        display: block;
+        width: 100%;
+        transform: rotate(90deg);
+        box-shadow: 0 1.0rem 1.6rem 0 rgba(0, 0, 0, 0.28);
+      }
+      &.before-card {
+        opacity: 0.2;
+      }
+    }
+    .tooltip-guide {
+      position: absolute;
+      top: 8.4rem;
+      left: 6rem;
+      right: -2rem;
+      .tooltip-content { 
+        .link {
+          text-decoration: underline;
+          color: $white;
+        }
+      }
+    }
+    .title {
+      color: $white;
+      @include fontHeight(1.6);
+      em.upper {
+        display: block;
+        @include fontHeight(1.4);
+        font-style: normal;
+        margin-bottom: .4rem;
+      }
+      .text {
+        display: inline-flex;
+        width: 100%;
+        @include fontHeight(2.4);
+        font-weight: $fontBold;
+        a.link {
+          position: relative;
+          overflow: hidden;
+          display: block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-weight: $fontBold;
+          box-sizing: border-box;
+          @include fontHeight(2.4);
+          color: $white;
+          padding-right: 2.0rem;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+            display: block;
+            width: 2.0rem;
+            height: 2.0rem;
+            background:url(#{$img-path}/payfan/visual/junior/icon_arrow_wh.svg) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+      .info {
+        display: block;
+        padding-top: .4rem;
+      }
+    }
+    .btn-apply {
+      @include fontHeight(1.4);
+      height: 4.0rem;
+      padding: 0 2.0rem;
+      font-weight: $fontBold;
+      color: $white;
+      border-radius: 2.0rem;
+      background: rgba(0,0,0,0.4);
+      margin: 1.6rem 0 3.2rem;
+    }
+  }
+  .pay-info {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+    // margin: 5.6rem 0 2.8rem;
+    .text, .info {
+      padding-bottom: 0.5rem;
+      .upper {
+        @include fontHeight(1.4);
+        color: $white;
+      }
+      .money-group {
+        display: flex;
+        align-items: center;
+        .btn-refresh {
+          margin-top: -.2rem;
+          margin-left: .3rem;
+          .icon { 
+            vertical-align: middle;
+          }
+        }
+      }
+      .money {
+        @include fontHeight(2.2);
+        display: block;
+        font-weight: $fontBold;
+        font-style: normal;
+        color: $white;
+        .unit {
+          font-style: normal;
+          @include fontHeight(2);
+        }
+      }
+    }
+    .btn-pay {
+      @include fontHeight(1.4);
+      height: 4.0rem;
+      padding: 0 2.0rem;
+      font-weight: $fontBold;
+      color: $white;
+      border-radius: 2.0rem;
+      background: rgba(0,0,0,0.4);
+    }
+  }
+  .card-benefit {
+    display: flex;
+    padding-bottom: 3.2rem;
+    dl {
+      flex: 1 1 auto;
+      dt {
+        color: $white;
+      }
+      dd {
+        padding-top: .4rem;
+        @include fontHeight(1.2);
+        color: #e2f1ff;
+      }
+    }
+  }
+  .card-status {
+    margin: 2.8rem 0 0;
+    height: 10.2rem;
+    @include fontHeight(1.4);
+    text-align: center;
+    color: $white;
+    &.card-regist {
+      margin: 2rem 0 0;
+      height: 11.8rem;
+    }
+    .text {
+      .issuance-info {
+        text-decoration: underline;
+        margin-bottom: 1.6rem;
+        .icon + span {
+          margin-left: .6rem;
+        }
+      }
+      .issuance-desc {
+        display: block;
+        color: #e2f1ff;
+        strong {
+          color: $white;
+          font-weight: $fontBold;
+        }
+      }
+    }
+    .btn-use-regist {
+      @include fontHeight(1.4);
+      height: 3.8rem;
+      padding: 0 1.6rem;
+      color: $white;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: transparent;
+      border-radius: 1.9rem;
+      margin: 1.6rem auto 2.4rem;
+    }
+  }
+  .banner-area {
+    margin: 0 -.4rem 4rem;
+    .banner-img {
+      border-radius: 1rem;
+    }
+    .card-slide { 
+      // width: 25.6rem;
+      .splide {
+        .splide__pagination.type1 {
+          bottom: -1.8rem;
+        }
+      }
+    }
+  }
+}

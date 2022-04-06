@@ -1,0 +1,26 @@
+/* table */
+caption {
+    overflow: hidden;
+    visibility: hidden;
+    height: 1px;
+    text-indent: -9999px;
+}
+
+.table {
+    width: 100%;
+    border-top: 2px solid #414042;
+    border-bottom: 1px solid #414042;
+    tr {}
+    th, td {
+        &:first-child {
+            border-left: 0;
+        }
+        padding: .5rem 1rem;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+    th {}
+}
+.table-scroll {
+  overflow-x: auto;
+}
