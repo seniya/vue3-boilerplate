@@ -1,5 +1,5 @@
 <template>
-<a-menu v-model:selectedKeys="current" mode="horizontal">
+  <a-menu v-model:selectedKeys="current" mode="horizontal">
     <a-menu-item key="home">
       <router-link to="/">home</router-link>
     </a-menu-item>
