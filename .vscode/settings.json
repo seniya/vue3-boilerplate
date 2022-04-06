@@ -10,8 +10,11 @@
     "enable": true
   },
   "eslint.format.enable": true,
+
+  "editor.fontFamily": "D2Coding ligature",
   "editor.fontSize": 16,
   "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "D2Coding ligature",
   "terminal.integrated.fontSize": 16,
   "debug.console.fontSize": 16,
   "editor.suggestFontSize": 16,
