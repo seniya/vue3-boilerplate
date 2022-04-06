@@ -52,6 +52,7 @@ export const useAuthStore = defineStore({
         if (res.data) {
           if (res.data.result) {
             this.authInfo = res.data.result
+            localStorage.setItem(StorageNameCode.TOKEN, this.authInfo.token)
           }
         }
         this.isLodingAuthInfo = false

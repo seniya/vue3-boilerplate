@@ -9,10 +9,10 @@
 
     <viewRead
       :item="state.postDetail"
-      :isLoadingPostRead="postStore.getIsLodingPostInfo"
-      :donePostRead="postStore.getIsDonePostInfo"
+      :isLoadingPostRead="postStore.isLodingPostInfo"
+      :donePostRead="postStore.isDonePostInfo"
       :onClickBackBtn_="actionGoList"
-      :onClickEditBtn_="actionEdit"/>
+      :onClickEditBtn_="actionEdit" />
   </div>
 </template>
 

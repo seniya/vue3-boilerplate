@@ -9,7 +9,7 @@
       <p>authStore.isLodingAuthInfo: {{authStore.isLodingAuthInfo}}</p>
       <p>authStore.isDoneAuthInfo : {{authStore.isDoneAuthInfo}}</p>
       <p>authStore.errorAuthInfo : {{authStore.errorAuthInfo}}</p>
-<!--  -->
+
       <div v-if="authStore.getIsLogin && authStore.getToken !== ''">
         <p>로그인 되었습니다.</p>
         <p>userId : {{authStore.authInfo.userId}}</p>

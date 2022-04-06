@@ -12,8 +12,8 @@
     <!-- -->
     <viewList
       :items="state.posts"
-      :isLoadingPostItems="postStore.getIsLodingPosts"
-      :donePostItems="postStore.getIsDonePosts"
+      :isLoadingPostItems="postStore.isLodingPosts"
+      :donePostItems="postStore.isDonePosts"
       :onClickMoreBtn_="actionMore"
       :onClickEditBtn_="actionEdit"
       :onClickReadBtn_="actionRead" />

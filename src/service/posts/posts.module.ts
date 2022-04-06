@@ -42,29 +42,12 @@ export const usePostStore = defineStore({
 
   getters: {
     getPosts (): PostInterface[] {
+      // 데이터 가공
       return this.posts
     },
-    getIsLodingPosts (): boolean {
-      return this.isLodingPosts
-    },
-    getIsDonePosts (): boolean {
-      return this.isDonePosts
-    },
-    getErrorPosts (): string | null {
-      return this.errorPosts
-    },
-
     getPostInfo (): PostInterface {
+      // 데이터 가공
       return this.postInfo
-    },
-    getIsLodingPostInfo (): boolean {
-      return this.isLodingPostInfo
-    },
-    getIsDonePostInfo (): boolean {
-      return this.isDonePostInfo
-    },
-    getErrorPostInfo (): string | null {
-      return this.errorPostInfo
     }
   },
   actions: {
