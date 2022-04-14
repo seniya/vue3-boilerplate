@@ -1,6 +1,6 @@
 <template>
-  <mainMenu />
-  <div>
+  <div id="app_container">
+    <mainMenu />
     <router-view></router-view>
   </div>
 </template>

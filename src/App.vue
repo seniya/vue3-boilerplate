@@ -1,5 +1,5 @@
 <template>
-  <div id="application">
+  <div id="app">
     <mainContainer />
   </div>
 </template>
