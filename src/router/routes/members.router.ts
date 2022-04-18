@@ -1,5 +1,4 @@
 const DefaultLayout = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "members" */ '@/views/members/_container.vue')
-
 const Main = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "members" */ '@/views/members/main.vue')
 
 export default {
