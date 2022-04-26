@@ -3,6 +3,7 @@ const pageMain = (): Promise<typeof import('*.vue')> => import(/* webpackChunkNa
 const page1 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page1.vue')
 const page2 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page2.vue')
 const page3 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page3.vue')
+const page4 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page4.vue')
 
 export default {
   path: '/pages',
@@ -36,6 +37,13 @@ export default {
       component: page3,
       meta: {
         title: 'page3'
+      }
+    },
+    {
+      path: '/pages/4',
+      component: page4,
+      meta: {
+        title: 'page4'
       }
     }
   ]

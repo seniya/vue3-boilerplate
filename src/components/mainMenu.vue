@@ -25,6 +25,9 @@
         <a-menu-item key="page:3">
           <router-link to="/pages/3">페이지3 - 권한확인 with router</router-link>
         </a-menu-item>
+        <a-menu-item key="page:4">
+          <router-link to="/pages/4">페이지4 - 은퇴 차트 샘플</router-link>
+        </a-menu-item>
       </a-menu-item-group>
     </a-sub-menu>
   </a-menu>
