@@ -28,6 +28,9 @@
         <a-menu-item key="page:4">
           <router-link to="/pages/4">페이지4 - 은퇴 차트 샘플</router-link>
         </a-menu-item>
+        <a-menu-item key="page:5">
+          <router-link to="/pages/5">페이지5 - 탭별 차트 포커스 샘플</router-link>
+        </a-menu-item>
       </a-menu-item-group>
     </a-sub-menu>
   </a-menu>
