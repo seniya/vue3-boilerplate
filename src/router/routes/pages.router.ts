@@ -5,6 +5,7 @@ const page2 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName:
 const page3 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page3.vue')
 const page4 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page4.vue')
 const page5 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page5.vue')
+const page6 = (): Promise<typeof import('*.vue')> => import(/* webpackChunkName: "pages" */ '@/views/pages/page6.vue')
 
 export default {
   path: '/pages',
@@ -52,6 +53,13 @@ export default {
       component: page5,
       meta: {
         title: 'page5'
+      }
+    },
+    {
+      path: '/pages/6',
+      component: page6,
+      meta: {
+        title: 'page6'
       }
     }
   ]

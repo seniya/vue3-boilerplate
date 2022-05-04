@@ -31,6 +31,9 @@
         <a-menu-item key="page:5">
           <router-link to="/pages/5">페이지5 - 탭별 차트 포커스 샘플</router-link>
         </a-menu-item>
+        <a-menu-item key="page:6">
+          <router-link to="/pages/6">페이지6 - Y축 0 기준 샘플</router-link>
+        </a-menu-item>
       </a-menu-item-group>
     </a-sub-menu>
   </a-menu>
